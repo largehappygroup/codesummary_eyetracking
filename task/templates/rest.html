@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div style="position:relative; top: 200px; line-height: 250%">
+    <h3 align="center">
+        You may now take a break.<br>
+        Press any key when you're ready to <br> recalibrate the eye-tracker and start the next session.
+    </h3>
+</div>
+
+<div align="center" style="position:relative; top: 225px;">
+    {% if next_task == "reading" %}
+    <form action="/reading" method="POST" enctype="multipart/form-data">
+        <input type="submit" value="start" class="btn button form-input">
+    </form>
+    {% elif next_task == "writing" %}
+    <form action="/writing" method="POST" enctype="multipart/form-data">
+        <input type="submit" value="start" class="btn button form-input">
+    </form>
+    {% endif %}
+</div>
+
+{% endblock %}

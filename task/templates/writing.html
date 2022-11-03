@@ -1,0 +1,40 @@
+{% extends 'bass.html' %}
+
+{% block head  %}
+<script>
+    // record all keystrokes + time
+    window.onload = function () {
+        $(document).ready(function () {
+            $(document).keydown(function (event) {
+                console.log("recording keystroke");
+                var my_url = "http://127.0.0.1:8181/writing/submitkeystroke?keypressed=" + event.which;
+                $.ajax(
+                    { url: my_url, complete: function () { } }
+                );
+            });
+        });
+    }
+</script>
+{% endblock %}
+
+{% block body %}
+
+<form action="/writing" method="POST" enctype="multipart/form-data">
+    <div class="parent"
+        <div id="col-a">
+            <code><textarea readonly class="form-control" id="code" 
+            style="font-size:18px;" rows="40" cols="30">{{code}}</textarea></code>
+        </div>
+        <div id="col-b">
+            <p align="center"><strong>Please write a summary describing what 
+                the method to the left is doing.</strong></p>
+                <textarea type="string" name="summary" id="summary" 
+                    style="width:900px; height:200px; font-size:18px; font-family:Arial;" 
+                    autocomplete="off"></textarea><br>
+            <input type="submit" value="next" class="btn button form-input" 
+                style="position:relative; left: 675px;">
+        </div>
+    </div>
+</form>
+
+{% endblock %}

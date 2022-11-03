@@ -1,0 +1,90 @@
+body {
+    margin : 0;
+    font-family : Arial;
+}
+
+div {
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+
+p{
+    font-size: 18px;
+    font-family: Arial;
+}
+
+h1{
+    text-align:center;
+}
+
+h2 {
+    left: 0;
+    line-height: 200px;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    width: 100%;
+    font-family: Arial;
+}
+
+h3{
+    line-height : 250%;
+    font-family: Arial;
+}
+
+textarea{
+    font-size : 1.2em;
+}
+
+input {
+    font-size : 24px;
+    font-family: Arial;
+}
+
+label {
+    float: left;
+    padding: 0 1em;
+    text-align: center;
+    font-family: Arial;
+    font-size: 14px;
+    color:midnightblue;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.center-left{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.button-bigger{
+    height : 30px;
+    width : 50px;
+}
+
+#col-a {
+    position: relative;
+    width: 50%;
+    float: left;
+}
+
+#col-b {
+    position: relative;
+    width: 50%;
+    float: left;
+}
+

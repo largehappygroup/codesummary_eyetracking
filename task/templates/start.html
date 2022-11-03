@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+<script src="signature-pad/jquery.min.js"></script>
+<script src="signature-pad/jquery.signaturepad.min.js"></script>
+<script src="signature-pad/jquery.signaturepad.js"></script>
+<script src="signature-pad/assets/json2.min.js"></script>
+<script src="signature-pad/assets/flashcanvas.js"></script>
+<script src="signature-pad/assets/flashcanvas.swf"></script>
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js">
+
+</script>
+<link rel="stylesheet" href="signature-pad/assets/jquery.signaturepad.css">
+
+
+{% block head %}
+<title>Test</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div id="header">
+                <h1>Welcome</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div id="body">
+                <h5><i>Please read the following information before start.</i></h5>
+                <p>This self-paced queationnaire contains three parts: prgramming, code comprehesion, and code review.
+                    Once you coontinue to the next task, you will not be able to go back to the previous one.</p>
+                <p><b><u>STATEMENT BY PERSON AGREEING TO PARTICIPATE IN THIS STUDY</u></b><br>
+                    <b>I am fully aware of the material contained in it. All my questions have been answered, and I
+                        freely and voluntarily choose to participate.</b>
+                </p>
+
+
+
+                <form action="/form" method="POST" enctype="multipart/form-data">
+                    <label for="name">Print your participant ID</label>
+                    <p><input class="form-input" placeholder="Your ID" name="input" id="input">
+                        </input></p>
+                    <input type="submit" value="start" class="btn button form-input" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

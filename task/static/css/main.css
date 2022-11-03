@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+h2 {
+    left: 0;
+    line-height: 200px;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
+
+#col-1 {
+    position: relative;
+    width: 50%;
+    float: left;
+    z-index: 1010101010
+}
+
+#col-2 {
+    position: relative;
+    width: 50%;
+    float: left;
+    z-index: 1010101010
+}
+
+.col-a {
+    position: relative;
+    width: 60%;
+    float: left;
+    z-index: 1010101010
+}
+
+.col-b {
+    position: relative;
+    width: 40%;
+    float: left;
+    z-index: 1010101010
+}
+
+.col-c{
+    display: inline-block;
+}

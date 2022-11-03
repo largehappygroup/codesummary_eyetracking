@@ -1,0 +1,473 @@
+,fid,name,ref,attendgru,function
+155,42956622,initButtons,inits the buttons on the screen,initialize the buttons,"
+
+ private void initButtons() {
+		this.playButton = createButton(BUTTON_FILE_NAME_PREFIX + PLAY_BUTTON_FILE_NAME, PLAY_BUTTON_TOOLTIP);
+		this.pauseButton = createButton(BUTTON_FILE_NAME_PREFIX + PAUSE_BUTTON_FILE_NAME, PAUSE_BUTTON_TOOLTIP);
+		this.exitButton = createButton(BUTTON_FILE_NAME_PREFIX + EXIT_BUTTON_FILE_NAME, EXIT_BUTTON_TOOLTIP);
+	} 
+"
+77,11950130,testGetCodigo,test of get codigo method of class proyectoventadepasajes,test of get codigo method of class com,"
+
+ public void testGetCodigo() {
+        System.out.println(""""getCodigo"""");
+        
+        Cronograma instance = null;
+        
+        String expResult = """""""";
+        String result = instance.getCodigo();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail(""""The test case is a prototype."""");
+    } 
+"
+72,18354735,invalidateSession,removes the mapping between the designated sm2 client identifier and,invalidate session with given id,"
+
+  public void invalidateSession(String uid, String sid) {
+      cat.debug(""""==> invalidateSession(""""+String.valueOf(uid)+"""", """"+String.valueOf(sid)+"""")"""");
+
+      synchronized (lock) {
+         uid2sid.remove(uid);
+         sid2ssc.remove(sid);
+         sid2ttl.remove(sid);
+      }
+
+      cat.debug(""""<== invalidateSession()"""");
+   } 
+"
+165,18912425,tellAgain,forward some message to the participant,this method is called when the user has entered the,"
+
+ protected void tellAgain(final QName message) throws RemoteException{
+		final AbstractCoordParticipantProxy proxy =
+			this.getParticipantProxy();
+
+		if (State.MESSAGE_CANCEL.equals(message)){
+			proxy.cancelOperation(null);
+			
+		}else if (State.MESSAGE_COMPENSATE.equals(message)){
+			proxy.compensateOperation(null);
+
+		}else if (State.MESSAGE_CLOSE.equals(message)){
+			proxy.closeOperation(null);
+			
+		}else if (State.MESSAGE_EXITED.equals(message)){
+			proxy.exitedOperation(null);
+			
+		}else if (State.MESSAGE_FAULTED.equals(message)){
+			proxy.faultedOperation(null);
+			
+		}else if (State.MESSAGE_GETSTATUS.equals(message)){
+			proxy.getStatusOperation(null);
+			
+		}else{
+			throw new IllegalArgumentException(""""Sorry, cannot tell a participant """"+message);
+		}
+	} 
+"
+42,1741129,otherDoEndTagOperations,method called from do end tag,this method is called when the end of the tag is executed,"
+
+ private void otherDoEndTagOperations() {
+        //
+        // TODO: code that performs other operations in doEndTag
+        //       should be placed here.
+        //       It will be called after initializing variables,
+        //       finding the parent, setting IDREFs, etc, and
+        //       before calling shouldEvaluateRestOfPageAfterEndTag().
+        //
+    } 
+"
+117,21359951,show,show dialog with existing or new null contact,show the contact dialog,"
+
+     public void show(Contact contact) {
+            logger.fine(""""Showing edit contact dialog for contact: """" + contact);
+            this.contact = contact;
+            init();
+            setLocationRelativeTo(Context.mainFrame);
+            optionPane.setValue(JOptionPane.UNINITIALIZED_VALUE);
+            panel.setContact(contact);
+            panel.prepareForShow();
+            setVisible(true);
+        } 
+"
+60,40778768,configBalanceRanking,load balances from the ranking file and configure the timer to save,<UNK> the <UNK> to the <UNK>,"
+
+ private void configBalanceRanking(List<IResponseTO> responses, String filePath) {
+		
+		PeerDAOFactory.getInstance().getAccountingDAO().loadBalancesRanking(filePath);
+		long frequence = AccountingConstants.RANKING_SAVING_FREQ;
+
+		ScheduleActionWithFixedDelayResponseTO to = new ScheduleActionWithFixedDelayResponseTO();
+		to.setActionName(PeerConstants.SAVE_ACCOUNTING_ACTION_NAME);
+		to.setDelay(frequence);
+		to.setTimeUnit(TimeUnit.SECONDS);
+		
+		responses.add(to);
+	} 
+"
+51,19682824,handleHalt,handle the halt system call,handle the halt process,"
+
+ private int handleHalt() {
+		//need to test that this is the root process
+		if(processID == 0){
+			Machine.halt(); 
+		}else{
+			//System.err.println(""""non-root process trying to call halt"""");
+			return -1; //This is not the root process so ignore this one
+		}
+		
+		Lib.assertNotReached(""""Machine.halt() did not halt machine!"""");
+		return 0;
+	} 
+"
+171,34427273,populateNewList,helper method which populates the gui list for resources which are new at,populates the list of new resources,"
+
+ private void populateNewList() {
+        newResources = mergeNewResources();
+        SwingUtilities.invokeLater(new Runnable() {
+            @SuppressWarnings(""""synthetic-access"""")
+            @Override
+            public void run() {
+                newListModel.clear();
+                for (Wrapper wr : newResources)
+                    newListModel.addElement(wr);
+            }
+        });
+    } 
+"
+58,46026508,saveSetting,save settings to property file,save the settings to the property file,"
+
+ private void saveSetting(CustomProperties prop) {
+		prop.setProperty(""""avalanchefever.gametype"""", mapSet);
+		prop.setProperty(""""avalanchefever.outlinetype"""", outlinetype);
+		prop.setProperty(""""avalanchefever.numcolors"""", numColors);
+		prop.setProperty(""""avalanchefever.version"""", version);
+		prop.setProperty(""""avalanchefever.chainDisplayType"""", chainDisplayType);
+		prop.setProperty(""""avalanchefever.bigDisplay"""", bigDisplay);
+	} 
+"
+10,34413807,close,notifies all views to de register from their view controllers,closes the <UNK>,"
+
+ public void close(){
+		Tabpanel tempPanel = null;
+		View tempView = null;
+		List<?> list;
+		Enumeration<Tabbox> tabs = primaryTabMap.keys();
+		while (tabs.hasMoreElements())
+		{
+			list = tabs.nextElement().getTabpanels().getChildren();
+			Iterator<?> itr = list.iterator();
+			while(itr.hasNext()){
+				tempPanel = (Tabpanel)itr.next();
+				tempView = (View)tempPanel.getChildren().get(0);
+				tempView.deregisterView();
+			}
+		}
+	} 
+"
+142,19344442,loadSystems,load the various systems from the db,loads the systems <UNK>,"
+
+ private void loadSystems() {
+		int i, num;
+		SystemItem dtls;
+
+		systemCombo.removeAllItems();
+
+		systemCombo.addItem(""""<All>"""");
+
+		dbLink = true;
+		try {
+			systems = copyBookInterface.getSystems();
+		} catch (Exception ex) {
+			if (message != null) {
+				message.setText(ex.getMessage());
+				message.setCaretPosition(1);
+			}
+			ex.printStackTrace();
+			systems = new ArrayList<SystemItem>();
+			dbLink = false;
+		}
+
+		num = systems.size();
+		for (i = 0; i < num; i++) {
+			dtls = systems.get(i);
+			systemCombo.addItem(dtls.description);
+		}
+
+	} 
+"
+53,37563349,"""",returns a rectangle which represents the rectangular,returns the bounds of the receiver,"
+
+""
+ 
+ public Rectangle getBounds() {
+	if (isDisposed()) SWT.error(SWT.ERROR_GRAPHIC_DISPOSED);
+  java.awt.Rectangle bounds = handle.getBounds();
+  return new Rectangle((int)bounds.getX(), (int)bounds.getY(), (int)bounds.getWidth(), (int)bounds.getHeight());
+} 
+"
+132,17121898,compareTo,compares the tpoint object with other tpoint using timestamps first i,compares this object with the specified angle for order,"
+
+ public int compareTo(TPoint o) {
+    if ((this.value == o.value()) && (this.tstamp == o.tstamp())) {
+      return 0;
+    }
+    else if (this.tstamp > o.tstamp) {
+      return 1;
+    }
+    else if (this.tstamp < o.tstamp) {
+      return -1;
+    }
+    else if (this.value > o.value) {
+      return 1;
+    }
+    return -1;
+  } 
+"
+124,22622479,getStatusFlagFields,gets the status flag input fields from the input manager,gets the status of the given list,"
+
+ private List getStatusFlagFields() {
+		List list = new ArrayList();
+		String statusFlagPath = """"/collectionConfigRecord/statusFlags/statusFlag/status"""";
+		for (Iterator i = im.getInputFields().iterator(); i.hasNext(); ) {
+			InputField field = (InputField) i.next();
+			// prtln (field.toString());
+			if (field.getNormalizedXPath().startsWith(statusFlagPath)) {
+				list.add(field);
+			}
+		}
+		return list;
+	} 
+"
+3,22907997,removeRedundantOperations,optimize the list of files to remove by discarding redundant operations like,removes redundant operations from the list of forbidden ones,"
+
+ private void removeRedundantOperations(OBEXElement file, List<OBEXElement> filesToRemove) {
+        OBEXElement parentFolder = file;
+        log.debug(""""Removing redundant operations"""");
+
+        while ((parentFolder = parentFolder.getParent()) != null) {
+
+            if (filesToRemove.contains(parentFolder)) {
+                filesToRemove.remove(file);
+                file = parentFolder;
+            }
+        }
+    } 
+"
+19,22407577,setTargetMap,modifiactor for the target map from the current configured settings,set the target map for the target map,"
+
+ public AntTargetMap setTargetMap() {
+        AntTargetMap targetMap = null;
+        String strDefaultTarget = null;
+        targetMap = m_buildfile.getTargetMap();
+        strDefaultTarget = m_buildfile.getDefaultTarget();
+
+        if (m_bSelectWithDescription) {
+            targetMap.selectWithDescription();
+
+        }
+        setTargetMap(targetMap);
+
+        return m_targetMap;
+    } 
+"
+114,4280405,getFiles,returns the files represented by the given fileset,returns a list of files that are included in the file,"
+
+ public List getFiles(FileSet fileSet) {
+        List files = new ArrayList();
+        String[] names = fileSet.getDirectoryScanner(project).getIncludedFiles();
+
+        for (int i = 0; i < names.length; i++) {
+            String name = names[i];
+            files.add(new File(fileSet.getDir(project), name));
+        }
+
+        return files;
+    } 
+"
+111,39233866,testInvoke,test if we can invoke a given service,test the invoke method of the servlet,"
+
+ public void testInvoke() throws Exception {
+        transport.setRemoteService(""""TravelProcess"""");
+
+        call.setOperation(""""initiate"""");
+        call.addParameter(""""x"""", XMLType.XSD_STRING, ParameterMode.IN);
+        call.setReturnType(XMLType.XSD_STRING);
+
+        String result = (String) call.invoke(new Object[] { """"anything"""" });
+
+        assertEquals(DUMMY_RESULT, result);
+    } 
+"
+82,16958722,indexToLetter,converts the given integer into a character for the coordinate system,returns the index of the given letter,"
+
+ public String indexToLetter(int index) {
+		if (index == 0)
+			return """"a"""";
+		else if (index == 1)
+			return """"b"""";
+		else if (index == 2)
+			return """"c"""";
+		else if (index == 3)
+			return """"d"""";
+		else if (index == 4)
+			return """"e"""";
+		else if (index == 5)
+			return """"f"""";
+		else if (index == 6)
+			return """"g"""";
+		else if (index == 7)
+			return """"h"""";
+		else if (index == 8)
+			return """"i"""";
+		else if (index == 9)
+			return """"j"""";
+		else
+			return null;
+	} 
+"
+131,31203138,setAdditionalSeqsOids,this sets or replaces the additional sequences oids in this project,set the additional oids oids,"
+
+ public void setAdditionalSeqsOids( int[] add_seq_oids ) {
+
+        _add_seq_oids = new ArrayList();
+
+        if ( add_seq_oids == null ) {
+            return;
+        }
+
+        for ( int i = 0; i < add_seq_oids.length; ++i ) {
+            addAdditionalSeqsOid( add_seq_oids[ i ] );
+        }
+
+    } // setAddSegsOids( int[] ) 
+42843931, 	public FieldContent put(Item item){
+			FieldContent old_field = this.content;
+			
+			if (item.getUid() == this.content.getItem().getUid()) {
+				if (content.getItem().isStackable()){ 
+					this.content = new InventoryStack(content.getItem(), content.getCount()+1);
+					return null;
+				} else {this.content = new InventoryItem(item); return old_field;}
+			} else {
+				this.content = new InventoryItem(item); return old_field;
+			}
+		} 
+"
+175,18251847,addDbArgs,adds jailer cli arguments for db connection,add a new connection to the database,"
+
+ public void addDbArgs(List<String> args) {
+		args.add(currentConnection.driverClass);
+		args.add(currentConnection.url);
+		args.add(currentConnection.user);
+		args.add(currentConnection.password);
+		if (currentConnection.jar1.trim().length() > 0) {
+			args.add(""""-jdbcjar"""");
+			args.add(currentConnection.jar1.trim());
+		}
+		if (currentConnection.jar2.trim().length() > 0) {
+			args.add(""""-jdbcjar2"""");
+			args.add(currentConnection.jar2.trim());
+		}
+	} 
+"
+185,1782360,getImageWithSource,returns the first image found in the page with the specified src attribute,returns the image with the given source,"
+
+ public WebImage getImageWithSource( String source ) {
+        WebImage[] images = getImages();
+        for (int i = 0; i < images.length; i++) {
+            if (HttpUnitUtils.matches( source, images[i].getSource() )) return images[i];
+        }
+        return null;
+    } 
+"
+71,47479282,getAllSourceRoots,returns all of the source roots specified in the source bundle providing,returns all the source roots of the given plugin,"
+
+ public Set getAllSourceRoots(String pluginName, Version pluginVersion) {
+		Set pluginSourceRoots = new HashSet();
+		ManifestElement[] manifestElements = getSourceEntries(pluginName, pluginVersion);
+		if (manifestElements != null) {
+			for (int j = 0; j < manifestElements.length; j++) {
+				ManifestElement currentElement = manifestElements[j];
+				addSourceRoots(currentElement.getDirective(""""roots""""), pluginSourceRoots); //$NON-NLS-1$
+			}
+		}
+		return pluginSourceRoots;
+	} 
+"
+151,20787007,store,stores a new element in the zip file with the given path,stores the given path into the file,"
+
+ public void store(String path, InputStream stream) throws IOException {
+    toIgnore.add(normalizePath(path));
+    ZipEntry entry = new ZipEntry(path);
+    zipOutput.putNextEntry(entry);
+    IOUtils.copy(stream, zipOutput);
+    zipOutput.closeEntry();
+  } 
+"
+38,48023365,evaluatePopulation,this method evaluates the given population passed as,evaluates the population of a population,"
+
+ public void evaluatePopulation (IntegerTypePopulation population, Simulation simulation, Object[] object){
+		
+		IntegerTypePopulation intPopulation = (IntegerTypePopulation) population;
+		
+		for (int i = 0; i < intPopulation.getChromossomesSet().size(); i++){
+			
+			intPopulation.getChromossomesSet().get(i).setFitness(this.calculateFitness(simulation.getChromossomesConfiguration(), intPopulation, i));
+			
+		}
+		
+		
+	} 
+"
+9,34413723,openNewContainerWindow,open a window to start the import process,opens a new container window,"
+
+ 	public boolean openNewContainerWindow(String containerName, String containerDescription){
+			//if name is blank, disable use default option
+			NewContainerImportWindow window;
+			if(containerName.equals("""""""")){
+				window = new NewContainerImportWindow();
+			}
+			else{
+				window = new NewContainerImportWindow(containerName,containerDescription);
+			}
+			window.setParent(OrganiserView.this);
+			try{
+				window.doModal();
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace(System.err);
+			}
+			if(doImport){
+				importer.setContainerName(window.getName());
+				importer.setContainerDescription(window.getDescription());
+			}
+			return doImport;
+		} 
+"
+56,23014476,addRotation,adds a rotation to this matrix,adds a rotation to the matrix,"
+
+ public void addRotation(Vector3f axis, Angle rotation) {
+        Quaternion q = new Quaternion(rotation, axis);
+        Matrix result = new Matrix(4, 4);
+        Matrix quaternion = q.getRotationMatrix();
+       
+        Matrix.multiply(matrix,q.getRotationMatrix(), result);
+        matrix = result;
+    } 
+"
+90,33719118,testGetEvtIDs,test of get evt ids method of class com,test of get event ids method of class email <UNK>,"
+
+ public void testGetEvtIDs() {
+        System.out.println(""""getEvtIDs"""");
+        
+        Email_DBImpl instance = new Email_DBImpl();
+        
+        String[] expResult = null;
+        String[] result = instance.getEvtIDs();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail(""""The test case is a prototype."""");
+    } 
+"

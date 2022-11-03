@@ -1,0 +1,30 @@
+{% extends 'bass.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div style="position:relative; top: 150px;">
+    <h3 style="line-height: 200%" align="center">
+        During this experiment, you will see snippets of Java code. <br>
+        For half of the experiment, you will read summaries of the code and rate the summaries. <br>
+        During the other half of the experiment, you will write your own summaries of code snippets. <br>
+        It will be randomized whether you read or write code summaries first.<br>
+        Try to sit still and stay focused on the screen. <br>
+        When you're ready, click start to begin.
+    </h3>
+</div>
+<div style="position:relative; top: 300px; font-size: 20px">
+{% if first_task == "reading" %}
+<form action="/reading" method="POST" enctype="multipart/form-data">
+    <input type="submit" value="Start" class="center btn button form-input">
+</form>
+
+{% elif first_task == "writing" %}
+<form action="/writing" method="POST" enctype="multipart/form-data">
+    <input type="submit" value="Start" class="center btn button form-input">
+</form>
+{% endif %}
+</div>
+
+{% endblock %}

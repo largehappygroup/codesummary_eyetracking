@@ -1,0 +1,474 @@
+,fid,name,ref,attendgru,function
+20,1412807,capitalizeString,capitalizes the first letter of each word,<UNK> the first letter of the given string,"
+
+ public String capitalizeString(String s) {
+        String result = """""""";
+        
+        for(int i = 0; i < s.length(); i++) {
+            if(i == 0 || s.substring(i-1, i).equals("""" """"))
+                result += s.substring(i, i + 1).toUpperCase();
+            else
+                result += s.substring(i, i + 1);
+                
+        }
+        
+        return result;
+    } 
+"
+110,4453291,exit,gracefully shutdown the application,exits the application,"
+
+ public void exit(EventObject event) {
+	for (ExitListener listener : exitListeners) {
+	    if (!listener.canExit(event)) {
+		return;
+	    }
+	}
+	try {
+	    for (ExitListener listener : exitListeners) {
+		try {
+		    listener.willExit(event);
+		}
+		catch (Exception e) { 
+		    logger.log(Level.WARNING, """"ExitListener.willExit() failed"""", e);
+		}
+	    }
+	    shutdown();
+	}
+	catch (Exception e) { 
+	    logger.log(Level.WARNING, """"unexpected error in Application.shutdown()"""", e);
+	}
+	finally {
+            end();
+	}
+    } 
+"
+149,1810081,onAttach,this method is called when a widget is attached to the browsers document,this method is called when the widget is attached to the browsers,"
+
+ protected void onAttach() {
+    if (attached)
+      return;
+
+    attached = true;
+
+    // Set the main element's event listener. This should only be set
+    // while the widget is attached, because it creates a circular
+    // reference between JavaScript and the DOM.
+    DOM.setEventListener(getElement(), this);
+
+    // Now that the widget is attached, call onLoad().
+    onLoad();
+  } 
+"
+113,13482891,visitRetStmt,make sure that all of targets of the tt ret tt are valid,visits a code ret code statement,"
+
+ public void visitRetStmt(RetStmt stmt) {
+        Set targets = new LinkedHashSet();
+
+        Iterator iter = stmt.sub().paths().iterator();
+
+        while (iter.hasNext()) {
+            Block[] path = (Block[]) iter.next();
+            targets.add(path[1]);
+        }
+
+        targets.addAll(stmt.catchTargets());
+
+        verifyTargets(stmt.block(), targets);
+
+        visitNode(stmt);
+    } 
+"
+127,22626628,toString,provides a string representataion for this dir info,returns a string representation of this object,"
+
+ public String toString() {
+		StringBuffer ret = new StringBuffer();
+		ret.append(""""format: """");
+		ret.append(format);
+		ret.append("""" directory: """");
+		Object[] attributeKeys = attributes.keySet().toArray();
+		for (int i = 0; i < attributeKeys.length; i++)
+			ret.append(""""\n attribute: """" + attributeKeys[i].toString());
+		return ret.toString();
+	} 
+"
+98,40865383,getBackCommand12,returns an initiliazed instance of back command12 component,returns an initiliazed instance of back <UNK> component,"
+
+ public Command getBackCommand12() {
+        if (backCommand12 == null) {//GEN-END:|264-getter|0|264-preInit
+            // write pre-init user code here
+            backCommand12 = new Command(""""OK"""", Command.BACK, 0);//GEN-LINE:|264-getter|1|264-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|264-getter|2|
+        return backCommand12;
+    } 
+"
+161,1694531,getUserNameFromCookie,get users name from cookie,get the user name from the cookie,"
+
+ private String getUserNameFromCookie() throws Exception {
+		String userName = null;
+		// get user name
+		Cookie[] cookies = servletRequest.getCookies();
+		for (int i = 0; i < cookies.length; i++) {
+			Cookie cookie = cookies[i];
+			if (cookie != null && cookie.getName().equals(""""platform.username"""")) {
+				String value = cookie.getValue();
+				userName = DesEncrypter.getInstance().decrypt(value);
+				break;
+			}
+		}
+
+		return userName;
+
+	} 
+"
+95,18421665,searchRecipe,this function searches a recipe starting with the recipe passed as parameter,this method is called when the voter loses the <UNK>,"
+
+ private Recipe searchRecipe (Recipe re) {
+		
+		Recipe recipe;
+		
+		for (IngredientAmount iam : re.getIngredients()) {
+			if (iam.getFood() instanceof Recipe) {
+				if ((Recipe)iam.getFood() == m_ActiveRecipe) {
+					return re;
+				} else {
+					recipe = searchRecipe ((Recipe) iam.getFood());
+					
+					if (recipe != null) {
+						return recipe;
+					}
+				}
+			}			
+		}		
+
+		return null;
+	} 
+"
+138,26493872,resolveValue,utility methods that resolve the value passed with for the given context,resolve the value of the given string,"
+
+ protected String resolveValue(MagnetContext aContext, String aValue) throws RenderingException {
+    try {
+      if (aValue == null) {
+        return null;
+      } else {
+        TemplateElementIF aTemplate = _theTemplateFactory.parse(aValue);
+        return aTemplate.render(aContext);
+      }
+    } catch (TemplateException te) {
+      throw new RenderingException(""""Unable to resolve the value """" + aValue, te);
+    }
+  } 
+"
+107,43040436,init,initializes the class,initializes the <UNK>,"
+
+ private void init() throws CoreException {
+        final String name = getClassName();
+        final IPackageFragment pkg = getPackage();
+        final ICompilationUnit unit = pkg.createCompilationUnit(name + """".java"""", """""""", true, null);
+        setUp(unit);
+        createMainType(PUBLIC_KEYWORD, pkg.getElementName(), getClassName());
+    } 
+"
+44,29601536,getBackCommand2,returns an initiliazed instance of back command2 component,returns an initiliazed instance of back command2 component,"
+
+ public Command getBackCommand2() {
+        if (backCommand2 == null) {//GEN-END:|92-getter|0|92-preInit
+            // write pre-init user code here
+            backCommand2 = new Command(""""Back"""", Command.BACK, 0);//GEN-LINE:|92-getter|1|92-postInit
+        // write post-init user code here
+        }//GEN-BEGIN:|92-getter|2|
+        return backCommand2;
+    } 
+"
+180,31788771,addUIDeployment,add a sand uideployment to our list of uis for this project,adds a <UNK> to the <UNK> rack,"
+
+ public void addUIDeployment(SandUIDeployment uidep) {
+        SandUIDeployment[] olduis=getSandUIDeployments();
+        SandUIDeployment[] newuis=new SandUIDeployment[olduis.length+1];
+        System.arraycopy(olduis,0,newuis,0,olduis.length);
+        newuis[olduis.length]=uidep;
+        setSandUIDeployments(newuis);
+    } 
+"
+100,40879350,getOkCommand18,returns an initiliazed instance of ok command18 component,returns an initiliazed instance of ok <UNK> component,"
+
+ public Command getOkCommand18() {
+        if (okCommand18 == null) {//GEN-END:|728-getter|0|728-preInit
+            // write pre-init user code here
+            okCommand18 = new Command(""""LIQUIDEZ"""", Command.OK, 0);//GEN-LINE:|728-getter|1|728-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|728-getter|2|
+        return okCommand18;
+    } 
+"
+183,33519720,encode,encodes a string using base64 encoding,encodes a string using the base64 encoded string,"
+
+ public String encode(String string) throws EncoderException {
+        
+        byte[] bytes, encoded_bytes;
+        String encoded_string = """""""";
+        
+        try {
+            bytes = string.getBytes(""""UTF-8"""");
+            encoded_bytes = encodeBase64(bytes);
+            encoded_string = new String(encoded_bytes);
+        
+        } catch (UnsupportedEncodingException ex) {
+            ex.printStackTrace();
+        }
+        return encoded_string;
+    } 
+"
+96,40936756,selectBracketingEntries,select the entries bracketing a specified date,select a <UNK> entries,"
+
+ protected boolean selectBracketingEntries(final AbsoluteDate date) {
+        try {
+            // select the bracketing elements
+            next     = (TimeStampedEntry) (eop.tailSet(date).first());
+            previous = (TimeStampedEntry) (eop.headSet(next).last());
+            return true;
+        } catch (NoSuchElementException nsee) {
+            previous = null;
+            next     = null;
+            return false;
+        }
+    } 
+"
+163,47629915,getPassword,fetches the password for a given account user and server,returns the password for the given user,"
+
+ public String getPassword(String user, String server) {
+
+		try {
+
+			KeyStore.SecretKeyEntry entry2 = (KeyStore.SecretKeyEntry) store
+					.getEntry(user + """"@"""" + server,
+							new KeyStore.PasswordProtection(masterPassword));
+			return new String(entry2.getSecretKey().getEncoded());
+		} catch (KeyStoreException e) {
+			e.printStackTrace();
+		} catch (UnrecoverableEntryException ce) {
+			ce.printStackTrace();
+		} catch (NoSuchAlgorithmException ne) {
+			ne.printStackTrace();
+		}
+
+		return null;
+	} 
+"
+201,19218425,getClassNameForLookAndFeel,may return null if no mapping for the name exists,look up look and feel name for look and feel,"
+
+ public String getClassNameForLookAndFeel(String name) {
+        if (lfNameToLookAndFeel.containsKey(name)) {
+            UIManager.LookAndFeelInfo lookAndFeelInfo =
+                    (UIManager.LookAndFeelInfo) lfNameToLookAndFeel.get(name);
+            return lookAndFeelInfo.getClassName();
+        }
+        else {
+            return null;
+        }
+    } 
+"
+69,19507735,testOneTwoThreeCreateCycle,ensures cycles are ignored,test the <UNK>,"
+
+ public void testOneTwoThreeCreateCycle() throws Exception {
+		IRodinFile ctx = createRodinFile(""""P/x.ctx"""");
+		createDependency(ctx, """"y"""");
+		createData(ctx, """"one"""");
+		ctx.save(null, true);
+		runBuilder();
+		
+		IRodinFile cty = createRodinFile(""""P/y.ctx"""");
+		createDependency(cty, """"x"""");
+		createData(cty, """"two"""");
+		cty.save(null, true);		
+		
+		IRodinFile ctz = createRodinFile(""""P/z.ctx"""");
+		createData(ctz, """"three"""");
+		ctz.save(null, true);
+	
+		runBuilder(
+				""""CSC extract /P/x.ctx"""",
+				""""CSC run /P/x.csc"""",
+				""""CSC extract /P/y.ctx"""",
+				""""CSC extract /P/z.ctx"""",
+				""""CSC run /P/z.csc""""
+		);
+	} 
+"
+188,45130358,evaluate,evaluates the numbers of hours in the xsd date time,evaluates the value of this external function,"
+
+ public Value evaluate(Value value) throws ExternalFunctionException {
+        
+        if (!(value instanceof Literal)) {
+            throw new ExternalFunctionException(""""Values need to be literals to be understood"""");
+        }
+        
+        DateTime date = this.converter.convertDateTime((Literal) value);
+        
+        return this.converter.convertInteger(date.getHour());
+    } 
+"
+194,35061399,leaveAll,generate events to leave all components vertex edge or cell,leaves the <UNK> of the mouse event,"
+
+ private void leaveAll( MouseEvent<? extends EventHandler> event ) {
+		LocInfo locInfo = new LocInfo();
+		assert( !locInfo.isVertexLocValid() );
+		assert( !locInfo.isVerticalEdgeLocValid() );
+		assert( !locInfo.isHorizontalEdgeLocValid() );
+		assert( !locInfo.isCellLocValid() );
+		handleLeaveEvents( locInfo, event );
+		lastLocInfo.copy( locInfo );
+	} 
+"
+2,27802185,createGraphModel,create a new pgraph model based on set of nodes,creates a new graph model,"
+
+ public GraphModel createGraphModel ( List includedNodes ) {
+    num_models++;
+    System.out.println(""""PGraphModel: creating a new non-super graphmodel: """"+num_models);
+
+    GraphModel model =  new PGraphModel( """"Phoebe""""+num_models, getModelSubSet( includedNodes ) );
+
+    getCommunity().add( model );
+
+    //return new PGraphModel( """"Phoebe""""+num_models, getModelSubSet( includedNodes ) );
+
+
+    return model;
+  } 
+"
+148,39299426,liesBetween,check if a value lies between 2 other values,checks if the parametric point lies between two points,"
+
+ private boolean liesBetween(double x1, double x2, double x3) {
+    	if((x1 <= x2) 
+    		&& (x3 >= x1 - ACCURACY && x3 <= x2 + ACCURACY))
+    			return true;
+    	if((x1 >= x2) 
+    		&& (x3 >= x2 - ACCURACY && x3 <= x1 + ACCURACY))
+    			return true;
+    	
+    	return false;
+    
+    } 
+"
+135,33993930,addMultiSelectionPropertyDescriptor,this adds a property descriptor for the multi selection feature,this adds a property descriptor for the multi selection feature,"
+
+ protected void addMultiSelectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString(""""_UI_TableWidget_multiSelection_feature""""),
+				 getString(""""_UI_PropertyDescriptor_description"""", """"_UI_TableWidget_multiSelection_feature"""", """"_UI_TableWidget_type""""),
+				 UiPackage.Literals.TABLE_WIDGET__MULTI_SELECTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	} 
+"
+187,39233258,getJSplitPane,this method initializes j split pane,this method initializes j split pane,"
+
+ private JSplitPane getJSplitPane() {
+
+        if (jSplitPane == null) {
+            jSplitPane = new JSplitPane();
+
+            DevicesTreePanel p = new DevicesTreePanel();
+            p.addSelectionChangeListener(this);
+            jSplitPane.setLeftComponent(p);
+            jSplitPane.setRightComponent(getJTabbedPane());
+
+            jSplitPane.setDividerSize(5);
+            jSplitPane.setDividerLocation(200);
+        }
+        return jSplitPane;
+    } 
+"
+195,42170923,addModePropertyDescriptor,this adds a property descriptor for the mode feature,this adds a property descriptor for the mode feature,"
+
+ protected void addModePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString(""""_UI_OccursModel_mode_feature""""),
+				 getString(""""_UI_PropertyDescriptor_description"""", """"_UI_OccursModel_mode_feature"""", """"_UI_OccursModel_type""""),
+				 TimeBasedRoutingPackage.Literals.OCCURS_MODEL__MODE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	} 
+"
+101,36356719,setEndpointAddress,set the endpoint address for the specified port name,set the endpoint address for the specified port name,"
+
+ public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
+        
+if (""""ProductInformationSOAP"""".equals(portName)) {
+            setProductInformationSOAPEndpointAddress(address);
+        }
+        else 
+{ // Unknown Port Name
+            throw new javax.xml.rpc.ServiceException("""" Cannot set Endpoint Address for Unknown Port"""" + portName);
+        }
+    } 
+"
+61,23286083,getScopePartnerLinks,return an code elist code containing all partner link elements defined,returns the list of all the scope of the given partner,"
+
+ public EList getScopePartnerLinks(final EObject process) {
+		TreeIterator contents = process.eAllContents();
+		EList results = new BasicEList();
+		
+		while (contents.hasNext()) {
+			EObject obj = (EObject) contents.next();
+			
+			if (obj instanceof Scope) {
+				results.addAll(((Scope) obj).getPartnerLinks().getChildren());
+			}	
+		}
+		return results;
+	} 
+"
+80,20687719,getConnectionPanel,this method initializes connection panel,this method initializes connection panel,"
+
+ private JPanel getConnectionPanel() {
+		if (connectionPanel == null) {
+			connectionRoomLabel = new JLabel();
+			connectionRoomLabel.setText(""""Playground"""");
+			connectionPanel = new JPanel();
+			connectionPanel.setLayout(new BoxLayout(getConnectionPanel(), BoxLayout.X_AXIS));
+			connectionPanel.add(getConnectionsButton(), null);
+			connectionPanel.add(connectionRoomLabel, null);
+		}
+		return connectionPanel;
+	} 
+"
+67,19505695,getRodinDBStatus,returns the rodin database status object for this exception,returns the <UNK> status status,"
+
+ public IRodinDBStatus getRodinDBStatus() {
+		IStatus status = this.getStatus();
+		if (status instanceof IRodinDBStatus) {
+			return (IRodinDBStatus) status;
+		} else {
+			// A regular IStatus is created only in the case of a CoreException.
+			// See bug 13492 Should handle RodinDBExceptions that contains
+			// CoreException more gracefully
+			return new RodinDBStatus(this.nestedCoreException);
+		}
+	} 
+"
+57,50891793,testSetExample,test of set example method of class com,test of set example method of class pl,"
+
+ public void testSetExample() {
+        System.out.println(""""testSetExample"""");
+        testString = """"<tag:foo>\n"""";
+        testString += """"\t<tag:bar />"""";
+        testString += """"</tag:foo>"""";
+        tag.setExample(testString);
+        assertEquals( tag.getExample(), testString );
+    } 
+"

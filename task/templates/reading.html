@@ -1,0 +1,87 @@
+{% extends 'bass.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<form action="/reading" method="POST" enctype="multipart/form-data">
+
+        <div id="col-a">
+            <code><textarea readonly class="form-control" id="code" style="font-size:18px;" rows="40" cols="30">{{code}}</textarea></code>
+        </div>
+        <div id="col-b">
+            <p align="center"><strong>Summary</strong></p>
+            <textarea readonly class="form-control" id="summary" style="font-size:18px; font-family: Arial;" rows="3" cols="2">{{summary}}</textarea>
+            <p style="font-size:20px;"><strong>Please indicate the level to which you agree with the following statements:</strong></p>
+            <div>
+                <p><strong>Independent of other factors, I feel that the summary is accurate.</strong></p>
+                <label for="s_disagree"> Strongly disagree<br />
+                    <input type="radio" id="s_disagree" name="accurate" value="s_disagree">
+                </label>
+                <label for="disagree"> Disagree<br />
+                    <input type="radio" id="disagree" name="accurate" value="disagree">
+                </label>
+                <label for="neutral"> Neutral<br />
+                    <input type="radio" id="neutral" name="accurate" value="neutral">
+                </label>
+                <label for="agree"> Agree<br />
+                    <input type="radio" id="agree" name="accurate" value="agree">
+                </label>
+                <label for="s_agree"> Strongly agree<br />
+                    <input type="radio" id="s_agree" name="accurate" value="s_agree">
+                </label>
+                <br>
+            </div>
+
+            <!-- add another positive rating-->
+
+            <div>
+                <br>
+                <p><strong>The summary is missing some important information, <br>
+                    which limits my understanding.</strong></p>
+                <label for="s_disagree"> Strongly disagree<br />
+                    <input type="radio" id="s_disagree" name="missing" value="s_disagree">
+                </label>
+                <label for="disagree"> Disagree<br />
+                    <input type="radio" id="disagree" name="missing" value="disagree">
+                </label>
+                <label for="neutral"> Neutral<br />
+                    <input type="radio" id="neutral" name="missing" value="neutral">
+                </label>
+                <label for="agree"> Agree<br />
+                    <input type="radio" id="agree" name="missing" value="agree">
+                </label>
+                <label for="s_agree"> Strongly agree<br />
+                    <input type="radio" id="s_agree" name="missing" value="s_agree">
+                </label>
+                <br>
+            </div>
+
+            <div>
+                <br>
+                <p><strong>The summary contains a lot of unnecessary information.</strong></p>
+                <label for="s_disagree"> Strongly disagree<br />
+                    <input type="radio" id="s_disagree" name="unnecessary" value="s_disagree">
+                </label>
+                <label for="disagree"> Disagree<br />
+                    <input type="radio" id="disagree" name="unnecessary" value="disagree">
+                </label>
+                <label for="neutral"> Neutral<br />
+                    <input type="radio" id="neutral" name="unnecessary" value="neutral">
+                </label>
+                <label for="agree"> Agree<br />
+                    <input type="radio" id="agree" name="unnecessary" value="agree">
+                </label>
+                <label for="s_agree"> Strongly agree<br />
+                    <input type="radio" id="s_agree" name="unnecessary" value="s_agree">
+                </label>
+            </div>           
+        </div>
+        <div>
+            <input type="submit" value="next" class="btn button form-input" style="position:relative; left: 675px;">
+        </div>
+
+</form>
+
+
+{% endblock %}

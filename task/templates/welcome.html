@@ -1,0 +1,19 @@
+{% extends 'bass.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div style="position:relative; top: 200px;">
+	<h2 align="center">
+		Welcome to the Code Summarization Experiment! <br>
+		Please enter your participant ID Number below.
+	</h2>
+</div>
+<div>
+	<form action="/instructions" method="POST" enctype="multipart/form-data">
+		<input type="integer" name="pid" id="pid" autocomplete="off" class="center">
+		<input type="submit" value="Submit" class = "center-left btn button form-input">
+	</form>
+</div> 
+{% endblock %}	
