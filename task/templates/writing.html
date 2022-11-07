@@ -15,6 +15,12 @@
         });
     }
 </script>
+<div class="progress">
+    <div id='progressBar' class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0"
+        aria-valuemax="100">
+        <script> $("#progressBar").css("width", "{{ percent }}%"); </script>
+    </div>
+</div>
 {% endblock %}
 
 {% block body %}

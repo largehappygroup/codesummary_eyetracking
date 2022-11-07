@@ -1,6 +1,12 @@
 {% extends 'bass.html' %}
 
 {% block head %}
+<div class="progress">
+    <div id='progressBar' class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0"
+        aria-valuemax="100">
+        <script> $("#progressBar").css("width", "{{ percent }}%"); </script>
+    </div>
+</div>
 {% endblock %}
 
 {% block body %}
@@ -80,7 +86,6 @@
         <div>
             <input type="submit" value="next" class="btn button form-input" style="position:relative; left: 675px;">
         </div>
-
 </form>
 
 

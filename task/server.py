@@ -151,9 +151,9 @@ def writing():
             return render_template('rest.html', next_task="reading")
     else:
         if i > 1: # on first trial, participant won't have written a summary
-            summary = request.form['summary']
+            summary = request.form.get('summary')
             print(summary)
-        return render_template('writing.html', code=writing_stimuli.iloc[arr[i-1], 5])
+        return render_template('writing.html', code=writing_stimuli.iloc[arr[i-1], 5], percent=10) # FIXME - percent
 
 # break in between tasks
 @app.route('/rest', methods=['POST'])
@@ -168,9 +168,9 @@ def reading():
     j_increment()
     if j == len(arr)+1:
         reset_j()
-        acc = request.form['accurate']
-        mis = request.form['missing']
-        unn = request.form['unnecessary']
+        acc = request.form.get('accurate')
+        mis = request.form.get('missing')
+        unn = request.form.get('unnecessary')
         if writing_done:
             return render_template('goodbye.html')
         else:
@@ -178,13 +178,13 @@ def reading():
             return render_template('rest.html', next_task="writing")
     else:
         if j > 1:
-            acc = request.form['accurate']
-            mis = request.form['missing']
-            unn = request.form['unnecessary']
+            acc = request.form.get('accurate')
+            mis = request.form.get('missing')
+            unn = request.form.get('unnecessary')
         human_summary = reading_stimuli.iloc[arr[j-1], 3]
         ai_summary = reading_stimuli.iloc[arr[j-1], 4]
         _code = reading_stimuli.iloc[arr[j-1], 5]
-        return render_template('reading.html', code=_code, summary=random.choice([human_summary, ai_summary]))    
+        return render_template('reading.html', code=_code, summary=random.choice([human_summary, ai_summary], percent=50)) # FIXME - percent 
         
 if __name__ == "__main__":
     # FIXME - add stuff for eyetracker
