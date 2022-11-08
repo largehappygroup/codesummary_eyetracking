@@ -1,0 +1,10 @@
+capitalizeString,1412807,writing,This is an exit function that listens to stuff then shuts down,,,
+visitRetStmt,13482891,writing,This capitalizes strings ,,,
+toString,22626628,writing,This one visits return statements,,,
+onAttach,1810081,writing,to string yes hello my name is zach,,,
+onAttach,1810081,writing,"Now that the widget is attached, call onLoad()",,,
+initButtons,42956622,reading,,s_disagree,disagree,disagree
+tellAgain,18912425,reading,,neutral,agree,neutral
+otherDoEndTagOperations,1741129,reading,,agree,neutral,disagree
+invalidateSession,18354735,reading,,s_disagree,s_disagree,s_disagree
+invalidateSession,18354735,reading,,s_agree,s_agree,s_agree

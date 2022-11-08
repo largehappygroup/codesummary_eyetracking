@@ -89,9 +89,10 @@ def make_files(pid):
         command = ('mkdir data/%s' % str(pid))
         os.system(command)
     # FIXME - write headers for these three files
-    f_keystrokes = 'data/{pid}/keystrokes_{pid}.csv'.format(pid=pid) # time, key, filename,  fid
-    f_task = 'data/{pid}/task_{pid}.csv'.format(pid=pid) # filename, fid, task, summary, accurate, missing_info, unnecessary
-    f_gaze = 'data/{pid}/gaze_{pid}.csv'.format(pid=pid) # filename, fid, time, valid, right gaze, left gaze, right pd, left pd
+    # FIXME - reformat data logging to match comments
+    f_keystrokes = 'data/{pid}/keystrokes_{pid}.csv'.format(pid=pid) # pid, filename, fid, key, time
+    f_task = 'data/{pid}/task_{pid}.csv'.format(pid=pid) # pid, filename, fid, task, summary, accurate, missing_info, unnecessary
+    f_gaze = 'data/{pid}/gaze_{pid}.csv'.format(pid=pid) # pid, filename, fid, time, valid, right gaze, left gaze, right pd, left pd
 
 ### EYE-TRACKING
 # setting up eye-tracker and making sure we can get data from it
@@ -105,13 +106,24 @@ def eye_tracker_setup():
     return my_eyetracker
 
 # FIXME -- get more data from the eye tracker like validity, pupil diameter, etc.
-def gaze_data_callback(gaze_data):
+def tobii_data_callback(gaze_data):
     # Print gaze points of left and right eye
     # FIXME Instead of print, write to a file
     # FIXME add more data
-    print("Left eye: ({gaze_left_eye}) \t Right eye: ({gaze_right_eye})".format(
-        gaze_left_eye=gaze_data['left_gaze_point_on_display_area'],
-        gaze_right_eye=gaze_data['right_gaze_point_on_display_area']))
+    system_timestamp = gaze_data['system_time_stamp']
+    valid_left_eye = gaze_data['left_pupil_validity']
+    valid_right_eye = gaze_data['right_pupil_validity']
+    gaze_left_eye = gaze_data['left_gaze_point_on_display_area']
+    gaze_left_eye_coordinate = gaze_data['left_gaze_point_in_user_coordinate_system']
+    gaze_right_eye = gaze_data['right_gaze_point_on_display_area']
+    gaze_right_eye_coordinate = gaze_data['right_gaze_point_in_user_coordinate_system']
+    pd_left = gaze_data['left_pupil_diameter']
+    pd_right = gaze_data['right_pupil_diameter']
+
+    with open(f_gaze, 'a+') as fg:
+        cg = csv.writer(fg)
+        cg.writerow([system_timestamp, valid_left_eye, valid_right_eye, gaze_left_eye, gaze_left_eye_coordinate, 
+        gaze_right_eye, gaze_right_eye_coordinate, pd_left, pd_right])
 
 # Start of UI, welcome page
 @app.route('/')
@@ -171,7 +183,7 @@ def writing():
 
 # Recording keystrokes during writing task
 # Communicates with HTML function in writing.html
-@app.route("/writing/submitkeystroke", methods=['GET', 'POST'])
+@app.route("/writing/submitkeystroke", methods=['GET', 'POST']) # FIXME - fix radio button bug
 def submitkeystroke():
     keypressed = request.args.get('keypressed')
     fid = writing_stimuli.iloc[arr[i-1], 1]
@@ -229,7 +241,8 @@ def reading():
         return render_template('reading.html', code=_code, summary=random.choice([human_summary, ai_summary]), percent=_percent) 
         
 if __name__ == "__main__":
-    # FIXME - add stuff for eyetracker
-    #my_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, gaze_data_callback, as_dictionary=True)
+    global starttime # FIXME - get delta time
+    my_eyetracker = eye_tracker_setup()
+    my_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, tobii_data_callback, as_dictionary=True)
     app.run(host='0.0.0.0', port=8181, debug = True)
-    #my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, gaze_data_callback)
+    my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
