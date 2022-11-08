@@ -1,0 +1,16 @@
+"this is a test. On attach
+",capitalizeString,1412807
+yes yes no no,toString,22626628
+upside down,exit,4453291
+meditation,visitRetStmt,13482891
+this is the visitRetStmt function that takes a stmt parameter and does some stuff with it,visitRetStmt,13482891
+capitalizeString,1412807,writing,this is a summary of the onAttach method,,,
+toString,22626628,writing,,,,
+exit,4453291,writing,the previous summary was blank,,,
+visitRetStmt,13482891,writing,This one is not blank,,,
+visitRetStmt,13482891,writing,Neither is this one,,,
+initButtons,42956622,reading,,s_disagree,disagree,neutral
+otherDoEndTagOperations,1741129,reading,,s_agree,agree,disagree
+testGetCodigo,11950130,reading,,disagree,neutral,s_agree
+tellAgain,18912425,reading,,neutral,neutral,neutral
+tellAgain,18912425,reading,,neutral,agree,neutral

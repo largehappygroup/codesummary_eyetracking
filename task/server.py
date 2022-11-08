@@ -9,7 +9,6 @@ import tobii_research as tr
 from flask import Flask, render_template, url_for, request
 from flask import redirect, url_for
 import random
-from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
@@ -89,9 +88,10 @@ def make_files(pid):
     else:
         command = ('mkdir data/%s' % str(pid))
         os.system(command)
-    f_keystrokes = 'data/{pid}/keystrokes_{pid}.csv'.format(pid=pid)
-    f_task = 'data/{pid}/task_{pid}.csv'.format(pid=pid)
-    f_gaze = 'data/{pid}/gaze_{pid}.csv'.format(pid=pid)
+    # FIXME - write headers for these three files
+    f_keystrokes = 'data/{pid}/keystrokes_{pid}.csv'.format(pid=pid) # time, key, filename,  fid
+    f_task = 'data/{pid}/task_{pid}.csv'.format(pid=pid) # filename, fid, task, summary, accurate, missing_info, unnecessary
+    f_gaze = 'data/{pid}/gaze_{pid}.csv'.format(pid=pid) # filename, fid, time, valid, right gaze, left gaze, right pd, left pd
 
 ### EYE-TRACKING
 # setting up eye-tracker and making sure we can get data from it
@@ -144,6 +144,11 @@ def writing():
         reset_i() # reset iterator through stimuli
         summary = request.form['summary'] # summary written by participant
         print(summary)
+        fid = writing_stimuli.iloc[arr[i-1], 1]
+        func_name = writing_stimuli.iloc[arr[i-1], 2]
+        with open(f_task, 'a+') as ft:
+            cw = csv.writer(ft)
+            cw.writerow([func_name, fid, "writing", summary, None, None, None])
         if reading_done: # if participant has already done reading task
             reset_progress()
             return render_template('goodbye.html')
@@ -153,10 +158,12 @@ def writing():
             return render_template('rest.html', next_task="reading")
     else:
         if i > 1: # on first trial, participant won't have written a summary
-            summary = request.form.get('summary') # FIXME fix this shit
+            summary = request.form.get('summary')
+            fid = writing_stimuli.iloc[arr[i-1], 1]
+            func_name = writing_stimuli.iloc[arr[i-1], 2]
             with open(f_task, 'a+') as ft:
                 cw = csv.writer(ft)
-                #cw.writerow([chr(int(keypressed)), str(datetime.now()), func_name, fid])
+                cw.writerow([func_name, fid, "writing", summary, None, None, None])
             print(summary)
         
         _percent = progress + (i/(len(arr)))*50
@@ -169,7 +176,8 @@ def submitkeystroke():
     keypressed = request.args.get('keypressed')
     fid = writing_stimuli.iloc[arr[i-1], 1]
     func_name = writing_stimuli.iloc[arr[i-1], 2]
-    # FIXME - check if data recording works
+
+    # recording keystrokes along with function name and fid 
     with open(f_keystrokes, 'a+') as f:
         cw = csv.writer(f)
         cw.writerow([chr(int(keypressed)), str(datetime.now()), func_name, fid])
@@ -188,9 +196,14 @@ def reading():
     j_increment()
     if j == len(arr)+1:
         reset_j()
-        acc = request.form.get('accurate') # values from likert scale questions
-        mis = request.form.get('missing')
-        unn = request.form.get('unnecessary')
+        accurate = request.form.get('accurate') # values from likert scale questions
+        missing = request.form.get('missing')
+        unnecessary = request.form.get('unnecessary')
+        fid = reading_stimuli.iloc[arr[j-1], 1]
+        func_name = reading_stimuli.iloc[arr[j-1], 2]
+        with open(f_task, 'a+') as ft:
+            cw = csv.writer(ft)
+            cw.writerow([func_name, fid, "reading", None, accurate, missing, unnecessary])
         if writing_done:
             reset_progress()
             return render_template('goodbye.html')
@@ -200,9 +213,14 @@ def reading():
             return render_template('rest.html', next_task="writing")
     else:
         if j > 1:
-            acc = request.form.get('accurate')
-            mis = request.form.get('missing')
-            unn = request.form.get('unnecessary')
+            accurate = request.form.get('accurate') # values from likert scale questions
+            missing = request.form.get('missing')
+            unnecessary = request.form.get('unnecessary')
+            fid = reading_stimuli.iloc[arr[j-1], 1]
+            func_name = reading_stimuli.iloc[arr[j-1], 2]
+            with open(f_task, 'a+') as ft:
+                cw = csv.writer(ft)
+                cw.writerow([func_name, fid, "reading", None, accurate, missing, unnecessary])
 
         _percent = progress + (j/(len(arr)))*50
         human_summary = reading_stimuli.iloc[arr[j-1], 3]
