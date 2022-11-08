@@ -108,8 +108,6 @@ def eye_tracker_setup():
 # FIXME -- get more data from the eye tracker like validity, pupil diameter, etc.
 def tobii_data_callback(gaze_data):
     # Print gaze points of left and right eye
-    # FIXME Instead of print, write to a file
-    # FIXME add more data
     system_timestamp = gaze_data['system_time_stamp']
     valid_left_eye = gaze_data['left_pupil_validity']
     valid_right_eye = gaze_data['right_pupil_validity']
