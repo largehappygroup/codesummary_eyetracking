@@ -156,7 +156,7 @@ def writing():
             summary = request.form.get('summary') # FIXME fix this shit
             with open(f_task, 'a+') as ft:
                 cw = csv.writer(ft)
-                cw.writerow([chr(int(keypressed)), str(datetime.now()), func_name, fid])
+                #cw.writerow([chr(int(keypressed)), str(datetime.now()), func_name, fid])
             print(summary)
         
         _percent = progress + (i/(len(arr)))*50
