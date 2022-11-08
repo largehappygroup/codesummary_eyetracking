@@ -25,6 +25,7 @@ j = 0 # iterator for reading stimuli
 coinflip = None # deciding whether reading task is first or writing task is first
 writing_done = False # 
 reading_done = False # Bools for whether reading/writing task is finished
+progress = 0
 
 ### ITERATOR FUNCTIONS
 # incrementing the iterator for writing stimuli
@@ -45,6 +46,15 @@ def reset_i():
 def reset_j():
     global j
     j = 0
+
+# editing the global progress variable once the participant completes half the experiment
+def halfway():
+    global progress
+    progress = 50
+
+def reset_progress():
+    global progress
+    progress = 0
 
 
 # Flip booleans for whether these tasks are done
@@ -69,7 +79,7 @@ def my_shuffle(array, pid):
 # 1. keystrokes 
 # 2. high-level task data (e.g. code summary ratings, summaries written)
 def make_files(pid):
-    global f_keystrokes
+    global f_keystrokes, f_task, f_gaze
     global f_task
     global f_gaze
     path = 'data/%s'%str(pid)
@@ -108,16 +118,6 @@ def gaze_data_callback(gaze_data):
 def welcome():
     return render_template('welcome.html')
 
-# Recording keystrokes during writing task
-# Communicates with HTML function in writing.html
-@app.route("/writing/submitkeystroke", methods=['GET', 'POST'])
-def submitkeystroke():
-    keypressed = request.args.get('keypressed')
-    with open(f_keystrokes, 'a+') as f:
-        cw = csv.writer(f)
-        cw.writerow([chr(int(keypressed)), str(datetime.now())])  # FIXME add something to record stimulus along with keystroke
-    return 'OK'
-
 # FIXME: make HTML so they have to enter a value for pid
 # instructions at the beginning of the experiment
 @app.route('/instructions', methods=['POST'])
@@ -138,22 +138,42 @@ def instructions():
 # writing task
 @app.route('/writing', methods=['POST'])
 def writing():
-    global i, arr, writing_stimuli, reading_done
+    global i, arr, writing_stimuli, reading_done, progress
     i_increment()
     if i == len(arr)+1: # end of writing stimuli has been reached
         reset_i() # reset iterator through stimuli
         summary = request.form['summary'] # summary written by participant
         print(summary)
         if reading_done: # if participant has already done reading task
+            reset_progress()
             return render_template('goodbye.html')
         else:
             flip_writing_bool() # writing is done, go on to reading
+            halfway() # setting progress bar to 50%
             return render_template('rest.html', next_task="reading")
     else:
         if i > 1: # on first trial, participant won't have written a summary
-            summary = request.form.get('summary')
+            summary = request.form.get('summary') # FIXME fix this shit
+            with open(f_task, 'a+') as ft:
+                cw = csv.writer(ft)
+                cw.writerow([chr(int(keypressed)), str(datetime.now()), func_name, fid])
             print(summary)
-        return render_template('writing.html', code=writing_stimuli.iloc[arr[i-1], 5], percent=10) # FIXME - percent
+        
+        _percent = progress + (i/(len(arr)))*50
+        return render_template('writing.html', code=writing_stimuli.iloc[arr[i-1], 5], percent=_percent)
+
+# Recording keystrokes during writing task
+# Communicates with HTML function in writing.html
+@app.route("/writing/submitkeystroke", methods=['GET', 'POST'])
+def submitkeystroke():
+    keypressed = request.args.get('keypressed')
+    fid = writing_stimuli.iloc[arr[i-1], 1]
+    func_name = writing_stimuli.iloc[arr[i-1], 2]
+    # FIXME - check if data recording works
+    with open(f_keystrokes, 'a+') as f:
+        cw = csv.writer(f)
+        cw.writerow([chr(int(keypressed)), str(datetime.now()), func_name, fid])
+    return 'OK'
 
 # break in between tasks
 @app.route('/rest', methods=['POST'])
@@ -164,27 +184,31 @@ def rest():
 # basically the same logic as the writing task
 @app.route('/reading', methods=['POST'])
 def reading():
-    global j, arr, reading_stimuli, writing_done
+    global j, arr, ct, reading_stimuli, writing_done, progress
     j_increment()
     if j == len(arr)+1:
         reset_j()
-        acc = request.form.get('accurate')
+        acc = request.form.get('accurate') # values from likert scale questions
         mis = request.form.get('missing')
         unn = request.form.get('unnecessary')
         if writing_done:
+            reset_progress()
             return render_template('goodbye.html')
         else:
             flip_reading_bool()
+            halfway() # setting progress bar to half
             return render_template('rest.html', next_task="writing")
     else:
         if j > 1:
             acc = request.form.get('accurate')
             mis = request.form.get('missing')
             unn = request.form.get('unnecessary')
+
+        _percent = progress + (j/(len(arr)))*50
         human_summary = reading_stimuli.iloc[arr[j-1], 3]
         ai_summary = reading_stimuli.iloc[arr[j-1], 4]
         _code = reading_stimuli.iloc[arr[j-1], 5]
-        return render_template('reading.html', code=_code, summary=random.choice([human_summary, ai_summary], percent=50)) # FIXME - percent 
+        return render_template('reading.html', code=_code, summary=random.choice([human_summary, ai_summary]), percent=_percent) 
         
 if __name__ == "__main__":
     # FIXME - add stuff for eyetracker
