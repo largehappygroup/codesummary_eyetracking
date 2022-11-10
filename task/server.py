@@ -82,8 +82,6 @@ def my_shuffle(array, pid):
 # 2. high-level task data (e.g. code summary ratings, summaries written)
 def make_files(pid):
     global f_keystrokes, f_task, f_gaze
-    global f_task
-    global f_gaze
     path = 'data/%s'%str(pid)
     if os.path.exists(path):
         print('participant folder already exists')
@@ -91,11 +89,25 @@ def make_files(pid):
     else:
         command = ('mkdir data/%s' % str(pid))
         os.system(command)
-    # FIXME - write headers for these three files
-    # FIXME - reformat data logging to match comments
     f_keystrokes = 'data/{pid}/keystrokes_{pid}.csv'.format(pid=pid) # pid, filename, fid, key, time
     f_task = 'data/{pid}/task_{pid}.csv'.format(pid=pid) # pid, filename, fid, task, summary, accurate, missing_info, unnecessary
-    f_gaze = 'data/{pid}/gaze_{pid}.csv'.format(pid=pid) # pid, filename, fid, time, valid, right gaze, left gaze, right pd, left pd
+    f_gaze = 'data/{pid}/gaze_{pid}.csv'.format(pid=pid) # pid, filename, fid, system time, device time, valid gaze left eye, valid gaze right eye, gaze left, 
+    #CONTINUED: gaze right, valid left pupil diameter, valid right pupil diameter, pupil diameter left, pupil diameter right
+
+    # Writing headers
+    with open(f_keystrokes, 'a+') as f:
+        ctemp = csv.writer(f)
+        ctemp.writerow(['participant_id', 'function_name', 'function_id', 'key_pressed', 'timestamp'])
+
+    with open(f_task, 'a+') as f:
+        ctemp = csv.writer(f)
+        ctemp.writerow(['participant_id', 'function_name', 'function_id', 'task', 'summary', 'how_accurate', 
+        'missing_info', 'unnecessary_info'])
+
+    with open(f_gaze, 'a+') as f:
+        ctemp = csv.writer(f)
+        ctemp.writerow(['participant_id', 'function_name', 'function_id', 'valid_gaze_left', 'valid_gaze_right', 'gaze_left_eye',
+        'gaze_right_eye', 'valid_pd_left', 'valid_pd_right', 'gaze_left', 'gaze_right'])
 
 ### EYE-TRACKING
 # setting up eye-tracker and making sure we can get data from it
@@ -110,21 +122,29 @@ def eye_tracker_setup():
 
 # FIXME -- get more data from the eye tracker like validity, pupil diameter, etc.
 def tobii_data_callback(gaze_data):
+    global i, j, arr, pid, writing_stimuli, reading_stimuli
     # Print gaze points of left and right eye
     system_timestamp = gaze_data['system_time_stamp']
-    valid_left_eye = gaze_data['left_pupil_validity']
-    valid_right_eye = gaze_data['right_pupil_validity']
+    device_timestamp = gaze_data['device_time_stamp']
+    gaze_validity_left = gaze_data['left_gaze_point_validity']
+    gaze_validity_right = gaze-data['right_gaze_point_validity']
     gaze_left_eye = gaze_data['left_gaze_point_on_display_area']
     #gaze_left_eye_coordinate = gaze_data['left_gaze_point_in_user_coordinate_system'] # user coordinate system also tracks distance from the eye-tracker
     gaze_right_eye = gaze_data['right_gaze_point_on_display_area']
     #gaze_right_eye_coordinate = gaze_data['right_gaze_point_in_user_coordinate_system']
+    valid_left_eye_pd = gaze_data['left_pupil_validity']
+    valid_right_eye_pd = gaze_data['right_pupil_validity']
     pd_left = gaze_data['left_pupil_diameter']
     pd_right = gaze_data['right_pupil_diameter']
 
+    # FIXME - figure out how to tell whether they're on writing or reading
+    func_name = "FIXME"
+    fid = "FIXME"
+
     with open(f_gaze, 'a+') as fg:
         cg = csv.writer(fg)
-        cg.writerow([system_timestamp, valid_left_eye, valid_right_eye, gaze_left_eye, 
-        gaze_right_eye, pd_left, pd_right])
+        cg.writerow([str(pid), func_name, fid, system_timestamp, device_timestamp, gaze_validity_left, 
+        gaze_validity_right, gaze_left_eye, gaze_right_eye, valid_left_eye_pd, valid_right_eye_pd, pd_left, pd_right])
 
 # Start of UI, welcome page
 @app.route('/')
