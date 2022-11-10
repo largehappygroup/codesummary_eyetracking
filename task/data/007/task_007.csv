@@ -1,0 +1,10 @@
+exit,4453291,writing,This method does something important related to onAttach. idk,,,
+toString,22626628,writing,This exits something,,,
+capitalizeString,1412807,writing,I am reading the method without typing right now. Nice,,,
+visitRetStmt,13482891,writing,"this method capitalizes. I just read the header mainly, didn't look anywhere else",,,
+visitRetStmt,13482891,writing,"I read all the lines of code, then looked back a couple times",,,
+testGetCodigo,11950130,reading,,s_disagree,s_disagree,s_disagree
+otherDoEndTagOperations,1741129,reading,,disagree,disagree,disagree
+initButtons,42956622,reading,,s_agree,s_agree,s_agree
+tellAgain,18912425,reading,,s_disagree,disagree,neutral
+tellAgain,18912425,reading,,s_disagree,s_disagree,s_disagree
