@@ -2,9 +2,7 @@ import os
 import csv
 import time
 import array
-#from pickle import FALSE
 import pandas as pd
-#from symbol import pass_stmt
 import tobii_research as tr
 from flask import Flask, render_template, url_for, request
 from flask import redirect, url_for
@@ -25,6 +23,7 @@ coinflip = None # deciding whether reading task is first or writing task is firs
 writing_done = False # 
 reading_done = False # Bools for whether reading/writing task is finished
 progress = 0
+pid = 000
 
 ### ITERATOR FUNCTIONS
 # incrementing the iterator for writing stimuli
@@ -67,6 +66,10 @@ def flip_reading_bool():
 
 ### PARTICIPANT SPECIFIC 
 # pseudorandomization for the experiment. It will be the same order for each pid.
+def set_pid(_pid):
+    global pid
+    pid = _pid
+
 def my_shuffle(array, pid):
     global coinflip
     coinflip = random.Random(pid).randint(0, 1)
@@ -132,10 +135,11 @@ def welcome():
 # instructions at the beginning of the experiment
 @app.route('/instructions', methods=['POST'])
 def instructions():
-    global i, j, arr, writing_stimuli, reading_stimuli, coinflip
+    global i, j, arr, pid, writing_stimuli, reading_stimuli, coinflip
     print("arr before shuffling\n", arr)
-    pid = request.form['pid']
-    arr = my_shuffle(arr, pid) # using PID at this point to shuffle stimuli 
+    _pid = request.form['pid']
+    set_pid(pid)
+    arr = my_shuffle(arr, _pid) # using PID at this point to shuffle stimuli 
     make_files(pid)            # and make folder/files for each participant
     print("arr after shuffling\n", arr)
     # writing is first
@@ -148,7 +152,7 @@ def instructions():
 # writing task
 @app.route('/writing', methods=['POST'])
 def writing():
-    global i, arr, writing_stimuli, reading_done, progress
+    global i, arr, pid, writing_stimuli, reading_done, progress
     i_increment()
     if i == len(arr)+1: # end of writing stimuli has been reached
         reset_i() # reset iterator through stimuli
@@ -158,7 +162,7 @@ def writing():
         func_name = writing_stimuli.iloc[arr[i-1], 2]
         with open(f_task, 'a+') as ft:
             cw = csv.writer(ft)
-            cw.writerow([func_name, fid, "writing", summary, None, None, None])
+            cw.writerow([str(pid), func_name, fid, "writing", summary, None, None, None])
         if reading_done: # if participant has already done reading task
             reset_progress()
             return render_template('goodbye.html')
@@ -173,7 +177,7 @@ def writing():
             func_name = writing_stimuli.iloc[arr[i-1], 2]
             with open(f_task, 'a+') as ft:
                 cw = csv.writer(ft)
-                cw.writerow([func_name, fid, "writing", summary, None, None, None])
+                cw.writerow([str(pid), func_name, fid, "writing", summary, None, None, None])
             print(summary)
         
         _percent = progress + (i/(len(arr)))*50
@@ -183,6 +187,7 @@ def writing():
 # Communicates with HTML function in writing.html
 @app.route("/writing/submitkeystroke", methods=['GET', 'POST']) # FIXME - fix radio button bug
 def submitkeystroke():
+    global pid
     keypressed = request.args.get('keypressed')
     fid = writing_stimuli.iloc[arr[i-1], 1]
     func_name = writing_stimuli.iloc[arr[i-1], 2]
@@ -190,7 +195,7 @@ def submitkeystroke():
     # recording keystrokes along with function name and fid 
     with open(f_keystrokes, 'a+') as f:
         cw = csv.writer(f)
-        cw.writerow([chr(int(keypressed)), str(datetime.now()), func_name, fid])
+        cw.writerow([str(pid), func_name, fid, chr(int(keypressed)), str(datetime.now())])
     return 'OK'
 
 # break in between tasks
@@ -201,8 +206,8 @@ def rest():
 # reading task
 # basically the same logic as the writing task
 @app.route('/reading', methods=['POST'])
-def reading():
-    global j, arr, ct, reading_stimuli, writing_done, progress
+def reading(): 
+    global j, arr, pid, reading_stimuli, writing_done, progress
     j_increment()
     if j == len(arr)+1:
         reset_j()
@@ -213,7 +218,7 @@ def reading():
         func_name = reading_stimuli.iloc[arr[j-1], 2]
         with open(f_task, 'a+') as ft:
             cw = csv.writer(ft)
-            cw.writerow([func_name, fid, "reading", None, accurate, missing, unnecessary])
+            cw.writerow([str(pid), func_name, fid, "reading", None, accurate, missing, unnecessary])
         if writing_done:
             reset_progress()
             return render_template('goodbye.html')
@@ -230,7 +235,7 @@ def reading():
             func_name = reading_stimuli.iloc[arr[j-1], 2]
             with open(f_task, 'a+') as ft:
                 cw = csv.writer(ft)
-                cw.writerow([func_name, fid, "reading", None, accurate, missing, unnecessary])
+                cw.writerow([str(pid), func_name, fid, "reading", None, accurate, missing, unnecessary])
 
         _percent = progress + (j/(len(arr)))*50
         human_summary = reading_stimuli.iloc[arr[j-1], 3]
