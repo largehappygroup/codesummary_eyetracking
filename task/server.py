@@ -112,16 +112,16 @@ def tobii_data_callback(gaze_data):
     valid_left_eye = gaze_data['left_pupil_validity']
     valid_right_eye = gaze_data['right_pupil_validity']
     gaze_left_eye = gaze_data['left_gaze_point_on_display_area']
-    gaze_left_eye_coordinate = gaze_data['left_gaze_point_in_user_coordinate_system']
+    #gaze_left_eye_coordinate = gaze_data['left_gaze_point_in_user_coordinate_system'] # user coordinate system also tracks distance from the eye-tracker
     gaze_right_eye = gaze_data['right_gaze_point_on_display_area']
-    gaze_right_eye_coordinate = gaze_data['right_gaze_point_in_user_coordinate_system']
+    #gaze_right_eye_coordinate = gaze_data['right_gaze_point_in_user_coordinate_system']
     pd_left = gaze_data['left_pupil_diameter']
     pd_right = gaze_data['right_pupil_diameter']
 
     with open(f_gaze, 'a+') as fg:
         cg = csv.writer(fg)
-        cg.writerow([system_timestamp, valid_left_eye, valid_right_eye, gaze_left_eye, gaze_left_eye_coordinate, 
-        gaze_right_eye, gaze_right_eye_coordinate, pd_left, pd_right])
+        cg.writerow([system_timestamp, valid_left_eye, valid_right_eye, gaze_left_eye, 
+        gaze_right_eye, pd_left, pd_right])
 
 # Start of UI, welcome page
 @app.route('/')
