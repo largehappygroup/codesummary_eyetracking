@@ -120,14 +120,13 @@ def eye_tracker_setup():
         my_eyetracker = found_eyetrackers[0]
     return my_eyetracker
 
-# FIXME -- get more data from the eye tracker like validity, pupil diameter, etc.
 def tobii_data_callback(gaze_data):
     global i, j, arr, pid, writing_stimuli, reading_stimuli
     # Print gaze points of left and right eye
     system_timestamp = gaze_data['system_time_stamp']
     device_timestamp = gaze_data['device_time_stamp']
     gaze_validity_left = gaze_data['left_gaze_point_validity']
-    gaze_validity_right = gaze-data['right_gaze_point_validity']
+    gaze_validity_right = gaze_data['right_gaze_point_validity']
     gaze_left_eye = gaze_data['left_gaze_point_on_display_area']
     #gaze_left_eye_coordinate = gaze_data['left_gaze_point_in_user_coordinate_system'] # user coordinate system also tracks distance from the eye-tracker
     gaze_right_eye = gaze_data['right_gaze_point_on_display_area']
@@ -136,8 +135,12 @@ def tobii_data_callback(gaze_data):
     valid_right_eye_pd = gaze_data['right_pupil_validity']
     pd_left = gaze_data['left_pupil_diameter']
     pd_right = gaze_data['right_pupil_diameter']
-
+    # FIXME - split up gaze file by function pid_fid_gaze.csv
     # FIXME - figure out how to tell whether they're on writing or reading
+    # FIXME - how many stimuli to use
+    # about 45s for reading, 1m for writing, break time for calibration
+    # FIXME - restart progress if they quit in the middle
+    # FIXME - check how bad the drifting is
     func_name = "FIXME"
     fid = "FIXME"
 
@@ -265,7 +268,7 @@ def reading():
         
 if __name__ == "__main__":
     global starttime # FIXME - get delta time
-    my_eyetracker = eye_tracker_setup()
-    my_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, tobii_data_callback, as_dictionary=True)
+    #my_eyetracker = eye_tracker_setup()
+    #my_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, tobii_data_callback, as_dictionary=True)
     app.run(host='0.0.0.0', port=8181, debug = True)
-    my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
+    #my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
