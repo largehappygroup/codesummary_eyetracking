@@ -20,3 +20,10 @@ participant_id,function_name,function_id,task,summary,how_accurate,missing_info,
 0,initButtons,42956622,reading,,,,
 0,tellAgain,18912425,reading,,,,
 0,tellAgain,18912425,reading,,,,
+participant_id,function_name,function_id,task,summary,how_accurate,missing_info,unnecessary_info
+0,initButtons,42956622,reading,,,,
+0,tellAgain,18912425,reading,,,,
+0,testGetCodigo,11950130,reading,,,,
+0,otherDoEndTagOperations,1741129,reading,,,,
+0,otherDoEndTagOperations,1741129,reading,,,,
+participant_id,function_name,function_id,task,summary,how_accurate,missing_info,unnecessary_info

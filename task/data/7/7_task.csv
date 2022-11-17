@@ -1,0 +1,7 @@
+participant_id,function_name,function_id,task,summary,how_accurate,missing_info,unnecessary_info
+participant_id,function_name,function_id,task,summary,how_accurate,missing_info,unnecessary_info
+7,initButtons,42956622,reading,,s_disagree,s_disagree,
+7,tellAgain,18912425,reading,,disagree,disagree,disagree
+7,testGetCodigo,11950130,reading,,neutral,neutral,neutral
+7,otherDoEndTagOperations,1741129,reading,,agree,agree,agree
+7,otherDoEndTagOperations,1741129,reading,,s_agree,s_agree,s_agree

@@ -18,12 +18,15 @@ i = 0 # iterator for writing stimuli
 reading_stimuli = pd.read_csv('./stimuli/reading_stimuli.csv') # stimuli --> snippets of code
 j = 0 # iterator for reading stimuli 
 
+# FIXME - data logged innaccurately --> issue with iterator and logging for func_name, fid
+
 ### ENVIRONMENT VARIABLES
 coinflip = None # deciding whether reading task is first or writing task is first
 writing_done = False # 
 reading_done = False # Bools for whether reading/writing task is finished
+current_task = None
 progress = 0
-pid = 000
+pid = None
 
 ### ITERATOR FUNCTIONS
 # incrementing the iterator for writing stimuli
@@ -44,6 +47,14 @@ def reset_i():
 def reset_j():
     global j
     j = 0
+    
+def reset_arr():
+    global arr
+    arr = list(range(0, 5))
+    
+def set_current_task(task):
+    global current_task
+    current_task = task
 
 # editing the global progress variable once the participant completes half the experiment
 def halfway():
@@ -53,7 +64,6 @@ def halfway():
 def reset_progress():
     global progress
     progress = 0
-
 
 # Flip booleans for whether these tasks are done
 def flip_writing_bool():
@@ -69,6 +79,8 @@ def flip_reading_bool():
 def set_pid(_pid):
     global pid
     pid = _pid
+    print("pid", pid)
+    print("_pid", _pid)
 
 def my_shuffle(array, pid):
     global coinflip
@@ -89,10 +101,10 @@ def make_files(pid):
     else:
         command = ('mkdir data/%s' % str(pid))
         os.system(command)
-    f_keystrokes = 'data/{pid}/keystrokes_{pid}.csv'.format(pid=pid) # pid, filename, fid, key, time
-    f_task = 'data/{pid}/task_{pid}.csv'.format(pid=pid) # pid, filename, fid, task, summary, accurate, missing_info, unnecessary
-    f_gaze = 'data/{pid}/gaze_{pid}.csv'.format(pid=pid) # pid, filename, fid, system time, device time, valid gaze left eye, valid gaze right eye, gaze left, 
-    #CONTINUED: gaze right, valid left pupil diameter, valid right pupil diameter, pupil diameter left, pupil diameter right
+    print(pid)
+    f_keystrokes = 'data/{pid}/{pid}_keystrokes.csv'.format(pid=pid)
+    f_task = 'data/{pid}/{pid}_task.csv'.format(pid=pid)
+    f_gaze = 'data/{pid}/{pid}_gaze.csv'.format(pid=pid)
 
     # Writing headers
     with open(f_keystrokes, 'a+') as f:
@@ -115,7 +127,6 @@ def eye_tracker_setup():
     found_eyetrackers = tr.find_all_eyetrackers()
     if not found_eyetrackers:
         print('cannot find eyetracker')
-        exit(1)
     else:
         my_eyetracker = found_eyetrackers[0]
     return my_eyetracker
@@ -141,8 +152,12 @@ def tobii_data_callback(gaze_data):
     # about 45s for reading, 1m for writing, break time for calibration
     # FIXME - restart progress if they quit in the middle
     # FIXME - check how bad the drifting is
-    func_name = "FIXME"
-    fid = "FIXME"
+    if current_task == "writing":
+        fid = writing_stimuli.iloc[arr[i-1], 1]
+        func_name = writing_stimuli.iloc[arr[i-1], 2]
+    elif current_task == "reading":
+            fid = reading_stimuli.iloc[arr[j-1], 1]
+            func_name = reading_stimuli.iloc[arr[j-1], 2]
 
     with open(f_gaze, 'a+') as fg:
         cg = csv.writer(fg)
@@ -161,9 +176,9 @@ def instructions():
     global i, j, arr, pid, writing_stimuli, reading_stimuli, coinflip
     print("arr before shuffling\n", arr)
     _pid = request.form['pid']
-    set_pid(pid)
+    set_pid(_pid)
     arr = my_shuffle(arr, _pid) # using PID at this point to shuffle stimuli 
-    make_files(pid)            # and make folder/files for each participant
+    make_files(_pid)            # and make folder/files for each participant
     print("arr after shuffling\n", arr)
     # writing is first
     if coinflip == 1: 
@@ -175,12 +190,15 @@ def instructions():
 # writing task
 @app.route('/writing', methods=['POST'])
 def writing():
-    global i, arr, pid, writing_stimuli, reading_done, progress
+    global i, arr, pid, current_task, writing_stimuli, reading_done, progress
+    if current_task != "writing":
+        set_current_task("writing")
+        
     i_increment()
     if i == len(arr)+1: # end of writing stimuli has been reached
         reset_i() # reset iterator through stimuli
         summary = request.form['summary'] # summary written by participant
-        print(summary)
+        #print(summary)
         fid = writing_stimuli.iloc[arr[i-1], 1]
         func_name = writing_stimuli.iloc[arr[i-1], 2]
         with open(f_task, 'a+') as ft:
@@ -188,6 +206,7 @@ def writing():
             cw.writerow([str(pid), func_name, fid, "writing", summary, None, None, None])
         if reading_done: # if participant has already done reading task
             reset_progress()
+            reset_arr()
             return render_template('goodbye.html')
         else:
             flip_writing_bool() # writing is done, go on to reading
@@ -201,7 +220,7 @@ def writing():
             with open(f_task, 'a+') as ft:
                 cw = csv.writer(ft)
                 cw.writerow([str(pid), func_name, fid, "writing", summary, None, None, None])
-            print(summary)
+            #print(summary)
         
         _percent = progress + (i/(len(arr)))*50
         return render_template('writing.html', code=writing_stimuli.iloc[arr[i-1], 5], percent=_percent)
@@ -230,8 +249,10 @@ def rest():
 # basically the same logic as the writing task
 @app.route('/reading', methods=['POST'])
 def reading(): 
-    global j, arr, pid, reading_stimuli, writing_done, progress
+    global j, arr, pid, current_task, reading_stimuli, writing_done, progress
     j_increment()
+    if current_task != "reading":
+        set_current_task("reading")
     if j == len(arr)+1:
         reset_j()
         accurate = request.form.get('accurate') # values from likert scale questions
@@ -244,6 +265,7 @@ def reading():
             cw.writerow([str(pid), func_name, fid, "reading", None, accurate, missing, unnecessary])
         if writing_done:
             reset_progress()
+            reset_arr()
             return render_template('goodbye.html')
         else:
             flip_reading_bool()
@@ -268,7 +290,16 @@ def reading():
         
 if __name__ == "__main__":
     global starttime # FIXME - get delta time
-    #my_eyetracker = eye_tracker_setup()
-    #my_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, tobii_data_callback, as_dictionary=True)
+    # trying to connect to eyetracker
+    try:
+        my_eyetracker = eye_tracker_setup()
+        my_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, tobii_data_callback, as_dictionary=True)
+    except:
+        UnboundLocalError("WARNING: couldn't find eyetracker")
+    
+    # start server
     app.run(host='0.0.0.0', port=8181, debug = True)
-    #my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
+    try:
+        my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
+    except:
+        UnboundLocalError("WARNING: no eyetracker, but experiment has ended")
