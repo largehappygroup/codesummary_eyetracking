@@ -197,10 +197,13 @@ def writing():
     i_increment()
     if i == len(arr)+1: # end of writing stimuli has been reached
         reset_i() # reset iterator through stimuli
-        summary = request.form['summary'] # summary written by participant
-        #print(summary)
+        print("i:", i)
         fid = writing_stimuli.iloc[arr[i-1], 1]
         func_name = writing_stimuli.iloc[arr[i-1], 2]
+
+        summary = request.form['summary'] # summary written by participant
+        #print(summary)
+
         with open(f_task, 'a+') as ft:
             cw = csv.writer(ft)
             cw.writerow([str(pid), func_name, fid, "writing", summary, None, None, None])
@@ -254,12 +257,13 @@ def reading():
     if current_task != "reading":
         set_current_task("reading")
     if j == len(arr)+1:
+
         reset_j()
+        fid = reading_stimuli.iloc[arr[j-1], 1]
+        func_name = reading_stimuli.iloc[arr[j-1], 2]
         accurate = request.form.get('accurate') # values from likert scale questions
         missing = request.form.get('missing')
         unnecessary = request.form.get('unnecessary')
-        fid = reading_stimuli.iloc[arr[j-1], 1]
-        func_name = reading_stimuli.iloc[arr[j-1], 2]
         with open(f_task, 'a+') as ft:
             cw = csv.writer(ft)
             cw.writerow([str(pid), func_name, fid, "reading", None, accurate, missing, unnecessary])

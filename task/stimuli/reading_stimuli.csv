@@ -1,4 +1,17 @@
 ,fid,name,ref,attendgru,function
+28,39840471,testCookieGreaterThan,verify the value stored in a cookie using code greater than tag code,test cookie greater than,"
+
+ public void testCookieGreaterThan() throws ServletException,  JspException {
+        GreaterThanTag gt = new GreaterThanTag();
+        gt.setPageContext(pageContext);
+        gt.setCookie(COOKIE_KEY);
+        gt.setValue(LESSER_VAL);
+
+        assertTrue(
+        	""""Cookie Value ("""" + GREATER_VAL + """") is greater than value ("""" + LESSER_VAL + """")"""", 
+        	gt.condition());
+    } 
+"
 155,42956622,initButtons,inits the buttons on the screen,initialize the buttons,"
 
  private void initButtons() {
