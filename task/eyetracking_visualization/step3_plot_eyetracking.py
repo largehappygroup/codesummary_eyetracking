@@ -6,11 +6,10 @@ import re
 from matplotlib import pyplot as plt
 import pandas as pd
 from tqdm import tqdm
-os.chdir('./test/')
+os.chdir('./cap_string_test/')
 
 frame_dir = '11_27_test/'
 framelist = os.listdir('.')
-#frame_out_dir = os.path.join('video_frames_out')
 frame_out_dir = '../video_frames_out'
 
 try:
@@ -19,16 +18,21 @@ except:
     pass
 
 framelen = len(framelist)
-
+framelist.sort()
 
 # read raw data
-csv_dir = '../data/001/gaze/'
-csv_file = '001.csv'
+csv_dir = '../../data/001/gaze/'
+csv_file = '001_gaze_capitalizeString_1412807.csv'
 df = pd.read_csv(csv_dir + csv_file)
+df.columns = ["pid", "function_name", "function_id", "system_timestamp", "device_timestamp", "valid_gaze_left", "valid_gaze_right", "gaze_left", "gaze_right", "valid_pd_left", "valid_pd_right", "gaze_left", "gaze_right"]
 
-df_valid = df[df['FIXME'] == True] # FIXME - column names
+df_valid = df[(df['valid_gaze_left'] == True)] # FIXME - column names
 # length of raw data
 dflen = len(df)
+
+print(df)
+#print(df_valid.shape())
+#print(df_valid.head())
 
 img_path = os.getcwd() + '/video_frames/' + frame_dir + '/' + framelist[0]
 img = cv2.imread(img_path)
