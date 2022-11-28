@@ -1,0 +1,11 @@
+participant_id,function_name,function_id,task,summary,how_accurate,missing_info,unnecessary_info
+001,exit,4453291,writing,this is the summary for the exit method. I read through all the lines,,,
+001,toString,22626628,writing,this is the tostring method. I just looked at the method name ,,,
+001,visitRetStmt,13482891,writing,this is the visit ret stmt summary. I read through the while loop with some detail,,,
+001,capitalizeString,1412807,writing,this is the capitalize string method. I read through the for loop with some detail. Looks like it capitalizes the first letter in the string,,,
+001,onAttach,1810081,writing,This is the void method. I didn't look much at the method but looked at the four corners of the screen then the date at the top,,,
+001,initButtons,42956622,reading,,s_disagree,s_disagree,s_disagree
+001,tellAgain,18912425,reading,,disagree,disagree,disagree
+001,invalidateSession,18354735,reading,,neutral,neutral,neutral
+001,testCookieGreaterThan,39840471,reading,,agree,agree,agree
+001,testGetCodigo,11950130,reading,,s_agree,s_agree,s_agree
