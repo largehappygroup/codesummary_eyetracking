@@ -11,7 +11,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 ### STIMULI 
-arr = list(range(0, 30)) # list of indices 
+arr = list(range(0, 5)) # list of indices 
 writing_stimuli = pd.read_csv('./stimuli/writing_stimuli.csv') # stimuli --> snippets of code
 reading_stimuli = pd.read_csv('./stimuli/reading_stimuli.csv') # stimuli --> snippets of code
 
@@ -39,11 +39,12 @@ def make_files(pid):
     if os.path.exists(path):
         print('participant folder already exists')
     else:
-        command = ('mkdir data/%s' % str(pid))
+        command = ('mkdir data/{pid}; mkdir data/{pid}/gaze/'.format(pid=pid))
         os.system(command)
+
     f_keystrokes = 'data/{pid}/{pid}_keystrokes.csv'.format(pid=pid)
     f_task = 'data/{pid}/{pid}_task.csv'.format(pid=pid)
-    f_gaze_root = 'data/{pid}/{pid}_gaze'.format(pid=pid)
+    f_gaze_root = 'data/{pid}/gaze/{pid}_gaze'.format(pid=pid)
     # header for gaze files
     # ['participant_id', 'function_name', 'function_id', 'valid_gaze_left', 'valid_gaze_right', 'gaze_left_eye', 'gaze_right_eye', 'valid_pd_left', 'valid_pd_right', 'gaze_left', 'gaze_right']
 
@@ -89,13 +90,16 @@ def tobii_data_callback(gaze_data):
     # FIXME - restart progress if they quit in the middle
     # FIXME - check how bad the drifting is
     if task.current_task == "writing":
-        fid = writing_stimuli.iloc[arr[task.i-2], 1]
-        func_name = writing_stimuli.iloc[arr[task.i-2], 2]
+        fid = writing_stimuli.iloc[arr[task.i-1], 1]
+        func_name = writing_stimuli.iloc[arr[task.i-1], 2]
     elif task.current_task == "reading":
-            fid = reading_stimuli.iloc[arr[task.j-2], 1]
-            func_name = reading_stimuli.iloc[arr[task.j-2], 2]
+            fid = reading_stimuli.iloc[arr[task.j-1], 1]
+            func_name = reading_stimuli.iloc[arr[task.j-1], 2]
+    gaze_file = "{root}_{func}_{fid}.csv".format(root=f_gaze_root, func=func_name, fid=fid)
+    print("gaze file name", gaze_file)
+    print("func name", func_name)
 
-    with open(str(f_gaze_root + "_" + func_name + "_" + fid + ".csv"), 'a+') as fg:
+    with open(gaze_file, 'a+') as fg:
         cg = csv.writer(fg)
         cg.writerow([str(participant.pid), func_name, fid, system_timestamp, device_timestamp, gaze_validity_left, 
         gaze_validity_right, gaze_left_eye, gaze_right_eye, valid_left_eye_pd, valid_right_eye_pd, pd_left, pd_right])
