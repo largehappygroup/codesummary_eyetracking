@@ -26,7 +26,7 @@ for vid in videolist:
             filepath = path + filename
             print(f"Creating file... {filename}")
             cv2.imwrite(filepath, image)
-        count += 1
+            count += 1
         else:
             flag = False
     os.remove(filepath)

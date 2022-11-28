@@ -6,11 +6,12 @@ import re
 from matplotlib import pyplot as plt
 import pandas as pd
 from tqdm import tqdm
-oc.chdir('./test/')
+os.chdir('./test/')
 
-frame_dir = '.'
-framelist = os.listdir(os.path.join('video_frames', frame_dir))
-frame_out_dir = os.path.join('video_frames_out', frame_dir)
+frame_dir = '11_27_test/'
+framelist = os.listdir('.')
+#frame_out_dir = os.path.join('video_frames_out')
+frame_out_dir = '../video_frames_out'
 
 try:
     os.mkdir(frame_out_dir)
@@ -19,9 +20,10 @@ except:
 
 framelen = len(framelist)
 
+
 # read raw data
-csv_dir = '../data/007/'
-csv_file = 'gaze_007.csv'
+csv_dir = '../data/001/gaze/'
+csv_file = '001.csv'
 df = pd.read_csv(csv_dir + csv_file)
 
 df_valid = df[df['FIXME'] == True] # FIXME - column names
