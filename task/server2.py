@@ -83,8 +83,6 @@ def tobii_data_callback(gaze_data):
     valid_right_eye_pd = gaze_data['right_pupil_validity']
     pd_left = gaze_data['left_pupil_diameter']
     pd_right = gaze_data['right_pupil_diameter']
-    # FIXME - split up gaze file by function pid_fid_gaze.csv
-    # ^^^ check whether fix from 11/22/22 splits the files properly 
     # FIXME - how many stimuli to use
     # about 45s for reading, 1m for writing, break time for calibration
     # FIXME - restart progress if they quit in the middle
