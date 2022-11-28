@@ -46,7 +46,7 @@ def make_files(pid):
     f_task = 'data/{pid}/{pid}_task.csv'.format(pid=pid)
     f_gaze_root = 'data/{pid}/gaze/{pid}_gaze'.format(pid=pid)
     # header for gaze files
-    # ['participant_id', 'function_name', 'function_id', 'valid_gaze_left', 'valid_gaze_right', 'gaze_left_eye', 'gaze_right_eye', 'valid_pd_left', 'valid_pd_right', 'gaze_left', 'gaze_right']
+    # ['participant_id', 'function_name', 'function_id', 'system_timestamp', 'device_timestamp', 'valid_gaze_left', 'valid_gaze_right', 'gaze_left_eye', 'gaze_right_eye', 'valid_pd_left', 'valid_pd_right', 'gaze_left', 'gaze_right']
 
     # Writing headers
     with open(f_keystrokes, 'a+') as f:

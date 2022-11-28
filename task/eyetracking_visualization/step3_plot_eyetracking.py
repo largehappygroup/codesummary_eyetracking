@@ -66,9 +66,10 @@ for j in tqdm(framelist):
     t = i/30
     # time in raw data
     t1 = closest(list)
+    t_index = list(time_series).index(t1)
 
     if df['CombinedGazeRayWorldValid'][t_index] == True: # FIXME - same thing
-        gaze_l = df['LeftGazeDirection'][t_inex]
+        gaze_l = df['LeftGazeDirection'][t_index]
         gaze_r = df['RightGazeDirection'][t_index]
 
         gaze_origin_l = df['LeftGazeOrigin'][t_index]
@@ -101,7 +102,7 @@ for j in tqdm(framelist):
 
         else:
             img = cv2.imread(img_path)
-            cv2.imwrite(frame_out_dir + '/' + re.finall('\d+', j)[0] + '.jpg', img)
+            cv2.imwrite(frame_out_dir + '/' + re.findall('\d+', j)[0] + '.jpg', img)
 
 
 
