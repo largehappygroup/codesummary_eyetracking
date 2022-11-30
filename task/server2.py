@@ -11,7 +11,8 @@ from datetime import datetime
 app = Flask(__name__)
 
 ### STIMULI 
-arr = list(range(0, 5)) # list of indices 
+#arr = list(range(0, 5)) # list of indices 
+arr = list(range(0, 203))
 writing_stimuli = pd.read_csv('./stimuli/writing_stimuli.csv') # stimuli --> snippets of code
 reading_stimuli = pd.read_csv('./stimuli/reading_stimuli.csv') # stimuli --> snippets of code
 
@@ -76,9 +77,7 @@ def tobii_data_callback(gaze_data):
     gaze_validity_left = gaze_data['left_gaze_point_validity']
     gaze_validity_right = gaze_data['right_gaze_point_validity']
     gaze_left_eye = gaze_data['left_gaze_point_on_display_area']
-    #gaze_left_eye_coordinate = gaze_data['left_gaze_point_in_user_coordinate_system'] # user coordinate system also tracks distance from the eye-tracker
     gaze_right_eye = gaze_data['right_gaze_point_on_display_area']
-    #gaze_right_eye_coordinate = gaze_data['right_gaze_point_in_user_coordinate_system']
     valid_left_eye_pd = gaze_data['left_pupil_validity']
     valid_right_eye_pd = gaze_data['right_pupil_validity']
     pd_left = gaze_data['left_pupil_diameter']
@@ -120,7 +119,7 @@ def instructions():
     
     task = Task_Progress()
     temp_arr = arr
-    random.Random(pid).shuffle(temp_arr) # random seeds for participants' task order
+    #random.Random(pid).shuffle(temp_arr) # random seeds for participants' task order
     task.shuffled_arr = temp_arr
 
     print("shuffled task:", task.shuffled_arr)

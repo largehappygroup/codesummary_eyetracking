@@ -472,3 +472,2653 @@ if (""""ProductInformationSOAP"""".equals(portName)) {
         assertEquals( tag.getExample(), testString );
     } 
 "
+28,39840471,testCookieGreaterThan,verify the value stored in a cookie using code greater than tag code,test cookie greater than,"
+
+ public void testCookieGreaterThan() throws ServletException,  JspException {
+        GreaterThanTag gt = new GreaterThanTag();
+        gt.setPageContext(pageContext);
+        gt.setCookie(COOKIE_KEY);
+        gt.setValue(LESSER_VAL);
+
+        assertTrue(
+        	""""Cookie Value ("""" + GREATER_VAL + """") is greater than value ("""" + LESSER_VAL + """")"""", 
+        	gt.condition());
+    } 
+"
+155,42956622,initButtons,inits the buttons on the screen,initialize the buttons,"
+
+ private void initButtons() {
+		this.playButton = createButton(BUTTON_FILE_NAME_PREFIX + PLAY_BUTTON_FILE_NAME, PLAY_BUTTON_TOOLTIP);
+		this.pauseButton = createButton(BUTTON_FILE_NAME_PREFIX + PAUSE_BUTTON_FILE_NAME, PAUSE_BUTTON_TOOLTIP);
+		this.exitButton = createButton(BUTTON_FILE_NAME_PREFIX + EXIT_BUTTON_FILE_NAME, EXIT_BUTTON_TOOLTIP);
+	} 
+"
+77,11950130,testGetCodigo,test of get codigo method of class proyectoventadepasajes,test of get codigo method of class com,"
+
+ public void testGetCodigo() {
+        System.out.println(""""getCodigo"""");
+        
+        Cronograma instance = null;
+        
+        String expResult = """""""";
+        String result = instance.getCodigo();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail(""""The test case is a prototype."""");
+    } 
+"
+72,18354735,invalidateSession,removes the mapping between the designated sm2 client identifier and,invalidate session with given id,"
+
+  public void invalidateSession(String uid, String sid) {
+      cat.debug(""""==> invalidateSession(""""+String.valueOf(uid)+"""", """"+String.valueOf(sid)+"""")"""");
+
+      synchronized (lock) {
+         uid2sid.remove(uid);
+         sid2ssc.remove(sid);
+         sid2ttl.remove(sid);
+      }
+
+      cat.debug(""""<== invalidateSession()"""");
+   } 
+"
+165,18912425,tellAgain,forward some message to the participant,this method is called when the user has entered the,"
+
+ protected void tellAgain(final QName message) throws RemoteException{
+		final AbstractCoordParticipantProxy proxy =
+			this.getParticipantProxy();
+
+		if (State.MESSAGE_CANCEL.equals(message)){
+			proxy.cancelOperation(null);
+			
+		}else if (State.MESSAGE_COMPENSATE.equals(message)){
+			proxy.compensateOperation(null);
+
+		}else if (State.MESSAGE_CLOSE.equals(message)){
+			proxy.closeOperation(null);
+			
+		}else if (State.MESSAGE_EXITED.equals(message)){
+			proxy.exitedOperation(null);
+			
+		}else if (State.MESSAGE_FAULTED.equals(message)){
+			proxy.faultedOperation(null);
+			
+		}else if (State.MESSAGE_GETSTATUS.equals(message)){
+			proxy.getStatusOperation(null);
+			
+		}else{
+			throw new IllegalArgumentException(""""Sorry, cannot tell a participant """"+message);
+		}
+	} 
+"
+42,1741129,otherDoEndTagOperations,method called from do end tag,this method is called when the end of the tag is executed,"
+
+ private void otherDoEndTagOperations() {
+        //
+        // TODO: code that performs other operations in doEndTag
+        //       should be placed here.
+        //       It will be called after initializing variables,
+        //       finding the parent, setting IDREFs, etc, and
+        //       before calling shouldEvaluateRestOfPageAfterEndTag().
+        //
+    } 
+"
+117,21359951,show,show dialog with existing or new null contact,show the contact dialog,"
+
+     public void show(Contact contact) {
+            logger.fine(""""Showing edit contact dialog for contact: """" + contact);
+            this.contact = contact;
+            init();
+            setLocationRelativeTo(Context.mainFrame);
+            optionPane.setValue(JOptionPane.UNINITIALIZED_VALUE);
+            panel.setContact(contact);
+            panel.prepareForShow();
+            setVisible(true);
+        } 
+"
+60,40778768,configBalanceRanking,load balances from the ranking file and configure the timer to save,<UNK> the <UNK> to the <UNK>,"
+
+ private void configBalanceRanking(List<IResponseTO> responses, String filePath) {
+		
+		PeerDAOFactory.getInstance().getAccountingDAO().loadBalancesRanking(filePath);
+		long frequence = AccountingConstants.RANKING_SAVING_FREQ;
+
+		ScheduleActionWithFixedDelayResponseTO to = new ScheduleActionWithFixedDelayResponseTO();
+		to.setActionName(PeerConstants.SAVE_ACCOUNTING_ACTION_NAME);
+		to.setDelay(frequence);
+		to.setTimeUnit(TimeUnit.SECONDS);
+		
+		responses.add(to);
+	} 
+"
+51,19682824,handleHalt,handle the halt system call,handle the halt process,"
+
+ private int handleHalt() {
+		//need to test that this is the root process
+		if(processID == 0){
+			Machine.halt(); 
+		}else{
+			//System.err.println(""""non-root process trying to call halt"""");
+			return -1; //This is not the root process so ignore this one
+		}
+		
+		Lib.assertNotReached(""""Machine.halt() did not halt machine!"""");
+		return 0;
+	} 
+"
+171,34427273,populateNewList,helper method which populates the gui list for resources which are new at,populates the list of new resources,"
+
+ private void populateNewList() {
+        newResources = mergeNewResources();
+        SwingUtilities.invokeLater(new Runnable() {
+            @SuppressWarnings(""""synthetic-access"""")
+            @Override
+            public void run() {
+                newListModel.clear();
+                for (Wrapper wr : newResources)
+                    newListModel.addElement(wr);
+            }
+        });
+    } 
+"
+58,46026508,saveSetting,save settings to property file,save the settings to the property file,"
+
+ private void saveSetting(CustomProperties prop) {
+		prop.setProperty(""""avalanchefever.gametype"""", mapSet);
+		prop.setProperty(""""avalanchefever.outlinetype"""", outlinetype);
+		prop.setProperty(""""avalanchefever.numcolors"""", numColors);
+		prop.setProperty(""""avalanchefever.version"""", version);
+		prop.setProperty(""""avalanchefever.chainDisplayType"""", chainDisplayType);
+		prop.setProperty(""""avalanchefever.bigDisplay"""", bigDisplay);
+	} 
+"
+10,34413807,close,notifies all views to de register from their view controllers,closes the <UNK>,"
+
+ public void close(){
+		Tabpanel tempPanel = null;
+		View tempView = null;
+		List<?> list;
+		Enumeration<Tabbox> tabs = primaryTabMap.keys();
+		while (tabs.hasMoreElements())
+		{
+			list = tabs.nextElement().getTabpanels().getChildren();
+			Iterator<?> itr = list.iterator();
+			while(itr.hasNext()){
+				tempPanel = (Tabpanel)itr.next();
+				tempView = (View)tempPanel.getChildren().get(0);
+				tempView.deregisterView();
+			}
+		}
+	} 
+"
+142,19344442,loadSystems,load the various systems from the db,loads the systems <UNK>,"
+
+ private void loadSystems() {
+		int i, num;
+		SystemItem dtls;
+
+		systemCombo.removeAllItems();
+
+		systemCombo.addItem(""""<All>"""");
+
+		dbLink = true;
+		try {
+			systems = copyBookInterface.getSystems();
+		} catch (Exception ex) {
+			if (message != null) {
+				message.setText(ex.getMessage());
+				message.setCaretPosition(1);
+			}
+			ex.printStackTrace();
+			systems = new ArrayList<SystemItem>();
+			dbLink = false;
+		}
+
+		num = systems.size();
+		for (i = 0; i < num; i++) {
+			dtls = systems.get(i);
+			systemCombo.addItem(dtls.description);
+		}
+
+	} 
+"
+53,37563349,"""",returns a rectangle which represents the rectangular,returns the bounds of the receiver,"
+
+""
+ 
+ public Rectangle getBounds() {
+	if (isDisposed()) SWT.error(SWT.ERROR_GRAPHIC_DISPOSED);
+  java.awt.Rectangle bounds = handle.getBounds();
+  return new Rectangle((int)bounds.getX(), (int)bounds.getY(), (int)bounds.getWidth(), (int)bounds.getHeight());
+} 
+"
+132,17121898,compareTo,compares the tpoint object with other tpoint using timestamps first i,compares this object with the specified angle for order,"
+
+ public int compareTo(TPoint o) {
+    if ((this.value == o.value()) && (this.tstamp == o.tstamp())) {
+      return 0;
+    }
+    else if (this.tstamp > o.tstamp) {
+      return 1;
+    }
+    else if (this.tstamp < o.tstamp) {
+      return -1;
+    }
+    else if (this.value > o.value) {
+      return 1;
+    }
+    return -1;
+  } 
+"
+124,22622479,getStatusFlagFields,gets the status flag input fields from the input manager,gets the status of the given list,"
+
+ private List getStatusFlagFields() {
+		List list = new ArrayList();
+		String statusFlagPath = """"/collectionConfigRecord/statusFlags/statusFlag/status"""";
+		for (Iterator i = im.getInputFields().iterator(); i.hasNext(); ) {
+			InputField field = (InputField) i.next();
+			// prtln (field.toString());
+			if (field.getNormalizedXPath().startsWith(statusFlagPath)) {
+				list.add(field);
+			}
+		}
+		return list;
+	} 
+"
+3,22907997,removeRedundantOperations,optimize the list of files to remove by discarding redundant operations like,removes redundant operations from the list of forbidden ones,"
+
+ private void removeRedundantOperations(OBEXElement file, List<OBEXElement> filesToRemove) {
+        OBEXElement parentFolder = file;
+        log.debug(""""Removing redundant operations"""");
+
+        while ((parentFolder = parentFolder.getParent()) != null) {
+
+            if (filesToRemove.contains(parentFolder)) {
+                filesToRemove.remove(file);
+                file = parentFolder;
+            }
+        }
+    } 
+"
+19,22407577,setTargetMap,modifiactor for the target map from the current configured settings,set the target map for the target map,"
+
+ public AntTargetMap setTargetMap() {
+        AntTargetMap targetMap = null;
+        String strDefaultTarget = null;
+        targetMap = m_buildfile.getTargetMap();
+        strDefaultTarget = m_buildfile.getDefaultTarget();
+
+        if (m_bSelectWithDescription) {
+            targetMap.selectWithDescription();
+
+        }
+        setTargetMap(targetMap);
+
+        return m_targetMap;
+    } 
+"
+114,4280405,getFiles,returns the files represented by the given fileset,returns a list of files that are included in the file,"
+
+ public List getFiles(FileSet fileSet) {
+        List files = new ArrayList();
+        String[] names = fileSet.getDirectoryScanner(project).getIncludedFiles();
+
+        for (int i = 0; i < names.length; i++) {
+            String name = names[i];
+            files.add(new File(fileSet.getDir(project), name));
+        }
+
+        return files;
+    } 
+"
+111,39233866,testInvoke,test if we can invoke a given service,test the invoke method of the servlet,"
+
+ public void testInvoke() throws Exception {
+        transport.setRemoteService(""""TravelProcess"""");
+
+        call.setOperation(""""initiate"""");
+        call.addParameter(""""x"""", XMLType.XSD_STRING, ParameterMode.IN);
+        call.setReturnType(XMLType.XSD_STRING);
+
+        String result = (String) call.invoke(new Object[] { """"anything"""" });
+
+        assertEquals(DUMMY_RESULT, result);
+    } 
+"
+82,16958722,indexToLetter,converts the given integer into a character for the coordinate system,returns the index of the given letter,"
+
+ public String indexToLetter(int index) {
+		if (index == 0)
+			return """"a"""";
+		else if (index == 1)
+			return """"b"""";
+		else if (index == 2)
+			return """"c"""";
+		else if (index == 3)
+			return """"d"""";
+		else if (index == 4)
+			return """"e"""";
+		else if (index == 5)
+			return """"f"""";
+		else if (index == 6)
+			return """"g"""";
+		else if (index == 7)
+			return """"h"""";
+		else if (index == 8)
+			return """"i"""";
+		else if (index == 9)
+			return """"j"""";
+		else
+			return null;
+	} 
+"
+131,31203138,setAdditionalSeqsOids,this sets or replaces the additional sequences oids in this project,set the additional oids oids,"
+
+ public void setAdditionalSeqsOids( int[] add_seq_oids ) {
+
+        _add_seq_oids = new ArrayList();
+
+        if ( add_seq_oids == null ) {
+            return;
+        }
+
+        for ( int i = 0; i < add_seq_oids.length; ++i ) {
+            addAdditionalSeqsOid( add_seq_oids[ i ] );
+        }
+
+    } // setAddSegsOids( int[] ) 
+42843931, 	public FieldContent put(Item item){
+			FieldContent old_field = this.content;
+			
+			if (item.getUid() == this.content.getItem().getUid()) {
+				if (content.getItem().isStackable()){ 
+					this.content = new InventoryStack(content.getItem(), content.getCount()+1);
+					return null;
+				} else {this.content = new InventoryItem(item); return old_field;}
+			} else {
+				this.content = new InventoryItem(item); return old_field;
+			}
+		} 
+"
+175,18251847,addDbArgs,adds jailer cli arguments for db connection,add a new connection to the database,"
+
+ public void addDbArgs(List<String> args) {
+		args.add(currentConnection.driverClass);
+		args.add(currentConnection.url);
+		args.add(currentConnection.user);
+		args.add(currentConnection.password);
+		if (currentConnection.jar1.trim().length() > 0) {
+			args.add(""""-jdbcjar"""");
+			args.add(currentConnection.jar1.trim());
+		}
+		if (currentConnection.jar2.trim().length() > 0) {
+			args.add(""""-jdbcjar2"""");
+			args.add(currentConnection.jar2.trim());
+		}
+	} 
+"
+185,1782360,getImageWithSource,returns the first image found in the page with the specified src attribute,returns the image with the given source,"
+
+ public WebImage getImageWithSource( String source ) {
+        WebImage[] images = getImages();
+        for (int i = 0; i < images.length; i++) {
+            if (HttpUnitUtils.matches( source, images[i].getSource() )) return images[i];
+        }
+        return null;
+    } 
+"
+71,47479282,getAllSourceRoots,returns all of the source roots specified in the source bundle providing,returns all the source roots of the given plugin,"
+
+ public Set getAllSourceRoots(String pluginName, Version pluginVersion) {
+		Set pluginSourceRoots = new HashSet();
+		ManifestElement[] manifestElements = getSourceEntries(pluginName, pluginVersion);
+		if (manifestElements != null) {
+			for (int j = 0; j < manifestElements.length; j++) {
+				ManifestElement currentElement = manifestElements[j];
+				addSourceRoots(currentElement.getDirective(""""roots""""), pluginSourceRoots); //$NON-NLS-1$
+			}
+		}
+		return pluginSourceRoots;
+	} 
+"
+151,20787007,store,stores a new element in the zip file with the given path,stores the given path into the file,"
+
+ public void store(String path, InputStream stream) throws IOException {
+    toIgnore.add(normalizePath(path));
+    ZipEntry entry = new ZipEntry(path);
+    zipOutput.putNextEntry(entry);
+    IOUtils.copy(stream, zipOutput);
+    zipOutput.closeEntry();
+  } 
+"
+38,48023365,evaluatePopulation,this method evaluates the given population passed as,evaluates the population of a population,"
+
+ public void evaluatePopulation (IntegerTypePopulation population, Simulation simulation, Object[] object){
+		
+		IntegerTypePopulation intPopulation = (IntegerTypePopulation) population;
+		
+		for (int i = 0; i < intPopulation.getChromossomesSet().size(); i++){
+			
+			intPopulation.getChromossomesSet().get(i).setFitness(this.calculateFitness(simulation.getChromossomesConfiguration(), intPopulation, i));
+			
+		}
+		
+		
+	} 
+"
+9,34413723,openNewContainerWindow,open a window to start the import process,opens a new container window,"
+
+ 	public boolean openNewContainerWindow(String containerName, String containerDescription){
+			//if name is blank, disable use default option
+			NewContainerImportWindow window;
+			if(containerName.equals("""""""")){
+				window = new NewContainerImportWindow();
+			}
+			else{
+				window = new NewContainerImportWindow(containerName,containerDescription);
+			}
+			window.setParent(OrganiserView.this);
+			try{
+				window.doModal();
+			}
+			catch(InterruptedException ie){
+				ie.printStackTrace(System.err);
+			}
+			if(doImport){
+				importer.setContainerName(window.getName());
+				importer.setContainerDescription(window.getDescription());
+			}
+			return doImport;
+		} 
+"
+56,23014476,addRotation,adds a rotation to this matrix,adds a rotation to the matrix,"
+
+ public void addRotation(Vector3f axis, Angle rotation) {
+        Quaternion q = new Quaternion(rotation, axis);
+        Matrix result = new Matrix(4, 4);
+        Matrix quaternion = q.getRotationMatrix();
+       
+        Matrix.multiply(matrix,q.getRotationMatrix(), result);
+        matrix = result;
+    } 
+"
+90,33719118,testGetEvtIDs,test of get evt ids method of class com,test of get event ids method of class email <UNK>,"
+
+ public void testGetEvtIDs() {
+        System.out.println(""""getEvtIDs"""");
+        
+        Email_DBImpl instance = new Email_DBImpl();
+        
+        String[] expResult = null;
+        String[] result = instance.getEvtIDs();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail(""""The test case is a prototype."""");
+    } 
+"
+190,3934822,documentLoadingCompleted,called when the loading of a document was completed,called when a document loading is completed,"
+
+ public void documentLoadingCompleted(SVGDocumentLoaderEvent e) {
+		if (debug) {
+			System.out.print(""""Document load completed in """");
+			System.out.println((System.currentTimeMillis() - time) + """" ms"""");
+		}
+
+		setSVGDocument(e.getSVGDocument(), e.getSVGDocument().getURL(), e.getSVGDocument().getTitle());
+	} 
+"
+197,42171903,addSessionVariablesPropertyDescriptor,this adds a property descriptor for the session variables feature,this adds a property descriptor for the session variable feature,"
+
+ protected void addSessionVariablesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString(""""_UI_SafletContext_sessionVariables_feature""""),
+				 getString(""""_UI_PropertyDescriptor_description"""", """"_UI_SafletContext_sessionVariables_feature"""", """"_UI_SafletContext_type""""),
+				 SafletPackage.Literals.SAFLET_CONTEXT__SESSION_VARIABLES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	} 
+"
+126,22625582,setUrls,sets the value of urls and normalizes them,sets the urls to be used to construct the <UNK>,"
+
+ public void setUrls(String[] theUrls) throws IllegalStateException {
+		if (xmlProcessed)
+			throw new IllegalStateException(illegalPostProssingMsg);
+		
+		if(theUrls != null) {
+			this.urls = new String [theUrls.length];
+			for(int i = 0; i < theUrls.length; i++)
+				this.urls[i] = UrlHelper.normalize(theUrls[i]);
+		}
+		else
+			this.urls = urls;
+	} 
+"
+159,47571713,saveToFile,save the move sets to a file,save the file to the file,"
+
+ public void saveToFile(File f) {
+        try {
+            FileOutputStream file = new FileOutputStream(f);
+            saveToFile(file);
+            file.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    } 
+"
+55,35553791,createServerChooser,create server file view,creates a new main menu bar,"
+
+ public void createServerChooser() {
+
+		MainMenuBar mainMenuBar = MainMenuBar.getInstance();
+
+		int nodeId = dbMgr.getNodeId((String) cbNE.getSelectedItem());
+
+		DownloadFileChooser downloadFile = new DownloadFileChooser(nodeId, DBDataDesc.SHELF_OLT1, tfFileName, tfFileNameOnly);
+		mainMenuBar.putCommand((Object) downloadFile);
+		downloadFile.setViewId(mainMenuBar.getViewId());
+		downloadFile.setVisible(true);
+	} 
+"
+191,46106919,update,updates the animated image every update interval ms,updates the current time in the current animation,"
+
+ private void update() {
+        currentTime = System.currentTimeMillis();
+        if (currentTime - lastTime > updateInterval && running) {
+            currentFrame++;
+            lastTime = currentTime;
+
+            if (currentFrame >= frames.size()) {
+                currentFrame = 0;
+                if (!isLoop)
+                    running = false;
+            }
+        }
+    } 
+"
+78,1046788,testAddCountryWithSequenceGenerator,flow 2 positive case hibernate sequence generator,test of add country method of class <UNK>,"
+
+ public void testAddCountryWithSequenceGenerator() throws Exception {
+		CountryWithSequence country1 = new CountryWithSequence();
+		country1.setCountryId(""""KR"""");
+		country1.setCountryName(""""Korea"""");
+
+		Integer countryCode = (Integer) session.save(country1);
+		assertEquals(""""fail to generate a new countryCode."""", 0, countryCode
+				.intValue());
+		assertNotNull(""""fail to add a new country with sequence generator."""",
+				countryCode);
+	} 
+"
+181,31789275,setGenJarDir,recursively walk the given project tree setting the gen jar dir,set the generation of the jar files,"
+
+ public void setGenJarDir(File genJarDir,SandProject proj) {
+        proj.getAntProject().setProperty(""""genJarDir"""",genJarDir.toString());
+        SandProject[] downstream=proj.getRequiredBy();
+        for(int i=0;i<downstream.length;i++) {
+            setGenJarDir(genJarDir,downstream[i]); }
+    } 
+"
+32,49121415,createDataset,creates a sample dataset,creates a dataset for a series,"
+
+ private XYDataset createDataset(double[]values,String name) {
+
+        // create dataset 1...
+        final XYSeries series = new XYSeries(name);
+        
+        for(int i=0; i<values.length;i++){
+        	series.add(i,values[i]);
+        }
+        
+        final XYSeriesCollection collection = new XYSeriesCollection();
+        collection.addSeries(series);
+        return collection;
+
+    } 
+"
+16,4114383,add,adds a date to the list keeping the list sorted,adds a date to the list of dates,"
+
+ public boolean add(Date date) {
+	if (dates.contains(date)) 
+	    return false; 
+	
+	boolean added = false;
+	for (int i=0; i < dates.size() && !added; i++) {
+	    Date nextDate = dates.get(i);
+	    if (date.before(nextDate)) {
+		dates.add(i, date);
+		added = true;
+	    }
+	}
+	if (!added) {
+	    dates.add(date);
+	}
+	return true;
+    } 
+"
+85,29854794,genIdents,generates the names of this type,generates a <UNK> statement,"
+
+ public JExpression genIdents() {
+    TokenReference	ref = getTokenReference();
+    JExpression[]	init = new JExpression[codes.length];
+
+    for (int i = 0; i < codes.length; i++) {
+      init[i] = new JStringLiteral(ref, codes[i].getIdent());
+    }
+    return VKUtils.createArray(ref, CStdType.String, init);
+  } 
+"
+172,39120328,toString,p returns the string representation of this matcher,returns a string representation of this region,"
+
+ public String toString() {
+        StringBuffer sb = new StringBuffer();
+	sb.append(""""java.util.regex.Matcher"""");
+	sb.append(""""[pattern="""" + pattern());
+	sb.append("""" region="""");
+	sb.append(regionStart() + """","""" + regionEnd());
+        sb.append("""" lastmatch="""");
+        if ((first >= 0) && (group() != null)) {
+            sb.append(group());
+        }
+	sb.append(""""]"""");
+	return sb.toString();
+    } 
+"
+198,42172736,addMaxPoolSizePropertyDescriptor,this adds a property descriptor for the max pool size feature,this adds a property descriptor for the max pool size feature,"
+
+ protected void addMaxPoolSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString(""""_UI_DBConnection_maxPoolSize_feature""""),
+				 getString(""""_UI_PropertyDescriptor_description"""", """"_UI_DBConnection_maxPoolSize_feature"""", """"_UI_DBConnection_type""""),
+				 DbPackage.Literals.DB_CONNECTION__MAX_POOL_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	} 
+"
+168,34426334,addLimit,helper method which creates and adds an option for limit to the specified,adds the limit to the limit of the menu item,"
+
+ private void addLimit(JPopupMenu popup) {
+        JMenuItem limit = makeMenuItem(""""Write option: Limit days..."""",
+                """"Specify a limit for the written output, in days"""",
+                new ActionListener() {
+
+                    @SuppressWarnings(""""synthetic-access"""")
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        actionLimit();
+                    }
+                });
+        popup.add(limit);
+    } 
+"
+196,42171835,addUseCachePropertyDescriptor,this adds a property descriptor for the use cache feature,this adds a property descriptor for the use cache feature,"
+
+ protected void addUseCachePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString(""""_UI_OpenQuery_useCache_feature""""),
+				 getString(""""_UI_PropertyDescriptor_description"""", """"_UI_OpenQuery_useCache_feature"""", """"_UI_OpenQuery_type""""),
+				 ActionStepPackage.eINSTANCE.getOpenQuery_UseCache(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	} 
+"
+156,43303607,iconify,iconify the given frame,<UNK> the <UNK> frame,"
+
+ public void iconify(final Frame frame) {
+        Point loc = getIconifyLocation(frame);
+        if (loc != null) {
+            mouseMove(frame, loc.x, loc.y);
+        }
+        invokeLater(frame, new Runnable() {
+            public void run() {
+                frame.setState(Frame.ICONIFIED);
+            }
+        });
+    } 
+"
+70,23010239,addAssignementPropertyDescriptor,this adds a property descriptor for the assignement feature,this adds a property descriptor for the <UNK> feature,"
+
+ protected void addAssignementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString(""""_UI_AbstractEdge_Assignement_feature""""),
+				 getString(""""_UI_PropertyDescriptor_description"""", """"_UI_AbstractEdge_Assignement_feature"""", """"_UI_AbstractEdge_type""""),
+				 TaEditorPackage.Literals.ABSTRACT_EDGE__ASSIGNEMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	} 
+"
+166,18929060,checkDescendantM,return true if member 2,checks if the member is a member of the join,"
+
+ public boolean checkDescendantM(Member aMember, Member dMember) {
+    mondrian.olap.Member monMember = ((MondrianMember) aMember).getMonMember();
+    mondrian.olap.Member monDesc = ((MondrianMember) dMember).getMonMember();
+    if (monDesc.isCalculatedInQuery() || monDesc.equals(monMember))
+      return false;
+    return monDesc.isChildOrEqualTo(monMember);
+  } 
+"
+31,51122387,getMessage,returns the detail message string of this throwable,returns a string representation of the message,"
+
+  public String getMessage() {
+      StringBuffer sb = new StringBuffer();
+
+      if (messages != null) {
+         for (int i = 0; i < messages.size(); i++) {
+            Object o = messages.elementAt(i);
+
+            if (o != null) {
+               sb.append(o.toString())
+                 .append(""""\n"""");
+            }
+         }
+      }
+
+      return sb.toString();
+   } 
+"
+184,12074406,getPreferenceStore,creates and the code preference store code for this application,returns the preference store for the given shell,"
+
+ private PreferenceStore getPreferenceStore(final Shell shell) {
+		try {
+			final File preferencesFile = new File(""""preferences.properties""""); //$NON-NLS-1$
+			PreferenceStore store;
+
+			if (!preferencesFile.exists()) {
+				// create new preferences file
+				preferencesFile.createNewFile();
+			}
+
+			store = new PreferenceStore(preferencesFile.getName());
+			store.load();
+			return store;
+		} catch (final IOException e) {
+			throw new PhotoListerException(""""Unable to load preferences.""""); //$NON-NLS-1$
+		}
+	} 
+"
+160,47571922,getEffect,return the effect applied to this pokemon of a particular lock or,get the effect of the given lock,"
+
+ public StatusEffect getEffect(int lock) {
+        synchronized (m_statuses) {
+            Iterator i = m_statuses.iterator();
+            while (i.hasNext()) {
+                StatusEffect eff = (StatusEffect)i.next();
+                if ((eff == null) || !eff.isActive()) {
+                    continue;
+                }
+                if (eff.getLock() == lock) {
+                    return eff;
+                }
+            }
+        }
+        return null;
+    } 
+"
+162,28631042,getMenuAdministracion,this method initializes menu administracion,this method initializes menu <UNK>,"
+
+ private JMenu getMenuAdministracion() {
+		if (menuAdministracion == null) {
+			menuAdministracion = new JMenu();
+			menuAdministracion.setText(Messages.getString(""""gui.GUI.57"""")); //$NON-NLS-1$
+			menuAdministracion.setIcon(new ImageIcon(
+					""""data/icons/package_system.png"""")); //$NON-NLS-1$
+			menuAdministracion.add(getMenuItemAdminUsuarios());
+			menuAdministracion.add(getMenuItemAdminResorces());
+		}
+		return menuAdministracion;
+	} 
+"
+66,19498298,testOccThm,all other tests only check for occurrences in axioms,test <UNK> <UNK> <UNK> <UNK> <UNK>,"
+
+ public void testOccThm() throws Exception {
+
+		final IContextRoot context =
+				ResourceUtils.createContext(rodinProject, CTX_BARE_NAME, CST_1DECL_1REF_THM);
+
+		final IConstant cst1 = context.getConstant(INTERNAL_ELEMENT1);
+		final IDeclaration declCst1 = newDecl(cst1, CST1);
+		
+		final IAxiom thm = context.getAxiom(INTERNAL_ELEMENT1);
+		final IOccurrence occRef = makeRefPred(thm, 9, 13, declCst1);
+
+
+		final BridgeStub tk = new BridgeStub(context);
+
+		final ContextIndexer indexer = new ContextIndexer();
+
+		assertTrue(indexer.index(tk));
+
+		tk.assertOccurrencesOtherThanDecl(cst1, occRef);
+	} 
+"
+145,48209810,setButtonText,sets the button text,sets the button text,"
+
+ private void setButtonText() {
+		String txt = menuItem.getTitle() + """" (""""
+				   + menuItem.getStock()
+				   + """" in Stock)"""";
+		try {
+			Course tmpCourse = (Course)menuItem;
+			if(tmpCourse.getCourseType() == Course.FIRST_COURSE) {
+				txt = """"1st: """" + txt;
+			} else {
+				txt = """"2nd: """" + txt;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		this.setText(txt);
+	} 
+"
+150,1810886,setNamedItem,this function delegates to the native method code set named item code in,this function delegates to the native method code set code,"
+
+ public Node setNamedItem(Node arg) {
+    try {
+      return NodeImpl.build(XMLParserImpl.setNamedItem(this.getJsObject(),
+        ((DOMItem) arg).getJsObject()));
+    } catch (JavaScriptException e) {
+      throw new DOMNodeException(DOMNodeException.INVALID_MODIFICATION_ERR, e, this);
+    }
+  } 
+"
+143,19344536,setCombo_Value,this method sets the vaule of combo value,sets the combo value,"
+
+ public void setCombo_Value(String val) {
+
+      if ((val == null || """""""".equals(val))
+      && (Combo_Value == null || """""""".equals(Combo_Value))) {
+          return;
+      }
+
+      if ((val == null) || (! val.equals(Combo_Value)) || (updateStatus == NULL_INT_VALUE)) {
+           Combo_Value = val;
+           updateStatus = UPDATED;
+      }
+  } 
+"
+6,49250848,isInvalidEmailLink,returns code true code if this link is an invalid email address link,checks if the email link contains a valid email address,"
+
+ public boolean isInvalidEmailLink() {
+        return textLink.contains(ArticleLink.EMAIL_AT_SEPARATOR) &&
+            !textLink.toLowerCase(Locale.getDefault()).startsWith(""""mailto:"""") && //$NON-NLS-1$
+            wikiFileURL.getWikiFileName(true).contains(ArticleLink.EMAIL_AT_SEPARATOR);
+    } 
+"
+13,19413001,messageSent,listens for output of the command,this method is called when the user has been sent,"
+
+ public void messageSent(MessageEvent e) {
+        String str = e.getMessage();
+        if (str.endsWith(DIR_ADDED)) {
+            str = str.substring(DIRECTORY.length(), str.indexOf(DIR_ADDED)).trim();
+            createCvsFiles(str);
+        }
+        super.messageSent(e);
+    } 
+"
+116,48861766,addRelativeHeaders,add relative header,add a relative headers to the response,"
+
+ private void addRelativeHeaders(Response response, int timeInSeconds) {
+		response.setHeader(CACHE_CONTROL_HEADER, String.format(""""max-age=%d"""", timeInSeconds));
+		Calendar expires = Calendar.getInstance();
+		expires.add(Calendar.SECOND, timeInSeconds);
+		response.setHeader(""""Expires"""", DATE_FORMAT.format(expires));
+	} 
+"
+39,41287529,play,start running the simulation from either a stopped or paused state,play the current state,"
+
+ public void play(){
+        if(currentState == SimulatorState.STOPPED){
+            setSimulationTime(0);
+            simItem.initialize();
+            startTimer();
+            setState(SimulatorState.PLAYING);
+        }
+        else if(currentState == SimulatorState.PAUSED){
+            startTimer();
+            setState(SimulatorState.PLAYING);
+        }
+    } 
+"
+17,29318894,getTargetServiceName,can be overridden by subclasses to customize how the wsa to header is,returns the target service name,"
+
+ protected String getTargetServiceName(AddressingHeaders headers) throws Exception {
+    To toURI = headers.getTo();
+    if (toURI == null) {
+      return null;
+    }
+    String to = toURI.getPath();
+    if (to == null) {
+      return null;
+    }
+    // set the target service
+    return (to.substring(to.lastIndexOf('/') + 1));
+  } 
+"
+83,33793341,testDeleteFornecedor,test of delete fornecedor method of class fornecedor dao,test of delete <UNK> method of class <UNK>,"
+
+ public void testDeleteFornecedor() {
+        /*System.out.println(""""deleteFornecedor"""");
+        Integer id = 151;
+        FornecedorDAO instance = new FornecedorDAO();
+        instance.deleteFornecedor(id);
+        // TODO review the generated test code and remove the default call to fail.
+        assertNull(instance.getFornecedor(id));*/
+    } 
+"
+21,48714932,getRootElement,returns a reference for the root element from the,returns the root element of the document,"
+
+ protected Element getRootElement() {
+        Assert.notNull(resource, """"resource cannot be null"""");
+        Document document = xmlDefinitionLoader.loadDocument(resource, new ClassPathResource(""""org/impalaframework/module/source/moduledefinition.xsd"""", this.getClass().getClassLoader()));
+
+        Element root = document.getDocumentElement();
+        return root;
+    } 
+"
+49,51019251,fScore,hierarchical f score function,computes the average of the score of the given x and y,"
+
+ public double fScore(ONDEXConcept x, ONDEXConcept y) {
+        double recall = recall(x, y);
+        double precision = precision(x, y);
+        double score = 0;
+        if (recall + precision != 0) {
+            score = (2d * recall * precision) / (recall + precision);
+        }
+        return score;
+    } 
+"
+199,42172743,addMaxIdleTimePropertyDescriptor,this adds a property descriptor for the max idle time feature,this adds a property descriptor for the max idle time feature,"
+
+ protected void addMaxIdleTimePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString(""""_UI_DBConnection_maxIdleTime_feature""""),
+				 getString(""""_UI_PropertyDescriptor_description"""", """"_UI_DBConnection_maxIdleTime_feature"""", """"_UI_DBConnection_type""""),
+				 DbPackage.Literals.DB_CONNECTION__MAX_IDLE_TIME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	} 
+"
+112,26412118,connectionErrorOccurred,responds to an error event,handle an error event,"
+
+ public void connectionErrorOccurred(ConnectionEvent event) {
+        logger.warn(""""Received Connection Error event from a conection in pool """" + info.getName());
+
+        if (info.isRemoveOnExceptions()) {
+            checkIn(event.getSource(), true);
+            logger.warn(""""removeOnExceptions == true, closed connection"""");
+        }
+    } 
+"
+93,18418213,showLatestPlan,loads the latest plan in order to show it,show the latest plan of the current <UNK> plan,"
+
+ public String showLatestPlan() {
+		
+		// clear previous protocols
+        mCurrPlanProt = null;
+		
+	
+		try {
+			PatientController han = new PatientController(mCurrPatient);
+			NutPlan plan = han.getLatestNutritionPlan();
+			NutritionController controller = NutritionController.editPlan(plan);
+
+			mCurrPlanProt = WebPlanProtocol.createPlan(controller, plan, mCurrPatient);
+			return """"success"""";
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return """"failure"""";
+	} 
+"
+36,38221424,removeService,removes service from this main form,removes the <UNK>,"
+
+ public void removeService(String type) {
+    CService service = (CService) services.get(type);
+    if (service != null) {
+      service.unsetContext();
+      services.remove(type);
+      fireServiceChanged(new CServiceEvent(this, service, CServiceEvent.REMOVED));
+    }
+  } 
+"
+41,1736289,resetSchedConflict,this method resets schedule conflict,resets the <UNK> conflict,"
+
+ public void resetSchedConflict() {
+		try {
+			if (listData == null || listData.size() == 0)
+				return;
+			for (int i = 0; i < listData.size(); i++) {
+				TblAuditor auditor = (TblAuditor) listData.get(i);
+				auditor.setSchedConflict(false);
+			}
+		} catch (Exception ex) {
+			logger.error(ex);
+			FacesUtils.addErrorMessage(ex.getMessage());
+		}
+	} 
+"
+157,43310565,_componentDefinition,bugfix for wo component loading,returns the definition of the given component,"
+
+ public WOComponentDefinition _componentDefinition(String s, NSArray nsarray) {
+		if(ERXProperties.booleanForKeyWithDefault(""""er.extensions.ERXApplication.fixCachingEnabled"""", true)) {
+			// _expectedLanguages already contains all the languages in all projects, so
+			// there is no need to check for the ones that come in...
+			return super._componentDefinition(s, _expectedLanguages());
+		}
+		return super._componentDefinition(s, nsarray);
+	} 
+"
+4,44521080,BFSdist,traverses the graph breadth first and updates the distance,<UNK> <UNK> <UNK>,"
+
+ public void BFSdist(Node n, Vector ToDo, int[] indirConn){
+	Node n2 = null;
+	for (Enumeration es = n.adjEdges.elements() ; es.hasMoreElements() ;) {
+		n2 = n.adjNode((Edge)es.nextElement());
+		if (n2.dist<0){
+		n2.dist=n.dist+1;
+		indirConn[n2.dist]++;
+
+		// important add adds to the end of the list
+		ToDo.add(n2);
+		}
+	}
+	if (!ToDo.isEmpty()){
+		n2 = (Node) ToDo.remove(0);
+		BFSdist(n2,ToDo,indirConn);
+	}
+	} 
+"
+43,36634895,swapItems,this function swaps two items positions in the menu list,swaps the items in the list of items in the array,"
+
+ public void swapItems(int index, int change){
+        if(index >= 0 && index < allItems.length &&
+                change >= 0 && change < allItems.length){
+            MenuItem temp = allItems[index];
+            allItems[index] = allItems[change];
+            allItems[change] = temp;
+        }
+    } 
+"
+14,4627680,updateSchema,update an already existent user schema,updates the schema to the specified schema,"
+
+ public void updateSchema(String kind, SchemaTO schemaTO) {
+        try {
+            restTemplate.postForObject(baseURL
+                    + """"schema/"""" + kind + """"/update"""", schemaTO, SchemaTO.class);
+        } catch (SyncopeClientCompositeErrorException e) {
+            LOG.error(""""While updating a user schema"""", e);
+        }
+    } 
+"
+87,33718481,testGetEmail,test of get email method of class tools,test of get email method of class org,"
+
+ public void testGetEmail() {
+        System.out.println(""""getEmail"""");
+        
+
+        
+        String expResult = """""""";
+        String result = instance.getEmail();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+      //  fail(""""The test case is a prototype."""");
+    } 
+"
+108,34604973,deleteCascade,will delete algorithm and also references to it cascadely in tables,deletes all the rows in the database,"
+
+ public void deleteCascade(VyhladavaciAlgoritmus algorithm) {
+		//searcheds
+		getHibernateTemplate().bulkUpdate(
+		    	""""DELETE Searched WHERE algorithm = ?"""",
+		    	new Object[] { algorithm } );
+		//plans
+		getHibernateTemplate().bulkUpdate(
+		    	""""DELETE SearchPlan WHERE algorithm = ?"""",
+		    	new Object[] { algorithm } );
+		//prefs
+		getHibernateTemplate().bulkUpdate(
+		    	""""DELETE SearchPrefs WHERE algorithm = ?"""",
+		    	new Object[] { algorithm } );
+		//categories
+		getHibernateTemplate().bulkUpdate(
+		    	""""DELETE SearchCategory WHERE algorithm = ?"""",
+		    	new Object[] { algorithm } );
+		delete(algorithm);
+	} 
+"
+8,31468595,getLength,node list method count the immediate children of this node,returns the length of the node in the list,"
+
+ public int getLength() {
+
+        if (nodeListChanges != changes || nodeListLength == -1) {
+            nodeListChanges = changes;
+            nodeListLength = 0;
+            nodeListIndex = 0;
+            nodeListNode = firstChild;
+            for (NodeImpl node = firstChild; node != null; node = node.nextSibling) {
+                nodeListLength++;
+            }
+        }
+        
+        return nodeListLength;
+
+    } // getLength():int 
+31468812, public String getAttributeNS(String namespaceURI, String localName) {
+
+        if (syncData) {
+            synchronizeData();
+        }
+
+        Attr attr = (Attr)(attributes.getNamedItemNS(namespaceURI, localName));
+        return (attr == null) ? null : attr.getValue();
+
+    } // getAttributeNS(String,String):String 
+5440773, public PageContext getPageContext(Servlet servlet, ServletRequest request, ServletResponse response, String errorPageURL, boolean needsSession, int bufferSize, boolean autoFlush) {
+        PageContextImpl context = new PageContextImpl();
+        context.initialize(servlet, request, response, errorPageURL, needsSession, bufferSize, autoFlush);
+        return context;
+    } 
+"
+152,28953715,readResponse,read the entire response from the http post as a string,reads the response from the stream,"
+
+ private String readResponse(InputStream stream) {
+		BufferedReader input = new BufferedReader(new InputStreamReader(stream));
+		StringBuffer sb = new StringBuffer();
+		String line;
+		try {
+			line = input.readLine();
+		} catch (IOException e) {
+			line = null;
+		}
+		while (line != null) {
+			if (!line.trim().equals("""""""")) {
+				if (sb.length() > 0) sb.append(""""\n"""");
+				sb.append(line);
+			}
+			try {
+				line = input.readLine();
+			} catch (IOException e) {
+				line = null;
+			}
+		}
+		return sb.toString();
+	} 
+"
+122,22618655,getGlobalElements,gets the global elements attribute of the definition miner object,gets the global elements of the document,"
+
+ private void getGlobalElements(Document doc, File file) {
+		if (doc == null) {
+			return;
+		}
+		List list = doc.selectNodes(""""/xsd:schema/xsd:element"""");
+		for (Iterator iter = list.iterator(); iter.hasNext(); ) {
+			Element element = (Element) iter.next();
+			String name = element.attributeValue(""""name"""");
+			GlobalElement g = new GlobalElement(element, file);
+			// System.out.println (g.toString());
+			try {
+				globalDefMap.setValue(name, g);
+			}  catch (Exception e) {
+				prtln (e.getMessage());
+			}
+		}
+	} 
+"
+115,38184555,wndPreferences,window preferences menu action,displays the dialog box,"
+
+ public void wndPreferences() {
+        log.entering(""""MainWindow"""",""""wndPreferences"""");
+        PropertiesDlg propDlg = new PropertiesDlg(this);
+        propDlg.setModal(true);
+        propDlg.setVisible(true);
+        log.exiting(""""MainWindow"""",""""wndPreferences"""");
+    } 
+"
+11,34413808,init,method to handle initialisation tasks,initializes the internal data structures,"
+
+ private void init() {
+		_innerData = Collections.synchronizedMap(new LinkedHashMap<String,Object>());
+		Iterator<Entry<String,Object>> itr = _srcModel.entrySet().iterator();
+		while(itr.hasNext()){
+			Entry<String, Object> entry = itr.next();
+			_innerData.put(entry.getKey(), entry.getValue());
+		}
+		
+		_srcListener = new ListDataListener(){
+			public void onChange(ListDataEvent event) {
+				onListDataChange(event);
+			}
+		};
+		
+		_srcModel.addListDataListener(_srcListener);
+	} 
+"
+18,22407318,jbInit,add compononents to the page,initialize the applet,"
+
+ private void jbInit() throws Exception {
+        setLayout(new GridBagLayout());
+
+        add(m_environmentpanel,
+            new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0,
+                                   GridBagConstraints.CENTER,
+                                   GridBagConstraints.HORIZONTAL,
+                                   new Insets(0, 0, 0, 0), 0, 0));
+    } 
+"
+75,3456415,testLogin,check that the user login and password are set on session,test the login session manager,"
+
+ public void testLogin() {
+    	
+		SessionManager manager = new SimpleSessionManager();
+		String sessionId = manager.createSession( null, null);
+		
+		Session session = manager.getSession( sessionId );
+		
+		manager.login(session, """"user"""", """"password"""");
+		
+		assertEquals(""""user"""", session.getUserId());
+		assertEquals(""""password"""", session.getUserPassword());
+		assertTrue( session.isLoggedIn() );
+    } 
+"
+102,27907979,atomToExpression,returns the expression for inserting or selecting the atom,converts an atom to an expression,"
+
+ private String atomToExpression(Atom atom, String name) {
+
+		String expr = name + """" = """";
+		
+		if (atom instanceof BooleanAtom) {
+			BooleanAtom booleanAtom = (BooleanAtom) atom;
+			try {
+				if(booleanAtom.getBooleanValue())
+					expr += """"'T'"""";
+				else
+					expr += """"'F'"""";
+			} catch (InvalidStateException e) {
+				throw new Error(""""Thing in invalid boolean state"""");
+			}
+		}
+			
+		else if (atom instanceof TextAtom)
+			expr += """"'"""" + atom.getValue() + """"'"""";
+		else
+			expr += atom.getValue();
+
+		return expr;
+	} 
+"
+106,43040209,addErrors,adds the given error for the given property,adds a new error to the list of errors,"
+
+ public void addErrors(String el, IErrorDescription... error) {
+        final IErrorDescription[] msg = errors.get(el);
+        // we expect that the main scenario is to add only once errors per property...
+        errors.put(el, msg == null ? error : merge(msg, error));
+    } 
+"
+154,26215341,updateGain,set the volume,update the gain of the given position,"
+
+ private void updateGain() {
+      int pos=getValue();
+      int value = (int) (127 * (double) (pos / 100.0));
+      MidiChannel[] cs = synthesizer.getChannels();
+      for(int i=0;i<cs.length;i++) {
+	cs[i].controlChange(7,value);
+      }
+    } 
+"
+12,19412370,fileInfoGenerated,called when file status information has been received,called when a file info has been received,"
+
+ public void fileInfoGenerated(FileInfoEvent e) {
+//      FileInfoContainer fileInfo = e.getInfoContainer();
+//        if (fileInfo.getClass().equals(StatusInformation.class)) {
+//          System.err.println(""""A file status event was received."""");
+//          System.err.println(""""The status information object is: """" +
+//                             fileInfo);
+//        }
+    } 
+"
+79,26285656,testValidateSeparationCount,test validate separation count,test that the separation count works properly,"
+
+ public void testValidateSeparationCount() {
+        try {
+            LinearDimension.validateSeparationCount(0);
+            fail();
+        } catch (IllegalArgumentException ex) {
+            // ok
+        }
+
+        try {
+            LinearDimension.validateSeparationCount(-2);
+            fail();
+        } catch (IllegalArgumentException ex) {
+            // ok
+        }
+
+        LinearDimension.validateSeparationCount(1);
+        LinearDimension.validateSeparationCount(2988);
+    } 
+"
+176,18252350,joinTableRender,gets render of an association for the join combobox,joins the table,"
+
+ private String joinTableRender(Table from, Association association) {
+    	int n = 0;
+    	for (Association a: from.associations) {
+    		if (a.destination == association.destination) {
+    			++n;
+    		}
+    	}
+    	return datamodel.getDisplayName(association.destination) + (n > 1? """" on """"  + association.getName() : """""""");
+	} 
+"
+186,48104729,clone,clone the format object,returns a clone of this code format code,"
+
+     public Object clone() {
+            Format result = new Format();
+
+            result.datatype = datatype;
+            result.datatypeID = datatypeID;
+            result.respectCase = respectCase;
+            result.gap = gap;
+            result.missing = missing;
+            result.labels = labels;
+            result.labelQuotes = labelQuotes;
+            result.transpose = transpose;
+            result.interleave = interleave;
+            result.diploid = diploid;
+            result.tokens = tokens;
+            result.symbols = symbols;
+            result.matchChar = matchChar;
+
+            return result;
+        } 
+"
+34,2896279,print,returns a string representation of this regular expression,print a string to the content of the tab,"
+
+ public String print(String tab) {
+    if (content instanceof RegExp) {
+      return tab+""""type = """"+type+Out.NL+tab+""""content :""""+Out.NL+((RegExp)content).print(tab+""""  """");
+    }
+    else
+      return tab+""""type = """"+type+Out.NL+tab+""""content :""""+Out.NL+tab+""""  """"+content;
+
+  } 
+"
+158,47570692,goToRegistration,brings the user to the registration dialog,this method is called when the user clicks the button,"
+
+ private void goToRegistration() {
+		m_logo.setVisible(false);
+		m_login.setText(""""Cancel"""");
+		m_userLabel.setLocation(16, 4);
+		m_username.setLocation(16, 24);
+		m_passLabel.setLocation(16, 52);
+		m_password.setLocation(16, 70);
+		m_confirmPass.setVisible(true);
+		m_confPassLabel.setVisible(true);
+		m_male.setVisible(true);
+		m_female.setVisible(true);
+		this.setTitle(""""Registration"""");
+	} 
+"
+167,34425716,actionLoadNotes,called when the user selects to load the in game notes file,called when the user presses the load notes button,"
+
+ private void actionLoadNotes() {
+        enableUserActions(false);
+
+        // set focus, otherwise it gives focus to """"clear"""" >> scary/not wanted
+        multiSubmitButton.requestFocusInWindow();
+
+        resetSingleTextFields();
+        multipleGUIList.clearSelection();
+        multipleResources = loadNotesFile();
+        updateMultiList();
+        enableUserActions(true);
+    } 
+"
+103,19280843,getInstitutions,this method returns a collection or institution bean objects,returns a collection of <UNK>,"
+
+ public Collection getInstitutions() {
+        try {
+            if (iInstitutions == null) {
+                refreshInstitutions();
+                logger.debug(""""Institutions were null while getting them. Attempting to refresh."""");
+            }
+            return iInstitutions;
+        }
+        catch (Exception e) {
+            logger.warn(e.getMessage(), e);
+            return Collections.EMPTY_LIST;
+        }
+    } 
+"
+140,26501411,doOutput,template method that can be overriden to log to another place than,output the message to the console,"
+
+ protected void doOutput(int lvl, Object message, Throwable t) {
+    System.out.print(""""["""");
+    System.out.print(_taskName);
+    System.out.print("""" - """");
+    System.out.print(LEVEL[lvl]);
+    System.out.print(""""]"""");
+    System.out.println(message);
+
+    if(t != null) {
+      t.printStackTrace();
+    }
+  } 
+"
+129,7957602,print,print a textual description of this expr info,prints the graph,"
+
+ 	protected void print() {
+			System.out.println(""""Print for """" + prototype + """"------------------"""");
+
+			cfg.visit(new PrintVisitor() {
+				Phi phi = null;
+
+				public void visitBlock(final Block block) {
+					phi = exprPhiAtBlock(block);
+					super.visitBlock(block);
+				}
+
+				public void visitLabelStmt(final LabelStmt stmt) {
+					super.visitLabelStmt(stmt);
+
+					if (stmt.label().startsBlock()) {
+						if (phi != null) {
+							println(phi);
+							phi = null;
+						}
+					}
+				}
+			});
+
+			System.out.println(""""End Print ----------------------------"""");
+		} 
+"
+128,22628734,setTopAttributes,populate top level attributes with opml type specific data attributes from,sets the top attribute of the <UNK> menu object,"
+
+ private void setTopAttributes( Attributes from ) {
+		for ( int i = 0; i < from.getLength(); i++ ) {
+			topMenu.setAttribute( from.getLocalName( i ), from.getValue( i ) );
+			topMenu.setAttribute( from.getQName( i ), from.getValue( i ) );
+		}
+	} 
+"
+23,18123253,setSelectedScript,sets the selected existing script,sets the selected script,"
+
+ public void setSelectedScript(Object script) {
+		selectedScript = script;
+
+		// expand to and select the specified container
+		List itemsToExpand = new ArrayList();
+		IContainer parent = project.getParent();
+		while (parent != null) {
+			itemsToExpand.add(0, parent);
+			parent = parent.getParent();
+		}
+		treeViewer.setExpandedElements(itemsToExpand.toArray());
+		treeViewer.setSelection(new StructuredSelection(project), true);
+	} 
+"
+5,45047585,exportXVRL,transform the validation report object into a xmlstream writer,exports the <UNK> to the given writer,"
+
+ public void exportXVRL(XMLStreamWriter xvrLDoc) throws Exception{
+		JAXBContext context = JAXBContext.newInstance(ValidationReport.class);
+		Marshaller m = context.createMarshaller();
+		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		ValidationReport vReport = exportVReport();
+		if (vReport!=null) m.marshal(vReport, xvrLDoc);
+	} 
+"
+22,48714949,repairModules,attempts to repair any modules which are in an error state,<UNK> the module,"
+
+ public void repairModules() {
+        RootModuleDefinition rootModuleDefinition = getModuleStateHolder().getRootModuleDefinition();
+        ModuleOperation operation = facade.getModuleOperationRegistry().getOperation(
+                ModuleOperationConstants.RepairModuleOperation);
+        ConstructedModuleDefinitionSource newModuleDefinitionSource = new ConstructedModuleDefinitionSource(
+                rootModuleDefinition);
+
+        ModuleOperationInput input = new ModuleOperationInput(newModuleDefinitionSource, null, null);
+        execute(operation, input);
+    } 
+"
+189,45130803,castLiteral,casts the passed untypted literal to a boolean literal,casts the given literal to the given literal,"
+
+ public Value castLiteral(Literal literal) throws IllegalCastException {
+		if (!literal.getLabel().equalsIgnoreCase(""""true"""") && !literal.getLabel().equalsIgnoreCase(""""false"""")) {
+			throw new IllegalCastException(""""Unable to cast string to boolean"""");
+		}
+		return this.factory.createLiteral(literal.getLabel(), SPARQLConstants.BOOLEAN_TYPE);
+	} 
+"
+179,45929468,getRelFeedItems,feed feed item,get the feed item feed item,"
+
+ public List getRelFeedItems(FeedItem feedItem) {
+		final int feedId = feedItem.getFeed().getFeedId();
+		final String sql = """"select * from T_FeedItem where FEED_ID ="""" + feedId;
+		return getPagedListByNativeSQL(FeedItem.class, sql, """" id desc"""", 1, 20);
+	} 
+"
+45,19630615,addComponentDefinitionIdPropertyDescriptor,this adds a property descriptor for the component definition id feature,this adds a property descriptor for the component definition id feature,"
+
+ protected void addComponentDefinitionIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString(""""_UI_ComponentDefinitionReference_componentDefinitionId_feature""""),
+				 getString(""""_UI_PropertyDescriptor_description"""", """"_UI_ComponentDefinitionReference_componentDefinitionId_feature"""", """"_UI_ComponentDefinitionReference_type""""),
+				 WorkflowPackage.Literals.COMPONENT_DEFINITION_REFERENCE__COMPONENT_DEFINITION_ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	} 
+"
+26,50995324,createCacheFile,write the scaled and rotated cache file for a photo,creates a cache file for the given photo,"
+
+ protected void createCacheFile(Photo photo, File photoCacheFile, PhotoDimension dimension) throws IOException {
+    OutputStream photoOS = new BufferedOutputStream(new FileOutputStream(photoCacheFile));
+    PhotoHelper.getInstance().writeUncachedThumbnail(photo, photoOS);
+    photoOS.close();
+  } 
+"
+141,29572299,listen,starts the server blocks indefinately,starts the server,"
+
+ public void listen() throws IOException {
+		logMessage(""""Server started at """" + this.getHostname() + """":"""" + this.getPort());
+		while (true) {
+			Socket socket = serverSocket.accept();
+			logMessage(socket.getInetAddress().getCanonicalHostName() + """"has made a connection !"""");
+			logMessage(""""Creating new listener"""");
+			ListenThread task = new ListenThread(socket,this);
+			logMessage(""""Adding new totemcontrolcomhandler"""");
+			addHandlers(task);
+			Thread listener = new Thread(task);
+			logMessage(""""Starting new thread"""");
+			listener.run();
+		}
+	} 
+"
+182,46707537,setValue,set this extensions value,sets the value of the value of the,"
+
+ public void setValue(ASN1Type nval) throws java.security.cert.CertificateEncodingException {
+	ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+	try {
+            nval.encode(new DEREncoder(baos));
+            extnValue.setByteArray(baos.toByteArray());
+	}
+	catch (Exception e) {
+            throw new java.security.cert.CertificateEncodingException(e.getMessage());
+	}
+	
+    }   
+16632712, private void initSelectedClassList() {
+        for (IClassRelationShip classRelationShip : classRelationShipList) {
+            String className = classRelationShip.getClassName();
+            selectedClassList.add(className);
+        }
+        selectedClassesListModel = new CustomizedListModel(selectedClassList);
+        classNamesList.setModel(selectedClassesListModel);
+    } 
+"
+146,24245709,fetchString,internal helper function read a string from the device,fetch a string from the data store,"
+
+ protected String fetchString(int register, int len) {
+		int ret = getData(register, byteBuff, 8);
+		char [] charBuff = new char[len];
+		for(int i=0;i<len;i++)
+			charBuff[i] = (byteBuff[i] == 0 ? ' ' : (char)byteBuff[i]);
+		return new String(charBuff, 0, len);
+	} 
+"
+33,43137003,getNAGString,returns the array of nags as a string delimited by space,returns the <UNK> of the <UNK>,"
+
+  public String getNAGString (boolean allNumeric) {
+      if (nags == null) return null;
+
+      StringBuilder sb = new StringBuilder();
+      String suff = null;
+      int count = 0;
+
+         for (int i=0; i<nags.length; i++) {
+	    suff = NAG.numberToString(nags[i], allNumeric);
+
+	    if (suff != null) {
+	       if (count++ > 0)
+	          sb.append("""" """");
+	       sb.append(suff);
+	    }
+	 }
+      return sb.toString();
+   } 
+"
+200,1118165,modifyRoleInCache,role user cache resource cache,modify the role in cache,"
+
+ public void modifyRoleInCache(Role role, String orgRolename) {
+		Set users = role.getUsers();
+		for (Iterator iter = users.iterator(); iter.hasNext();) {
+			User user = (User) iter.next();
+			userDetailsInCache(user);
+		}
+
+		for (Iterator iter = role.getRescs().iterator(); iter.hasNext();) {
+			Resource resource = (Resource) iter.next();
+			resourceDetailsInCache(resource);
+		}
+	} 
+"
+46,19632303,addUriPropertyDescriptor,this adds a property descriptor for the uri feature,this adds a property descriptor for the uri feature,"
+
+ protected void addUriPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString(""""_UI_ConfigurationPropertyReference_uri_feature""""),
+				 getString(""""_UI_PropertyDescriptor_description"""", """"_UI_ConfigurationPropertyReference_uri_feature"""", """"_UI_ConfigurationPropertyReference_type""""),
+				 CanvasPackage.Literals.CONFIGURATION_PROPERTY_REFERENCE__URI,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	} 
+"
+118,45147874,clearFieldersFromField,clear all fielders from the field,clears all the <UNK> from the board,"
+
+ public void clearFieldersFromField() {
+    // clear all fielders from field
+    for (int i = 0; i < boardXDimension; i++) {
+      for (int j = 0; j < boardYDimension; j++) {
+        for (int a = 0; a < boardZDimension; a++) {
+          cricketFieldPositions[i][j][a] = 0;
+        }
+      }
+    }
+  } 
+"
+7,20950900,load,loads the image from a file,loads the locked file,"
+
+ private void load(LockedFile file) throws SQLIOException {
+		file.setPosition(POS_HEADER);
+
+		byte[] buffer = new byte[BASE_HEADER_SIZE];
+		file.read(buffer, 0, BASE_HEADER_SIZE);
+
+		type = buffer[POS_TYPE];
+		lastUpdate = decode3Date(buffer, POS_LAST_UDPATE);
+		recordsNum = DbfUtils.decodeLittleUint16(buffer, POS_RECORDS_NUM);
+		recordSize = DbfUtils.decodeLittleUint16(buffer, POS_RECORD_SIZE);
+		headerSize = DbfUtils.decodeLittleUint16(buffer, POS_HEADER_SIZE);
+
+		verifyAndFixHeader(file);
+	} 
+"
+92,33719869,testSetWelcomeMsg,test of set welcome msg method of class com,test of set welcome msg method of class <UNK>,"
+
+ public void testSetWelcomeMsg() {
+        System.out.println(""""setWelcomeMsg"""");
+        
+        String welcomeMsg = """""""";
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        instance.setWelcomeMsg(welcomeMsg);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail(""""The test case is a prototype."""");
+    } 
+"
+170,34426938,initOptionsMenu,initiates and populates the options menu,initialize the options menu,"
+
+ private void initOptionsMenu(JMenuBar bar) {
+        optionsMenu = new JMenu(""""Options"""");
+        optionsMenu.setToolTipText(""""Options for SWGAide"""");
+        optionsMenu.setMnemonic(KeyEvent.VK_O);
+
+        optionsMenu.add(optionsSWGCraftMenuItem());
+
+        optionsMenu.setEnabled(true);
+        bar.add(optionsMenu);
+    } 
+"
+164,18911339,cleanupObject,overriden to close the statement,cleanup the prepared statement cache,"
+
+ protected void cleanupObject(Object obj) {
+		if (obj != null) {
+			log.debug(""""PreparedStatementCache:cleanupObject class='""""
+					+ obj.getClass() + """"'"""");
+			log
+					.debug(""""PreparedStatementCache:cleanupObject close a PreparedStatement o=""""
+							+ """"'"""" + obj.toString() + """"'"""");
+
+			try {
+				((PreparedStatement) obj).close();
+				// obj = null;
+			} catch (SQLException e) {
+				log
+						.error(""""PreparedStatementCache:cleanupObject problem to close""""
+								+ """"a PreparedStatement: """" + e);
+			}
+		}
+	} 
+"
+64,19475841,addFixedPropertyDescriptor,this adds a property descriptor for the fixed feature,this adds a property descriptor for the fixed feature,"
+
+ protected void addFixedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString(""""_UI_UMLBClass_fixed_feature""""),
+				 getString(""""_UI_PropertyDescriptor_description"""", """"_UI_UMLBClass_fixed_feature"""", """"_UI_UMLBClass_type""""),
+				 UMLBPackage.Literals.UMLB_CLASS__FIXED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	} 
+"
+47,12723449,"""",self modifying version of view dice,constructs and returns a new dice equal to the given dimensions,"
+
+""
+ 
+ protected AbstractMatrix3D vDice(int axis0, int axis1, int axis2) {
+	super.vDice(axis0,axis1,axis2);
+	
+	// swap offsets
+	int[][] offsets = new int[3][];
+	offsets[0] = this.sliceOffsets;
+	offsets[1] = this.rowOffsets;
+	offsets[2] = this.columnOffsets;
+
+	this.sliceOffsets = offsets[axis0];
+	this.rowOffsets = offsets[axis1];
+	this.columnOffsets = offsets[axis2];
+
+	return this;
+} 
+"
+104,19282261,countQuery,performs a query and returns the count of objects the criteria specified,counts the number of queries in the database,"
+
+ protected int countQuery(final Query query) throws PersistenceException {
+        if (query != null)
+        {
+            if (pride2Broker != null){
+                return pride2Broker.getCount(query);
+            }
+            else {
+                throw new PersistenceException(""""Query called on uninitialized PersistenceBroker"""", null);
+            }
+        }
+        else {
+            throw new PersistenceException(""""No query specified!"""", null);
+        }
+    } 
+"
+35,21344301,loadCurrentApplicationSpec,load and validate the current application specification,loads the application spec from the application spec,"
+
+ private ApplicationSpec loadCurrentApplicationSpec() {
+		ApplicationSpec currentApplicationSpec = null;
+		if (currentApplicationSpecFile != null && currentApplicationSpecFile.exists()) {
+			try {
+				currentApplicationSpec = applicationSpecSerializer
+						.downloadApplicationSpec(new BufferedInputStream(new FileInputStream(
+								currentApplicationSpecFile)));
+				if (!validateCurrentApplicationSpec(currentApplicationSpec))
+					currentApplicationSpec = null;
+			} catch (Exception e) {
+				log.error(""""Could not read local application spec file"""", e);
+			}
+		}
+		return currentApplicationSpec;
+	} 
+"
+192,250694,getCollaborateCollection,returns the list of collaborate collections for the given user id,get a list of <UNK>,"
+
+ public List getCollaborateCollection(String userID) throws AccessException {
+		logger.debug(""""entering getCollaborateCollection()"""");
+		String query = """"SELECT collection.PID PID, collection.TITLE TITLE, """"
+				+ """" collectionrole.ROLE ROLE FROM collectionrole, collection WHERE """"
+				+ """" collectionrole.USERID = '"""" + userID + """"'""""
+				+ """" AND collectionrole.COLLECTIONPID = collection.PID""""
+				+ """" AND collection.ROOT = '1'"""";
+		List list = buildResult(query);
+		return list;
+	} 
+"
+68,19507414,testMoveRFWithNullContainer,ensures that a rodin file cannot be moved to a null container,test the move method,"
+
+ public void testMoveRFWithNullContainer() throws CoreException {
+		IRodinFile rfSource = createRodinFile(""""/P/X.test"""");
+		try {
+			rfSource.move(null, null, null, false, null);
+		} catch (IllegalArgumentException iae) {
+			return;
+		}
+		assertTrue(""""Should not be able to move a rf to a null container"""", false);
+	} 
+"
+29,44118809,remove,removes a whole passage from the map,remove a <UNK> from <UNK> <UNK> <UNK> <UNK> <UNK> <UNK> <UNK>,"
+
+ public void remove() {
+        // FIXME (magda) wlaciwie to powinna byc tez metoda mapy/jakiegos
+        // nadrzednego obiektu tego przejscia, ktora usunie je z mapy. choc
+        // jakbysmy trzymali parenta, to nie byloby problemu, bo w tej metodzie
+        // obiekt by sie odczepial od kolekcji parenta i gc() bo go usunelo
+    } 
+"
+134,33993860,addIconPropertyDescriptor,this adds a property descriptor for the icon feature,this adds a property descriptor for the icon feature,"
+
+ protected void addIconPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString(""""_UI_ButtonWidget_icon_feature""""),
+				 getString(""""_UI_PropertyDescriptor_description"""", """"_UI_ButtonWidget_icon_feature"""", """"_UI_ButtonWidget_type""""),
+				 UiPackage.Literals.BUTTON_WIDGET__ICON,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	} 
+"
+50,7848915,draw,draw the control fps panel in the control sketch window,draws the <UNK> of the sketch,"
+
+ public void draw() {
+		p4vj.cSketch.stroke(0);
+		p4vj.cSketch.fill(128);
+		p4vj.cSketch.rect(xPos, yPos, xSize, ySize);
+		drawFPS();
+		p4vj.cSketch.fill(255);
+		p4vj.cSketch.textAlign(p.LEFT, p.BASELINE);
+		p4vj.cSketch.textFont(p4vj.fontSS14, 14);
+		p4vj.cSketch.text("""" :: Control FPS"""", xPos, yPos + ySize - 5);
+	} 
+"
+76,3457090,createNewServerProcess,create a new socket process for a new connection,creates a new server process,"
+
+ protected void createNewServerProcess( Socket socket ){
+		logger.info( """"Received connection on port """" + getPort() + """" from ["""" + socket.getInetAddress() + """":""""+ socket.getPort() + """"]."""");
+		
+		Thread t = new Thread( getNewServerProcess(socket) );
+		t.start();
+		getServerProcesses().add( t );
+		new Thread( new Monitor( t ) ).start();
+	} 
+"
+139,26494825,resolve,returns a list of advices contained in the group corresponding to this,resolve the given <UNK> defs,"
+
+ public List resolve(Map defs) throws ConfigurationException {
+    if(_id == null) {
+      throw new ConfigurationException(
+          """"'id' attribute not set on advice group reference"""");
+    }
+
+    Group group = (Group) defs.get(_id);
+
+    if(group == null) {
+      throw new ConfigurationException(""""No advice group matches ID: """" + _id);
+    }
+
+    return group.getAdvices();
+  } 
+"
+173,14467418,setUpMrj,attempts to retrieve mrj version and mrj major version information on the,inserts the test case,"
+
+ private void setUpMrj() {
+    Belvedere4.mrjVersion = System.getProperty(""""mrj.version"""");
+    if (Belvedere4.mrjVersion == null) return;
+    try {
+      Belvedere4.mrjMajorVersion =
+        Double.valueOf(Belvedere4.mrjVersion.substring(0, 3)).doubleValue();
+    } catch (Exception e) {
+      Belvedere4.mrjMajorVersion = 0;
+    }
+  } 
+"
+48,12725774,actionPerformed,group select or deselct on all selected rows,invoked when an action occurs,"
+
+ public void actionPerformed(ActionEvent e) {
+		int[] selectedRows = features.getSelectedRows();
+		if (selectedRows.length > 0) {
+			boolean valueToBeSet = ((Boolean) features.getValueAt(
+					selectedRows[0], 0)).booleanValue();
+			for (int i = 0; i < selectedRows.length; ++i) {
+				features.setValueAt(new Boolean(!valueToBeSet),
+						selectedRows[i], 0);
+			}
+		}
+	} 
+"
+99,40875567,getBackCommand25,returns an initiliazed instance of back command25 component,returns an initiliazed instance of back <UNK> component,"
+
+ public Command getBackCommand25() {
+        if (backCommand25 == null) {//GEN-END:|618-getter|0|618-preInit
+            // write pre-init user code here
+            backCommand25 = new Command(""""Back"""", Command.BACK, 0);//GEN-LINE:|618-getter|1|618-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|618-getter|2|
+        return backCommand25;
+    } 
+"
+24,38737384,setSecurityMode,public method to set the security level,set the security mode for the security,"
+
+ public int setSecurityMode(int level,String authToken) throws RemoteException {
+        if(!this.authToken.equals(authToken)){
+            throw new RemoteException(""""Invalid Login Token"""");
+        }
+        serverSettingBean.setSecureMode(""""""""+level);
+        serverSettingBean.updateSettings();
+        securityMode=level;
+        return securityMode;
+    } 
+"
+109,10222579,equals,indicates whether some other object is equal to this one,compares this selector with another object,"
+
+ public boolean equals(Object obj) {
+        if (obj == null || (obj.getClass() != getClass())) {
+            return false;
+        }
+        CSSConditionalSelectorImpl s = (CSSConditionalSelectorImpl)obj;
+        return (s.simpleSelector.equals(simpleSelector) &&
+                s.condition.equals(condition));
+    } 
+"
+59,40776207,process,notifies the client that the worker is ready to receive calls to other,process a worker,"
+
+ public void process(WorkerIsReadyMessageHandle handle, ServiceManager serviceManager) {
+		WorkerIsReadyProcessorRequestTO to = new WorkerIsReadyProcessorRequestTO();
+		ServiceID workerID = serviceManager.getSenderServiceID();
+		
+		to.setWorkerAddress(workerID.toString());
+		to.setWorkerContainerID(workerID.getContainerID().toString());
+		
+		OurGridRequestControl.getInstance().execute(to, serviceManager);
+	} 
+"
+120,45891169,removeView,removes a small view from the scenario list,removes the view from the view,"
+
+ public void removeView(StateViewSmall view) {
+		view.setVisible(false);
+		// remove from scenario
+		int removedPosition = indexOfView(view);
+		mScenarioPanel.remove(removedPosition);
+		// take care of the big (detailed) view
+		if (mCurrentSmallView != null && mCurrentSmallView.equals(view)) {
+			mCurrentBigView.setVisible(false);
+			mCurrentBigView = null;
+			mCurrentSmallView = null;
+		}
+		// compute the new number of pixels per scenario position
+		mTimeBar.scaleNumberOfPixelsPerPosition();
+		refresh();
+	} 
+"
+74,11759898,markStart,marks the start of the interval,mark the start of the timer,"
+
+ public void markStart(Object tag) {
+		synchronized (pair2startTimeMap) {
+			pair2startTimeMap.put(tag, clock.getCurrentTime());
+			// FIXME it probably makes more sense to run the garbage collection
+			// periodically instead of allocating the timer every time
+			Timer removalTimer = clock.createNewTimer();
+			removalTimer.addTimerListener(new GarbageCollectionTimerListener(tag));
+			removalTimer.schedule(Time.inMilliseconds(maxWait));
+		}
+	} 
+"
+137,37824224,notifyProgressListeners,notify all of the progress listeners of a state change,notify listeners that the progress has occurred,"
+
+  protected void notifyProgressListeners() {
+      Enumeration enum = m_prProgressListeners.elements();
+      ProgressListener thisListener = null;
+      while( enum.hasMoreElements() ) {
+         thisListener = (ProgressListener)enum.nextElement();
+         thisListener.progressStateChanged( m_prUpgradeProgress );
+      }
+   } // notifyProgressListeners() 
+34599430, public void setSigmaRx( double newSigmaRx) throws IllegalArgumentException, DimensionMismatchException {
+		if (this.dimension != 6)
+			throw new DimensionMismatchException(this.dimension + """"D-Punkt hat keine X-Drehung"""");
+		if (newSigmaRx>0)
+			this.sigmaRx = newSigmaRx;
+		else
+			throw new IllegalArgumentException(""""Standardabweichung muss groesser Null sein """" + newSigmaRx);
+	} 
+"
+40,16777940,readFromFile,ask a file for the username and password,reads the data from the file,"
+
+  private void readFromFile() {
+      try {
+         FileReader fr = new FileReader(this.credentials);
+         BufferedReader br = new BufferedReader(fr);
+         this.username = br.readLine();
+         this.password = br.readLine();
+         br.close();
+         fr.close();
+      }
+      catch (Exception e) {
+         this.username = """""""";
+         this.password = """""""";
+      }
+   } 
+"
+147,39298970,getApplicableLaw,selects the influence law which is applicable to a given influence,returns the influence of the given <UNK>,"
+
+ public InfluenceLaw getApplicableLaw(Influence inf) {
+        if (inf == null) {
+            throw new IllegalArgumentException();
+        }
+        for (Iterator iter = influenceLaws.iterator(); iter.hasNext();) {
+            InfluenceLaw infLaw = (InfluenceLaw) iter.next();
+            if(infLaw.isApplicableTo(inf)) {
+                return infLaw;
+            }
+        }
+        return null;
+    } 
+"
+37,38221537,addDigit,adds the digit to the indicator text editor,adds a digit to the list,"
+
+ private void addDigit(char digit) {
+    if (digit == '0' && value.equals(""""0"""")) return;
+    if (value.equals(""""0"""")) value = """""""";
+    if (update) {
+      value = """""""";
+      minus = false;
+      comma = false;
+    }
+    update = false;
+    value += digit;
+    showValue();
+  } 
+"
+193,51577053,addPKColumn,adds a primarykey column,this method was created in visual age,"
+
+ public void addPKColumn(String aPKColName) throws IllegalArgumentException {
+        Column col = (Column) colMap.get(aPKColName);
+        if (col == null) {
+            throw new IllegalArgumentException (""""The column |"""" + aPKColName
+                    + """"| does not belong to the table |"""" + name + """"|"""");
+        }
+        pkColumns.add(col);
+    } 
+"
+97,40865212,getBackCommand2,returns an initiliazed instance of back command2 component,returns an initiliazed instance of back command2 component,"
+
+ public Command getBackCommand2() {
+        if (backCommand2 == null) {//GEN-END:|233-getter|0|233-preInit
+            // write pre-init user code here
+            backCommand2 = new Command(""""OK"""", Command.BACK, 0);//GEN-LINE:|233-getter|1|233-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|233-getter|2|
+        return backCommand2;
+    } 
+"
+62,19466347,addBasePropertyDescriptor,this adds a property descriptor for the base feature,this adds a property descriptor for the base feature,"
+
+ protected void addBasePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString(""""_UI_AddressedVariable_base_feature""""),
+				 getString(""""_UI_PropertyDescriptor_description"""", """"_UI_AddressedVariable_base_feature"""", """"_UI_AddressedVariable_type""""),
+				 TaskingPackage.Literals.ADDRESSED_VARIABLE__BASE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	} 
+"
+88,33719114,testSetEvtID,test of set evt id method of class com,test of set event id method of class email <UNK>,"
+
+ public void testSetEvtID() {
+        System.out.println(""""setEvtID"""");
+        
+        String evtID = """""""";
+        Email_DBImpl instance = new Email_DBImpl();
+        
+        instance.setEvtID(evtID);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail(""""The test case is a prototype."""");
+    } 
+"
+0,27798254,pluginRegistryContains,tests if plugin is in registry,checks if the plugin registry contains the given plugin,"
+ public boolean pluginRegistryContains(String pluginName) {
+        synchronized (registry) {
+            Iterator iter;
+            for (iter = registry.iterator(); iter.hasNext();) {
+                PluginRegistryNode node = (PluginRegistryNode)iter.next();
+                if (node.plugin.getName().equals(pluginName)) return true;
+            }
+        }
+        return false;
+    } 
+"
+15,15689897,getAll,returns all the values associated with the given key,returns a list of all the values in the map,"
+
+ public List getAll(Object key) {
+        Object value = mMap.get(key);
+        if (value instanceof List) {
+            return ((List)value);
+        }
+        else {
+            List list = new ArrayList();
+            if (value != null || mMap.containsKey(key)) {
+                list.add(value);
+            }
+            mMap.put(key, list);
+            return list;
+        }
+    } 
+"
+73,43419611,saveCRCReply,here the local container description will be stored on disk,save the <UNK> service,"
+
+ private void saveCRCReply(ClientRemoteContainerReply crcReply) {
+		
+		LoadService.currentlyWritingFile = true;
+		String mySavingPath = LoadService.SERVICE_NODE_DESCRIPTION_FILE;
+		try {
+			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(mySavingPath));
+			out.writeObject(crcReply);
+			out.flush();
+			out.close();
+			
+		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		LoadService.currentlyWritingFile = false;
+	} 
+"
+174,37762493,moveUpTarget,moves the given target up in the list of active targets,moves the target up target index up to the target,"
+
+ public void moveUpTarget(int index) {
+		Object target= targets.get(index);
+		if (index == 0 || target == null) {
+			return;
+		}
+		targets.set(index, targets.get(index - 1));
+		targets.set(index - 1, target);
+		log.debug(""""New ordering"""");
+		for (int i = 0; i < targets.size(); i++) {
+            log.debug(""""\t"""" + i + targets.get(i));
+        }
+	} 
+"
+54,35553511,refreshTreePanel,refresh tree panel,refreshes the tree panel,"
+
+ public void refreshTreePanel() {
+
+		root.removeAllChildren();
+
+		root = new DefaultMutableTreeNode(""""ALL"""");
+		treeModel = new DefaultTreeModel(root);
+
+		tree.setModel(treeModel);
+		tree.setBounds(new Rectangle(0, 0, 196, 443));
+		tree.setLayout(null);
+		tree.setBackground(Color.white);
+
+		tree.setCellRenderer(new UserIconRenderer());
+
+		addAllUsers();
+
+		TreePath treePath = tree.getPathForRow(0);
+		tree.fireTreeExpanded(treePath);
+	} 
+"
+123,22620483,getLabelText,removes namespace prefix from label text,returns the label text for the given xpath expression,"
+
+ public String getLabelText(String xpath, String siblingPath, String indexId) {
+		if (siblingPath != null && indexId != null) {
+			String nodeName =
+				NamespaceRegistry.stripNamespacePrefix(XPathUtils.getNodeName(siblingPath));
+			return (nodeName + """" ${"""" + indexId + """"+1}"""");
+		}
+		else {
+			String nodeName =
+				NamespaceRegistry.stripNamespacePrefix(XPathUtils.getNodeName(normalizedXPath));
+			return nodeName;
+		}
+	} 
+"
+153,36405409,appendDeclarations,p append declarations needed by the code note converter code to,p append declarations to a code <UNK> code,"
+
+ public void appendDeclarations(LaTeXDocumentPortion pack, LaTeXDocumentPortion decl) {
+        if (bContainsEndnotes) { pack.append(""""\\usepackage{endnotes}"""").nl(); }
+        if (bContainsFootnotes) convertFootnotesConfiguration(decl);
+        if (bContainsEndnotes) convertEndnotesConfiguration(decl);
+    } 
+"
+91,33719607,testGetClassification,test of get classification method of class com,test of get classification method of class <UNK>,"
+
+ public void testGetClassification() {
+        System.out.println(""""getClassification"""");
+        
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        Set expResult = null;
+        Set result = instance.getClassification();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail(""""The test case is a prototype."""");
+    } 
+"
+25,50994916,setPhoto,set the jdai photo to display,set the photo to be displayed in the panel,"
+
+ public void setPhoto(JdaiPhoto photo) {
+		String text = null;
+		if (photo != null) {
+			label.setText("""""""");
+			try {
+				text = photo.getSection().getInfoStore().getCaption(photo);
+			} catch (JdaiReadException e) {
+				JdaiGuiHelpers.reportException(""""Unable to read caption"""", e);
+			}
+			if (text == null || text.equals(""""""""))
+				text = """"No caption set"""";
+		} else {
+			label.setIcon(null);
+		}
+		label.setToolTipText(text);
+		setNewPhoto(photo);
+	} 
+"
+177,34105249,makeUniqueParagraphForGlobalWithLength,used to create a paragraph of unique words with varying lengths,make a new paragraph,"
+
+ public void makeUniqueParagraphForGlobalWithLength(String global, int length) {
+    String paragraph = """""""";
+    String word;
+    for (int x = 0; x < length; x++) {
+      word = makeUniqueStringForGlobalWithLength(global, (int)(Math.random() * 8) + 2);
+      paragraph += word + """" """";
+    }
+    utils.setGlobal(global, paragraph);
+  } 
+"
+84,29852582,genSql,generate the code in pure java form,generates a sql statement for the given type,"
+
+ public void genSql() throws PositionedError {
+    try {
+      SqlcPrettyPrinter         spp;
+
+      spp = new SqlcPrettyPrinter(ref.getFile());
+      spp.printCUnit(elems);
+      spp.close();
+    } catch (IOException ioe) {
+      ioe.printStackTrace();
+      System.err.println(""""cannot write: """" + ref.getFile());
+    }
+  } 
+"
+81,11298083,toString,returns a string of the serialised binding operation pointer part,returns a string representation of the operation,"
+
+ public String toString() {
+        String operationString = (operation.getPrefix() != null && !operation.getPrefix().equals(emptyString) ? operation.getPrefix() + """":"""" + operation.getLocalPart() : operation.getLocalPart());
+        return """"wsdl.bindingOperation("""" + binding + """"/"""" + operationString + """")"""";
+    } 
+"
+89,33719117,testSetChkEvtID,test of set chk evt id method of class com,test of set chk evt id method of class <UNK>,"
+
+ public void testSetChkEvtID() {
+        System.out.println(""""setChkEvtID"""");
+        
+        String ChkEvtID = """""""";
+        Email_DBImpl instance = new Email_DBImpl();
+        
+        instance.setChkEvtID(ChkEvtID);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail(""""The test case is a prototype."""");
+    } 
+"
+121,31696447,testNegativeParseCases,unit test 1 negative parse tests to make sure the parser detects,test that the parser correctly accepts a negative parse,"
+
+ public void  testNegativeParseCases() {
+    verbose(""""--->Negative parse tests  START"""");
+    for (int i = 0; i < negativeParseTests.length; i++) {
+      parseFilter(negativeParseTests[i], false);
+    }
+    
+    // 
+    // This used to fail until the parser was rewritten with the stack
+    // stuff so that it can clean up partially parsed expression trees.
+    checkDelete();
+
+  } 
+"
+1,27801498,setBinWidth,sets the bin width and repaints,sets the bin width of the bin,"
+
+ public void setBinWidth ( double new_bin_width ) {
+    double old_bin_width = binWidth;
+    binWidth = new_bin_width;
+    pcs.firePropertyChange(
+      """"binWidth"""",
+      new Double( old_bin_width ),
+      new Double( new_bin_width )
+    );
+    repaint();
+  } // setBinWidth( double ) 
+"
+27,14477536,go,shake hands with the server,sends a message to the server,"
+
+ public void go(String theUserName) {
+		try {
+			new ChatUI((MessageInputReceiver) this, theUserName);
+
+			// shake hands
+			writer.println(theUserName);
+			writer.flush();
+			// OK means init with server went well
+			if (reader.readLine().equals(""""OK"""")) {
+				initialized = true;
+				readChat();
+			} else {
+				bailOut(new IOException(""""handshake failed""""));
+			}
+		} catch (IOException ioe) {
+			bailOut(ioe);
+		} catch (Exception e) {
+			bailOut(e);
+		}
+	} 
+"
+94,18420500,getUnitCombo,this method initializes m unit combo,this method initializes unit combo,"
+
+ private JComboBox getUnitCombo() {
+		if (m_UnitCombo == null) {
+			m_UnitCombo = new JComboBox();
+			m_UnitCombo.setBounds(87, 83, 125, 22);
+			m_UnitCombo.setModel(getUnitComboModel());
+            if (m_FreePara.getUnit() != null) {
+                m_UnitCombo.setSelectedItem(m_FreePara.getUnit());
+            }
+		}
+		return m_UnitCombo;
+	} 
+"
+130,31203037,addToTechnicalComment,adds to the technical comment about this project,adds a technical comment to the technical comment list,"
+
+ public void addToTechnicalComment( final String add_to_technical_comment ) {
+        if ( getTechnicalComment() != null
+        &&   getTechnicalComment().length() > 0 ) {
+            setTechnicalComment( getTechnicalComment()
+                                 + """"\n"""" + add_to_technical_comment );
+        }
+        else {
+            setTechnicalComment( add_to_technical_comment );
+        }
+    } 
+"
+65,19498280,test_10_bug2689872,an invalid character in a predicate is ignored but reported as a warning,test the creation of a generic element,"
+
+ public void test_10_bug2689872() throws Exception {
+		E con = getGeneric().createElement(""""elt"""");
+
+		getGeneric().addPredicates(con, makeSList(""""A1""""), makeSList(""""0/=1""""), false);
+	
+		getGeneric().save(con);
+		
+		runBuilder();
+		
+		SCE file = getGeneric().getSCElement(con);
+		
+		getGeneric().containsPredicates(file, emptyEnv, makeSList(), makeSList());
+		
+		hasMarker(getGeneric().getPredicates(con)[0],
+				EventBAttributes.PREDICATE_ATTRIBUTE,
+				ParseProblem.LexerError,
+				""""/""""
+				);
+	} 
+"
+136,33994017,addColumnsPropertyDescriptor,this adds a property descriptor for the columns feature,this adds a property descriptor for the columns feature,"
+
+ protected void addColumnsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString(""""_UI_TableLayoutGroup_columns_feature""""),
+				 getString(""""_UI_PropertyDescriptor_description"""", """"_UI_TableLayoutGroup_columns_feature"""", """"_UI_TableLayoutGroup_type""""),
+				 UiPackage.Literals.TABLE_LAYOUT_GROUP__COLUMNS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	} 
+"
+133,40099556,removeSelection,removes the given entity from the basket,removes the selected item from the list,"
+
+ public void removeSelection(IEntity selection) {
+
+        // Assertions.
+        if (selection == null) {
+            String msg = """"Argument 'selection' cannot be null."""";
+            throw new IllegalArgumentException(msg);
+        }
+        
+        entitySel.remove(selection.getEntityId());
+        if(selection.getType().equals(EntityType.MEMBER)){          
+            memberCount--;
+        }else{
+            groupCount--;
+        }
+        
+    } 
+"
+63,19466669,addParentEventNamePropertyDescriptor,this adds a property descriptor for the parent event name feature,this adds a property descriptor for the parent event name feature,"
+
+ protected void addParentEventNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString(""""_UI_Command_ParentEventName_feature""""),
+				 getString(""""_UI_PropertyDescriptor_description"""", """"_UI_Command_ParentEventName_feature"""", """"_UI_Command_type""""),
+				 Il1Package.Literals.COMMAND__PARENT_EVENT_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	} 
+"
+125,22624602,asMap,for use in json emulate part of people db 1,returns a map of all the fields in the map,"
+
+ 	public Map asMap() {
+			Map map = new HashMap();
+			// map.put (""""org_id"""", org_id);
+			map.put(""""startDate"""", start_date);
+			map.put(""""endDate"""", end_date);
+			if (this.organization != null)
+				map.put(""""organization"""", this.organization.acronym);
+			map.put(""""type"""", (this.isVisitor() ? """"Visitor"""" : """"Employee""""));
+			// return new JSONObject (map);
+			return map;
+		} 
+"
+52,36760565,releaseExclusiveLock,releases an exclusive lock,releases the exclusive lock,"
+
+ public void releaseExclusiveLock() {
+		this.lock.lock();
+		try {
+			if (readers != 0  || writers != 1 ){
+				this.throwError(""""There should be no readers(""""+readers+""""), and just one writer (""""+writers+"""")"""");
+			}
+			writers--;
+			//wake up a writer if it is waiting; if not, wake up all the readers that are waiting, if any 
+			if (writersWaitingCount > 0) {
+				writersWaiting.signal();
+			} else if (readersWaitingCount > 0) {
+				readersWaiting.signalAll();
+			}
+		} finally {
+			this.lock.unlock();
+		}
+	} 
+"
+169,34426756,makeCenter,helper method which creates and returns a canvas for images,create a center image canvas,"
+
+ private Component makeCenter() {
+        imageCanvas = new JPanel();
+        imageCanvas.addMouseListener(new MouseAdapter() {
+            @SuppressWarnings(""""synthetic-access"""")
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                actionImageMouse(e);
+            }
+        });
+
+        imageCanvas.add(new JLabel(new ImageIcon(
+                SWGFrame.class.getResource(""""images/swg.png""""))));
+
+        return new JScrollPane(imageCanvas);
+    } 
+"
+30,49866815,createChecklistItem,creates a checklist item for the specified list,create a new checklist item,"
+
+ public long createChecklistItem(long listId, String item, boolean isDone) {
+    ContentValues values = new ContentValues();
+    values.put(KEY_LIST_ID, listId);
+    values.put(KEY_IS_DONE, isDone);
+    values.put(KEY_ITEM, item);
+    return mDb.insert(CHECKLIST_ITEM_TBL, null, values);
+  } 
+"
+144,19346491,checkSetLayout,checks layout set correctly,check the layout for the field,"
+
+ private void checkSetLayout(int layout, String field) {
+
+        filter.setLayoutIndex(layout);
+        assertEquals(""""The layout Index was """" + filter.getLayoutIndex()
+                + """" and not """" + layout, layout, filter.getLayoutIndex());
+
+        String fld = fieldList.getValueAt(1, 0).toString();
+        assertEquals(""""Expected field '"""" + field + """"' but got """" + fld,
+                field, fld);
+    } 
+"
+105,50026101,getRemoteObject,return a reference to a remote object,get the remote object,"
+
+ public DBusInterface getRemoteObject(String objectpath) throws DBusException {
+    if (null == objectpath) { throw new DBusException(_(""""Invalid object path: null"""")); }
+
+    if (!objectpath.matches(OBJECT_REGEX) || (objectpath.length() > MAX_NAME_LENGTH)) { throw new DBusException(
+        _(""""Invalid object path: """") + objectpath); }
+
+    return dynamicProxy(objectpath);
+  } 
+"
+86,29859244,split,each token of the line is an element of the list,splits a line into a list of strings,"
+
+ private List split(String line) {
+    List                result;
+
+    if (line == null) {
+      result = new ArrayList();
+    } else {
+      StringTokenizer     tok;
+
+      tok = new StringTokenizer(line, """","""");
+      result = new ArrayList(tok.countTokens());
+
+      while(tok.hasMoreTokens()) {
+        result.add(tok.nextToken());
+      }
+    }
+
+    return result;
+  } 
+"
+202,34609355,getFastestGenerator,returns the fastest generator for the given language,returns the <UNK> generator for the specified locale,"
+
+ public WordFormGenerator getFastestGenerator(final Locale locale) throws MorphologyException {
+        if (locale == null) {
+            throw new IllegalArgumentException(""""The 'loc' argument cannot be null."""");
+        }
+        WordFormGenerator component = (WordFormGenerator) fastestGenerators.get(locale);
+        if (component == null) {
+            throw new MorphologyException(""""Cannot find generator for locales : """" + locale.toString());
+        }
+        return component;
+    } 
+"
+178,39215677,iamNear,check if a player is next to another actor,this method is called when the voter is moving to the,"
+
+ private boolean iamNear(Actor defender) {
+        short xDiff = (short) (defender.getXpos() - getXpos());
+        short yDiff = (short) (defender.getYpos() - getYpos());
+        if (xDiff > 1 || yDiff > 1 || xDiff < -1 || yDiff < -1) {
+            return false;
+        }
+        return true;
+    } 
+"
+119,45888514,openCursor,opens cursor with custom selection,opens a cursor with the given source and returns the result,"
+
+ public Cursor openCursor(Context context, String selection, String[] selectionArgs) {
+		if(mSourcesUri==null) {
+			throw new NullPointerException(""""Sources uri not set."""");
+		}
+		return context.getContentResolver().query(mSourcesUri, mProjection, selection, selectionArgs, Sources.SourcesTable.NAME);
+	} 
+"

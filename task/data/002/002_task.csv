@@ -1,0 +1,11 @@
+participant_id,function_name,function_id,task,summary,how_accurate,missing_info,unnecessary_info
+002,visitRetStmt,13482891,writing,this is the visit ret stmt function. I read through the method first before writing,,,
+002,toString,22626628,writing,this is the to string method. I looked through the whole method,,,
+002,capitalizeString,1412807,writing,This is the capitalize string method. I looked at all four corners of the screen,,,
+002,exit,4453291,writing,This is the exit method. I looked at the for statement and skimmed the rest,,,
+002,onAttach,1810081,writing,"I'm writing without looking at what I'm writing, mostly",,,
+002,invalidateSession,18354735,reading,,s_disagree,s_disagree,s_disagree
+002,tellAgain,18912425,reading,,disagree,disagree,disagree
+002,testCookieGreaterThan,39840471,reading,,neutral,neutral,neutral
+002,initButtons,42956622,reading,,agree,agree,agree
+002,testGetCodigo,11950130,reading,,s_agree,s_agree,s_agree
