@@ -2,8 +2,11 @@ import numpy as np
 import cv2
 import os
 import glob
-videolist = glob.glob('*.mkv')
-output_path = './test/'
+videolist = glob.glob('./videos/11_29_test.mkv') # FIXME - hard coded
+output_path = './intermediate_images/11_29/'
+
+print("videolist", videolist)
+print("output path", output_path)
 
 print('b4 loop')
 for vid in videolist:

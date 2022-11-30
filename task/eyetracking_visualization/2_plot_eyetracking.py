@@ -5,11 +5,11 @@ import re
 from matplotlib import pyplot as plt
 import pandas as pd
 from tqdm import tqdm
-os.chdir('./cap_string_test/')
+os.chdir('./11_29_toString/')
 
-frame_dir = '11_27_test/'
+frame_dir = '11_29_toString/'
 framelist = os.listdir('.')
-frame_out_dir = '../video_frames_out'
+frame_out_dir = '../video_frames_out/11_29'
 framelen = len(framelist)
 framelist.sort()
 
@@ -18,8 +18,8 @@ try:
 except:
     pass
 
-csv_dir = '../../data/001/gaze/'
-csv_file = '001_gaze_capitalizeString_1412807.csv'
+csv_dir = '../../data/002/gaze/'
+csv_file = '002_gaze_toString_22626628.csv'
 
 df = pd.read_csv(csv_dir + csv_file)
 df.columns = ["pid", "function_name", "function_id", "system_timestamp", "device_timestamp", "valid_gaze_left",
@@ -62,6 +62,7 @@ valid_time_series = df_valid['adjusted_timestamp']
 def return_x_y(gaze):
     pattern = "[()]"
     new_gaze_string = re.sub(pattern, "", gaze)
+    
     xyz = new_gaze_string.split(',')
     x = width/2*float(xyz[0])
     y = height/2*float(xyz[1])
@@ -70,7 +71,7 @@ def return_x_y(gaze):
     return cv_x, cv_y
 
 for k, j in enumerate(tqdm(framelist)):
-    i = int(re.findall("\d+",j)[2])-2783 # hard coded 2783 for capitalize string test
+    i = int(re.findall("\d+",j)[0]) #-1124 # FIXME hard coded 2783 for capitalize string test
     img_path = os.getcwd() + '/' + framelist[k]
     # time from the video
     t = i/30
@@ -84,10 +85,12 @@ for k, j in enumerate(tqdm(framelist)):
         cv_x_l, cv_y_l = return_x_y(gaze_l)
         cv_x_r, cv_y_r = return_x_y(gaze_r)
 
+        
+        
         img = cv2.imread(img_path)
         cv2.circle(img, (cv_x_l, cv_y_l), 20, (0, 255, 0), -1)
         cv2.circle(img, (cv_x_r, cv_y_r), 20, (255, 0, 0), -1)
-        cv2.imwrite(frame_out_dir + '/' + re.findall("\d+", j)[2] + '.jpg', img)
+        cv2.imwrite(frame_out_dir + '/' + re.findall("\d+", j)[0] + '.jpg', img)
     else:
         t_2 = closest(list(valid_time_series), t)
 
@@ -102,11 +105,11 @@ for k, j in enumerate(tqdm(framelist)):
             img =cv2.imread(img_path)
             cv2.circle(img,(cv_x_l, cv_y_l), 20, (0,255,0),-1)
             cv2.circle(img,(cv_x_r,cv_y_r), 20, (255,0,0),-1)
-            cv2.imwrite(frame_out_dir + '/' + re.findall("\d+",j)[2] +'.jpg',img) 
+            cv2.imwrite(frame_out_dir + '/' + re.findall("\d+",j)[0] +'.jpg',img) 
 
         else:
             img = cv2.imread(img_path)
-            cv2.imwrite(frame_out_dir + '/' + re.findall('\d+', j)[2] + '.jpg', img)
+            cv2.imwrite(frame_out_dir + '/' + re.findall('\d+', j)[0] + '.jpg', img)
 
 
 
