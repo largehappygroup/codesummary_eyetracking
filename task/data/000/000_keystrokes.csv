@@ -2060,3 +2060,4 @@ participant_id,function_name,function_id,key_pressed,timestamp
 000,resetSchedConflict,1736289,G,2022-11-28 22:25:02.547951
 000,addComponentDefinitionIdPropertyDescriptor,19630615,[,2022-11-28 22:26:45.902545
 000,addComponentDefinitionIdPropertyDescriptor,19630615,,2022-11-28 22:26:46.001723
+participant_id,function_name,function_id,key_pressed,timestamp

@@ -11,8 +11,8 @@ from datetime import datetime
 app = Flask(__name__)
 
 ### STIMULI 
-#arr = list(range(0, 5)) # list of indices 
-arr = list(range(0, 203))
+arr = list(range(0, 5)) # list of indices 
+#arr = list(range(0, 203))
 writing_stimuli = pd.read_csv('./stimuli/writing_stimuli.csv') # stimuli --> snippets of code
 reading_stimuli = pd.read_csv('./stimuli/reading_stimuli.csv') # stimuli --> snippets of code
 
@@ -191,6 +191,7 @@ def rest():
 
 # reading task
 # basically the same logic as the writing task
+# FIXME - center likert scale buttons
 @app.route('/reading', methods=['POST'])
 def reading(): 
     global arr, task, participant, reading_stimuli

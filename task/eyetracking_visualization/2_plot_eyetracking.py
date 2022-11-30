@@ -64,14 +64,30 @@ def return_x_y(gaze):
     new_gaze_string = re.sub(pattern, "", gaze)
     
     xyz = new_gaze_string.split(',')
-    x = width/2*float(xyz[0])
-    y = height/2*float(xyz[1])
+    #x = width/2*float(xyz[0])
+    #y = height/2*float(xyz[1])
+    x = round(width*float(xyz[0]))
+    y = round(height*float(xyz[1]))
+    
+    print("xyz", xyz)
+    print("width", width)
+    print("height", height)
+    print("x", x)
+    print("y", y)
+    """
     cv_x = round(width/2 + x)
     cv_y = round(height/2 - y)
-    return cv_x, cv_y
+    print("cv x", cv_x)
+    print("cv y", cv_y)
+    exit(1)
+    """
+    return x, y
+    #return cv_x, cv_y
 
 for k, j in enumerate(tqdm(framelist)):
-    i = int(re.findall("\d+",j)[0]) #-1124 # FIXME hard coded 2783 for capitalize string test
+    print("k", k)
+    print("j", j)
+    i = int(re.findall("\d+",j)[0])-1124 # FIXME hard coded 2783 for capitalize string test
     img_path = os.getcwd() + '/' + framelist[k]
     # time from the video
     t = i/30
@@ -88,8 +104,8 @@ for k, j in enumerate(tqdm(framelist)):
         
         
         img = cv2.imread(img_path)
-        cv2.circle(img, (cv_x_l, cv_y_l), 20, (0, 255, 0), -1)
-        cv2.circle(img, (cv_x_r, cv_y_r), 20, (255, 0, 0), -1)
+        cv2.circle(img, (cv_x_l, cv_y_l), 10, (0, 255, 0), -1)
+        cv2.circle(img, (cv_x_r, cv_y_r), 10, (255, 0, 0), -1)
         cv2.imwrite(frame_out_dir + '/' + re.findall("\d+", j)[0] + '.jpg', img)
     else:
         t_2 = closest(list(valid_time_series), t)
@@ -103,13 +119,14 @@ for k, j in enumerate(tqdm(framelist)):
             cv_x_r,cv_y_r = return_x_y(gaze_r)
             
             img =cv2.imread(img_path)
-            cv2.circle(img,(cv_x_l, cv_y_l), 20, (0,255,0),-1)
-            cv2.circle(img,(cv_x_r,cv_y_r), 20, (255,0,0),-1)
+            cv2.circle(img,(cv_x_l, cv_y_l), 10, (0,255,0),-1)
+            cv2.circle(img,(cv_x_r,cv_y_r), 10, (255,0,0),-1)
             cv2.imwrite(frame_out_dir + '/' + re.findall("\d+",j)[0] +'.jpg',img) 
 
         else:
             img = cv2.imread(img_path)
             cv2.imwrite(frame_out_dir + '/' + re.findall('\d+', j)[0] + '.jpg', img)
+    
 
 
 
