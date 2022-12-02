@@ -5,11 +5,11 @@ import re
 from matplotlib import pyplot as plt
 import pandas as pd
 from tqdm import tqdm
-os.chdir('./11_29_capitalizeString/')
+os.chdir('./intermediate_images/11_29')
 
-frame_dir = '11_29_capitalizeString/'
+frame_dir = '11_29/'
 framelist = os.listdir('.')
-frame_out_dir = '../video_frames_out/11_29_capitalizeString'
+frame_out_dir = '../../video_frames_out/11_29'
 framelen = len(framelist)
 framelist.sort()
 
@@ -18,8 +18,8 @@ try:
 except:
     pass
 
-csv_dir = '../../data/002/gaze/'
-csv_file = '002_gaze_capitalizeString_1412807.csv'
+csv_dir = '../../../data/002/gaze/'
+csv_file = '002_full_task.csv'
 
 df = pd.read_csv(csv_dir + csv_file)
 df.columns = ["pid", "function_name", "function_id", "system_timestamp", "device_timestamp", "valid_gaze_left",
@@ -69,7 +69,7 @@ def return_x_y(gaze):
     return x, y
 
 for k, j in enumerate(tqdm(framelist)):
-    i = int(re.findall("\d+",j)[0])-1667
+    i = int(re.findall("\d+",j)[0]) - 333 # subtract frame numbers here if starting in the middle 
     img_path = os.getcwd() + '/' + framelist[k]
     # time from the video
     t = i/30
