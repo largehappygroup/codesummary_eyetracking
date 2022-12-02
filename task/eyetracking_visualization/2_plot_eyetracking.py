@@ -5,11 +5,11 @@ import re
 from matplotlib import pyplot as plt
 import pandas as pd
 from tqdm import tqdm
-os.chdir('./11_29_toString/')
+os.chdir('./11_29_capitalizeString/')
 
-frame_dir = '11_29_toString/'
+frame_dir = '11_29_capitalizeString/'
 framelist = os.listdir('.')
-frame_out_dir = '../video_frames_out/11_29'
+frame_out_dir = '../video_frames_out/11_29_capitalizeString'
 framelen = len(framelist)
 framelist.sort()
 
@@ -19,7 +19,7 @@ except:
     pass
 
 csv_dir = '../../data/002/gaze/'
-csv_file = '002_gaze_toString_22626628.csv'
+csv_file = '002_gaze_capitalizeString_1412807.csv'
 
 df = pd.read_csv(csv_dir + csv_file)
 df.columns = ["pid", "function_name", "function_id", "system_timestamp", "device_timestamp", "valid_gaze_left",
@@ -40,17 +40,13 @@ height = img.shape[0]
 width = img.shape[1]
 
 starttime = int(df_valid.iloc[0, 3])  # in microseconds
-#print(starttime/(10**6))
-
 endtime = int(df_valid.iloc[-1, 3])  # in microseconds
-#print(endtime/(10**6))
-
 duration = endtime-starttime
 
 df_valid['adjusted_timestamp'] = df_valid.apply(lambda row: (
-    row['system_timestamp'] - starttime)/(10**6)*30, axis=1)
+    row['system_timestamp'] - starttime)/(10**6), axis=1)
 df['adjusted_timestamp'] = df.apply(lambda row: (
-    row['system_timestamp'] - starttime)/(10**6)*30, axis=1)
+    row['system_timestamp'] - starttime)/(10**6), axis=1)
 
 def closest(lst, K):
     return lst[min(range(len(lst)), key=lambda i: abs(lst[i]-K))]
@@ -64,30 +60,16 @@ def return_x_y(gaze):
     new_gaze_string = re.sub(pattern, "", gaze)
     
     xyz = new_gaze_string.split(',')
-    #x = width/2*float(xyz[0])
-    #y = height/2*float(xyz[1])
+    if xyz[0] == 'nan' or xyz[1] == 'nan':
+        return "oof", "oof"
+    
     x = round(width*float(xyz[0]))
     y = round(height*float(xyz[1]))
-    
-    print("xyz", xyz)
-    print("width", width)
-    print("height", height)
-    print("x", x)
-    print("y", y)
-    """
-    cv_x = round(width/2 + x)
-    cv_y = round(height/2 - y)
-    print("cv x", cv_x)
-    print("cv y", cv_y)
-    exit(1)
-    """
+
     return x, y
-    #return cv_x, cv_y
 
 for k, j in enumerate(tqdm(framelist)):
-    print("k", k)
-    print("j", j)
-    i = int(re.findall("\d+",j)[0])-1124 # FIXME hard coded 2783 for capitalize string test
+    i = int(re.findall("\d+",j)[0])-1667
     img_path = os.getcwd() + '/' + framelist[k]
     # time from the video
     t = i/30
@@ -100,8 +82,10 @@ for k, j in enumerate(tqdm(framelist)):
         gaze_r = df.loc[t_index, 'gaze_right']
         cv_x_l, cv_y_l = return_x_y(gaze_l)
         cv_x_r, cv_y_r = return_x_y(gaze_r)
-
         
+        temp = [cv_x_l, cv_y_l, cv_x_r, cv_y_r]
+        if "oof" in temp:
+            continue
         
         img = cv2.imread(img_path)
         cv2.circle(img, (cv_x_l, cv_y_l), 10, (0, 255, 0), -1)
@@ -118,6 +102,10 @@ for k, j in enumerate(tqdm(framelist)):
             cv_x_l,cv_y_l = return_x_y(gaze_l)
             cv_x_r,cv_y_r = return_x_y(gaze_r)
             
+            temp = [cv_x_l, cv_y_l, cv_x_r, cv_y_r]
+            if "oof" in temp:
+                continue
+            
             img =cv2.imread(img_path)
             cv2.circle(img,(cv_x_l, cv_y_l), 10, (0,255,0),-1)
             cv2.circle(img,(cv_x_r,cv_y_r), 10, (255,0,0),-1)
@@ -127,11 +115,3 @@ for k, j in enumerate(tqdm(framelist)):
             img = cv2.imread(img_path)
             cv2.imwrite(frame_out_dir + '/' + re.findall('\d+', j)[0] + '.jpg', img)
     
-
-
-
-
-
-
-
-
