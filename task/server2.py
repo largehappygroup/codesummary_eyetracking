@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 ### STIMULI 
 arr = list(range(0, 5)) # list of indices 
-#arr = list(range(0, 203)) # looking at all stimuli for testing purposes
+#arr = list(range(0, 168)) # looking at all stimuli for testing purposes
 writing_stimuli = pd.read_csv('./stimuli/writing_stimuli.csv') # stimuli --> snippets of code
 reading_stimuli = pd.read_csv('./stimuli/reading_stimuli.csv') # stimuli --> snippets of code
 

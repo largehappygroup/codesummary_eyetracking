@@ -1,139 +1,5 @@
 ,fid,name,ref,attendgru,function
-28,39840471,testCookieGreaterThan,verify the value stored in a cookie using code greater than tag code,test cookie greater than,"
-
- public void testCookieGreaterThan() throws ServletException,  JspException {
-        GreaterThanTag gt = new GreaterThanTag();
-        gt.setPageContext(pageContext);
-        gt.setCookie(COOKIE_KEY);
-        gt.setValue(LESSER_VAL);
-
-        assertTrue(
-        	""""Cookie Value ("""" + GREATER_VAL + """") is greater than value ("""" + LESSER_VAL + """")"""", 
-        	gt.condition());
-    } 
-"
-155,42956622,initButtons,inits the buttons on the screen,initialize the buttons,"
-
- private void initButtons() {
-		this.playButton = createButton(BUTTON_FILE_NAME_PREFIX + PLAY_BUTTON_FILE_NAME, PLAY_BUTTON_TOOLTIP);
-		this.pauseButton = createButton(BUTTON_FILE_NAME_PREFIX + PAUSE_BUTTON_FILE_NAME, PAUSE_BUTTON_TOOLTIP);
-		this.exitButton = createButton(BUTTON_FILE_NAME_PREFIX + EXIT_BUTTON_FILE_NAME, EXIT_BUTTON_TOOLTIP);
-	} 
-"
-77,11950130,testGetCodigo,test of get codigo method of class proyectoventadepasajes,test of get codigo method of class com,"
-
- public void testGetCodigo() {
-        System.out.println(""""getCodigo"""");
-        
-        Cronograma instance = null;
-        
-        String expResult = """""""";
-        String result = instance.getCodigo();
-        assertEquals(expResult, result);
-        
-        // TODO review the generated test code and remove the default call to fail.
-        fail(""""The test case is a prototype."""");
-    } 
-"
-72,18354735,invalidateSession,removes the mapping between the designated sm2 client identifier and,invalidate session with given id,"
-
-  public void invalidateSession(String uid, String sid) {
-      cat.debug(""""==> invalidateSession(""""+String.valueOf(uid)+"""", """"+String.valueOf(sid)+"""")"""");
-
-      synchronized (lock) {
-         uid2sid.remove(uid);
-         sid2ssc.remove(sid);
-         sid2ttl.remove(sid);
-      }
-
-      cat.debug(""""<== invalidateSession()"""");
-   } 
-"
-165,18912425,tellAgain,forward some message to the participant,this method is called when the user has entered the,"
-
- protected void tellAgain(final QName message) throws RemoteException{
-		final AbstractCoordParticipantProxy proxy =
-			this.getParticipantProxy();
-
-		if (State.MESSAGE_CANCEL.equals(message)){
-			proxy.cancelOperation(null);
-			
-		}else if (State.MESSAGE_COMPENSATE.equals(message)){
-			proxy.compensateOperation(null);
-
-		}else if (State.MESSAGE_CLOSE.equals(message)){
-			proxy.closeOperation(null);
-			
-		}else if (State.MESSAGE_EXITED.equals(message)){
-			proxy.exitedOperation(null);
-			
-		}else if (State.MESSAGE_FAULTED.equals(message)){
-			proxy.faultedOperation(null);
-			
-		}else if (State.MESSAGE_GETSTATUS.equals(message)){
-			proxy.getStatusOperation(null);
-			
-		}else{
-			throw new IllegalArgumentException(""""Sorry, cannot tell a participant """"+message);
-		}
-	} 
-"
-42,1741129,otherDoEndTagOperations,method called from do end tag,this method is called when the end of the tag is executed,"
-
- private void otherDoEndTagOperations() {
-        //
-        // TODO: code that performs other operations in doEndTag
-        //       should be placed here.
-        //       It will be called after initializing variables,
-        //       finding the parent, setting IDREFs, etc, and
-        //       before calling shouldEvaluateRestOfPageAfterEndTag().
-        //
-    } 
-"
-117,21359951,show,show dialog with existing or new null contact,show the contact dialog,"
-
-     public void show(Contact contact) {
-            logger.fine(""""Showing edit contact dialog for contact: """" + contact);
-            this.contact = contact;
-            init();
-            setLocationRelativeTo(Context.mainFrame);
-            optionPane.setValue(JOptionPane.UNINITIALIZED_VALUE);
-            panel.setContact(contact);
-            panel.prepareForShow();
-            setVisible(true);
-        } 
-"
-60,40778768,configBalanceRanking,load balances from the ranking file and configure the timer to save,<UNK> the <UNK> to the <UNK>,"
-
- private void configBalanceRanking(List<IResponseTO> responses, String filePath) {
-		
-		PeerDAOFactory.getInstance().getAccountingDAO().loadBalancesRanking(filePath);
-		long frequence = AccountingConstants.RANKING_SAVING_FREQ;
-
-		ScheduleActionWithFixedDelayResponseTO to = new ScheduleActionWithFixedDelayResponseTO();
-		to.setActionName(PeerConstants.SAVE_ACCOUNTING_ACTION_NAME);
-		to.setDelay(frequence);
-		to.setTimeUnit(TimeUnit.SECONDS);
-		
-		responses.add(to);
-	} 
-"
-51,19682824,handleHalt,handle the halt system call,handle the halt process,"
-
- private int handleHalt() {
-		//need to test that this is the root process
-		if(processID == 0){
-			Machine.halt(); 
-		}else{
-			//System.err.println(""""non-root process trying to call halt"""");
-			return -1; //This is not the root process so ignore this one
-		}
-		
-		Lib.assertNotReached(""""Machine.halt() did not halt machine!"""");
-		return 0;
-	} 
-"
-171,34427273,populateNewList,helper method which populates the gui list for resources which are new at,populates the list of new resources,"
+144,34427273,populateNewList,helper method which populates the gui list for resources which are new at,populates the list of new resources,"
 
  private void populateNewList() {
         newResources = mergeNewResources();
@@ -148,7 +14,396 @@
         });
     } 
 "
-58,46026508,saveSetting,save settings to property file,save the settings to the property file,"
+6,49250848,isInvalidEmailLink,returns code true code if this link is an invalid email address link,checks if the email link contains a valid email address,"
+
+ public boolean isInvalidEmailLink() {
+        return textLink.contains(ArticleLink.EMAIL_AT_SEPARATOR) &&
+            !textLink.toLowerCase(Locale.getDefault()).startsWith(""""mailto:"""") && //$NON-NLS-1$
+            wikiFileURL.getWikiFileName(true).contains(ArticleLink.EMAIL_AT_SEPARATOR);
+    } 
+"
+13,15689897,getAll,returns all the values associated with the given key,returns a list of all the values in the map,"
+
+ public List getAll(Object key) {
+        Object value = mMap.get(key);
+        if (value instanceof List) {
+            return ((List)value);
+        }
+        else {
+            List list = new ArrayList();
+            if (value != null || mMap.containsKey(key)) {
+                list.add(value);
+            }
+            mMap.put(key, list);
+            return list;
+        }
+    } 
+"
+82,40865383,getBackCommand12,returns an initiliazed instance of back command12 component,returns an initiliazed instance of back <UNK> component,"
+
+ public Command getBackCommand12() {
+        if (backCommand12 == null) {//GEN-END:|264-getter|0|264-preInit
+            // write pre-init user code here
+            backCommand12 = new Command(""""OK"""", Command.BACK, 0);//GEN-LINE:|264-getter|1|264-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|264-getter|2|
+        return backCommand12;
+    } 
+"
+103,45891169,removeView,removes a small view from the scenario list,removes the view from the view,"
+
+ public void removeView(StateViewSmall view) {
+		view.setVisible(false);
+		// remove from scenario
+		int removedPosition = indexOfView(view);
+		mScenarioPanel.remove(removedPosition);
+		// take care of the big (detailed) view
+		if (mCurrentSmallView != null && mCurrentSmallView.equals(view)) {
+			mCurrentBigView.setVisible(false);
+			mCurrentBigView = null;
+			mCurrentSmallView = null;
+		}
+		// compute the new number of pixels per scenario position
+		mTimeBar.scaleNumberOfPixelsPerPosition();
+		refresh();
+	} 
+"
+17,22407577,setTargetMap,modifiactor for the target map from the current configured settings,set the target map for the target map,"
+
+ public AntTargetMap setTargetMap() {
+        AntTargetMap targetMap = null;
+        String strDefaultTarget = null;
+        targetMap = m_buildfile.getTargetMap();
+        strDefaultTarget = m_buildfile.getDefaultTarget();
+
+        if (m_bSelectWithDescription) {
+            targetMap.selectWithDescription();
+
+        }
+        setTargetMap(targetMap);
+
+        return m_targetMap;
+    } 
+"
+21,50994916,setPhoto,set the jdai photo to display,set the photo to be displayed in the panel,"
+
+ public void setPhoto(JdaiPhoto photo) {
+		String text = null;
+		if (photo != null) {
+			label.setText("""""""");
+			try {
+				text = photo.getSection().getInfoStore().getCaption(photo);
+			} catch (JdaiReadException e) {
+				JdaiGuiHelpers.reportException(""""Unable to read caption"""", e);
+			}
+			if (text == null || text.equals(""""""""))
+				text = """"No caption set"""";
+		} else {
+			label.setIcon(null);
+		}
+		label.setToolTipText(text);
+		setNewPhoto(photo);
+	} 
+"
+108,22625582,setUrls,sets the value of urls and normalizes them,sets the urls to be used to construct the <UNK>,"
+
+ public void setUrls(String[] theUrls) throws IllegalStateException {
+		if (xmlProcessed)
+			throw new IllegalStateException(illegalPostProssingMsg);
+		
+		if(theUrls != null) {
+			this.urls = new String [theUrls.length];
+			for(int i = 0; i < theUrls.length; i++)
+				this.urls[i] = UrlHelper.normalize(theUrls[i]);
+		}
+		else
+			this.urls = urls;
+	} 
+"
+79,18421665,searchRecipe,this function searches a recipe starting with the recipe passed as parameter,this method is called when the voter loses the <UNK>,"
+
+ private Recipe searchRecipe (Recipe re) {
+		
+		Recipe recipe;
+		
+		for (IngredientAmount iam : re.getIngredients()) {
+			if (iam.getFood() instanceof Recipe) {
+				if ((Recipe)iam.getFood() == m_ActiveRecipe) {
+					return re;
+				} else {
+					recipe = searchRecipe ((Recipe) iam.getFood());
+					
+					if (recipe != null) {
+						return recipe;
+					}
+				}
+			}			
+		}		
+
+		return null;
+	} 
+"
+78,18420500,getUnitCombo,this method initializes m unit combo,this method initializes unit combo,"
+
+ private JComboBox getUnitCombo() {
+	if (m_UnitCombo == null) {
+			m_UnitCombo = new JComboBox();
+			m_UnitCombo.setBounds(87, 83, 125, 22);
+			m_UnitCombo.setModel(getUnitComboModel());
+            if (m_FreePara.getUnit() != null) {
+                m_UnitCombo.setSelectedItem(m_FreePara.getUnit());
+            }
+		}
+		return m_UnitCombo;
+	} 
+"
+36,29601536,getBackCommand2,returns an initiliazed instance of back command2 component,returns an initiliazed instance of back command2 component,"
+
+ public Command getBackCommand2() {
+        if (backCommand2 == null) {//GEN-END:|92-getter|0|92-preInit
+            // write pre-init user code here
+            backCommand2 = new Command(""""Back"""", Command.BACK, 0);//GEN-LINE:|92-getter|1|92-postInit
+        // write post-init user code here
+        }//GEN-BEGIN:|92-getter|2|
+        return backCommand2;
+    } 
+"
+126,1810081,onAttach,this method is called when a widget is attached to the browsers document,this method is called when the widget is attached to the browsers,"
+
+ protected void onAttach() {
+    if (attached)
+      return;
+
+    attached = true;
+
+    // Set the main element's event listener. This should only be set
+    // while the widget is attached, because it creates a circular
+    // reference between JavaScript and the DOM.
+    DOM.setEventListener(getElement(), this);
+
+    // Now that the widget is attached, call onLoad().
+    onLoad();
+  } 
+"
+87,19282261,countQuery,performs a query and returns the count of objects the criteria specified,counts the number of queries in the database,"
+
+ protected int countQuery(final Query query) throws PersistenceException {
+        if (query != null)
+        {
+            if (pride2Broker != null){
+                return pride2Broker.getCount(query);
+            }
+            else {
+                throw new PersistenceException(""""Query called on uninitialized PersistenceBroker"""", null);
+            }
+        }
+        else {
+            throw new PersistenceException(""""No query specified!"""", null);
+        }
+    } 
+"
+112,31203037,addToTechnicalComment,adds to the technical comment about this project,adds a technical comment to the technical comment list,"
+
+ public void addToTechnicalComment( final String add_to_technical_comment ) {
+        if ( getTechnicalComment() != null
+        &&   getTechnicalComment().length() > 0 ) {
+            setTechnicalComment( getTechnicalComment()
+                                 + """"\n"""" + add_to_technical_comment );
+        }
+        else {
+            setTechnicalComment( add_to_technical_comment );
+        }
+    } 
+"
+43,35553511,refreshTreePanel,refresh tree panel,refreshes the tree panel,"
+
+ public void refreshTreePanel() {
+
+		root.removeAllChildren();
+
+		root = new DefaultMutableTreeNode(""""ALL"""");
+		treeModel = new DefaultTreeModel(root);
+
+		tree.setModel(treeModel);
+		tree.setBounds(new Rectangle(0, 0, 196, 443));
+		tree.setLayout(null);
+		tree.setBackground(Color.white);
+
+		tree.setCellRenderer(new UserIconRenderer());
+
+		addAllUsers();
+
+		TreePath treePath = tree.getPathForRow(0);
+		tree.fireTreeExpanded(treePath);
+	} 
+"
+131,26215341,updateGain,set the volume,update the gain of the given position,"
+
+ private void updateGain() {
+      int pos=getValue();
+      int value = (int) (127 * (double) (pos / 100.0));
+      MidiChannel[] cs = synthesizer.getChannels();
+      for(int i=0;i<cs.length;i++) {
+	cs[i].controlChange(7,value);
+      }
+    } 
+"
+92,10222579,equals,indicates whether some other object is equal to this one,compares this selector with another object,"
+
+ public boolean equals(Object obj) {
+        if (obj == null || (obj.getClass() != getClass())) {
+            return false;
+        }
+        CSSConditionalSelectorImpl s = (CSSConditionalSelectorImpl)obj;
+        return (s.simpleSelector.equals(simpleSelector) &&
+                s.condition.equals(condition));
+    } 
+"
+97,4280405,getFiles,returns the files represented by the given fileset,returns a list of files that are included in the file,"
+
+ public List getFiles(FileSet fileSet) {
+        List files = new ArrayList();
+        String[] names = fileSet.getDirectoryScanner(project).getIncludedFiles();
+
+        for (int i = 0; i < names.length; i++) {
+            String name = names[i];
+            files.add(new File(fileSet.getDir(project), name));
+        }
+
+        return files;
+    } 
+"
+156,1782360,getImageWithSource,returns the first image found in the page with the specified src attribute,returns the image with the given source,"
+
+ public WebImage getImageWithSource( String source ) {
+        WebImage[] images = getImages();
+        for (int i = 0; i < images.length; i++) {
+            if (HttpUnitUtils.matches( source, images[i].getSource() )) return images[i];
+        }
+        return null;
+    } 
+"
+81,40865212,getBackCommand2,returns an initiliazed instance of back command2 component,returns an initiliazed instance of back command2 component,"
+
+ public Command getBackCommand2() {
+        if (backCommand2 == null) {//GEN-END:|233-getter|0|233-preInit
+            // write pre-init user code here
+            backCommand2 = new Command(""""OK"""", Command.BACK, 0);//GEN-LINE:|233-getter|1|233-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|233-getter|2|
+        return backCommand2;
+    } 
+"
+11,19413001,messageSent,listens for output of the command,this method is called when the user has been sent,"
+
+ public void messageSent(MessageEvent e) {
+        String str = e.getMessage();
+        if (str.endsWith(DIR_ADDED)) {
+            str = str.substring(DIRECTORY.length(), str.indexOf(DIR_ADDED)).trim();
+            createCvsFiles(str);
+        }
+        super.messageSent(e);
+    } 
+"
+86,19280843,getInstitutions,this method returns a collection or institution bean objects,returns a collection of <UNK>,"
+
+ public Collection getInstitutions() {
+        try {
+            if (iInstitutions == null) {
+                refreshInstitutions();
+                logger.debug(""""Institutions were null while getting them. Attempting to refresh."""");
+            }
+            return iInstitutions;
+        }
+        catch (Exception e) {
+            logger.warn(e.getMessage(), e);
+            return Collections.EMPTY_LIST;
+        }
+    } 
+"
+52,19498298,testOccThm,all other tests only check for occurrences in axioms,test <UNK> <UNK> <UNK> <UNK> <UNK>,"
+
+ public void testOccThm() throws Exception {
+
+		final IContextRoot context =
+				ResourceUtils.createContext(rodinProject, CTX_BARE_NAME, CST_1DECL_1REF_THM);
+
+		final IConstant cst1 = context.getConstant(INTERNAL_ELEMENT1);
+		final IDeclaration declCst1 = newDecl(cst1, CST1);
+		
+		final IAxiom thm = context.getAxiom(INTERNAL_ELEMENT1);
+		final IOccurrence occRef = makeRefPred(thm, 9, 13, declCst1);
+
+
+		final BridgeStub tk = new BridgeStub(context);
+
+		final ContextIndexer indexer = new ContextIndexer();
+
+		assertTrue(indexer.index(tk));
+
+		tk.assertOccurrencesOtherThanDecl(cst1, occRef);
+	} 
+"
+84,40879350,getOkCommand18,returns an initiliazed instance of ok command18 component,returns an initiliazed instance of ok <UNK> component,"
+
+ public Command getOkCommand18() {
+        if (okCommand18 == null) {//GEN-END:|728-getter|0|728-preInit
+            // write pre-init user code here
+            okCommand18 = new Command(""""LIQUIDEZ"""", Command.OK, 0);//GEN-LINE:|728-getter|1|728-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|728-getter|2|
+        return okCommand18;
+    } 
+"
+37,12723449,abstractMatrix3D,self modifying version of view dice,constructs and returns a new dice equal to the given dimensions,"
+ 
+ protected AbstractMatrix3D vDice(int axis0, int axis1, int axis2) {
+	super.vDice(axis0,axis1,axis2);
+	
+	// swap offsets
+	int[][] offsets = new int[3][];
+	offsets[0] = this.sliceOffsets;
+	offsets[1] = this.rowOffsets;
+	offsets[2] = this.columnOffsets;
+
+	this.sliceOffsets = offsets[axis0];
+	this.rowOffsets = offsets[axis1];
+	this.columnOffsets = offsets[axis2];
+
+	return this;
+} 
+"
+150,34105249,makeUniqueParagraphForGlobalWithLength,used to create a paragraph of unique words with varying lengths,make a new paragraph,"
+
+ public void makeUniqueParagraphForGlobalWithLength(String global, int length) {
+    String paragraph = """""""";
+    String word;
+    for (int x = 0; x < length; x++) {
+      word = makeUniqueStringForGlobalWithLength(global, (int)(Math.random() * 8) + 2);
+      paragraph += word + """" """";
+    }
+    utils.setGlobal(global, paragraph);
+  } 
+"
+90,43040436,init,initializes the class,initializes the <UNK>,"
+
+ private void init() throws CoreException {
+        final String name = getClassName();
+        final IPackageFragment pkg = getPackage();
+        final ICompilationUnit unit = pkg.createCompilationUnit(name + """".java"""", """""""", true, null);
+        setUp(unit);
+        createMainType(PUBLIC_KEYWORD, pkg.getElementName(), getClassName());
+    } 
+"
+130,36405409,appendDeclarations,p append declarations needed by the code note converter code to,p append declarations to a code <UNK> code,"
+
+ public void appendDeclarations(LaTeXDocumentPortion pack, LaTeXDocumentPortion decl) {
+        if (bContainsEndnotes) { pack.append(""""\\usepackage{endnotes}"""").nl(); }
+        if (bContainsFootnotes) convertFootnotesConfiguration(decl);
+        if (bContainsEndnotes) convertEndnotesConfiguration(decl);
+    } 
+"
+47,46026508,saveSetting,save settings to property file,save the settings to the property file,"
 
  private void saveSetting(CustomProperties prop) {
 		prop.setProperty(""""avalanchefever.gametype"""", mapSet);
@@ -159,26 +414,226 @@
 		prop.setProperty(""""avalanchefever.bigDisplay"""", bigDisplay);
 	} 
 "
-10,34413807,close,notifies all views to de register from their view controllers,closes the <UNK>,"
+128,20787007,store,stores a new element in the zip file with the given path,stores the given path into the file,"
 
- public void close(){
-		Tabpanel tempPanel = null;
-		View tempView = null;
-		List<?> list;
-		Enumeration<Tabbox> tabs = primaryTabMap.keys();
-		while (tabs.hasMoreElements())
-		{
-			list = tabs.nextElement().getTabpanels().getChildren();
-			Iterator<?> itr = list.iterator();
-			while(itr.hasNext()){
-				tempPanel = (Tabpanel)itr.next();
-				tempView = (View)tempPanel.getChildren().get(0);
-				tempView.deregisterView();
-			}
-		}
+ public void store(String path, InputStream stream) throws IOException {
+    toIgnore.add(normalizePath(path));
+    ZipEntry entry = new ZipEntry(path);
+    zipOutput.putNextEntry(entry);
+    IOUtils.copy(stream, zipOutput);
+    zipOutput.closeEntry();
+  } 
+"
+104,31696447,testNegativeParseCases,unit test 1 negative parse tests to make sure the parser detects,test that the parser correctly accepts a negative parse,"
+
+ public void  testNegativeParseCases() {
+    verbose(""""--->Negative parse tests  START"""");
+    for (int i = 0; i < negativeParseTests.length; i++) {
+      parseFilter(negativeParseTests[i], false);
+    }
+    
+    // 
+    // This used to fail until the parser was rewritten with the stack
+    // stuff so that it can clean up partially parsed expression trees.
+    checkDelete();
+
+  } 
+"
+91,34604973,deleteCascade,will delete algorithm and also references to it cascadely in tables,deletes all the rows in the database,"
+
+ public void deleteCascade(VyhladavaciAlgoritmus algorithm) {
+		//searcheds
+		getHibernateTemplate().bulkUpdate(
+		    	""""DELETE Searched WHERE algorithm = ?"""",
+		    	new Object[] { algorithm } );
+		//plans
+		getHibernateTemplate().bulkUpdate(
+		    	""""DELETE SearchPlan WHERE algorithm = ?"""",
+		    	new Object[] { algorithm } );
+		//prefs
+		getHibernateTemplate().bulkUpdate(
+		    	""""DELETE SearchPrefs WHERE algorithm = ?"""",
+		    	new Object[] { algorithm } );
+		//categories
+		getHibernateTemplate().bulkUpdate(
+		    	""""DELETE SearchCategory WHERE algorithm = ?"""",
+		    	new Object[] { algorithm } );
+		delete(algorithm);
 	} 
 "
-142,19344442,loadSystems,load the various systems from the db,loads the systems <UNK>,"
+157,48104729,clone,clone the format object,returns a clone of this code format code,"
+
+     public Object clone() {
+            Format result = new Format();
+
+            result.datatype = datatype;
+            result.datatypeID = datatypeID;
+            result.respectCase = respectCase;
+            result.gap = gap;
+            result.missing = missing;
+            result.labels = labels;
+            result.labelQuotes = labelQuotes;
+            result.transpose = transpose;
+            result.interleave = interleave;
+            result.diploid = diploid;
+            result.tokens = tokens;
+            result.symbols = symbols;
+            result.matchChar = matchChar;
+
+            return result;
+        } 
+"
+154,31789275,setGenJarDir,recursively walk the given project tree setting the gen jar dir,set the generation of the jar files,"
+
+ public void setGenJarDir(File genJarDir,SandProject proj) {
+        proj.getAntProject().setProperty(""""genJarDir"""",genJarDir.toString());
+        SandProject[] downstream=proj.getRequiredBy();
+        for(int i=0;i<downstream.length;i++) {
+            setGenJarDir(genJarDir,downstream[i]); }
+    } 
+"
+133,47570692,goToRegistration,brings the user to the registration dialog,this method is called when the user clicks the button,"
+
+ private void goToRegistration() {
+		m_logo.setVisible(false);
+		m_login.setText(""""Cancel"""");
+		m_userLabel.setLocation(16, 4);
+		m_username.setLocation(16, 24);
+		m_passLabel.setLocation(16, 52);
+		m_password.setLocation(16, 70);
+		m_confirmPass.setVisible(true);
+		m_confPassLabel.setVisible(true);
+		m_male.setVisible(true);
+		m_female.setVisible(true);
+		this.setTitle(""""Registration"""");
+	} 
+"
+74,33719118,testGetEvtIDs,test of get evt ids method of class com,test of get event ids method of class email <UNK>,"
+
+ public void testGetEvtIDs() {
+        System.out.println(""""getEvtIDs"""");
+        
+        Email_DBImpl instance = new Email_DBImpl();
+        
+        String[] expResult = null;
+        String[] result = instance.getEvtIDs();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail(""""The test case is a prototype."""");
+    } 
+"
+145,39120328,toString,p returns the string representation of this matcher,returns a string representation of this region,"
+
+ public String toString() {
+        StringBuffer sb = new StringBuffer();
+	sb.append(""""java.util.regex.Matcher"""");
+	sb.append(""""[pattern="""" + pattern());
+	sb.append("""" region="""");
+	sb.append(regionStart() + """","""" + regionEnd());
+        sb.append("""" lastmatch="""");
+        if ((first >= 0) && (group() != null)) {
+            sb.append(group());
+        }
+	sb.append(""""]"""");
+	return sb.toString();
+    } 
+"
+140,34425716,actionLoadNotes,called when the user selects to load the in game notes file,called when the user presses the load notes button,"
+
+ private void actionLoadNotes() {
+        enableUserActions(false);
+
+        // set focus, otherwise it gives focus to """"clear"""" >> scary/not wanted
+        multiSubmitButton.requestFocusInWindow();
+
+        resetSingleTextFields();
+        multipleGUIList.clearSelection();
+        multipleResources = loadNotesFile();
+        updateMultiList();
+        enableUserActions(true);
+    } 
+"
+15,29318894,getTargetServiceName,can be overridden by subclasses to customize how the wsa to header is,returns the target service name,"
+
+ protected String getTargetServiceName(AddressingHeaders headers) throws Exception {
+    To toURI = headers.getTo();
+    if (toURI == null) {
+      return null;
+    }
+    String to = toURI.getPath();
+    if (to == null) {
+      return null;
+    }
+    // set the target service
+    return (to.substring(to.lastIndexOf('/') + 1));
+  } 
+"
+99,48861766,addRelativeHeaders,add relative header,add a relative headers to the response,"
+
+ private void addRelativeHeaders(Response response, int timeInSeconds) {
+		response.setHeader(CACHE_CONTROL_HEADER, String.format(""""max-age=%d"""", timeInSeconds));
+		Calendar expires = Calendar.getInstance();
+		expires.add(Calendar.SECOND, timeInSeconds);
+		response.setHeader(""""Expires"""", DATE_FORMAT.format(expires));
+	} 
+"
+139,18929060,checkDescendantM,return true if member 2,checks if the member is a member of the join,"
+
+ public boolean checkDescendantM(Member aMember, Member dMember) {
+    mondrian.olap.Member monMember = ((MondrianMember) aMember).getMonMember();
+    mondrian.olap.Member monDesc = ((MondrianMember) dMember).getMonMember();
+    if (monDesc.isCalculatedInQuery() || monDesc.equals(monMember))
+      return false;
+    return monDesc.isChildOrEqualTo(monMember);
+  } 
+"
+55,19507735,testOneTwoThreeCreateCycle,ensures cycles are ignored,test the <UNK>,"
+
+ public void testOneTwoThreeCreateCycle() throws Exception {
+		IRodinFile ctx = createRodinFile(""""P/x.ctx"""");
+		createDependency(ctx, """"y"""");
+		createData(ctx, """"one"""");
+		ctx.save(null, true);
+		runBuilder();
+		
+		IRodinFile cty = createRodinFile(""""P/y.ctx"""");
+		createDependency(cty, """"x"""");
+		createData(cty, """"two"""");
+		cty.save(null, true);		
+		
+		IRodinFile ctz = createRodinFile(""""P/z.ctx"""");
+		createData(ctz, """"three"""");
+		ctz.save(null, true);
+	
+		runBuilder(
+				""""CSC extract /P/x.ctx"""",
+				""""CSC run /P/x.csc"""",
+				""""CSC extract /P/y.ctx"""",
+				""""CSC extract /P/z.ctx"""",
+				""""CSC run /P/z.csc""""
+		);
+	} 
+"
+142,34426756,makeCenter,helper method which creates and returns a canvas for images,create a center image canvas,"
+
+ private Component makeCenter() {
+        imageCanvas = new JPanel();
+        imageCanvas.addMouseListener(new MouseAdapter() {
+            @SuppressWarnings(""""synthetic-access"""")
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                actionImageMouse(e);
+            }
+        });
+
+        imageCanvas.add(new JLabel(new ImageIcon(
+                SWGFrame.class.getResource(""""images/swg.png""""))));
+
+        return new JScrollPane(imageCanvas);
+    } 
+"
+119,19344442,loadSystems,load the various systems from the db,loads the systems <UNK>,"
 
  private void loadSystems() {
 		int i, num;
@@ -209,192 +664,245 @@
 
 	} 
 "
-53,37563349,"""",returns a rectangle which represents the rectangular,returns the bounds of the receiver,"
+62,11950130,testGetCodigo,test of get codigo method of class proyectoventadepasajes,test of get codigo method of class com,"
 
-""
- 
- public Rectangle getBounds() {
-	if (isDisposed()) SWT.error(SWT.ERROR_GRAPHIC_DISPOSED);
-  java.awt.Rectangle bounds = handle.getBounds();
-  return new Rectangle((int)bounds.getX(), (int)bounds.getY(), (int)bounds.getWidth(), (int)bounds.getHeight());
-} 
+ public void testGetCodigo() {
+        System.out.println(""""getCodigo"""");
+        
+        Cronograma instance = null;
+        
+        String expResult = """""""";
+        String result = instance.getCodigo();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail(""""The test case is a prototype."""");
+    } 
 "
-132,17121898,compareTo,compares the tpoint object with other tpoint using timestamps first i,compares this object with the specified angle for order,"
+123,24245709,fetchString,internal helper function read a string from the device,fetch a string from the data store,"
 
- public int compareTo(TPoint o) {
-    if ((this.value == o.value()) && (this.tstamp == o.tstamp())) {
-      return 0;
-    }
-    else if (this.tstamp > o.tstamp) {
-      return 1;
-    }
-    else if (this.tstamp < o.tstamp) {
-      return -1;
-    }
-    else if (this.value > o.value) {
-      return 1;
-    }
-    return -1;
+ protected String fetchString(int register, int len) {
+		int ret = getData(register, byteBuff, 8);
+		char [] charBuff = new char[len];
+		for(int i=0;i<len;i++)
+			charBuff[i] = (byteBuff[i] == 0 ? ' ' : (char)byteBuff[i]);
+		return new String(charBuff, 0, len);
+	} 
+"
+105,22618655,getGlobalElements,gets the global elements attribute of the definition miner object,gets the global elements of the document,"
+
+ private void getGlobalElements(Document doc, File file) {
+		if (doc == null) {
+			return;
+		}
+		List list = doc.selectNodes(""""/xsd:schema/xsd:element"""");
+		for (Iterator iter = list.iterator(); iter.hasNext(); ) {
+			Element element = (Element) iter.next();
+			String name = element.attributeValue(""""name"""");
+			GlobalElement g = new GlobalElement(element, file);
+			// System.out.println (g.toString());
+			try {
+				globalDefMap.setValue(name, g);
+			}  catch (Exception e) {
+				prtln (e.getMessage());
+			}
+		}
+	} 
+"
+136,1694531,getUserNameFromCookie,get users name from cookie,get the user name from the cookie,"
+
+ private String getUserNameFromCookie() throws Exception {
+		String userName = null;
+		// get user name
+		Cookie[] cookies = servletRequest.getCookies();
+		for (int i = 0; i < cookies.length; i++) {
+			Cookie cookie = cookies[i];
+			if (cookie != null && cookie.getName().equals(""""platform.username"""")) {
+				String value = cookie.getValue();
+				userName = DesEncrypter.getInstance().decrypt(value);
+				break;
+			}
+		}
+
+		return userName;
+
+	} 
+"
+22,50995324,createCacheFile,write the scaled and rotated cache file for a photo,creates a cache file for the given photo,"
+
+ protected void createCacheFile(Photo photo, File photoCacheFile, PhotoDimension dimension) throws IOException {
+    OutputStream photoOS = new BufferedOutputStream(new FileOutputStream(photoCacheFile));
+    PhotoHelper.getInstance().writeUncachedThumbnail(photo, photoOS);
+    photoOS.close();
   } 
 "
-124,22622479,getStatusFlagFields,gets the status flag input fields from the input manager,gets the status of the given list,"
+64,26285656,testValidateSeparationCount,test validate separation count,test that the separation count works properly,"
 
- private List getStatusFlagFields() {
-		List list = new ArrayList();
-		String statusFlagPath = """"/collectionConfigRecord/statusFlags/statusFlag/status"""";
-		for (Iterator i = im.getInputFields().iterator(); i.hasNext(); ) {
-			InputField field = (InputField) i.next();
-			// prtln (field.toString());
-			if (field.getNormalizedXPath().startsWith(statusFlagPath)) {
-				list.add(field);
-			}
-		}
-		return list;
-	} 
-"
-3,22907997,removeRedundantOperations,optimize the list of files to remove by discarding redundant operations like,removes redundant operations from the list of forbidden ones,"
-
- private void removeRedundantOperations(OBEXElement file, List<OBEXElement> filesToRemove) {
-        OBEXElement parentFolder = file;
-        log.debug(""""Removing redundant operations"""");
-
-        while ((parentFolder = parentFolder.getParent()) != null) {
-
-            if (filesToRemove.contains(parentFolder)) {
-                filesToRemove.remove(file);
-                file = parentFolder;
-            }
+ public void testValidateSeparationCount() {
+        try {
+            LinearDimension.validateSeparationCount(0);
+            fail();
+        } catch (IllegalArgumentException ex) {
+            // ok
         }
+
+        try {
+            LinearDimension.validateSeparationCount(-2);
+            fail();
+        } catch (IllegalArgumentException ex) {
+            // ok
+        }
+
+        LinearDimension.validateSeparationCount(1);
+        LinearDimension.validateSeparationCount(2988);
     } 
 "
-19,22407577,setTargetMap,modifiactor for the target map from the current configured settings,set the target map for the target map,"
+115,26493872,resolveValue,utility methods that resolve the value passed with for the given context,resolve the value of the given string,"
 
- public AntTargetMap setTargetMap() {
-        AntTargetMap targetMap = null;
-        String strDefaultTarget = null;
-        targetMap = m_buildfile.getTargetMap();
-        strDefaultTarget = m_buildfile.getDefaultTarget();
-
-        if (m_bSelectWithDescription) {
-            targetMap.selectWithDescription();
-
-        }
-        setTargetMap(targetMap);
-
-        return m_targetMap;
-    } 
-"
-114,4280405,getFiles,returns the files represented by the given fileset,returns a list of files that are included in the file,"
-
- public List getFiles(FileSet fileSet) {
-        List files = new ArrayList();
-        String[] names = fileSet.getDirectoryScanner(project).getIncludedFiles();
-
-        for (int i = 0; i < names.length; i++) {
-            String name = names[i];
-            files.add(new File(fileSet.getDir(project), name));
-        }
-
-        return files;
-    } 
-"
-111,39233866,testInvoke,test if we can invoke a given service,test the invoke method of the servlet,"
-
- public void testInvoke() throws Exception {
-        transport.setRemoteService(""""TravelProcess"""");
-
-        call.setOperation(""""initiate"""");
-        call.addParameter(""""x"""", XMLType.XSD_STRING, ParameterMode.IN);
-        call.setReturnType(XMLType.XSD_STRING);
-
-        String result = (String) call.invoke(new Object[] { """"anything"""" });
-
-        assertEquals(DUMMY_RESULT, result);
-    } 
-"
-82,16958722,indexToLetter,converts the given integer into a character for the coordinate system,returns the index of the given letter,"
-
- public String indexToLetter(int index) {
-		if (index == 0)
-			return """"a"""";
-		else if (index == 1)
-			return """"b"""";
-		else if (index == 2)
-			return """"c"""";
-		else if (index == 3)
-			return """"d"""";
-		else if (index == 4)
-			return """"e"""";
-		else if (index == 5)
-			return """"f"""";
-		else if (index == 6)
-			return """"g"""";
-		else if (index == 7)
-			return """"h"""";
-		else if (index == 8)
-			return """"i"""";
-		else if (index == 9)
-			return """"j"""";
-		else
-			return null;
-	} 
-"
-131,31203138,setAdditionalSeqsOids,this sets or replaces the additional sequences oids in this project,set the additional oids oids,"
-
- public void setAdditionalSeqsOids( int[] add_seq_oids ) {
-
-        _add_seq_oids = new ArrayList();
-
-        if ( add_seq_oids == null ) {
-            return;
-        }
-
-        for ( int i = 0; i < add_seq_oids.length; ++i ) {
-            addAdditionalSeqsOid( add_seq_oids[ i ] );
-        }
-
-    } // setAddSegsOids( int[] ) 
-42843931, 	public FieldContent put(Item item){
-			FieldContent old_field = this.content;
-			
-			if (item.getUid() == this.content.getItem().getUid()) {
-				if (content.getItem().isStackable()){ 
-					this.content = new InventoryStack(content.getItem(), content.getCount()+1);
-					return null;
-				} else {this.content = new InventoryItem(item); return old_field;}
-			} else {
-				this.content = new InventoryItem(item); return old_field;
-			}
-		} 
-"
-175,18251847,addDbArgs,adds jailer cli arguments for db connection,add a new connection to the database,"
-
- public void addDbArgs(List<String> args) {
-		args.add(currentConnection.driverClass);
-		args.add(currentConnection.url);
-		args.add(currentConnection.user);
-		args.add(currentConnection.password);
-		if (currentConnection.jar1.trim().length() > 0) {
-			args.add(""""-jdbcjar"""");
-			args.add(currentConnection.jar1.trim());
-		}
-		if (currentConnection.jar2.trim().length() > 0) {
-			args.add(""""-jdbcjar2"""");
-			args.add(currentConnection.jar2.trim());
-		}
-	} 
-"
-185,1782360,getImageWithSource,returns the first image found in the page with the specified src attribute,returns the image with the given source,"
-
- public WebImage getImageWithSource( String source ) {
-        WebImage[] images = getImages();
-        for (int i = 0; i < images.length; i++) {
-            if (HttpUnitUtils.matches( source, images[i].getSource() )) return images[i];
-        }
+ protected String resolveValue(MagnetContext aContext, String aValue) throws RenderingException {
+    try {
+      if (aValue == null) {
         return null;
+      } else {
+        TemplateElementIF aTemplate = _theTemplateFactory.parse(aValue);
+        return aTemplate.render(aContext);
+      }
+    } catch (TemplateException te) {
+      throw new RenderingException(""""Unable to resolve the value """" + aValue, te);
+    }
+  } 
+"
+89,43040209,addErrors,adds the given error for the given property,adds a new error to the list of errors,"
+
+ public void addErrors(String el, IErrorDescription... error) {
+        final IErrorDescription[] msg = errors.get(el);
+        // we expect that the main scenario is to add only once errors per property...
+        errors.put(el, msg == null ? error : merge(msg, error));
     } 
 "
-71,47479282,getAllSourceRoots,returns all of the source roots specified in the source bundle providing,returns all the source roots of the given plugin,"
+33,16777940,readFromFile,ask a file for the username and password,reads the data from the file,"
+
+  private void readFromFile() {
+      try {
+         FileReader fr = new FileReader(this.credentials);
+         BufferedReader br = new BufferedReader(fr);
+         this.username = br.readLine();
+         this.password = br.readLine();
+         br.close();
+         fr.close();
+      }
+      catch (Exception e) {
+         this.username = """""""";
+         this.password = """""""";
+      }
+   } 
+"
+71,33718481,testGetEmail,test of get email method of class tools,test of get email method of class org,"
+
+ public void testGetEmail() {
+        System.out.println(""""getEmail"""");
+        
+
+        
+        String expResult = """""""";
+        String result = instance.getEmail();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+      //  fail(""""The test case is a prototype."""");
+    } 
+"
+152,45929468,getRelFeedItems,feed feed item,get the feed item feed item,"
+
+ public List getRelFeedItems(FeedItem feedItem) {
+		final int feedId = feedItem.getFeed().getFeedId();
+		final String sql = """"select * from T_FeedItem where FEED_ID ="""" + feedId;
+		return getPagedListByNativeSQL(FeedItem.class, sql, """" id desc"""", 1, 20);
+	} 
+"
+29,2896279,print,returns a string representation of this regular expression,print a string to the content of the tab,"
+
+ public String print(String tab) {
+    if (content instanceof RegExp) {
+      return tab+""""type = """"+type+Out.NL+tab+""""content :""""+Out.NL+((RegExp)content).print(tab+""""  """");
+    }
+    else
+      return tab+""""type = """"+type+Out.NL+tab+""""content :""""+Out.NL+tab+""""  """"+content;
+
+  } 
+"
+85,27907979,atomToExpression,returns the expression for inserting or selecting the atom,converts an atom to an expression,"
+
+ private String atomToExpression(Atom atom, String name) {
+
+		String expr = name + """" = """";
+		
+		if (atom instanceof BooleanAtom) {
+			BooleanAtom booleanAtom = (BooleanAtom) atom;
+			try {
+				if(booleanAtom.getBooleanValue())
+					expr += """"'T'"""";
+				else
+					expr += """"'F'"""";
+			} catch (InvalidStateException e) {
+				throw new Error(""""Thing in invalid boolean state"""");
+			}
+		}
+			
+		else if (atom instanceof TextAtom)
+			expr += """"'"""" + atom.getValue() + """"'"""";
+		else
+			expr += atom.getValue();
+
+		return expr;
+	} 
+"
+73,33719117,testSetChkEvtID,test of set chk evt id method of class com,test of set chk evt id method of class <UNK>,"
+
+ public void testSetChkEvtID() {
+        System.out.println(""""setChkEvtID"""");
+        
+        String ChkEvtID = """""""";
+        Email_DBImpl instance = new Email_DBImpl();
+        
+        instance.setChkEvtID(ChkEvtID);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail(""""The test case is a prototype."""");
+    } 
+"
+38,12725774,actionPerformed,group select or deselct on all selected rows,invoked when an action occurs,"
+
+ public void actionPerformed(ActionEvent e) {
+		int[] selectedRows = features.getSelectedRows();
+		if (selectedRows.length > 0) {
+			boolean valueToBeSet = ((Boolean) features.getValueAt(
+					selectedRows[0], 0)).booleanValue();
+			for (int i = 0; i < selectedRows.length; ++i) {
+				features.setValueAt(new Boolean(!valueToBeSet),
+						selectedRows[i], 0);
+			}
+		}
+	} 
+"
+7,20950900,load,loads the image from a file,loads the locked file,"
+
+ private void load(LockedFile file) throws SQLIOException {
+		file.setPosition(POS_HEADER);
+
+		byte[] buffer = new byte[BASE_HEADER_SIZE];
+		file.read(buffer, 0, BASE_HEADER_SIZE);
+
+		type = buffer[POS_TYPE];
+		lastUpdate = decode3Date(buffer, POS_LAST_UDPATE);
+		recordsNum = DbfUtils.decodeLittleUint16(buffer, POS_RECORDS_NUM);
+		recordSize = DbfUtils.decodeLittleUint16(buffer, POS_RECORD_SIZE);
+		headerSize = DbfUtils.decodeLittleUint16(buffer, POS_HEADER_SIZE);
+
+		verifyAndFixHeader(file);
+	} 
+"
+56,47479282,getAllSourceRoots,returns all of the source roots specified in the source bundle providing,returns all the source roots of the given plugin,"
 
  public Set getAllSourceRoots(String pluginName, Version pluginVersion) {
 		Set pluginSourceRoots = new HashSet();
@@ -408,79 +916,308 @@
 		return pluginSourceRoots;
 	} 
 "
-151,20787007,store,stores a new element in the zip file with the given path,stores the given path into the file,"
+164,35061399,leaveAll,generate events to leave all components vertex edge or cell,leaves the <UNK> of the mouse event,"
 
- public void store(String path, InputStream stream) throws IOException {
-    toIgnore.add(normalizePath(path));
-    ZipEntry entry = new ZipEntry(path);
-    zipOutput.putNextEntry(entry);
-    IOUtils.copy(stream, zipOutput);
-    zipOutput.closeEntry();
-  } 
-"
-38,48023365,evaluatePopulation,this method evaluates the given population passed as,evaluates the population of a population,"
-
- public void evaluatePopulation (IntegerTypePopulation population, Simulation simulation, Object[] object){
-		
-		IntegerTypePopulation intPopulation = (IntegerTypePopulation) population;
-		
-		for (int i = 0; i < intPopulation.getChromossomesSet().size(); i++){
-			
-			intPopulation.getChromossomesSet().get(i).setFitness(this.calculateFitness(simulation.getChromossomesConfiguration(), intPopulation, i));
-			
-		}
-		
-		
+ private void leaveAll( MouseEvent<? extends EventHandler> event ) {
+		LocInfo locInfo = new LocInfo();
+		assert( !locInfo.isVertexLocValid() );
+		assert( !locInfo.isVerticalEdgeLocValid() );
+		assert( !locInfo.isHorizontalEdgeLocValid() );
+		assert( !locInfo.isCellLocValid() );
+		handleLeaveEvents( locInfo, event );
+		lastLocInfo.copy( locInfo );
 	} 
 "
-9,34413723,openNewContainerWindow,open a window to start the import process,opens a new container window,"
+153,31788771,addUIDeployment,add a sand uideployment to our list of uis for this project,adds a <UNK> to the <UNK> rack,"
 
- 	public boolean openNewContainerWindow(String containerName, String containerDescription){
-			//if name is blank, disable use default option
-			NewContainerImportWindow window;
-			if(containerName.equals("""""""")){
-				window = new NewContainerImportWindow();
-			}
-			else{
-				window = new NewContainerImportWindow(containerName,containerDescription);
-			}
-			window.setParent(OrganiserView.this);
-			try{
-				window.doModal();
-			}
-			catch(InterruptedException ie){
-				ie.printStackTrace(System.err);
-			}
-			if(doImport){
-				importer.setContainerName(window.getName());
-				importer.setContainerDescription(window.getDescription());
-			}
-			return doImport;
-		} 
-"
-56,23014476,addRotation,adds a rotation to this matrix,adds a rotation to the matrix,"
-
- public void addRotation(Vector3f axis, Angle rotation) {
-        Quaternion q = new Quaternion(rotation, axis);
-        Matrix result = new Matrix(4, 4);
-        Matrix quaternion = q.getRotationMatrix();
-       
-        Matrix.multiply(matrix,q.getRotationMatrix(), result);
-        matrix = result;
+ public void addUIDeployment(SandUIDeployment uidep) {
+        SandUIDeployment[] olduis=getSandUIDeployments();
+        SandUIDeployment[] newuis=new SandUIDeployment[olduis.length+1];
+        System.arraycopy(olduis,0,newuis,0,olduis.length);
+        newuis[olduis.length]=uidep;
+        setSandUIDeployments(newuis);
     } 
 "
-90,33719118,testGetEvtIDs,test of get evt ids method of class com,test of get event ids method of class email <UNK>,"
+167,34609355,getFastestGenerator,returns the fastest generator for the given language,returns the <UNK> generator for the specified locale,"
 
- public void testGetEvtIDs() {
-        System.out.println(""""getEvtIDs"""");
+ public WordFormGenerator getFastestGenerator(final Locale locale) throws MorphologyException {
+        if (locale == null) {
+            throw new IllegalArgumentException(""""The 'loc' argument cannot be null."""");
+        }
+        WordFormGenerator component = (WordFormGenerator) fastestGenerators.get(locale);
+        if (component == null) {
+            throw new MorphologyException(""""Cannot find generator for locales : """" + locale.toString());
+        }
+        return component;
+    } 
+"
+48,40776207,process,notifies the client that the worker is ready to receive calls to other,process a worker,"
+
+ public void process(WorkerIsReadyMessageHandle handle, ServiceManager serviceManager) {
+		WorkerIsReadyProcessorRequestTO to = new WorkerIsReadyProcessorRequestTO();
+		ServiceID workerID = serviceManager.getSenderServiceID();
+		
+		to.setWorkerAddress(workerID.toString());
+		to.setWorkerContainerID(workerID.getContainerID().toString());
+		
+		OurGridRequestControl.getInstance().execute(to, serviceManager);
+	} 
+"
+32,41287529,play,start running the simulation from either a stopped or paused state,play the current state,"
+
+ public void play(){
+        if(currentState == SimulatorState.STOPPED){
+            setSimulationTime(0);
+            simItem.initialize();
+            startTimer();
+            setState(SimulatorState.PLAYING);
+        }
+        else if(currentState == SimulatorState.PAUSED){
+            startTimer();
+            setState(SimulatorState.PLAYING);
+        }
+    } 
+"
+116,26494825,resolve,returns a list of advices contained in the group corresponding to this,resolve the given <UNK> defs,"
+
+ public List resolve(Map defs) throws ConfigurationException {
+    if(_id == null) {
+      throw new ConfigurationException(
+          """"'id' attribute not set on advice group reference"""");
+    }
+
+    Group group = (Group) defs.get(_id);
+
+    if(group == null) {
+      throw new ConfigurationException(""""No advice group matches ID: """" + _id);
+    }
+
+    return group.getAdvices();
+  } 
+"
+162,250694,getCollaborateCollection,returns the list of collaborate collections for the given user id,get a list of <UNK>,"
+
+ public List getCollaborateCollection(String userID) throws AccessException {
+		logger.debug(""""entering getCollaborateCollection()"""");
+		String query = """"SELECT collection.PID PID, collection.TITLE TITLE, """"
+				+ """" collectionrole.ROLE ROLE FROM collectionrole, collection WHERE """"
+				+ """" collectionrole.USERID = '"""" + userID + """"'""""
+				+ """" AND collectionrole.COLLECTIONPID = collection.PID""""
+				+ """" AND collection.ROOT = '1'"""";
+		List list = buildResult(query);
+		return list;
+	} 
+"
+25,49866815,createChecklistItem,creates a checklist item for the specified list,create a new checklist item,"
+
+ public long createChecklistItem(long listId, String item, boolean isDone) {
+    ContentValues values = new ContentValues();
+    values.put(KEY_LIST_ID, listId);
+    values.put(KEY_IS_DONE, isDone);
+    values.put(KEY_ITEM, item);
+    return mDb.insert(CHECKLIST_ITEM_TBL, null, values);
+  } 
+"
+0,27798254,pluginRegistryContains,tests if plugin is in registry,checks if the plugin registry contains the given plugin,"
+
+ public boolean pluginRegistryContains(String pluginName) {
+        synchronized (registry) {
+            Iterator iter;
+            for (iter = registry.iterator(); iter.hasNext();) {
+                PluginRegistryNode node = (PluginRegistryNode)iter.next();
+                if (node.plugin.getName().equals(pluginName)) return true;
+            }
+        }
+        return false;
+    } 
+"
+109,22626628,toString,provides a string representataion for this dir info,returns a string representation of this object,"
+
+ public String toString() {
+		StringBuffer ret = new StringBuffer();
+		ret.append(""""format: """");
+		ret.append(format);
+		ret.append("""" directory: """");
+		Object[] attributeKeys = attributes.keySet().toArray();
+		for (int i = 0; i < attributeKeys.length; i++)
+			ret.append(""""\n attribute: """" + attributeKeys[i].toString());
+		return ret.toString();
+	} 
+"
+163,51577053,addPKColumn,adds a primarykey column,this method was created in visual age,"
+
+ public void addPKColumn(String aPKColName) throws IllegalArgumentException {
+        Column col = (Column) colMap.get(aPKColName);
+        if (col == null) {
+            throw new IllegalArgumentException (""""The column |"""" + aPKColName
+                    + """"| does not belong to the table |"""" + name + """"|"""");
+        }
+        pkColumns.add(col);
+    } 
+"
+23,14477536,go,shake hands with the server,sends a message to the server,"
+
+ public void go(String theUserName) {
+		try {
+			new ChatUI((MessageInputReceiver) this, theUserName);
+
+			// shake hands
+			writer.println(theUserName);
+			writer.flush();
+			// OK means init with server went well
+			if (reader.readLine().equals(""""OK"""")) {
+				initialized = true;
+				readChat();
+			} else {
+				bailOut(new IOException(""""handshake failed""""));
+			}
+		} catch (IOException ioe) {
+			bailOut(ioe);
+		} catch (Exception e) {
+			bailOut(e);
+		}
+	} 
+"
+54,19507414,testMoveRFWithNullContainer,ensures that a rodin file cannot be moved to a null container,test the move method,"
+
+ public void testMoveRFWithNullContainer() throws CoreException {
+		IRodinFile rfSource = createRodinFile(""""/P/X.test"""");
+		try {
+			rfSource.move(null, null, null, false, null);
+		} catch (IllegalArgumentException iae) {
+			return;
+		}
+		assertTrue(""""Should not be able to move a rf to a null container"""", false);
+	} 
+"
+46,50891793,testSetExample,test of set example method of class com,test of set example method of class pl,"
+
+ public void testSetExample() {
+        System.out.println(""""testSetExample"""");
+        testString = """"<tag:foo>\n"""";
+        testString += """"\t<tag:bar />"""";
+        testString += """"</tag:foo>"""";
+        tag.setExample(testString);
+        assertEquals( tag.getExample(), testString );
+    } 
+"
+59,11759898,markStart,marks the start of the interval,mark the start of the timer,"
+
+ public void markStart(Object tag) {
+		synchronized (pair2startTimeMap) {
+			pair2startTimeMap.put(tag, clock.getCurrentTime());
+			// FIXME it probably makes more sense to run the garbage collection
+			// periodically instead of allocating the timer every time
+			Timer removalTimer = clock.createNewTimer();
+			removalTimer.addTimerListener(new GarbageCollectionTimerListener(tag));
+			removalTimer.schedule(Time.inMilliseconds(maxWait));
+		}
+	} 
+"
+165,1118165,modifyRoleInCache,role user cache resource cache,modify the role in cache,"
+
+ public void modifyRoleInCache(Role role, String orgRolename) {
+		Set users = role.getUsers();
+		for (Iterator iter = users.iterator(); iter.hasNext();) {
+			User user = (User) iter.next();
+			userDetailsInCache(user);
+		}
+
+		for (Iterator iter = role.getRescs().iterator(); iter.hasNext();) {
+			Resource resource = (Resource) iter.next();
+			resourceDetailsInCache(resource);
+		}
+	} 
+"
+18,1412807,capitalizeString,capitalizes the first letter of each word,<UNK> the first letter of the given string,"
+
+ public String capitalizeString(String s) {
+        String result = """""""";
         
-        Email_DBImpl instance = new Email_DBImpl();
+        for(int i = 0; i < s.length(); i++) {
+            if(i == 0 || s.substring(i-1, i).equals("""" """"))
+                result += s.substring(i, i + 1).toUpperCase();
+            else
+                result += s.substring(i, i + 1);
+                
+        }
         
-        String[] expResult = null;
-        String[] result = instance.getEvtIDs();
-        assertEquals(expResult, result);
+        return result;
+    } 
+"
+132,43303607,iconify,iconify the given frame,<UNK> the <UNK> frame,"
+
+ public void iconify(final Frame frame) {
+        Point loc = getIconifyLocation(frame);
+        if (loc != null) {
+            mouseMove(frame, loc.x, loc.y);
+        }
+        invokeLater(frame, new Runnable() {
+            public void run() {
+                frame.setState(Frame.ICONIFIED);
+            }
+        });
+    } 
+"
+121,19346491,checkSetLayout,checks layout set correctly,check the layout for the field,"
+
+ private void checkSetLayout(int layout, String field) {
+
+        filter.setLayoutIndex(layout);
+        assertEquals(""""The layout Index was """" + filter.getLayoutIndex()
+                + """" and not """" + layout, layout, filter.getLayoutIndex());
+
+        String fld = fieldList.getValueAt(1, 0).toString();
+        assertEquals(""""Expected field '"""" + field + """"' but got """" + fld,
+                field, fld);
+    } 
+"
+88,50026101,getRemoteObject,return a reference to a remote object,get the remote object,"
+
+ public DBusInterface getRemoteObject(String objectpath) throws DBusException {
+    if (null == objectpath) { throw new DBusException(_(""""Invalid object path: null"""")); }
+
+    if (!objectpath.matches(OBJECT_REGEX) || (objectpath.length() > MAX_NAME_LENGTH)) { throw new DBusException(
+        _(""""Invalid object path: """") + objectpath); }
+
+    return dynamicProxy(objectpath);
+  } 
+"
+76,33719869,testSetWelcomeMsg,test of set welcome msg method of class com,test of set welcome msg method of class <UNK>,"
+
+ public void testSetWelcomeMsg() {
+        System.out.println(""""setWelcomeMsg"""");
+        
+        String welcomeMsg = """""""";
+        SystemClient_DBImpl instance = new SystemClient_DBImpl();
+        
+        instance.setWelcomeMsg(welcomeMsg);
         
         // TODO review the generated test code and remove the default call to fail.
         fail(""""The test case is a prototype."""");
+    } 
+"
+12,4627680,updateSchema,update an already existent user schema,updates the schema to the specified schema,"
+
+ public void updateSchema(String kind, SchemaTO schemaTO) {
+        try {
+            restTemplate.postForObject(baseURL
+                    + """"schema/"""" + kind + """"/update"""", schemaTO, SchemaTO.class);
+        } catch (SyncopeClientCompositeErrorException e) {
+            LOG.error(""""While updating a user schema"""", e);
+        }
+    } 
+"
+24,39840471,testCookieGreaterThan,verify the value stored in a cookie using code greater than tag code,test cookie greater than,"
+
+ public void testCookieGreaterThan() throws ServletException,  JspException {
+        GreaterThanTag gt = new GreaterThanTag();
+        gt.setPageContext(pageContext);
+        gt.setCookie(COOKIE_KEY);
+        gt.setValue(LESSER_VAL);
+
+        assertTrue(
+        	""""Cookie Value ("""" + GREATER_VAL + """") is greater than value ("""" + LESSER_VAL + """")"""", 
+        	gt.condition());
     } 
 "
