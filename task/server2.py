@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 ### STIMULI 
 arr = list(range(0, 5)) # list of indices 
-#arr = list(range(0, 203))
+#arr = list(range(0, 203)) # looking at all stimuli for testing purposes
 writing_stimuli = pd.read_csv('./stimuli/writing_stimuli.csv') # stimuli --> snippets of code
 reading_stimuli = pd.read_csv('./stimuli/reading_stimuli.csv') # stimuli --> snippets of code
 
@@ -239,8 +239,7 @@ def reading():
         return render_template('reading.html', code=code, summary=random.choice([human_summary, ai_summary]), percent=percent) 
         
 if __name__ == "__main__":
-    global starttime # FIXME - get delta time
-    # trying to connect to eyetracker
+    
     try:
         my_eyetracker = eye_tracker_setup()
         my_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, tobii_data_callback, as_dictionary=True)
