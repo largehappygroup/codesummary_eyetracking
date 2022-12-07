@@ -1,10 +1,8 @@
 import os
 import csv
-import time
 import pandas as pd
 import tobii_research as tr
-from flask import Flask, render_template, url_for, request
-from flask import redirect, url_for
+from flask import Flask, render_template, request
 import random
 from datetime import datetime
 
