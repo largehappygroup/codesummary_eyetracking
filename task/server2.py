@@ -9,8 +9,8 @@ from datetime import datetime
 app = Flask(__name__)
 
 ### STIMULI 
-arr = list(range(0, 5)) # list of indices 
-#arr = list(range(0, 168)) # looking at all stimuli for testing purposes
+#arr = list(range(0, 5)) # list of indices 
+arr = list(range(0, 168)) # looking at all stimuli for testing purposes
 writing_stimuli = pd.read_csv('./stimuli/writing_stimuli.csv') # stimuli --> snippets of code
 reading_stimuli = pd.read_csv('./stimuli/reading_stimuli.csv') # stimuli --> snippets of code
 
@@ -116,8 +116,8 @@ def instructions():
     print("first task:", participant.first_task)
     
     task = Task_Progress()
-    temp_arr = arr
-    #random.Random(pid).shuffle(temp_arr) # random seeds for participants' task order
+    temp_arr = arr 
+    random.Random(pid).shuffle(temp_arr) # random seeds for participants' task order
     task.shuffled_arr = temp_arr
 
     print("shuffled task:", task.shuffled_arr)
