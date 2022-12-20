@@ -28,8 +28,18 @@
 <form action="/writing" method="POST" enctype="multipart/form-data">
     <div class="parent"
         <div id="col-a">
-            <code><textarea readonly class="form-control" id="code" 
-            style="font-size:18px;" rows="40" cols="30">{{code}}</textarea></code>
+            <textarea readonly class="form-control" id="code" 
+            style="font-size:18px;" rows="40" cols="30">{{code}}</textarea>
+            <script> var code = CodeMirror.fromTextArea(document.getElementById("code"),
+                    {
+                        mode: "text/x-java",
+                        lineNumbers: true,
+                        matchBrackets: true,
+                        smartIndent: true,
+                        indentUnit: 6
+                    }
+                    );
+            </script>
         </div>
         <div id="col-b">
             <p align="center"><strong>Please write a summary describing what 
