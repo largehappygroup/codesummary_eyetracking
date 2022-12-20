@@ -117,7 +117,7 @@ def instructions():
     
     task = Task_Progress()
     temp_arr = arr 
-    random.Random(pid).shuffle(temp_arr) # random seeds for participants' task order
+    # random.Random(pid).shuffle(temp_arr) # random seeds for participants' task order
     task.shuffled_arr = temp_arr
 
     print("shuffled task:", task.shuffled_arr)

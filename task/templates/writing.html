@@ -28,15 +28,15 @@
 <form action="/writing" method="POST" enctype="multipart/form-data">
     <div class="parent"
         <div id="col-a">
-            <textarea readonly class="form-control" id="code" 
-            style="font-size:18px;" rows="40" cols="30">{{code}}</textarea>
+            <code><textarea readonly class="form-control" id="code" 
+            style="font-size:18px;" rows="40" cols="30">{{code}}</textarea></code>
             <script> var code = CodeMirror.fromTextArea(document.getElementById("code"),
                     {
                         mode: "text/x-java",
                         lineNumbers: true,
                         matchBrackets: true,
                         smartIndent: true,
-                        indentUnit: 6
+                        indentUnit: "4"
                     }
                     );
             </script>

@@ -14,6 +14,16 @@
 
         <div id="col-a">
             <code><textarea readonly class="form-control" id="code" style="font-size:18px;" rows="40" cols="30">{{code}}</textarea></code>
+            <script> var code = CodeMirror.fromTextArea(document.getElementById("code"),
+                    {
+                        mode: "text/x-java",
+                        lineNumbers: true,
+                        matchBrackets: true,
+                        smartIndent: true,
+                        indentUnit: 8
+                    }
+                    );
+            </script>
         </div>
         <div id="col-b">
             <p align="center"><strong>Summary</strong></p>
