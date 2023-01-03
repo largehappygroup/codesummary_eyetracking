@@ -4,3 +4,20 @@ participant_id,function_name,function_id,key_pressed,timestamp
 participant_id,function_name,function_id,key_pressed,timestamp
 participant_id,function_name,function_id,key_pressed,timestamp
 participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+000,setTopAttributes,22628734,[,2023-01-02 20:04:10.000188
+000,joinTableRender,18252350,[,2023-01-02 20:09:14.822805
+000,asMap,22624602,[,2023-01-02 20:19:18.466181
+000,createServerChooser,35553791,[,2023-01-02 20:20:17.779589
+000,addDbArgs,18251847,[,2023-01-02 20:23:36.859097
+000,documentLoadingCompleted,3934822,[,2023-01-02 20:24:46.497261
+000,rectangle,37563349,[,2023-01-02 20:30:33.010868
+000,rectangle,37563349,F,2023-01-02 20:30:33.139604
+000,getRodinDBStatus,19505695,[,2023-01-02 20:34:45.006573
+000,getRodinDBStatus,19505695,[,2023-01-02 20:34:50.168646
+000,searchRecipe,18421665,[,2023-01-02 21:13:59.389896
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
