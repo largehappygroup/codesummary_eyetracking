@@ -14,7 +14,7 @@
             });
         });
     }
-</script>
+</script
 <div class="progress">
     <div id='progressBar' class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0"
         aria-valuemax="100">
@@ -25,10 +25,11 @@
 
 {% block body %}
 
+
 <form action="/writing" method="POST" enctype="multipart/form-data">
     <div class="parent"
         <div id="col-a">
-            <code><textarea readonly class="form-control" id="code" 
+            <code><textarea readonly class="form-control withClientRectsOverlay" id="code" 
             style="font-size:18px;" rows="40" cols="30">{{code}}</textarea></code>
             <script> var code = CodeMirror.fromTextArea(document.getElementById("code"),
                     {

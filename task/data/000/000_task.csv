@@ -645,3 +645,7 @@ participant_id,function_name,function_id,task,summary,how_accurate,missing_info,
 000,getConnectionPanel,20687719,writing,,,,
 000,moveUpTarget,37762493,writing,,,,
 000,draw,7848915,writing,,,,
+participant_id,function_name,function_id,task,summary,how_accurate,missing_info,unnecessary_info
+000,setSecurityMode,38737384,writing,,,,
+000,setTopAttributes,22628734,writing,,,,
+participant_id,function_name,function_id,task,summary,how_accurate,missing_info,unnecessary_info
