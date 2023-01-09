@@ -24,3 +24,106 @@ participant_id,function_name,function_id,key_pressed,timestamp
 participant_id,function_name,function_id,key_pressed,timestamp
 000,joinTableRender,18252350,[,2023-01-05 13:40:09.195272
 participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+000,setSecurityMode,38737384,,2023-01-07 16:03:58.552572
+000,setSecurityMode,38737384,,2023-01-07 16:03:58.701542
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+000,setSecurityMode,38737384,[,2023-01-07 22:34:06.589724
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+000,setSecurityMode,38737384,[,2023-01-07 22:36:59.415142
+participant_id,function_name,function_id,key_pressed,timestamp
+000,createServerChooser,35553791,[,2023-01-07 22:47:57.247437
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+000,connectionErrorOccurred,26412118,[,2023-01-07 23:59:24.466639
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+000,setTopAttributes,22628734,[,2023-01-08 00:19:48.207484
+000,setNamedItem,1810886,[,2023-01-08 08:50:37.942839
+000,update,46106919,[,2023-01-08 08:57:01.571851
+000,visitRetStmt,13482891,[,2023-01-08 09:33:55.757197
+participant_id,function_name,function_id,key_pressed,timestamp
+000,setTopAttributes,22628734,[,2023-01-08 09:41:04.343541
+000,compareTo,17121898,[,2023-01-08 09:44:03.917774
+000,getClassNameForLookAndFeel,19218425,[,2023-01-08 09:54:14.904886
+000,genIdents,29854794,,2023-01-08 09:55:54.867589
+000,genIdents,29854794,,2023-01-08 09:55:54.870241
+000,genIdents,29854794,I,2023-01-08 09:55:54.980500
+000,genIdents,29854794,,2023-01-08 09:55:56.813223
+000,genIdents,29854794,,2023-01-08 09:55:56.817409
+000,genIdents,29854794,I,2023-01-08 09:55:57.125183
+000,genIdents,29854794,[,2023-01-08 09:55:57.782778
+000,genIdents,29854794,,2023-01-08 09:55:57.782938
+000,genIdents,29854794,I,2023-01-08 09:55:57.893003
+000,genIdents,29854794,,2023-01-08 09:56:11.988489
+000,genIdents,29854794,[,2023-01-08 09:56:11.991280
+000,genIdents,29854794,I,2023-01-08 09:56:12.125819
+000,addDbArgs,18251847,[,2023-01-08 09:57:22.191910
+000,testDeleteFornecedor,33793341,[,2023-01-08 10:07:13.648480
+000,getNAGString,43137003,[,2023-01-08 10:11:48.606648
+000,showLatestPlan,18418213,[,2023-01-08 10:14:43.407159
+000,rectangle,37563349,[,2023-01-08 10:16:01.591754
+000,rectangle,37563349,[,2023-01-08 10:16:07.017779
+000,doOutput,26501411,[,2023-01-08 10:16:12.596564
+000,saveCRCReply,43419611,[,2023-01-08 10:22:09.971647
+000,init,34413808,[,2023-01-08 10:22:26.113870
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+000,tellAgain,18912425,[,2023-01-08 10:57:38.364832
+000,createServerChooser,35553791,[,2023-01-08 11:05:00.952639
+000,createServerChooser,35553791,[,2023-01-08 11:05:16.423727
+000,createServerChooser,35553791,[,2023-01-08 11:05:26.023312
+participant_id,function_name,function_id,key_pressed,timestamp
+000,setSecurityMode,38737384,,2023-01-08 11:17:58.184576
+000,setSecurityMode,38737384,[,2023-01-08 11:17:58.184767
+000,setSecurityMode,38737384,I,2023-01-08 11:17:58.256575
+000,connectionErrorOccurred,26412118,[,2023-01-08 11:29:37.117202
+000,connectionErrorOccurred,26412118,,2023-01-08 11:29:40.731764
+000,connectionErrorOccurred,26412118,[,2023-01-08 11:29:40.738133
+000,connectionErrorOccurred,26412118,I,2023-01-08 11:29:41.168981
+000,tellAgain,18912425,,2023-01-08 11:30:15.972027
+000,tellAgain,18912425,[,2023-01-08 11:30:15.974382
+000,tellAgain,18912425,I,2023-01-08 11:30:16.138672
+000,asMap,22624602,,2023-01-08 11:32:40.594070
+000,asMap,22624602,[,2023-01-08 11:32:40.596745
+000,asMap,22624602,I,2023-01-08 11:32:40.755982
+participant_id,function_name,function_id,key_pressed,timestamp
+000,setSecurityMode,38737384,],2023-01-08 20:41:08.123682
+000,setSecurityMode,38737384,,2023-01-08 20:41:08.126275
+000,setSecurityMode,38737384,I,2023-01-08 20:41:08.838203
+000,setTopAttributes,22628734,,2023-01-08 20:43:07.715566
+000,setTopAttributes,22628734,],2023-01-08 20:43:07.715765
+000,setTopAttributes,22628734,I,2023-01-08 20:43:08.039026
+000,joinTableRender,18252350,,2023-01-08 20:46:23.477942
+000,joinTableRender,18252350,],2023-01-08 20:46:23.480571
+000,joinTableRender,18252350,I,2023-01-08 20:46:24.022827
+000,compareTo,17121898,],2023-01-08 20:47:04.325818
+000,compareTo,17121898,,2023-01-08 20:47:04.390393
+000,compareTo,17121898,I,2023-01-08 20:47:04.752115
+000,setNamedItem,1810886,[,2023-01-08 20:48:17.838047
+000,setNamedItem,1810886,,2023-01-08 20:48:17.840970
+000,setNamedItem,1810886,I,2023-01-08 20:48:17.905998
+000,wndPreferences,38184555,,2023-01-08 20:49:23.862956
+000,wndPreferences,38184555,,2023-01-08 20:49:23.885735
+000,wndPreferences,38184555,I,2023-01-08 20:49:24.050413
+000,wndPreferences,38184555,,2023-01-08 20:49:24.864566
+000,wndPreferences,38184555,[,2023-01-08 20:49:24.867488
+000,wndPreferences,38184555,I,2023-01-08 20:49:24.941417
+000,createGraphModel,27802185,[,2023-01-08 21:00:09.216450
+000,getEffect,47571922,[,2023-01-08 21:18:37.864434
