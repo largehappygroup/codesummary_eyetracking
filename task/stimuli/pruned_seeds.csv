@@ -1,7 +1,7 @@
 fid,name,ref,attendgru,function
 38737384,setSecurityMode,public method to set the security level,set the security mode for the security,"
 
-public int setSecurityMode (int level, String authToken) throws RemoteException {
+public int setSecurityMode ( int level, String authToken ) throws RemoteException {
     if ( !this.authToken.equals( authToken )){
         throw new RemoteException( ""Invalid Login Token"" );
     }
@@ -15,7 +15,7 @@ public int setSecurityMode (int level, String authToken) throws RemoteException 
 
 private void setTopAttributes( Attributes from ) {
     for ( int i = 0; i < from.getLength(); i++ ) {
-        topMenu.setAttribute( from.getLocalName( I ), from.getValue( i ) );
+        topMenu.setAttribute( from.getLocalName( i ), from.getValue( i ) );
         topMenu.setAttribute( from.getQName( i ), from.getValue( i ) );
     }
 } 
@@ -246,7 +246,7 @@ public GraphModel createGraphModel ( List includedNodes ) {
     num_models++;
     System.out.println( ""PGraphModel: creating a new non-super graphmodel: "" + num_models );
 
-    GraphModel model =  new PGraphModel( ""Phoebe""+num_models, getModelSubSet( includedNodes ));
+    GraphModel model =  new PGraphModel( ""Phoebe"" + num_models, getModelSubSet( includedNodes ));
     getCommunity().add( model );
     //return new PGraphModel( ""Phoebe"" + num_models, getModelSubSet( includedNodes ));
 
@@ -480,7 +480,7 @@ private void saveCRCReply( ClientRemoteContainerReply crcReply ) {
 34413808,init,method to handle initialisation tasks,initializes the internal data structures,"
 
 private void init() {
-    _innerData = Collections.synchronizedMap(new LinkedHashMap< String, Object >());
+    _innerData = Collections.synchronizedMap( new LinkedHashMap< String, Object >() );
     Iterator< Entry < String, Object >> itr = _srcModel.entrySet().iterator();
 
     while( itr.hasNext() ){
@@ -639,7 +639,7 @@ public void moveUpTarget( int index ) {
     log.debug( ""New ordering"" );
 
     for ( int i = 0; i < targets.size(); i++ ) {
-        log.debug( ""\t"" + i + targets.get( i ));
+        log.debug( ""|t"" + i + targets.get( i ));
     }
 } 
 "
@@ -770,8 +770,8 @@ private String readResponse( InputStream stream ) {
         line = null;
     }
     while ( line != null ) {
-        if (!line.trim().equals( """" )) {
-            if ( sb.length() > 0 ) sb.append( ""\n"" );
+        if ( !line.trim().equals( """" ) ) {
+            if ( sb.length() > 0 ) sb.append( ""|n"" );
             sb.append( line );
         }
         try {
@@ -873,7 +873,7 @@ public EList getScopePartnerLinks( final EObject process ) {
 "
 40778768,configBalanceRanking,load balances from the ranking file and configure the timer to save,<UNK> the <UNK> to the <UNK>,"
 
-private void configBalanceRanking( List<IResponseTO> responses, String filePath ) {	
+private void configBalanceRanking( List< IResponseTO > responses, String filePath ) {	
     PeerDAOFactory.getInstance().getAccountingDAO().loadBalancesRanking( filePath );
     long frequence = AccountingConstants.RANKING_SAVING_FREQ;
 
@@ -908,7 +908,7 @@ public String getMessage() {
 
             if ( o != null ) {
                 sb.append( o.toString() );
-                sb.append( ""\n"" );
+                sb.append( ""|n"" );
             }
         }
     }
@@ -918,11 +918,11 @@ public String getMessage() {
 49121415,createDataset,creates a sample dataset,creates a dataset for a series,"
 
 private XYDataset createDataset( double[] values, String name ) {
-    // create dataset 1‚Ä¶
+    // create dataset 1
     final XYSeries series = new XYSeries( name );
         
     for( int i = 0; i<values.length; i++ ){
-        series.add( i,values[ i ] );
+        series.add( i, values[ i ] );
     }  
     final XYSeriesCollection collection = new XYSeriesCollection();
     collection.addSeries( series );
@@ -937,7 +937,7 @@ private void initOptionsMenu( JMenuBar bar ) {
     optionsMenu.setMnemonic( KeyEvent.VK_O );
 
     optionsMenu.add( optionsSWGCraftMenuItem() );
-    optionsMenu.setEnabled( true );
+    optionsMenu.setEnabled( true );
     bar.add( optionsMenu );
 } 
 "
@@ -954,13 +954,13 @@ public Cursor openCursor( Context context, String selection, String[] selectionA
 
 public void listen() throws IOException {
     logMessage( ""Server started at "" + this.getHostname() + "":"" + this.getPort() );
-    while ( true ) {
+    while ( true ) {
         Socket socket = serverSocket.accept();
         logMessage( socket.getInetAddress().getCanonicalHostName() + ""has made a connection !"" );
         logMessage( ""Creating new listener"" );
         ListenThread task = new ListenThread( socket, this );
         logMessage( ""Adding new totemcontrolcomhandler"" );
-        addHandlers( task );
+        addHandlers( task );
         Thread listener = new Thread( task );
         logMessage( ""Starting new thread"" );
         listener.run();
@@ -985,7 +985,7 @@ private JMenu getMenuAdministracion() {
     if ( menuAdministracion == null ) {
         menuAdministracion = new JMenu();
         menuAdministracion.setText( Messages.getString( ""gui.GUI.57"" )); //$NON-NLS-1$
-        menuAdministracion.setIcon(new ImageIcon( ""data/icons/package_system.png"" )); //$NON-NLS-1$
+        menuAdministracion.setIcon( new ImageIcon( ""data/icons/package_system.png"" )); //$NON-NLS-1$
         menuAdministracion.add( getMenuItemAdminUsuarios() );
         menuAdministracion.add( getMenuItemAdminResorces() );
     }
@@ -999,7 +999,7 @@ private void setButtonText() {
     try {
         Course tmpCourse = ( Course )menuItem;
 
-        if(tmpCourse.getCourseType() == Course.FIRST_COURSE) {
+        if ( tmpCourse.getCourseType() == Course.FIRST_COURSE ) {
             txt = ""1st: "" + txt;
         } else {
             txt = ""2nd: "" + txt;
@@ -1017,9 +1017,9 @@ private void jbInit() throws Exception {
 
     add( m_environmentpanel,
         new GridBagConstraints( 0, 0, 1, 1, 1.0, 1.0,
-                               GridBagConstraints.CENTER,
-                      GridBagConstraints.HORIZONTAL,
-                                  new Insets( 0, 0, 0, 0 ), 0, 0 ));
+                          GridBagConstraints.CENTER,
+                          GridBagConstraints.HORIZONTAL,
+                          new Insets( 0, 0, 0, 0 ), 0, 0 ));
 } 
 "
 34413723,openNewContainerWindow,open a window to start the import process,opens a new container window,"
@@ -1145,7 +1145,7 @@ public void exportXVRL( XMLStreamWriter xvrLDoc ) throws Exception{
     m.setProperty( Marshaller.JAXB_FORMATTED_OUTPUT, true );
     ValidationReport vReport = exportVReport();
 
-    if ( vReport!=null ) m.marshal( vReport, xvrLDoc );
+    if ( vReport != null ) m.marshal( vReport, xvrLDoc );
 } 
 "
 27801498,setBinWidth,sets the bin width and repaints,sets the bin width of the bin,"
@@ -1195,9 +1195,9 @@ private void addDigit( char digit ) {
 "
 47571713,saveToFile,save the move sets to a file,save the file to the file,"
 
-public void saveToFile(File f) {
+public void saveToFile( File f ) {
     try {
-        FileOutputStream file = new FileOutputStream(f);
+        FileOutputStream file = new FileOutputStream( f );
         saveToFile( file );
         file.close();
     } catch ( FileNotFoundException e ) {
@@ -1461,7 +1461,7 @@ protected int countQuery( final Query query ) throws PersistenceException {
 
 public void addToTechnicalComment( final String add_to_technical_comment ) {
     if ( getTechnicalComment() != null && getTechnicalComment().length() > 0 ) {
-        setTechnicalComment( getTechnicalComment() + ""\n"" + add_to_technical_comment );
+        setTechnicalComment( getTechnicalComment() + ""|n"" + add_to_technical_comment );
     }
     else {
         setTechnicalComment( add_to_technical_comment );
@@ -1474,7 +1474,7 @@ public void refreshTreePanel() {
     root.removeAllChildren();
 
     root = new DefaultMutableTreeNode( ""ALL"" );
-    treeModel = new DefaultTreeModel( root );
+    treeModel = new DefaultTreeModel( root );
     tree.setModel( treeModel );
     tree.setBounds( new Rectangle( 0, 0, 196, 443 ));
     tree.setLayout( null );
@@ -1490,8 +1490,8 @@ public void refreshTreePanel() {
 26215341,updateGain,set the volume,update the gain of the given position,"
 
 private void updateGain() {
-    int pos=getValue();
-    int value = ( int ) ( 127 * ( double ) ( pos / 100.0 ));
+    int pos = getValue();
+    int value = (int) ( 127 * ( double ) ( pos / 100.0 ));
     MidiChannel[] cs = synthesizer.getChannels();
 
     for( int I = 0; I < cs.length; i++ ) {
@@ -1546,7 +1546,7 @@ public Command getBackCommand2() {
 "
 19413001,messageSent,listens for output of the command,this method is called when the user has been sent,"
 
-public void messageSent(MessageEvent e) {
+public void messageSent( MessageEvent e ) {
     String str = e.getMessage();
 
     if ( str.endsWith( DIR_ADDED )) {
@@ -1664,7 +1664,7 @@ private void saveSetting( CustomProperties prop ) {
 20787007,store,stores a new element in the zip file with the given path,stores the given path into the file,"
 
 public void store( String path, InputStream stream ) throws IOException {
-    toIgnore.add( normalizePath( path ));
+    toIgnore.add( normalizePath( path ));
     ZipEntry entry = new ZipEntry( path );
     zipOutput.putNextEntry( entry );
     IOUtils.copy( stream, zipOutput );
@@ -1703,7 +1703,7 @@ public void deleteCascade( VyhladavaciAlgoritmus algorithm ) {
     getHibernateTemplate().bulkUpdate(
         ""DELETE SearchCategory WHERE algorithm = ?"",
 		                    new Object[] { algorithm });
-    delete(algorithm);
+    delete( algorithm );
 } 
 "
 48104729,clone,clone the format object,returns a clone of this code format code,"
@@ -1734,8 +1734,9 @@ public void setGenJarDir( File genJarDir,SandProject proj ) {
     proj.getAntProject().setProperty( ""genJarDir"", genJarDir.toString() );
     SandProject[] downstream = proj.getRequiredBy();
 
-    for( int i=0; i<downstream.length; i++ ) {
-        setGenJarDir( genJarDir, downstream[ i ]); }
+    for( int i=0; i < downstream.length; i++ ) {
+        setGenJarDir( genJarDir, downstream[ i ]); 
+    }
 } 
 "
 47570692,goToRegistration,brings the user to the registration dialog,this method is called when the user clicks the button,"
@@ -1856,10 +1857,10 @@ public void testOneTwoThreeCreateCycle() throws Exception {
     ctz.save( null, true );
 	
     runBuilder( ""CSC extract /P/x.ctx"",
-                             ""CSC run /P/x.csc"",
-                        ""CSC extract /P/y.ctx"",
-                        ""CSC extract /P/z.ctx"",
-                              ""CSC run /P/z.csc"");
+                    ""CSC run /P/x.csc"",
+                ""CSC extract /P/y.ctx"",
+                ""CSC extract /P/z.ctx"",
+                     ""CSC run /P/z.csc"");
 } 
 "
 34426756,makeCenter,helper method which creates and returns a canvas for images,create a center image canvas,"
@@ -2197,7 +2198,7 @@ public void process( WorkerIsReadyMessageHandle handle, ServiceManager serviceMa
     ServiceID workerID = serviceManager.getSenderServiceID();
 		
     to.setWorkerAddress( workerID.toString() );
-    to.setWorkerContainerID( workerID.getContainerID().toString() );\	
+    to.setWorkerContainerID( workerID.getContainerID().toString() );	
     OurGridRequestControl.getInstance().execute( to, serviceManager );
 } 
 "
@@ -2240,7 +2241,7 @@ public List getCollaborateCollection( String userID ) throws AccessException {
             + "" collectionrole.USERID = '"" + userID + ""'""
             + "" AND collectionrole.COLLECTIONPID = collection.PID""
             + "" AND collection.ROOT = '1'"";
-    List list = buildResult( query );
+    List list = buildResult( query );
     return list;
 } 
 "
@@ -2278,7 +2279,7 @@ public String toString() {
     Object[] attributeKeys = attributes.keySet().toArray();
 
     for ( int i = 0; i < attributeKeys.length; i++ )
-        ret.append( ""\n attribute: "" + attributeKeys[ i ].toString() );
+        ret.append( ""|n attribute: "" + attributeKeys[ i ].toString() );
     return ret.toString();
 } 
 "
@@ -2311,7 +2312,7 @@ public void go( String theUserName ) {
             bailOut( new IOException( ""handshake failed"" ));
         }
     } catch ( IOException ioe ) {
-        bailOut( ioe );
+        bailOut( ioe );
     } catch ( Exception e ) {
         bailOut( e );
     }
@@ -2333,8 +2334,8 @@ public void testMoveRFWithNullContainer() throws CoreException {
 
 public void testSetExample() {
     System.out.println( ""testSetExample"" );
-    testString = ""<tag:foo>\n"";
-    testString += ""\t<tag:bar />"";
+    testString = ""<tag:foo>|n"";
+    testString += ""|t<tag:bar />"";
     testString += ""</tag:foo>"";
     tag.setExample( testString );
     assertEquals( tag.getExample(), testString );
@@ -2348,7 +2349,7 @@ public void markStart( Object tag ) {
         // FIXME it probably makes more sense to run the garbage collection
         // periodically instead of allocating the timer every time
         Timer removalTimer = clock.createNewTimer();
-        removalTimer.addTimerListener(new GarbageCollectionTimerListener( tag ));
+        removalTimer.addTimerListener( new GarbageCollectionTimerListener( tag ));
         removalTimer.schedule( Time.inMilliseconds( maxWait ));
     }
 } 
@@ -2358,7 +2359,7 @@ public void markStart( Object tag ) {
 public void modifyRoleInCache( Role role, String orgRolename ) {
     Set users = role.getUsers();
 
-    for (Iterator iter = users.iterator(); iter.hasNext(); ) {
+    for ( Iterator iter = users.iterator(); iter.hasNext(); ) {
         User user = ( User ) iter.next();
         userDetailsInCache( user );
     }
