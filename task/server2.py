@@ -4,7 +4,6 @@ import random
 import pandas as pd
 import tobii_research as tr
 from datetime import datetime
-#from selenium import webdriver
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
