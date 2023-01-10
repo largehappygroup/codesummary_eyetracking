@@ -21,23 +21,16 @@
         <script> $("#progressBar").css("width", "{{ percent }}%"); </script>
     </div>
 </div>
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 {% endblock %}
 
 {% block body %}
-<div id="capture">
 <form action="/writing" method="POST" enctype="multipart/form-data">
     <div class="parent" id="test">
         <div id="col-a">
             <code><textarea readonly class="form-control" id="code" 
-            style="font-size:18px; white-space: pre-wrap;" rows="30" cols="30">{{code}}</textarea></code>
+            style="font-size:18px; white-space: pre-wrap;" rows="35" cols="30">{{code}}</textarea></code>
         </div>
-        <svg position="relative" width="61" float="left"> 
-            <foreignObject x="0" y="0" position="relative" width="61" float="left">
-                <code><textarea readonly class="form-control" id="code" 
-                    style="font-size:18px; white-space: pre-wrap;" rows="30" cols="30">{{code}}</textarea></code>
-            </foreignObject>
-        </svg>
+
         <div id="col-b">
             <p align="center"><strong>Please write a summary describing what 
                 the function to the left is doing.</strong></p>
@@ -49,22 +42,6 @@
         </div>
     </div>
 </form>
-</div>
 
-<script>
-    var c = document.getElementById("myCanvas");
-    var ctx = c.getContext("2d");
-    ctx.fillText(code)
-    document.body.appendChild(c)
-</script>
-<script>
-    html2canvas(document.querySelector("#col-a")).then(canvas => {
-        var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-        image.white_space = "pre-wrap";
-        image.overflow_wrap = "break-word";
-        console.log(image);
-        
-    });
-</script>
 {% endblock %}
 

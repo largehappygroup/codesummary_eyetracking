@@ -138,9 +138,6 @@ def writing():
         task.current_task = "writing"
 
     task.i += 1 # preincrementing because can't increment after return render template
-    #driver = webdriver.Chrome
-    #driver.get('http://127.0.0.1:8181/writing')
-    #driver.get_screenshot_as_file(str("test{}.png" % task.i))
     if task.i == len(arr)+1: # end of writing stimuli has been reached
         fid = writing_stimuli.iloc[arr[task.i-2], 1] # identifying info for current function
         func_name = writing_stimuli.iloc[arr[task.i-2], 2]
@@ -169,15 +166,6 @@ def writing():
         task.progress = task.progress + (1/(len(arr)))*50 # incrementing progress
         percent = task.progress
         return render_template('writing.html', code=writing_stimuli.iloc[arr[task.i-1], 5], percent=percent)
-
-
-#@app.route('/writing/takescreenshot', methods=['GET', 'POST'])
-#def writing_screenshot():
-#    driver = webdriver.Chrome
-#    current_screen = request.args.get('url')
-#    driver.get(current_screen)
-#    driver.get_screenshot_as_file("test.png")
-#    driver.quit()
 
 # Recording keystrokes during writing task
 # Communicates with HTML function in writing.html
@@ -249,10 +237,6 @@ def reading():
         return render_template('reading.html', code=code, summary=random.choice([human_summary, ai_summary]), percent=percent) 
         
         
-@app.route('/reading/takescreenshot', methods=['POST', 'GET'])
-def reading_screenshot():
-    pass
-
 if __name__ == "__main__":
     
     try:
