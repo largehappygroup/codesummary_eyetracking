@@ -1790,3 +1790,8 @@ participant_id,function_name,function_id,task,summary,how_accurate,missing_info,
 000,iconify,43303607,writing,,,,
 000,getNAGString,43137003,writing,,,,
 000,setSecurityMode,38737384,writing,,,,
+participant_id,function_name,function_id,task,summary,how_accurate,missing_info,unnecessary_info
+000,documentLoadingCompleted,3934822,writing,,,,
+000,appendDeclarations,36405409,writing,,,,
+000,resolve,26494825,writing,,,,
+000,testNegativeParseCases,31696447,writing,,,,
