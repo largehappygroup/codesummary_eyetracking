@@ -90,7 +90,7 @@ def tobii_data_callback(gaze_data):
     elif task.current_task == "reading":
             fid = reading_stimuli.iloc[arr[task.j-1], 1]
             func_name = reading_stimuli.iloc[arr[task.j-1], 2]
-    gaze_file = "{root}_{func}_{fid}.csv".format(root=f_gaze_root, func=func_name, fid=fid)
+    gaze_file = "{root}_{func}.csv".format(root=f_gaze_root, func=func_name)
     print("gaze file name", gaze_file)
     print("func name", func_name)
 
