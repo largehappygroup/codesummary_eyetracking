@@ -68,7 +68,7 @@ def eye_tracker_setup():
     return my_eyetracker
 
 def tobii_data_callback(gaze_data):
-    global arr, task, participant, writing_stimuli, reading_stimuli, f_gaze_root
+    global arr, task, participant, writing_stimuli, reading_stimuli, f_gaze_root, gaze_file
     # Print gaze points of left and right eye
     system_timestamp = gaze_data['system_time_stamp']
     device_timestamp = gaze_data['device_time_stamp']
@@ -148,6 +148,9 @@ def writing():
             cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None])
         if task.first_task_done: # if participant has already done reading task, they've finished the experiment
             task.progress = 0 # resetting progress for next participant
+            f_keystrokes.close() # closing all the files
+            gaze_file.close()
+            f_task.close()
             return render_template('goodbye.html')
         else: # halfway through
             task.first_task_done = True 
@@ -209,6 +212,9 @@ def reading():
             cw.writerow([str(participant.pid), func_name, fid, "reading", None, accurate, missing, unnecessary])
         if task.first_task_done:
             task.progress = 0
+            f_keystrokes.close()
+            gaze_file.close()
+            f_task.close()
             return render_template('goodbye.html')
         else:
             task.first_task_done = True
