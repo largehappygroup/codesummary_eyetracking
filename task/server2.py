@@ -148,9 +148,10 @@ def writing():
             cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None])
         if task.first_task_done: # if participant has already done reading task, they've finished the experiment
             task.progress = 0 # resetting progress for next participant
-            f_keystrokes.close() # closing all the files
-            gaze_file.close()
-            f_task.close()
+            try:
+                my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
+            except:
+                UnboundLocalError("WARNING: no eyetracker, but experiment has ended")
             return render_template('goodbye.html')
         else: # halfway through
             task.first_task_done = True 
@@ -194,7 +195,7 @@ def rest():
 # FIXME - center likert scale buttons
 @app.route('/reading', methods=['POST'])
 def reading(): 
-    global arr, task, participant, reading_stimuli
+    global arr, task, participant, reading_stimuli, my_eyetracker
     if task.current_task != "reading":
         task.current_task = "reading"
         
@@ -212,9 +213,10 @@ def reading():
             cw.writerow([str(participant.pid), func_name, fid, "reading", None, accurate, missing, unnecessary])
         if task.first_task_done:
             task.progress = 0
-            f_keystrokes.close()
-            gaze_file.close()
-            f_task.close()
+            try:
+                my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
+            except:
+                UnboundLocalError("WARNING: no eyetracker, but experiment has ended")
             return render_template('goodbye.html')
         else:
             task.first_task_done = True
@@ -243,6 +245,7 @@ def reading():
         
         
 if __name__ == "__main__":
+    global my_eyetracker
     
     try:
         my_eyetracker = eye_tracker_setup()
@@ -252,7 +255,3 @@ if __name__ == "__main__":
     
     # start server
     app.run(host='0.0.0.0', port=8181, debug = True)
-    try:
-        my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
-    except:
-        UnboundLocalError("WARNING: no eyetracker, but experiment has ended")
