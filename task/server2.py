@@ -11,6 +11,9 @@ app = Flask(__name__)
 ### STIMULI 
 #arr = list(range(0, 5)) # list of indices 
 arr = list(range(0, 167)) # looking at all stimuli for testing purposes
+writing_arr = list(range(0, 15)) # 60%
+reading_arr = list(range(0, 27)) # 60%
+
 writing_stimuli = pd.read_csv('./stimuli/writing_stimuli.csv') # stimuli --> snippets of code
 reading_stimuli = pd.read_csv('./stimuli/reading_stimuli.csv') # stimuli --> snippets of code
 
@@ -23,7 +26,7 @@ class Participant_Info():
 class Task_Progress():
     i = 0 # incrementer for writing task
     j = 0 # incrementer for reading task
-    shuffled_arr = [] # basically a copy of arr, but shuffling this doesn't affect arr
+    #shuffled_arr = [] # basically a copy of arr, but shuffling this doesn't affect arr
     current_task = None
     progress = 0 # incremented as participant continues with task
     first_task_done = False
@@ -80,8 +83,6 @@ def tobii_data_callback(gaze_data):
     valid_right_eye_pd = gaze_data['right_pupil_validity']
     pd_left = gaze_data['left_pupil_diameter']
     pd_right = gaze_data['right_pupil_diameter']
-    # FIXME - how many stimuli to use
-    # about 45s for reading, 1m for writing, break time for calibration
     # FIXME - restart progress if they quit in the middle
     # FIXME - check how bad the drifting is
     if task.current_task == "writing":
@@ -108,19 +109,29 @@ def welcome():
 # instructions at the beginning of the experiment
 @app.route('/instructions', methods=['POST'])
 def instructions():
-    global task, participant
+    global task, participant, writing_arr, reading_arr
     pid = request.form['pid'] # getting pid from HTML
     participant = Participant_Info() # creating object for participant and task progress
     participant.pid = pid
     participant.first_task = random.Random(pid).choice(['reading', 'writing']) # random choice whether reading/writing is first
     print("first task:", participant.first_task)
     
+    variable_writing = random.Random(pid).sample(range(15, 75), 10)
+    variable_reading = random.Random(pid).sample(range(27, 94), 18)
+    writing_arr = writing_arr + variable_writing
+    reading_arr = reading_arr + variable_reading
+    
     task = Task_Progress()
-    temp_arr = arr 
-    # random.Random(pid).shuffle(temp_arr) # random seeds for participants' task order
-    task.shuffled_arr = temp_arr
-
-    print("shuffled task:", task.shuffled_arr)
+    #temp_arr = arr 
+    #random.Random(pid).shuffle(temp_arr) # random seeds for participants' task order
+    random.Random(pid).shuffle(writing_arr)
+    random.Random(pid).shuffle(reading_arr)
+    #task.shuffled_arr = temp_arr
+    print("after shuffling")
+    print("writing", writing_arr)
+    print("reading", reading_arr)
+    
+    #print("shuffled task:", task.shuffled_arr)
     make_files(pid) # and make folder/files for each participant
     
     if participant.first_task == "writing":
@@ -132,14 +143,14 @@ def instructions():
 # writing task
 @app.route('/writing', methods=['POST'])
 def writing():
-    global arr, task, participant
+    global writing_arr, task, participant
     if task.current_task != "writing":
         task.current_task = "writing"
 
     task.i += 1 # preincrementing because can't increment after return render template
-    if task.i == len(arr)+1: # end of writing stimuli has been reached
-        fid = writing_stimuli.iloc[arr[task.i-2], 1] # identifying info for current function
-        func_name = writing_stimuli.iloc[arr[task.i-2], 2]
+    if task.i == len(writing_arr)+1: # end of writing stimuli has been reached
+        fid = writing_stimuli.iloc[writing_arr[task.i-2], 1] # identifying info for current function
+        func_name = writing_stimuli.iloc[writing_arr[task.i-2], 2]
         task.i = 0 # resetting writing incrementer
         summary = request.form['summary'] # summary written by participant
 
@@ -160,24 +171,24 @@ def writing():
     else:
         if task.i > 1: # on first trial, participant won't have written a summary
             summary = request.form.get('summary')
-            fid = writing_stimuli.iloc[arr[task.i-2], 1]
-            func_name = writing_stimuli.iloc[arr[task.i-2], 2]
+            fid = writing_stimuli.iloc[writing_arr[task.i-2], 1]
+            func_name = writing_stimuli.iloc[writing_arr[task.i-2], 2]
             with open(f_task, 'a+') as ft:
                 cw = csv.writer(ft)
                 cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None])
 
-        task.progress = task.progress + (1/(len(arr)))*50 # incrementing progress
+        task.progress = task.progress + (1/(len(writing_arr)))*50 # incrementing progress
         percent = task.progress
-        return render_template('writing.html', code=writing_stimuli.iloc[arr[task.i-1], 5], percent=percent)
+        return render_template('writing.html', code=writing_stimuli.iloc[writing_arr[task.i-1], 5], percent=percent)
 
 # Recording keystrokes during writing task
 # Communicates with HTML function in writing.html
 @app.route("/writing/submitkeystroke", methods=['GET', 'POST']) # FIXME - fix radio button bug
 def submitkeystroke():
-    global task, participant
+    global task, participant, writing_arr
     keypressed = request.args.get('keypressed')
-    fid = writing_stimuli.iloc[arr[task.i-1], 1]
-    func_name = writing_stimuli.iloc[arr[task.i-1], 2]
+    fid = writing_stimuli.iloc[writing_arr[task.i-1], 1]
+    func_name = writing_stimuli.iloc[writing_arr[task.i-1], 2]
 
     # recording keystrokes along with function name and fid 
     with open(f_keystrokes, 'a+') as f:
@@ -195,15 +206,15 @@ def rest():
 # FIXME - center likert scale buttons
 @app.route('/reading', methods=['POST'])
 def reading(): 
-    global arr, task, participant, reading_stimuli, my_eyetracker
+    global reading_arr, task, participant, reading_stimuli, my_eyetracker
     if task.current_task != "reading":
         task.current_task = "reading"
         
     task.j += 1
     print("j entering the loop:", task.j)
-    if task.j == len(arr)+1:
-        fid = reading_stimuli.iloc[arr[task.j-2], 1]
-        func_name = reading_stimuli.iloc[arr[task.j-2], 2]
+    if task.j == len(reading_arr)+1:
+        fid = reading_stimuli.iloc[reading_arr[task.j-2], 1]
+        func_name = reading_stimuli.iloc[reading_arr[task.j-2], 2]
         task.j = 0
         accurate = request.form.get('accurate') # values from likert scale questions
         missing = request.form.get('missing')
@@ -227,19 +238,19 @@ def reading():
             accurate = request.form.get('accurate') # values from likert scale questions
             missing = request.form.get('missing')
             unnecessary = request.form.get('unnecessary')
-            fid = reading_stimuli.iloc[arr[task.j-2], 1]
-            func_name = reading_stimuli.iloc[arr[task.j-2], 2]
+            fid = reading_stimuli.iloc[reading_arr[task.j-2], 1]
+            func_name = reading_stimuli.iloc[reading_arr[task.j-2], 2]
             print("fid", fid)
             print("func name", func_name)
             with open(f_task, 'a+') as ft:
                 cw = csv.writer(ft)
                 cw.writerow([str(participant.pid), func_name, fid, "reading", None, accurate, missing, unnecessary])
 
-        task.progress = task.progress + (1/(len(arr)))*50
+        task.progress = task.progress + (1/(len(reading_arr)))*50
         percent = task.progress
-        code = reading_stimuli.iloc[arr[task.j-1], 5]
-        human_summary = reading_stimuli.iloc[arr[task.j-1], 3]
-        ai_summary = reading_stimuli.iloc[arr[task.j-1], 4]
+        code = reading_stimuli.iloc[reading_arr[task.j-1], 5]
+        human_summary = reading_stimuli.iloc[reading_arr[task.j-1], 3]
+        ai_summary = reading_stimuli.iloc[reading_arr[task.j-1], 4]
         
         return render_template('reading.html', code=code, summary=random.choice([human_summary, ai_summary]), percent=percent) 
         

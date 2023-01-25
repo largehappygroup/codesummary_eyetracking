@@ -1,4 +1,997 @@
 ,fid,name,ref,attendgru,function
+159,1118165,modifyRoleInCache,role user cache resource cache,modify the role in cache,"
+
+public void modifyRoleInCache( Role role, String orgRolename ) {
+    Set users = role.getUsers();
+
+    for ( Iterator iter = users.iterator(); iter.hasNext(); ) {
+        User user = ( User ) iter.next();
+        userDetailsInCache( user );
+    }
+    for ( Iterator iter = role.getRescs().iterator(); iter.hasNext(); ) {
+        Resource resource = ( Resource ) iter.next();
+        resourceDetailsInCache( resource );
+    }
+} 
+"
+2,18252350,joinTableRender,gets render of an association for the join combobox,joins the table,"
+
+private String joinTableRender( Table from, Association association ) {
+    int n = 0;
+
+    for ( Association a: from.associations ) {
+        if ( a.destination == association.destination ) {
+            ++n;
+        }
+    }
+    return datamodel.getDisplayName( association.destination ) + ( n > 1?"" on "" + association.getName():"""" );
+} 
+"
+148,41287529,play,start running the simulation from either a stopped or paused state,play the current state,"
+
+public void play(){
+    if( currentState == SimulatorState.STOPPED ){
+        setSimulationTime( 0 );
+        simItem.initialize();
+        startTimer();
+        setState( SimulatorState.PLAYING );
+    }
+    else if( currentState == SimulatorState.PAUSED ){
+        startTimer();
+        setState( SimulatorState.PLAYING );
+    }
+} 
+"
+135,16777940,readFromFile,ask a file for the username and password,reads the data from the file,"
+
+private void readFromFile() {
+    try {
+        FileReader fr = new FileReader( this.credentials );
+        BufferedReader br = new BufferedReader( fr );
+        this.username = br.readLine();
+        this.password = br.readLine();
+        br.close();
+        fr.close();
+    }
+    catch ( Exception e ) {
+        this.username = """";
+        this.password = """";
+    }
+} 
+"
+160,1412807,capitalizeString,capitalizes the first letter of each word,<UNK> the first letter of the given string,"
+
+public String capitalizeString( String s ) {
+    String result = """";
+        
+    for( int i = 0; i < s.length(); i++ ) {
+        if ( i == 0 || s.substring( i - 1, i ).equals( "" "" ))
+            result += s.substring( i, i + 1 ).toUpperCase();
+        else
+            result += s.substring( i, i + 1 );          
+    }  
+    return result;
+} 
+"
+101,1782360,getImageWithSource,returns the first image found in the page with the specified src attribute,returns the image with the given source,"
+
+public WebImage getImageWithSource( String source ) {
+    WebImage[] images = getImages();
+
+    for ( int i = 0; i < images.length; i++ ) {
+        if ( HttpUnitUtils.matches( source, images[ i ].getSource() )) return images[ i ];
+    }
+    return null;
+} 
+"
+61,49121415,createDataset,creates a sample dataset,creates a dataset for a series,"
+
+private XYDataset createDataset( double[] values, String name ) {
+    // create dataset 1
+    final XYSeries series = new XYSeries( name );
+        
+    for( int i = 0; i<values.length; i++ ){
+        series.add( i, values[ i ] );
+    }  
+    final XYSeriesCollection collection = new XYSeriesCollection();
+    collection.addSeries( series );
+    return collection;
+} 
+"
+80,47571713,saveToFile,save the move sets to a file,save the file to the file,"
+
+public void saveToFile( File f ) {
+    try {
+        FileOutputStream file = new FileOutputStream( f );
+        saveToFile( file );
+        file.close();
+    } catch ( FileNotFoundException e ) {
+        e.printStackTrace();
+    } catch ( IOException e ) {
+        e.printStackTrace();
+    }
+} 
+"
+67,48209810,setButtonText,sets the button text,sets the button text,"
+
+private void setButtonText() {
+    String txt = menuItem.getTitle() + "" ("" + menuItem.getStock() + "" in Stock)"";
+    try {
+        Course tmpCourse = ( Course )menuItem;
+
+        if ( tmpCourse.getCourseType() == Course.FIRST_COURSE ) {
+            txt = ""1st: "" + txt;
+        } else {
+            txt = ""2nd: "" + txt;
+        }
+    } catch ( Exception e ) {
+        // TODO: handle exception
+    }
+    this.setText( txt );
+} 
+"
+57,23286083,getScopePartnerLinks,return an code elist code containing all partner link elements defined,returns the list of all the scope of the given partner,"
+
+public EList getScopePartnerLinks( final EObject process ) {
+    TreeIterator contents = process.eAllContents();
+    EList results = new BasicEList();
+		
+    while ( contents.hasNext() ) {
+        EObject obj = ( EObject ) contents.next();
+			
+        if ( obj instanceof Scope ) {
+            results.addAll((( Scope ) obj ).getPartnerLinks().getChildren() );
+        }	
+    }
+    return results;
+} 
+"
+28,37563349,rectangle,returns a rectangle which represents the rectangular,returns the bounds of the receiver,"
+
+public Rectangle getBounds() {
+    if ( isDisposed() ) SWT.error( SWT.ERROR_GRAPHIC_DISPOSED );
+        java.awt.Rectangle bounds = handle.getBounds();
+    return new Rectangle(( int )bounds.getX(), ( int )bounds.getY(), ( int )bounds.getWidth(), ( int )bounds.getHeight() );
+} 
+"
+77,27801498,setBinWidth,sets the bin width and repaints,sets the bin width of the bin,"
+
+public void setBinWidth ( double new_bin_width ) {
+    double old_bin_width = binWidth;
+    binWidth = new_bin_width;
+    pcs.firePropertyChange( ""binWidth"",
+              new Double( old_bin_width ),
+              new Double( new_bin_width ));
+    repaint();
+} // setBinWidth( double ) 
+"
+72,29852582,genSql,generate the code in pure java form,generates a sql statement for the given type,"
+
+public void genSql() throws PositionedError {
+    try {
+        SqlcPrettyPrinter spp;
+        spp = new SqlcPrettyPrinter( ref.getFile() );
+        spp.printCUnit( elems );
+        spp.close();
+    } catch ( IOException ioe ) {
+        ioe.printStackTrace();
+        System.err.println( ""cannot write: "" + ref.getFile() );
+    }
+} 
+"
+42,37762493,moveUpTarget,moves the given target up in the list of active targets,moves the target up target index up to the target,"
+
+public void moveUpTarget( int index ) {
+    Object target= targets.get( index );
+
+    if ( index == 0 || target == null ) {
+        return;
+    }
+    targets.set( index, targets.get( index - 1 ));
+    targets.set( index - 1, target );
+    log.debug( ""New ordering"" );
+
+    for ( int i = 0; i < targets.size(); i++ ) {
+        log.debug( ""|t"" + i + targets.get( i ));
+    }
+} 
+"
+117,47570692,goToRegistration,brings the user to the registration dialog,this method is called when the user clicks the button,"
+
+private void goToRegistration() {
+    m_logo.setVisible( false );
+    m_login.setText( ""Cancel"" );
+    m_userLabel.setLocation( 16, 4 );
+    m_username.setLocation( 16, 24 );
+    m_passLabel.setLocation( 16, 52 );
+    m_password.setLocation( 16, 70 );
+    m_confirmPass.setVisible( true );
+    m_confPassLabel.setVisible( true );
+    m_male.setVisible( true );
+    m_female.setVisible( true );
+    this.setTitle( ""Registration"" );
+} 
+"
+60,51122387,getMessage,returns the detail message string of this throwable,returns a string representation of the message,"
+
+public String getMessage() {
+    StringBuffer sb = new StringBuffer();
+
+    if ( messages != null ) {
+        for ( int i = 0; i < messages.size(); i++ ) {
+            Object o = messages.elementAt( i );
+
+            if ( o != null ) {
+                sb.append( o.toString() );
+                sb.append( ""|n"" );
+            }
+        }
+    }
+    return sb.toString();
+} 
+"
+51,28953715,readResponse,read the entire response from the http post as a string,reads the response from the stream,"
+
+private String readResponse( InputStream stream ) {
+    BufferedReader input = new BufferedReader( new InputStreamReader( stream ));
+    StringBuffer sb = new StringBuffer();
+    String line;
+    try {
+        line = input.readLine();
+    } catch ( IOException e ) {
+        line = null;
+    }
+    while ( line != null ) {
+        if ( !line.trim().equals( """" ) ) {
+            if ( sb.length() > 0 ) sb.append( ""|n"" );
+            sb.append( line );
+        }
+        try {
+            line = input.readLine();
+        } catch ( IOException e ) {
+            line = null;
+		}
+    }
+    return sb.toString();
+} 
+"
+58,40778768,configBalanceRanking,load balances from the ranking file and configure the timer to save,<UNK> the <UNK> to the <UNK>,"
+
+private void configBalanceRanking( List< IResponseTO > responses, String filePath ) {	
+    PeerDAOFactory.getInstance().getAccountingDAO().loadBalancesRanking( filePath );
+    long frequence = AccountingConstants.RANKING_SAVING_FREQ;
+
+    ScheduleActionWithFixedDelayResponseTO to = new ScheduleActionWithFixedDelayResponseTO();
+    to.setActionName( PeerConstants.SAVE_ACCOUNTING_ACTION_NAME );
+    to.setDelay( frequence );
+    to.setTimeUnit( TimeUnit.SECONDS );
+		
+    responses.add( to );
+} 
+"
+10,35553791,createServerChooser,create server file view,creates a new main menu bar,"
+
+public void createServerChooser() {
+    MainMenuBar mainMenuBar = MainMenuBar.getInstance();
+
+    int nodeId = dbMgr.getNodeId(( String ) cbNE.getSelectedItem());
+
+    DownloadFileChooser downloadFile = new DownloadFileChooser( nodeId, DBDataDesc.SHELF_OLT1, tfFileName, tfFileNameOnly );
+
+    mainMenuBar.putCommand(( Object ) downloadFile );
+    downloadFile.setViewId( mainMenuBar.getViewId() );
+    downloadFile.setVisible( true );
+} 
+"
+53,22622479,getStatusFlagFields,gets the status flag input fields from the input manager,gets the status of the given list,"
+
+private List getStatusFlagFields() {
+    List list = new ArrayList();
+    String statusFlagPath = ""/collectionConfigRecord/statusFlags/statusFlag/status"";
+    for ( Iterator i = im.getInputFields().iterator(); i.hasNext(); ) {
+        InputField field = ( InputField ) i.next();
+        // prtln ( field.toString() );
+        if ( field.getNormalizedXPath().startsWith( statusFlagPath )) {
+            list.add( field );
+        }
+    }
+    return list;
+} 
+"
+124,19507735,testOneTwoThreeCreateCycle,ensures cycles are ignored,test the <UNK>,"
+
+public void testOneTwoThreeCreateCycle() throws Exception {
+    IRodinFile ctx = createRodinFile( ""P/x.ctx"" );
+    createDependency( ctx, ""y"" );
+    createData( ctx, ""one"" );
+    ctx.save( null, true );
+    runBuilder();
+		
+    IRodinFile cty = createRodinFile( ""P/y.ctx"" );
+    createDependency( cty, ""x"" );
+    createData( cty, ""two"" );
+    cty.save( null, true );		
+		
+    IRodinFile ctz = createRodinFile( ""P/z.ctx"" );
+    createData( ctz, ""three"" );
+    ctz.save( null, true );
+	
+    runBuilder( ""CSC extract /P/x.ctx"",
+                    ""CSC run /P/x.csc"",
+                ""CSC extract /P/y.ctx"",
+                ""CSC extract /P/z.ctx"",
+                     ""CSC run /P/z.csc"");
+} 
+"
+3,17121898,compareTo,compares the tpoint object with other tpoint using timestamps first i,compares this object with the specified angle for order,"
+
+public int compareTo( TPoint o ) {
+    if (( this.value == o.value() ) && ( this.tstamp == o.tstamp() )) {
+        return 0;
+    }
+    else if ( this.tstamp > o.tstamp ) {
+        return 1;
+    }
+    else if ( this.tstamp < o.tstamp ) {
+        return -1;
+    }
+    else if ( this.value > o.value ) {
+        return 1;
+    }
+    return -1;
+} 
+"
+19,47571922,getEffect,return the effect applied to this pokemon of a particular lock or,get the effect of the given lock,"
+
+public StatusEffect getEffect( int lock ) {
+    synchronized ( m_statuses ) {
+        Iterator i = m_statuses.iterator();
+
+        while ( i.hasNext() ) {
+            StatusEffect eff = ( StatusEffect )i.next();
+
+            if (( eff == null ) || !eff.isActive() ) {
+                continue;
+            }
+            if ( eff.getLock() == lock ) {
+                return eff;
+            }
+        }
+    }
+    return null;
+} 
+"
+114,34604973,deleteCascade,will delete algorithm and also references to it cascadely in tables,deletes all the rows in the database,"
+
+public void deleteCascade( VyhladavaciAlgoritmus algorithm ) {
+    //searcheds
+    getHibernateTemplate().bulkUpdate(
+        ""DELETE Searched WHERE algorithm = ?"",
+                                  new Object[] { algorithm });
+    //plans
+    getHibernateTemplate().bulkUpdate(
+        ""DELETE SearchPlan WHERE algorithm = ?"",
+		             new Object[] { algorithm });
+    //prefs
+    getHibernateTemplate().bulkUpdate(
+        ""DELETE SearchPrefs WHERE algorithm = ?"",
+		              new Object[] { algorithm });
+    //categories
+    getHibernateTemplate().bulkUpdate(
+        ""DELETE SearchCategory WHERE algorithm = ?"",
+		                    new Object[] { algorithm });
+    delete( algorithm );
+} 
+"
+111,46026508,saveSetting,save settings to property file,save the settings to the property file,"
+
+private void saveSetting( CustomProperties prop ) {
+    prop.setProperty( ""avalanchefever.gametype"", mapSet );
+    prop.setProperty( ""avalanchefever.outlinetype"", outlinetype );
+    prop.setProperty( ""avalanchefever.numcolors"", numColors );
+    prop.setProperty( ""avalanchefever.version"", version );
+    prop.setProperty( ""avalanchefever.chainDisplayType"", chainDisplayType );
+    prop.setProperty( ""avalanchefever.bigDisplay"", bigDisplay );
+} 
+"
+41,20687719,getConnectionPanel,this method initializes connection panel,this method initializes connection panel,"
+
+private JPanel getConnectionPanel() {
+    if ( connectionPanel == null ) {
+        connectionRoomLabel = new JLabel();
+        connectionRoomLabel.setText( ""Playground"" );
+        connectionPanel = new JPanel();
+        connectionPanel.setLayout( new BoxLayout( getConnectionPanel(), BoxLayout.X_AXIS ));
+        connectionPanel.add( getConnectionsButton(), null );
+        connectionPanel.add( connectionRoomLabel, null );
+    }
+    return connectionPanel;
+} 
+"
+65,51019251,fScore,hierarchical f score function,computes the average of the score of the given x and y,"
+
+public double fScore( ONDEXConcept x, ONDEXConcept y ) {
+    double recall = recall( x, y );
+    double precision = precision( x, y );
+    double score = 0;
+    if ( recall + precision != 0 ) {
+        score = ( 2d * recall * precision ) / ( recall + precision );
+    }
+    return score;
+} 
+"
+147,40776207,process,notifies the client that the worker is ready to receive calls to other,process a worker,"
+
+public void process( WorkerIsReadyMessageHandle handle, ServiceManager serviceManager ) {
+    WorkerIsReadyProcessorRequestTO to = new WorkerIsReadyProcessorRequestTO();
+    ServiceID workerID = serviceManager.getSenderServiceID();
+		
+    to.setWorkerAddress( workerID.toString() );
+    to.setWorkerContainerID( workerID.getContainerID().toString() );	
+    OurGridRequestControl.getInstance().execute( to, serviceManager );
+} 
+"
+40,19682824,handleHalt,handle the halt system call,handle the halt process,"
+
+private int handleHalt() {
+    //need to test that this is the root process
+    if( processID == 0 ){
+        Machine.halt(); 
+    } else{
+        //System.err.println( ""non-root process trying to call halt"" );
+        return -1; //This is not the root process so ignore this one
+    }	
+    Lib.assertNotReached( ""Machine.halt() did not halt machine!"" );
+    return 0;
+} 
+"
+120,34425716,actionLoadNotes,called when the user selects to load the in game notes file,called when the user presses the load notes button,"
+
+private void actionLoadNotes() {
+    enableUserActions( false );
+
+    // set focus, otherwise it gives focus to ""clear"" >> scary/not wanted
+    multiSubmitButton.requestFocusInWindow();
+
+    resetSingleTextFields();
+    multipleGUIList.clearSelection();
+    multipleResources = loadNotesFile();
+    updateMultiList();
+    enableUserActions( true );
+} 
+"
+34,19505695,getRodinDBStatus,returns the rodin database status object for this exception,returns the <UNK> status status,"
+
+public IRodinDBStatus getRodinDBStatus() {
+    IStatus status = this.getStatus();
+
+    if (vstatus instanceof IRodinDBStatusv) {
+        return (vIRodinDBStatusv) status;
+    } else {
+        // A regular IStatus is created only in the case of a CoreException.
+        // See bug 13492 Should handle RodinDBExceptions that contains
+        // CoreException more gracefully
+        return new RodinDBStatus( this.nestedCoreException );
+    }
+} 
+"
+35,39298970,getApplicableLaw,selects the influence law which is applicable to a given influence,returns the influence of the given <UNK>,"
+
+public InfluenceLaw getApplicableLaw( Influence inf ) {
+    if ( inf == null ) {
+        throw new IllegalArgumentException();
+    }
+    for ( Iterator iter = influenceLaws.iterator(); iter.hasNext(); ) {
+        InfluenceLaw infLaw = ( InfluenceLaw ) iter.next();
+        if( infLaw.isApplicableTo( inf )) {
+            return infLaw;
+        }
+    }
+    return null;
+} 
+"
+93,29601536,getBackCommand2,returns an initiliazed instance of back command2 component,returns an initiliazed instance of back command2 component,"
+
+public Command getBackCommand2() {
+    if ( backCommand2 == null ) {//GEN-END:|92-getter|0|92-preInit
+        // write pre-init user code here
+        backCommand2 = new Command( ""Back"", Command.BACK, 0 );//GEN-LINE:| 92-getter | 1 | 92-postInit
+    // write post-init user code here
+    }//GEN-BEGIN:| 92-getter | 2 |
+    return backCommand2;
+} 
+"
+146,34609355,getFastestGenerator,returns the fastest generator for the given language,returns the <UNK> generator for the specified locale,"
+
+public WordFormGenerator getFastestGenerator( final Locale locale ) throws MorphologyException {
+    if ( locale == null ) {
+        throw new IllegalArgumentException( ""The 'loc' argument cannot be null."" );
+    }
+    WordFormGenerator component = ( WordFormGenerator ) fastestGenerators.get( locale );
+    if ( component == null ) {
+        throw new MorphologyException( ""Cannot find generator for locales : "" + locale.toString() );
+    }
+    return component;
+} 
+"
+94,1810081,onAttach,this method is called when a widget is attached to the browsers document,this method is called when the widget is attached to the browsers,"
+
+protected void onAttach() {
+    if ( attached )
+        return;
+
+    attached = true;
+
+    // Set the main element's event listener. This should only be set
+    // while the widget is attached, because it creates a circular
+    // reference between JavaScript and the DOM.
+    DOM.setEventListener( getElement(), this );
+
+    // Now that the widget is attached, call onLoad().
+    onLoad();
+} 
+"
+125,34426756,makeCenter,helper method which creates and returns a canvas for images,create a center image canvas,"
+
+private Component makeCenter() {
+    imageCanvas = new JPanel();
+    imageCanvas.addMouseListener( new MouseAdapter() {
+        @SuppressWarnings( ""synthetic-access"" )
+        @Override
+        public void mouseClicked( MouseEvent e ) {
+            actionImageMouse( e );
+        }
+    });
+
+    imageCanvas.add( new JLabel( new ImageIcon( SWGFrame.class.getResource( ""images/swg.png"" ))));
+
+    return new JScrollPane( imageCanvas );
+} 
+"
+129,22618655,getGlobalElements,gets the global elements attribute of the definition miner object,gets the global elements of the document,"
+
+private void getGlobalElements( Document doc, File file ) {
+    if ( doc == null ) {
+        return;
+    }
+    List list = doc.selectNodes( ""/xsd:schema/xsd:element"" );
+
+    for ( Iterator iter = list.iterator(); iter.hasNext(); ) {
+        Element element = ( Element ) iter.next();
+        String name = element.attributeValue( ""name"" );
+        GlobalElement g = new GlobalElement( element, file );
+        // System.out.println ( g.toString() );
+        try {
+            globalDefMap.setValue( name, g );
+        }  catch ( Exception e ) {
+            System.out.println ( e.getMessage() );
+        }
+    }
+} 
+"
+83,34427273,populateNewList,helper method which populates the gui list for resources which are new at,populates the list of new resources,"
+
+private void populateNewList() {
+    newResources = mergeNewResources();
+    SwingUtilities.invokeLater( new Runnable() {
+        @SuppressWarnings( ""synthetic-access"" )
+        @Override
+        public void run() {
+            newListModel.clear();
+            for ( Wrapper wr : newResources )
+                newListModel.addElement( wr );
+        }
+    });
+} 
+"
+106,40879350,getOkCommand18,returns an initiliazed instance of ok command18 component,returns an initiliazed instance of ok <UNK> component,"
+
+public Command getOkCommand18() {
+    if ( okCommand18 == null ) {//GEN-END: | 728-getter | 0 | 728-preInit
+        // write pre-init user code here
+        okCommand18 = new Command( ""LIQUIDEZ"", Command.OK, 0 );//GEN-LINE: | 728-getter | 1 | 728-postInit
+        // write post-init user code here
+    }//GEN-BEGIN: | 728-getter | 2 |
+    return okCommand18;
+} 
+"
+4,1810886,setNamedItem,this function delegates to the native method code set named item code in,this function delegates to the native method code set code,"
+
+public Node setNamedItem( Node arg ) {
+    try {
+        return NodeImpl.build( XMLParserImpl.setNamedItem( this.getJsObject(),
+        (( DOMItem ) arg ).getJsObject() ));
+    } catch ( JavaScriptException e ) {
+        throw new DOMNodeException( DOMNodeException.INVALID_MODIFICATION_ERR, e, this );
+    }
+} 
+"
+141,12725774,actionPerformed,group select or deselct on all selected rows,invoked when an action occurs,"
+
+public void actionPerformed( ActionEvent e ) {
+    int[] selectedRows = features.getSelectedRows();
+
+    if ( selectedRows.length > 0 ) {
+        boolean valueToBeSet = (( Boolean ) features.getValueAt(
+            selectedRows[ 0 ], 0 )).booleanValue();
+
+        for ( int i = 0; i < selectedRows.length; ++i ) {
+            features.setValueAt( new Boolean( !valueToBeSet ), selectedRows[ i ], 0 );
+        }
+    }
+} 
+"
+45,1736289,resetSchedConflict,this method resets schedule conflict,resets the <UNK> conflict,"
+
+public void resetSchedConflict() {
+    try {
+        if ( listData == null || listData.size() == 0 )
+            return;
+        for ( int i = 0;  i < listData.size();  i++ ) {
+            TblAuditor auditor = ( TblAuditor ) listData.get( i );
+            auditor.setSchedConflict( false );
+        }
+    } catch ( Exception ex ) {
+        logger.error( ex );
+        FacesUtils.addErrorMessage( ex.getMessage() );
+    }
+} 
+"
+50,39299426,liesBetween,check if a value lies between 2 other values,checks if the parametric point lies between two points,"
+
+private boolean liesBetween( double x1, double x2, double x3 ) {
+    if (( x1 <= x2 ) 
+    	&& ( x3 >= x1 - ACCURACY && x3 <= x2 + ACCURACY ))
+    		return true;
+    if (( x1 >= x2 ) 
+    	&& ( x3 >= x2 - ACCURACY && x3 <= x1 + ACCURACY ))
+    		return true;
+    	
+    return false;
+} 
+"
+49,39233866,testInvoke,test if we can invoke a given service,test the invoke method of the servlet,"
+
+public void testInvoke() throws Exception {
+    transport.setRemoteService( ""TravelProcess"" );
+    call.setOperation( ""initiate"" );
+    call.addParameter( ""x"", XMLType.XSD_STRING, ParameterMode.IN );
+    call.setReturnType( XMLType.XSD_STRING );
+
+    String result = ( String ) call.invoke( new Object[] { ""anything"" });
+
+    assertEquals( DUMMY_RESULT, result );
+} 
+"
+63,45888514,openCursor,opens cursor with custom selection,opens a cursor with the given source and returns the result,"
+
+public Cursor openCursor( Context context, String selection, String[] selectionArgs ) {
+    if( mSourcesUri == null ) {
+        throw new NullPointerException( ""Sources uri not set."" );
+    }
+    return context.getContentResolver().query( mSourcesUri, mProjection, selection, selectionArgs, Sources.SourcesTable.NAME );
+} 
+"
+26,18418213,showLatestPlan,loads the latest plan in order to show it,show the latest plan of the current <UNK> plan,"
+
+public String showLatestPlan() {
+    // clear previous protocols
+    mCurrPlanProt = null;	
+    try {
+        PatientController han = new PatientController( mCurrPatient );
+        NutPlan plan = han.getLatestNutritionPlan();
+        NutritionController controller = NutritionController.editPlan( plan );
+
+        mCurrPlanProt = WebPlanProtocol.createPlan( controller, plan, mCurrPatient );
+        return ""success"";
+
+    } catch ( Exception e ) {
+        e.printStackTrace();
+    }
+    return ""failure"";
+} 
+"
+27,33719114,testSetEvtID,test of set evt id method of class com,test of set event id method of class email <UNK>,"
+
+public void testSetEvtID() {
+    System.out.println( ""setEvtID"" );    
+    String evtID = """";
+    Email_DBImpl instance = new Email_DBImpl();
+    instance.setEvtID( evtID );
+        
+    // TODO review the generated test code and remove the default call to fail.
+    fail( ""The test case is a prototype."" );
+} 
+"
+143,47479282,getAllSourceRoots,returns all of the source roots specified in the source bundle providing,returns all the source roots of the given plugin,"
+
+public Set getAllSourceRoots( String pluginName, Version pluginVersion ) {
+    Set pluginSourceRoots = new HashSet();
+    ManifestElement[] manifestElements = getSourceEntries( pluginName, pluginVersion );
+
+    if ( manifestElements != null ) {
+        for ( int j = 0; j < manifestElements.length; j++ ) {
+            ManifestElement currentElement = manifestElements[ j ];
+            addSourceRoots( currentElement.getDirective( ""roots"" ), pluginSourceRoots ); //$NON-NLS-1$
+        }
+    }
+    return pluginSourceRoots;
+} 
+"
+102,40865212,getBackCommand2,returns an initiliazed instance of back command2 component,returns an initiliazed instance of back command2 component,"
+
+public Command getBackCommand2() {
+    if ( backCommand2 == null ) {//GEN-END: | 233-getter | 0 | 233-preInit
+        // write pre-init user code here
+        backCommand2 = new Command( ""OK"", Command.BACK, 0 );//GEN-LINE: | 233-getter | 1 | 233-postInit
+        // write post-init user code here
+    }//GEN-BEGIN: | 233-getter | 2 |
+    return backCommand2;
+} 
+"
+118,33719118,testGetEvtIDs,test of get evt ids method of class com,test of get event ids method of class email <UNK>,"
+
+public void testGetEvtIDs() {
+    System.out.println( ""getEvtIDs"" );
+    Email_DBImpl instance = new Email_DBImpl();     
+    String[] expResult = null;
+    String[] result = instance.getEvtIDs();
+    assertEquals( expResult, result );
+        
+    // TODO review the generated test code and remove the default call to fail.
+    fail( ""The test case is a prototype."" );
+} 
+"
+39,7957602,print,print a textual description of this expr info,prints the graph,"
+
+protected void print() {
+    System.out.println( ""Print for "" + prototype + ""------------------"" );
+    cfg.visit( new PrintVisitor() {
+        Phi phi = null;
+
+        public void visitBlock( final Block block ) {
+            phi = exprPhiAtBlock( block );
+            super.visitBlock( block );
+        }
+        public void visitLabelStmt( final LabelStmt stmt ) {
+            super.visitLabelStmt( stmt );
+
+            if ( stmt.label().startsBlock() ) {
+                if ( phi != null ) {
+                    println( phi );
+                    phi = null;
+                }
+            }
+        }
+    });
+    System.out.println( ""End Print ----------------------------"" );
+} 
+"
+137,45929468,getRelFeedItems,feed feed item,get the feed item feed item,"
+
+public List getRelFeedItems( FeedItem feedItem ) {
+    final int feedId = feedItem.getFeed().getFeedId();
+    final String sql = ""select * from T_FeedItem where FEED_ID ="" + feedId;
+    return getPagedListByNativeSQL( FeedItem.class, sql, "" id desc"", 1, 20 );
+} 
+"
+122,48861766,addRelativeHeaders,add relative header,add a relative headers to the response,"
+
+private void addRelativeHeaders( Response response, int timeInSeconds ) {
+    response.setHeader( CACHE_CONTROL_HEADER, String.format( ""max-age=%d"", timeInSeconds ));
+    Calendar expires = Calendar.getInstance();
+    expires.add( Calendar.SECOND, timeInSeconds );
+    response.setHeader( ""Expires"", DATE_FORMAT.format( expires ));
+} 
+"
+16,45130358,evaluate,evaluates the numbers of hours in the xsd date time,evaluates the value of this external function,"
+
+public Value evaluate( Value value ) throws ExternalFunctionException {
+    if (!( value instanceof Literal )) {
+        throw new ExternalFunctionException( ""Values need to be literals to be understood"" );
+    }    
+    DateTime date = this.converter.convertDateTime(( Literal ) value );
+        
+    return this.converter.convertInteger( date.getHour() );
+} 
+"
+8,18912425,tellAgain,forward some message to the participant,this method is called when the user has entered the,"
+
+protected void tellAgain( final QName message ) throws RemoteException{
+    final AbstractCoordParticipantProxy proxy =
+        this.getParticipantProxy();
+
+    if ( State.MESSAGE_CANCEL.equals( message )){
+        proxy.cancelOperation( null );
+			
+    } else if ( State.MESSAGE_COMPENSATE.equals( message )){
+        proxy.compensateOperation( null );
+
+    } else if ( State.MESSAGE_CLOSE.equals( message )){
+        proxy.closeOperation( null );
+			
+    } else if ( State.MESSAGE_EXITED.equals( message )){
+        proxy.exitedOperation( null );
+			
+    } else if ( State.MESSAGE_FAULTED.equals( message )){
+        proxy.faultedOperation( null );
+			
+    } else if ( State.MESSAGE_GETSTATUS.equals( message )){
+        proxy.getStatusOperation( null );
+			
+    } else{
+        throw new IllegalArgumentException( ""Sorry, cannot tell a participant "" + message );
+    }
+} 
+"
+151,49866815,createChecklistItem,creates a checklist item for the specified list,create a new checklist item,"
+
+public long createChecklistItem( long listId, String item, boolean isDone ) {
+    ContentValues values = new ContentValues();
+    values.put( KEY_LIST_ID, listId );
+    values.put( KEY_IS_DONE, isDone );
+    values.put( KEY_ITEM, item );
+    return mDb.insert( CHECKLIST_ITEM_TBL, null, values );
+} 
+"
+14,29854794,genIdents,generates the names of this type,generates a <UNK> statement,"
+
+public JExpression genIdents() {
+    TokenReference ref = getTokenReference();
+    Jexpression[] init = new JExpression[ codes.length ];
+
+    for ( int i = 0; i < codes.length; i++ ) {
+        init[ i ] = new JStringLiteral( ref, codes[ i ].getIdent() );
+    }
+    return VKUtils.createArray( ref, CStdType.String, init );
+} 
+"
+68,22407318,jbInit,add compononents to the page,initialize the applet,"
+
+private void jbInit() throws Exception {
+    setLayout( new GridBagLayout() );
+
+    add( m_environmentpanel,
+        new GridBagConstraints( 0, 0, 1, 1, 1.0, 1.0,
+                          GridBagConstraints.CENTER,
+                          GridBagConstraints.HORIZONTAL,
+                          new Insets( 0, 0, 0, 0 ), 0, 0 ));
+} 
+"
+158,11759898,markStart,marks the start of the interval,mark the start of the timer,"
+
+public void markStart( Object tag ) {
+    synchronized ( pair2startTimeMap ) {
+        pair2startTimeMap.put( tag, clock.getCurrentTime() );
+        // FIXME it probably makes more sense to run the garbage collection
+        // periodically instead of allocating the timer every time
+        Timer removalTimer = clock.createNewTimer();
+        removalTimer.addTimerListener( new GarbageCollectionTimerListener( tag ));
+        removalTimer.schedule( Time.inMilliseconds( maxWait ));
+    }
+} 
+"
+75,38221424,removeService,removes service from this main form,removes the <UNK>,"
+
+public void removeService( String type ) {
+    CService service = ( CService ) services.get( type );
+
+    if ( service != null ) {
+        service.unsetContext();
+        services.remove( type );
+        fireServiceChanged( new CServiceEvent( this, service, CServiceEvent.REMOVED ));
+    }
+} 
+"
+30,3456415,testLogin,check that the user login and password are set on session,test the login session manager,"
+
+public void testLogin() {
+    SessionManager manager = new SimpleSessionManager();
+    String sessionId = manager.createSession( null, null );		
+    Session session = manager.getSession( sessionId );
+    manager.login( session, ""user"", ""password"" );
+		
+    assertEquals( ""user"", session.getUserId() );
+    assertEquals( ""password"", session.getUserPassword() );
+    assertTrue( session.isLoggedIn() );
+} 
+"
+5,38184555,wndPreferences,window preferences menu action,displays the dialog box,"
+
+public void wndPreferences() {
+    log.entering( ""MainWindow"", ""wndPreferences"" );
+    PropertiesDlg propDlg = new PropertiesDlg( this );
+    propDlg.setModal( true );
+    propDlg.setVisible( true );
+    log.exiting( ""MainWindow"", ""wndPreferences"" );
+} 
+"
+1,22628734,setTopAttributes,populate top level attributes with opml type specific data attributes from,sets the top attribute of the <UNK> menu object,"
+
+private void setTopAttributes( Attributes from ) {
+    for ( int i = 0; i < from.getLength(); i++ ) {
+        topMenu.setAttribute( from.getLocalName( i ), from.getValue( i ) );
+        topMenu.setAttribute( from.getQName( i ), from.getValue( i ) );
+    }
+} 
+"
+70,39215677,iamNear,check if a player is next to another actor,this method is called when the voter is moving to the,"
+
+private boolean iamNear( Actor defender ) {
+    short xDiff = ( short ) ( defender.getXpos() - getXpos() );
+    short yDiff = ( short ) ( defender.getYpos() - getYpos() );
+
+    if ( xDiff > 1 || yDiff > 1 || xDiff < -1 || yDiff < -1 ) {
+        return false;
+    }
+    return true;
+} 
+"
+31,19498280,test_10_bug2689872,an invalid character in a predicate is ignored but reported as a warning,test the creation of a generic element,"
+
+public void test_10_bug2689872() throws Exception {
+    E con = getGeneric().createElement( ""elt"" );
+    getGeneric().addPredicates( con, makeSList( ""A1"" ), makeSList( ""0/=1"" ), false );
+    getGeneric().save( con );
+    runBuilder();
+    SCE file = getGeneric().getSCElement( con );
+    getGeneric().containsPredicates( file, emptyEnv, makeSList(), makeSList() );
+		
+    hasMarker( getGeneric().getPredicates( con )[ 0 ],
+        EventBAttributes.PREDICATE_ATTRIBUTE,
+        ParseProblem.LexerError,
+        ""/""
+        );
+} 
+"
+134,43040209,addErrors,adds the given error for the given property,adds a new error to the list of errors,"
+
+public void addErrors( String el, IErrorDescription... error ) {
+    final IErrorDescription[] msg = errors.get( el );
+    // we expect that the main scenario is to add only once errors per property...
+    errors.put( el, msg == null ? error : merge( msg, error ));
+} 
+"
+66,28631042,getMenuAdministracion,this method initializes menu administracion,this method initializes menu <UNK>,"
+
+private JMenu getMenuAdministracion() {
+    if ( menuAdministracion == null ) {
+        menuAdministracion = new JMenu();
+        menuAdministracion.setText( Messages.getString( ""gui.GUI.57"" )); //$NON-NLS-1$
+        menuAdministracion.setIcon( new ImageIcon( ""data/icons/package_system.png"" )); //$NON-NLS-1$
+        menuAdministracion.add( getMenuItemAdminUsuarios() );
+        menuAdministracion.add( getMenuItemAdminResorces() );
+    }
+    return menuAdministracion;
+} 
+"
+9,22624602,asMap,for use in json emulate part of people db 1,returns a map of all the fields in the map,"
+
+public Map asMap() {
+    Map map = new HashMap();
+    // map.put ( ""org_id"", org_id );
+    map.put( ""startDate"", start_date );
+    map.put( ""endDate"", end_date );
+
+    if ( this.organization != null )
+        map.put( ""organization"", this.organization.acronym );
+    map.put( ""type"", ( this.isVisitor() ? ""Visitor"" : ""Employee"" ));
+    // return new JSONObject( map );
+    return map;
+} 
+"
+144,35061399,leaveAll,generate events to leave all components vertex edge or cell,leaves the <UNK> of the mouse event,"
+
+private void leaveAll( MouseEvent<? extends EventHandler > event ) {
+    LocInfo locInfo = new LocInfo();
+    assert( !locInfo.isVertexLocValid() );
+    assert( !locInfo.isVerticalEdgeLocValid() );
+    assert( !locInfo.isHorizontalEdgeLocValid() );
+    assert( !locInfo.isCellLocValid() );
+    handleLeaveEvents( locInfo, event );
+    lastLocInfo.copy( locInfo );
+} 
+"
 6,46106919,update,updates the animated image every update interval ms,updates the current time in the current animation,"
 
 private void update() {
@@ -355,897 +1348,5 @@ public void setSelectedScript( Object script ) {
     }
     treeViewer.setExpandedElements( itemsToExpand.toArray() );
     treeViewer.setSelection( new StructuredSelection( project ), true );
-} 
-"
-150,250694,getCollaborateCollection,returns the list of collaborate collections for the given user id,get a list of <UNK>,"
-
-public List getCollaborateCollection( String userID ) throws AccessException {
-    logger.debug( ""entering getCollaborateCollection()"" );
-    String query = ""SELECT collection.PID PID, collection.TITLE TITLE, ""
-            + "" collectionrole.ROLE ROLE FROM collectionrole, collection WHERE ""
-            + "" collectionrole.USERID = '"" + userID + ""'""
-            + "" AND collectionrole.COLLECTIONPID = collection.PID""
-            + "" AND collection.ROOT = '1'"";
-    List list = buildResult( query );
-    return list;
-} 
-"
-90,22625582,setUrls,sets the value of urls and normalizes them,sets the urls to be used to construct the <UNK>,"
-
-public void setUrls( String[] theUrls ) throws IllegalStateException {
-    if ( xmlProcessed )
-        throw new IllegalStateException( illegalPostProssingMsg );
-		
-    if( theUrls != null ) {
-        this.urls = new String [ theUrls.length ];
-        for( int i = 0; i < theUrls.length; i++ )
-            this.urls[ i ] = UrlHelper.normalize( theUrls[ i ]);
-    }
-    else
-        this.urls = urls;
-} 
-"
-130,1694531,getUserNameFromCookie,get users name from cookie,get the user name from the cookie,"
-
-private String getUserNameFromCookie() throws Exception {
-    String userName = null;
-    // get user name
-    Cookie[] cookies = servletRequest.getCookies();
-
-    for ( int i = 0; i < cookies.length; i++ ) {
-        Cookie cookie = cookies[ i ];
-
-        if ( cookie != null && cookie.getName().equals( ""platform.username"" )) {
-            String value = cookie.getValue();
-            userName = DesEncrypter.getInstance().decrypt( value );
-            break;
-        }
-    }
-    return userName;
-} 
-"
-47,4453291,exit,gracefully shutdown the application,exits the application,"
-
-public void exit( EventObject event ) {
-    for ( ExitListener listener : exitListeners ) {
-        if ( !listener.canExit( event )) {
-            return;
-        }
-    }
-    try {
-        for ( ExitListener listener : exitListeners ) {
-            try {
-                listener.willExit( event );
-            } catch ( Exception e ) { 
-                logger.log( Level.WARNING, ""ExitListener.willExit() failed"", e );
-            }
-        }
-        shutdown();
-    } catch ( Exception e ) { 
-        logger.log( Level.WARNING, ""unexpected error in Application.shutdown()"", e );
-    }
-    finally {
-        end();
-    }
-} 
-"
-128,24245709,fetchString,internal helper function read a string from the device,fetch a string from the data store,"
-
-protected String fetchString( int register, int len ) {
-    int ret = getData( register, byteBuff, 8 );
-    char [] charBuff = new char[ len ];
-
-    for( int i = 0; i < len; i++ )
-        charBuff[ i ] = ( byteBuff[ i ] == 0 ? ' ' : ( char )byteBuff[ i ]);
-        return new String( charBuff, 0, len );
-} 
-"
-104,19280843,getInstitutions,this method returns a collection or institution bean objects,returns a collection of <UNK>,"
-
-public Collection getInstitutions() {
-    try {
-        if ( iInstitutions == null ) {
-            refreshInstitutions();
-            logger.debug( ""Institutions were null while getting them. Attempting to refresh."" );
-        }
-        return iInstitutions;
-    }
-    catch ( Exception e ) {
-        logger.warn( e.getMessage(), e );
-        return Collections.EMPTY_LIST;
-    }
-} 
-"
-91,18421665,searchRecipe,this function searches a recipe starting with the recipe passed as parameter,this method is called when the voter loses the <UNK>,"
-
-private Recipe searchRecipe ( Recipe re ) {	
-    Recipe recipe;
-		
-    for ( IngredientAmount iam : re.getIngredients() ) {
-        if ( iam.getFood() instanceof Recipe ) {
-            if (( Recipe )iam.getFood() == m_ActiveRecipe ) {
-                return re;
-            } else {
-                recipe = searchRecipe (( Recipe ) iam.getFood());
-					
-                if ( recipe != null ) {
-                    return recipe;
-                }
-            }
-        }			
-    }		
-    return null;
-} 
-"
-157,50891793,testSetExample,test of set example method of class com,test of set example method of class pl,"
-
-public void testSetExample() {
-    System.out.println( ""testSetExample"" );
-    testString = ""<tag:foo>|n"";
-    testString += ""|t<tag:bar />"";
-    testString += ""</tag:foo>"";
-    tag.setExample( testString );
-    assertEquals( tag.getExample(), testString );
-} 
-"
-154,51577053,addPKColumn,adds a primarykey column,this method was created in visual age,"
-
-public void addPKColumn( String aPKColName ) throws IllegalArgumentException {
-    Column col = ( Column ) colMap.get( aPKColName );
-
-    if ( col == null ) {
-        throw new IllegalArgumentException ( ""The column |"" + aPKColName
-                        + ""| does not belong to the table |"" + name + ""|"" );
-    }
-    pkColumns.add( col );
-} 
-"
-133,26493872,resolveValue,utility methods that resolve the value passed with for the given context,resolve the value of the given string,"
-
-protected String resolveValue( MagnetContext aContext, String aValue ) throws RenderingException {
-    try {
-        if ( aValue == null ) {
-            return null;
-        } else {
-            TemplateElementIF aTemplate = _theTemplateFactory.parse( aValue );
-            return aTemplate.render( aContext );
-        }
-    } catch ( TemplateException te ) {
-        throw new RenderingException( ""Unable to resolve the value "" + aValue, te );
-    }
-} 
-"
-74,33719607,testGetClassification,test of get classification method of class com,test of get classification method of class <UNK>,"
-
-public void testGetClassification() {
-    System.out.println( ""getClassification"" );
-    SystemClient_DBImpl instance = new SystemClient_DBImpl();
-        
-    Set expResult = null;
-    Set result = instance.getClassification();
-    assertEquals( expResult, result );
-        
-    // TODO review the generated test code and remove the default call to fail.
-    fail( ""The test case is a prototype."" );
-} 
-"
-145,31788771,addUIDeployment,add a sand uideployment to our list of uis for this project,adds a <UNK> to the <UNK> rack,"
-
-public void addUIDeployment( SandUIDeployment uidep ) {
-    SandUIDeployment[] olduis = getSandUIDeployments();
-    SandUIDeployment[] newuis = new SandUIDeployment[ olduis.length + 1 ];
-    System.arraycopy( olduis, 0, newuis, 0, olduis.length );
-    newuis[ olduis.length ] = uidep;
-    setSandUIDeployments( newuis );
-} 
-"
-140,33719117,testSetChkEvtID,test of set chk evt id method of class com,test of set chk evt id method of class <UNK>,"
-
-public void testSetChkEvtID() {
-    System.out.println( ""setChkEvtID"" );
-        
-    String ChkEvtID = """";
-    Email_DBImpl instance = new Email_DBImpl();
-        
-    instance.setChkEvtID( ChkEvtID );
-        
-    // TODO review the generated test code and remove the default call to fail.
-    fail( ""The test case is a prototype."" );
-} 
-"
-15,33519720,encode,encodes a string using base64 encoding,encodes a string using the base64 encoded string,"
-
-public String encode( String string ) throws EncoderException {
-    byte[] bytes, encoded_bytes;
-    String encoded_string = """";
-        
-    try {
-        bytes = string.getBytes( ""UTF-8"" );
-        encoded_bytes = encodeBase64( bytes );
-        encoded_string = new String( encoded_bytes );
-        
-    } catch ( UnsupportedEncodingException ex ) {
-        ex.printStackTrace();
-    }
-    return encoded_string;
-} 
-"
-99,10222579,equals,indicates whether some other object is equal to this one,compares this selector with another object,"
-
-public boolean equals( Object obj ) {
-    if ( obj == null || ( obj.getClass() != getClass() )) {
-        return false;
-    }
-    CSSConditionalSelectorImpl s = ( CSSConditionalSelectorImpl ) obj;
-    return ( s.simpleSelector.equals( simpleSelector ) && s.condition.equals( condition ));
-} 
-"
-139,27907979,atomToExpression,returns the expression for inserting or selecting the atom,converts an atom to an expression,"
-
-private String atomToExpression( Atom atom, String name ) {
-    String expr = name + "" = "";
-		
-    if ( atom instanceof BooleanAtom ) {
-        BooleanAtom booleanAtom = ( BooleanAtom ) atom;
-        try {
-            if( booleanAtom.getBooleanValue() )
-                expr += ""'T'"";
-            else
-                expr += ""'F'"";
-        } catch ( InvalidStateException e ) {
-            throw new Error( ""Thing in invalid boolean state"" );
-        }
-    }		
-    else if ( atom instanceof TextAtom )
-        expr += ""'"" + atom.getValue() + ""'"";
-    else
-        expr += atom.getValue();
-
-    return expr;
-} 
-"
-55,34426334,addLimit,helper method which creates and adds an option for limit to the specified,adds the limit to the limit of the menu item,"
-
-private void addLimit( JPopupMenu popup ) {
-    JMenuItem limit = makeMenuItem( ""Write option: Limit days..."",""
-                                   Specify a limit for the written output, in days"",
-                                   new ActionListener() {
-                                       @SuppressWarnings( ""synthetic-access"" )
-                                       @Override
-                                       public void actionPerformed( ActionEvent e ) {
-                                           actionLimit();
-                                       }
-                                   });
-    popup.add( limit );
-} 
-"
-142,20950900,load,loads the image from a file,loads the locked file,"
-
-private void load( LockedFile file ) throws SQLIOException {
-    file.setPosition( POS_HEADER );
-
-    byte[] buffer = new byte[ BASE_HEADER_SIZE ];
-    file.read( buffer, 0, BASE_HEADER_SIZE );
-
-    type = buffer[ POS_TYPE ];
-    lastUpdate = decode3Date( buffer, POS_LAST_UDPATE );
-    recordsNum = DbfUtils.decodeLittleUint16( buffer, POS_RECORDS_NUM );
-    recordSize = DbfUtils.decodeLittleUint16( buffer, POS_RECORD_SIZE );
-    headerSize = DbfUtils.decodeLittleUint16( buffer, POS_HEADER_SIZE );
-
-    verifyAndFixHeader( file );
-} 
-"
-119,39120328,toString,p returns the string representation of this matcher,returns a string representation of this region,"
-
-public String toString() {
-    StringBuffer sb = new StringBuffer();
-
-    sb.append( ""java.util.regex.Matcher"" );
-    sb.append( ""[pattern="" + pattern() );
-    sb.append( "" region="" );
-    sb.append( regionStart() + "","" + regionEnd() );
-    sb.append( "" lastmatch="" );
-
-    if (( first >= 0 ) && ( group() != null )) {
-        sb.append( group() );
-    }
-    sb.append( ""]"" );
-    return sb.toString();
-} 
-"
-62,34426938,initOptionsMenu,initiates and populates the options menu,initialize the options menu,"
-
-private void initOptionsMenu( JMenuBar bar ) {
-    optionsMenu = new JMenu( ""Options"" );
-    optionsMenu.setToolTipText( ""Options for SWGAide"" );
-    optionsMenu.setMnemonic( KeyEvent.VK_O );
-
-    optionsMenu.add( optionsSWGCraftMenuItem() );
-    optionsMenu.setEnabled( true );
-    bar.add( optionsMenu );
-} 
-"
-123,18929060,checkDescendantM,return true if member 2,checks if the member is a member of the join,"
-
-public boolean checkDescendantM( Member aMember, Member dMember ) {
-    mondrian.olap.Member monMember = (( MondrianMember ) aMember ).getMonMember();
-    mondrian.olap.Member monDesc = (( MondrianMember ) dMember ).getMonMember();
-
-    if ( monDesc.isCalculatedInQuery() || monDesc.equals( monMember ))
-        return false;
-    return monDesc.isChildOrEqualTo( monMember );
-} 
-"
-105,19498298,testOccThm,all other tests only check for occurrences in axioms,test <UNK> <UNK> <UNK> <UNK> <UNK>,"
-
-public void testOccThm() throws Exception {
-    final IContextRoot context = ResourceUtils.createContext( rodinProject, CTX_BARE_NAME, CST_1DECL_1REF_THM );
-    final IConstant cst1 = context.getConstant( INTERNAL_ELEMENT1 );
-    final IDeclaration declCst1 = newDecl( cst1, CST1 );
-    final IAxiom thm = context.getAxiom( INTERNAL_ELEMENT1 );
-    final IOccurrence occRef = makeRefPred( thm, 9, 13, declCst1 );
-    final BridgeStub tk = new BridgeStub( context );
-    final ContextIndexer indexer = new ContextIndexer();
-
-    assertTrue( indexer.index( tk ));
-
-    tk.assertOccurrencesOtherThanDecl( cst1, occRef );
-} 
-"
-136,33718481,testGetEmail,test of get email method of class tools,test of get email method of class org,"
-
-public void testGetEmail() {
-    System.out.println( ""getEmail"" );
-        
-    String expResult = """";
-    String result = instance.getEmail();
-    assertEquals( expResult, result );
-        
-    // TODO review the generated test code and remove the default call to fail.
-    //  fail( ""The test case is a prototype."" );
-} 
-"
-22,3457090,createNewServerProcess,create a new socket process for a new connection,creates a new server process,"
-
-protected void createNewServerProcess( Socket socket ){
-    logger.info( ""Received connection on port "" + getPort() + "" from ["" + socket.getInetAddress() + "":"" + socket.getPort() + ""]."" );
-		
-    Thread t = new Thread( getNewServerProcess( socket ));
-    t.start();
-    getServerProcesses().add( t );
-    new Thread( new Monitor( t )).start();
-} 
-"
-64,29572299,listen,starts the server blocks indefinately,starts the server,"
-
-public void listen() throws IOException {
-    logMessage( ""Server started at "" + this.getHostname() + "":"" + this.getPort() );
-    while ( true ) {
-        Socket socket = serverSocket.accept();
-        logMessage( socket.getInetAddress().getCanonicalHostName() + ""has made a connection !"" );
-        logMessage( ""Creating new listener"" );
-        ListenThread task = new ListenThread( socket, this );
-        logMessage( ""Adding new totemcontrolcomhandler"" );
-        addHandlers( task );
-        Thread listener = new Thread( task );
-        logMessage( ""Starting new thread"" );
-        listener.run();
-    }
-} 
-"
-115,48104729,clone,clone the format object,returns a clone of this code format code,"
-
-public Object clone() {
-    Format result = new Format();
-
-    result.datatype = datatype;
-    result.datatypeID = datatypeID;
-    result.respectCase = respectCase;
-    result.gap = gap;
-    result.missing = missing;
-    result.labels = labels;
-    result.labelQuotes = labelQuotes;
-    result.transpose = transpose;
-    result.interleave = interleave;
-    result.diploid = diploid;
-    result.tokens = tokens;
-    result.symbols = symbols;
-    result.matchChar = matchChar;
-
-    return result;
-} 
-"
-89,50994916,setPhoto,set the jdai photo to display,set the photo to be displayed in the panel,"
-
-public void setPhoto( JdaiPhoto photo ) {
-    String text = null;
-
-    if ( photo != null ) {
-        label.setText( """" );
-        try {
-            text = photo.getSection().getInfoStore().getCaption(photo);
-        } catch ( JdaiReadException e ) {
-            JdaiGuiHelpers.reportException( ""Unable to read caption"", e );
-        }
-        if ( text == null || text.equals( """" ) )
-            text = ""No caption set"";
-    } else {
-        label.setIcon( null );
-    }
-    label.setToolTipText( text );
-    setNewPhoto( photo );
-} 
-"
-33,34413808,init,method to handle initialisation tasks,initializes the internal data structures,"
-
-private void init() {
-    _innerData = Collections.synchronizedMap( new LinkedHashMap< String, Object >() );
-    Iterator< Entry < String, Object >> itr = _srcModel.entrySet().iterator();
-
-    while( itr.hasNext() ){
-        Entry< String, Object > entry = itr.next();
-        _innerData.put( entry.getKey(), entry.getValue() );
-    }
-    _srcListener = new ListDataListener(){
-        public void onChange( ListDataEvent event ) {
-        onListDataChange( event );
-        }
-    };	
-    _srcModel.addListDataListener( _srcListener );
-} 
-"
-71,4114383,add,adds a date to the list keeping the list sorted,adds a date to the list of dates,"
-
-public boolean add( Date date ) {
-    if ( dates.contains( date )) 
-        return false; 
-	
-    boolean added = false;
-    for ( int i = 0; i < dates.size() && !added; i++ ) {
-        Date nextDate = dates.get( i );
-
-        if ( date.before( nextDate )) {
-            dates.add( i, date );
-            added = true;
-        }
-    }
-    if ( !added ) {
-        dates.add( date );
-    }
-    return true;
-} 
-"
-152,27798254,pluginRegistryContains,tests if plugin is in registry,checks if the plugin registry contains the given plugin,"
-
-public boolean pluginRegistryContains( String pluginName ) {
-    synchronized ( registry ) {
-        Iterator iter;
-
-        for ( iter = registry.iterator(); iter.hasNext(); ) {
-            PluginRegistryNode node = ( PluginRegistryNode )iter.next();
-            if (  node.plugin.getName().equals( pluginName )) return true;
-        }
-    }
-    return false;
-} 
-"
-29,26501411,doOutput,template method that can be overriden to log to another place than,output the message to the console,"
-
-protected void doOutput( int lvl, Object message, Throwable t ) {
-    System.out.print( ""["" );
-    System.out.print( _taskName );
-    System.out.print( "" - "" );
-    System.out.print( LEVEL[lvl] );
-    System.out.print( ""]"" );
-    System.out.println( message );
-
-    if( t != null ) {
-        t.printStackTrace();
-    }
-} 
-"
-85,15689897,getAll,returns all the values associated with the given key,returns a list of all the values in the map,"
-
-public List getAll( Object key ) {
-    Object value = mMap.get( key );
-
-    if ( value instanceof List ) {
-        return (( List )value );
-    }
-    else {
-        List list = new ArrayList();
-
-        if ( value != null || mMap.containsKey( key )) {
-            list.add( value );
-        }
-        mMap.put( key, list );
-        return list;
-    }
-} 
-"
-73,39233258,getJSplitPane,this method initializes j split pane,this method initializes j split pane,"
-
-private JSplitPane getJSplitPane() {
-    if ( jSplitPane == null ) {
-        jSplitPane = new JSplitPane();
-
-        DevicesTreePanel p = new DevicesTreePanel();
-        p.addSelectionChangeListener( this );
-        jSplitPane.setLeftComponent( p );
-        jSplitPane.setRightComponent( getJTabbedPane() );
-
-        jSplitPane.setDividerSize( 5 );
-        jSplitPane.setDividerLocation( 200 );
-    }
-    return jSplitPane;
-} 
-"
-38,40099556,removeSelection,removes the given entity from the basket,removes the selected item from the list,"
-
-public void removeSelection( IEntity selection ) {
-    // Assertions.
-    if ( selection == null ) {
-        String msg = ""Argument 'selection' cannot be null."";
-        throw new IllegalArgumentException( msg );
-    }
-        
-    entitySel.remove( selection.getEntityId() );
-    if( selection.getType().equals( EntityType.MEMBER )){          
-        memberCount--;
-    } else{
-        groupCount--;
-    }
-        
-} 
-"
-7,26412118,connectionErrorOccurred,responds to an error event,handle an error event,"
-
-public void connectionErrorOccurred( ConnectionEvent event ) {
-    logger.warn( ""Received Connection Error event from a conection in pool "" + info.getName() );
-
-    if ( info.isRemoveOnExceptions() ) {
-        checkIn( event.getSource(), true );
-        logger.warn( ""removeOnExceptions == true, closed connection"" );
-    }
-} 
-"
-56,23014476,addRotation,adds a rotation to this matrix,adds a rotation to the matrix,"
-
-public void addRotation( Vector3f axis, Angle rotation ) {
-    Quaternion q = new Quaternion( rotation, axis );
-    Matrix result = new Matrix( 4, 4 );
-    Matrix quaternion = q.getRotationMatrix();
-       
-    Matrix.multiply( matrix, q.getRotationMatrix(), result );
-    matrix = result;
-} 
-"
-163,50026101,getRemoteObject,return a reference to a remote object,get the remote object,"
-
-public DBusInterface getRemoteObject( String objectpath ) throws DBusException {
-    if ( null == objectpath ) { throw new DBusException(_( ""Invalid object path: null"" )); }
-
-    if ( !objectpath.matches( OBJECT_REGEX )||( objectpath.length() > MAX_NAME_LENGTH )){ throw new DBusException(( ""Invalid object path: "" ) + objectpath); }
-
-    return dynamicProxy( objectpath );
-} 
-"
-153,22626628,toString,provides a string representataion for this dir info,returns a string representation of this object,"
-
-public String toString() {
-    StringBuffer ret = new StringBuffer();
-    ret.append( ""format: "" );
-    ret.append( format );
-    ret.append( "" directory: "" );
-    Object[] attributeKeys = attributes.keySet().toArray();
-
-    for ( int i = 0; i < attributeKeys.length; i++ )
-        ret.append( ""|n attribute: "" + attributeKeys[ i ].toString() );
-    return ret.toString();
-} 
-"
-166,39840471,testCookieGreaterThan,verify the value stored in a cookie using code greater than tag code,test cookie greater than,"
-
-public void testCookieGreaterThan() throws ServletException,  JspException {
-    GreaterThanTag gt = new GreaterThanTag();
-    gt.setPageContext( pageContext );
-    gt.setCookie( COOKIE_KEY );
-    gt.setValue( LESSER_VAL );
-
-    assertTrue(
-        ""Cookie Value ("" + GREATER_VAL + "") is greater than value ("" + LESSER_VAL + "")"", 
-        gt.condition());
-} 
-"
-48,14467418,setUpMrj,attempts to retrieve mrj version and mrj major version information on the,inserts the test case,"
-
-private void setUpMrj() {
-    Belvedere4.mrjVersion = System.getProperty( ""mrj.version"" );
-
-    if ( Belvedere4.mrjVersion == null ) return;
-    try {
-        Belvedere4.mrjMajorVersion = Double.valueOf( Belvedere4.mrjVersion.substring( 0, 3 )).doubleValue();
-    } catch ( Exception e ) {
-        Belvedere4.mrjMajorVersion = 0;
-    }
-} 
-"
-32,43419611,saveCRCReply,here the local container description will be stored on disk,save the <UNK> service,"
-
-private void saveCRCReply( ClientRemoteContainerReply crcReply ) {	
-    LoadService.currentlyWritingFile = true;
-    String mySavingPath = LoadService.SERVICE_NODE_DESCRIPTION_FILE;
-    try {
-        ObjectOutputStream out = new ObjectOutputStream( new FileOutputStream( mySavingPath ));
-        out.writeObject( crcReply );
-        out.flush();
-        out.close();
-			
-    } catch ( FileNotFoundException e1 ) {
-        e1.printStackTrace();
-    } catch ( IOException e1 ) {
-        e1.printStackTrace();
-    }
-    LoadService.currentlyWritingFile = false;
-} 
-"
-116,31789275,setGenJarDir,recursively walk the given project tree setting the gen jar dir,set the generation of the jar files,"
-
-public void setGenJarDir( File genJarDir,SandProject proj ) {
-    proj.getAntProject().setProperty( ""genJarDir"", genJarDir.toString() );
-    SandProject[] downstream = proj.getRequiredBy();
-
-    for( int i=0; i < downstream.length; i++ ) {
-        setGenJarDir( genJarDir, downstream[ i ]); 
-    }
-} 
-"
-161,43303607,iconify,iconify the given frame,<UNK> the <UNK> frame,"
-
-public void iconify( final Frame frame ) {
-    Point loc = getIconifyLocation( frame );
-
-    if ( loc != null ) {
-        mouseMove( frame, loc.x, loc.y );
-    }
-    invokeLater( frame, new Runnable() {
-        public void run() {
-            frame.setState( Frame.ICONIFIED );
-        }
-    });
-} 
-"
-25,43137003,getNAGString,returns the array of nags as a string delimited by space,returns the <UNK> of the <UNK>,"
-
-public String getNAGString ( boolean allNumeric ) {
-    if ( nags == null ) return null;
-
-    StringBuilder sb = new StringBuilder();
-    String suff = null;
-    int count = 0;
-
-    for ( int i=0; i < nags.length; i++ ) {
-        suff = NAG.numberToString( nags[i], allNumeric );
-
-        if ( suff != null ) {
-            if ( count++ > 0 )
-                sb.append("" "");
-            sb.append( suff );
-        }
-    }
-    return sb.toString();
-} 
-"
-0,38737384,setSecurityMode,public method to set the security level,set the security mode for the security,"
-
-public int setSecurityMode ( int level, String authToken ) throws RemoteException {
-    if ( !this.authToken.equals( authToken )){
-        throw new RemoteException( ""Invalid Login Token"" );
-    }
-    ServerSettingBean.setSecureMode( """" + level );
-    serverSettingBean.updateSettings();
-    securityMode = level;
-    return securityMode;
-} 
-"
-109,43040436,init,initializes the class,initializes the <UNK>,"
-
-private void init() throws CoreException {
-    final String name = getClassName();
-    final IPackageFragment pkg = getPackage();
-    final ICompilationUnit unit = pkg.createCompilationUnit( name + "".java"", """", true, null );
-    setUp( unit );
-    createMainType( PUBLIC_KEYWORD, pkg.getElementName(), getClassName() );
-} 
-"
-162,19346491,checkSetLayout,checks layout set correctly,check the layout for the field,"
-
-private void checkSetLayout( int layout, String field ) {
-    filter.setLayoutIndex( layout );
-    assertEquals( ""The layout Index was "" + filter.getLayoutIndex()
-            + "" and not "" + layout, layout, filter.getLayoutIndex() );
-
-    String fld = fieldList.getValueAt( 1, 0 ).toString();
-    assertEquals( ""Expected field '"" + field + ""' but got "" + fld, field, fld );
-} 
-"
-23,40936756,selectBracketingEntries,select the entries bracketing a specified date,select a <UNK> entries,"
-
-protected boolean selectBracketingEntries( final AbsoluteDate date ) {
-    try {
-        // select the bracketing elements
-        next = ( TimeStampedEntry ) ( eop.tailSet( date ).first() );
-        previous = ( TimeStampedEntry ) ( eop.headSet( next ).last() );
-        return true;
-    } catch ( NoSuchElementException nsee ) {
-        previous = null;
-        next = null;
-        return false;
-    }
-} 
-"
-54,44521080,BFSdist,traverses the graph breadth first and updates the distance,<UNK> <UNK> <UNK>,"
-
-public void BFSdist( Node n, Vector ToDo, int[] indirConn ){
-    Node n2 = null;
-    for ( Enumeration es = n.adjEdges.elements() ; es.hasMoreElements(); ) {
-        n2 = n.adjNode(( Edge )es.nextElement());
-        if ( n2.dist < 0 ){
-            n2.dist = n.dist + 1;
-            indirConn[ n2.dist ]++;
-
-            // important add adds to the end of the list
-            ToDo.add( n2 );
-        }
-    }
-    if ( !ToDo.isEmpty() ){
-        n2 = ( Node ) ToDo.remove( 0 );
-        BFSdist( n2, ToDo, indirConn );
-    }
-} 
-"
-46,36634895,swapItems,this function swaps two items positions in the menu list,swaps the items in the list of items in the array,"
-
-public void swapItems( int index, int change ){
-    if( index >= 0 && index < allItems.length && change >= 0 && change < allItems.length ){
-        MenuItem temp = allItems[ index ];
-        allItems[ index ] = allItems[ change ];
-        allItems[ change ] = temp;
-    }
-} 
-"
-59,1046788,testAddCountryWithSequenceGenerator,flow 2 positive case hibernate sequence generator,test of add country method of class <UNK>,"
-
-public void testAddCountryWithSequenceGenerator() throws Exception {
-    CountryWithSequence country1 = new CountryWithSequence();
-    country1.setCountryId( ""KR"" );
-    country1.setCountryName( ""Korea"" );
-
-    Integer countryCode = ( Integer ) session.save( country1 );
-    assertEquals( ""fail to generate a new countryCode."", 0, countryCode.intValue() );
-    assertNotNull( ""fail to add a new country with sequence generator."", countryCode );
-} 
-"
-164,33719869,testSetWelcomeMsg,test of set welcome msg method of class com,test of set welcome msg method of class <UNK>,"
-
-public void testSetWelcomeMsg() {
-    System.out.println( ""setWelcomeMsg"" );
-    String welcomeMsg = """";
-    SystemClient_DBImpl instance = new SystemClient_DBImpl();     
-    instance.setWelcomeMsg( welcomeMsg );
-        
-    // TODO review the generated test code and remove the default call to fail.
-    fail( ""The test case is a prototype."" );
-} 
-"
-18,18251847,addDbArgs,adds jailer cli arguments for db connection,add a new connection to the database,"
-
-public void addDbArgs( List<String> args ) {
-    args.add( currentConnection.driverClass );
-    args.add( currentConnection.url );
-    args.add( currentConnection.user );
-    args.add( currentConnection.password );
-
-    if ( currentConnection.jar1.trim().length() > 0 ) {
-        args.add( ""-jdbcjar"" );
-        args.add( currentConnection.jar1.trim() );
-    }
-    if ( currentConnection.jar2.trim().length() > 0 ) {
-        args.add( ""-jdbcjar2"" );
-        args.add( currentConnection.jar2.trim() );
-    }
-} 
-"
-132,26285656,testValidateSeparationCount,test validate separation count,test that the separation count works properly,"
-
-public void testValidateSeparationCount() {
-    try {
-        LinearDimension.validateSeparationCount( 0 );
-        fail();
-    } catch ( IllegalArgumentException ex ) {
-        // ok
-    }
-    try {
-        LinearDimension.validateSeparationCount( -2 );
-        fail();
-    } catch ( IllegalArgumentException ex ) {
-        // ok
-    }
-    LinearDimension.validateSeparationCount( 1 );
-    LinearDimension.validateSeparationCount( 2988 );
-} 
-"
-121,29318894,getTargetServiceName,can be overridden by subclasses to customize how the wsa to header is,returns the target service name,"
-
-protected String getTargetServiceName( AddressingHeaders headers ) throws Exception {
-    To toURI = headers.getTo();
-
-    if ( toURI == null ) {
-      return null;
-    }
-    String to = toURI.getPath();
-
-    if ( to == nul l) {
-      return null;
-    }
-    // set the target service
-    return ( to.substring( to.lastIndexOf( '/' ) + 1 ));
-} 
-"
-88,22407577,setTargetMap,modifiactor for the target map from the current configured settings,set the target map for the target map,"
-
-public AntTargetMap setTargetMap() {
-    AntTargetMap targetMap = null;
-    String strDefaultTarget = null;
-    targetMap = m_buildfile.getTargetMap();
-    strDefaultTarget = m_buildfile.getDefaultTarget();
-
-    if ( m_bSelectWithDescription ) {
-        targetMap.selectWithDescription();
-    }
-    setTargetMap( targetMap );
-
-    return m_targetMap;
-} 
-"
-76,45047585,exportXVRL,transform the validation report object into a xmlstream writer,exports the <UNK> to the given writer,"
-
-public void exportXVRL( XMLStreamWriter xvrLDoc ) throws Exception{
-    JAXBContext context = JAXBContext.newInstance( ValidationReport.class );
-    Marshaller m = context.createMarshaller();
-    m.setProperty( Marshaller.JAXB_FORMATTED_OUTPUT, true );
-    ValidationReport vReport = exportVReport();
-
-    if ( vReport != null ) m.marshal( vReport, xvrLDoc );
-} 
-"
-12,13482891,visitRetStmt,make sure that all of targets of the tt ret tt are valid,visits a code ret code statement,"
-
-public void visitRetStmt( RetStmt stmt ) {
-    Set targets = new LinkedHashSet();
-    Iterator iter = stmt.sub().paths().iterator();
-
-    while ( iter.hasNext() ) {
-        Block[] path = ( Block[]) iter.next();
-        targets.add( path[ 1 ] );
-    }
-
-    targets.addAll( stmt.catchTargets() );
-    verifyTargets( stmt.block(), targets );
-    visitNode( stmt );
-} 
-"
-24,18354735,invalidateSession,removes the mapping between the designated sm2 client identifier and,invalidate session with given id,"
-
-public void invalidateSession( String uid, String sid ) {
-    cat.debug( ""==> invalidateSession( "" + String.valueOf( uid ) + "", "" + String.valueOf( sid ) + "")"" );
-
-    synchronized ( lock ) {
-        uid2sid.remove( uid );
-        sid2ssc.remove( sid );
-        sid2ttl.remove( sid );
-    }
-    cat.debug( ""<== invalidateSession()"" );
 } 
 "
