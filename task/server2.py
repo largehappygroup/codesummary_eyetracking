@@ -9,7 +9,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 # FIXME - pseudorandomize human written/ai written
-# FIXME - unsubscribe from eye-tracker during breaks [TODO: CHECK IF THIS NOW WORKS]
+# FIXME - unsubscribe from eye-tracker in between tasks
 
 ### STIMULI 
 #arr = list(range(0, 5)) # list of indices 
@@ -44,8 +44,8 @@ def make_files(pid):
     if os.path.exists(path):
         print('participant folder already exists')
     else:
-        command = ('mkdir data/{pid}; mkdir data/{pid}/gaze/'.format(pid=pid))
-        os.system(command)
+        os.mkdir('data/{pid}'.format(pid=pid))
+        os.mkdir('data/{pid}/gaze'.format(pid=pid))
 
     f_keystrokes = 'data/{pid}/{pid}_keystrokes.csv'.format(pid=pid)
     f_task = 'data/{pid}/{pid}_task.csv'.format(pid=pid)
@@ -76,7 +76,7 @@ def eye_tracker_setup():
     return my_eyetracker
 
 def tobii_data_callback(gaze_data):
-    global arr, task, participant, writing_stimuli, reading_stimuli, f_gaze_root, gaze_file
+    global task, participant, writing_stimuli, reading_stimuli, f_gaze_root, gaze_file, writing_arr, reading_arr
     # Print gaze points of left and right eye
     system_timestamp = gaze_data['system_time_stamp']
     device_timestamp = gaze_data['device_time_stamp']
@@ -88,17 +88,14 @@ def tobii_data_callback(gaze_data):
     valid_right_eye_pd = gaze_data['right_pupil_validity']
     pd_left = gaze_data['left_pupil_diameter']
     pd_right = gaze_data['right_pupil_diameter']
-    # FIXME - restart progress if they quit in the middle
     # FIXME - check how bad the drifting is
     if task.current_task == "writing":
-        fid = writing_stimuli.iloc[arr[task.i-1], 1]
-        func_name = writing_stimuli.iloc[arr[task.i-1], 2]
+        fid = writing_stimuli.iloc[writing_arr[task.i-1], 1]
+        func_name = writing_stimuli.iloc[writing_arr[task.i-1], 2]
     elif task.current_task == "reading":
-            fid = reading_stimuli.iloc[arr[task.j-1], 1]
-            func_name = reading_stimuli.iloc[arr[task.j-1], 2]
-    gaze_file = "{root}_{func}.csv".format(root=f_gaze_root, func=func_name)
-    print("gaze file name", gaze_file)
-    print("func name", func_name)
+            fid = reading_stimuli.iloc[reading_arr[task.j-1], 1]
+            func_name = reading_stimuli.iloc[reading_arr[task.j-1], 2]
+    gaze_file = "{root}_{current_task}_{func}.csv".format(root=f_gaze_root, current_task=task.current_task, func=func_name)
 
     with open(gaze_file, 'a+') as fg:
         cg = csv.writer(fg)
@@ -177,7 +174,6 @@ def writing():
         task.current_task = "writing"
     
     if task.at_rest == True:
-        task.i += 1
         try:
             my_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, tobii_data_callback, as_dictionary=True)
         except:
@@ -186,6 +182,7 @@ def writing():
         
     if task.i == math.floor((len(writing_arr)+1)/2):
         task.at_rest = True
+        task.i += 1
         try:
             my_eyetracker.unsubscribe_from(
                 tr.EYETRACKER_GAZE_DATA, tobii_data_callback)  # stop recording gaze data
@@ -217,15 +214,19 @@ def writing():
         with open(f_task, 'a+') as ft: # writing the last stimulus for participants
             cw = csv.writer(ft)
             cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None])
+            
+        try:  # FIXME - move this outside of if statement
+            my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
+        except:
+            UnboundLocalError(
+                "WARNING: no eyetracker, but experiment has ended")
+            
         if task.first_task_done: # if participant has already done reading task, they've finished the experiment
             task.progress = 0 # resetting progress for next participant
             task.is_finished = True
-            try:
-                my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
-            except:
-                UnboundLocalError("WARNING: no eyetracker, but experiment has ended")
             return render_template('goodbye.html')
         else: # halfway through
+            task.at_rest = True
             task.first_task_done = True 
             task.progress = 50
             return render_template('rest.html', next_task="reading")
@@ -272,7 +273,6 @@ def reading():
         task.current_task = "reading"
         
     if task.at_rest == True:
-        task.j += 1
         try:
             my_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, tobii_data_callback, as_dictionary=True)
         except:
@@ -281,9 +281,9 @@ def reading():
         
     if task.j == math.floor((len(reading_arr)+1)/2):
         task.at_rest = True
+        task.j += 1
         try:
-            my_eyetracker.unsubscribe_from(
-                tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
+            my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
         except:
             UnboundLocalError("WARNING: no eyetracker, but resting")
         return render_template('rest.html', next_task="reading")
@@ -299,7 +299,7 @@ def reading():
             my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
         except:
             UnboundLocalError(
-                "WARNING: no eyetracker, but experiment has ended")
+                "WARNING: no eyetracker, but resting")
         return render_template('goodbye.html')
     
     if task.j == len(reading_arr)+1:
@@ -313,17 +313,19 @@ def reading():
         with open(f_task, 'a+') as ft:
             cw = csv.writer(ft)
             cw.writerow([str(participant.pid), func_name, fid, "reading", None, accurate, missing, unnecessary])
+
+        try:
+            my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
+        except:
+            UnboundLocalError(
+                "WARNING: no eyetracker, but resting")
             
         if task.first_task_done:
             task.progress = 0
             task.is_finished = True
-            try:
-                my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
-            except:
-                UnboundLocalError("WARNING: no eyetracker, but experiment has ended")
-                
             return render_template('goodbye.html')
         else:
+            task.at_rest = True
             task.first_task_done = True
             task.progress = 50
             return render_template('rest.html', next_task="writing")
