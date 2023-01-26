@@ -8,9 +8,8 @@ from datetime import datetime
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
-# FIXME - make a save point
 # FIXME - pseudorandomize human written/ai written
-# FIXME - unsubscribe from eye-tracker during breaks
+# FIXME - unsubscribe from eye-tracker during breaks [TODO: CHECK IF THIS NOW WORKS]
 
 ### STIMULI 
 #arr = list(range(0, 5)) # list of indices 
@@ -139,9 +138,12 @@ def instructions():
         writing_save = pd.read_csv(f_writing_save)
         w_checkpoint = writing_save.columns[0]
         task.i = int(w_checkpoint)
-        if task.i > len(writing_arr)+1 and participant.first_task == "writing":
+        if task.i >= len(writing_arr)+1 and participant.first_task == "writing":
             task.first_task_done == True
+            task.progress += 50
             participant.first_task = "reading"
+        else:
+            task.progress += (task.i/(len(writing_arr)))*50
     except:
         print("This checkpoint for writing doesn't exist yet")
     
@@ -149,9 +151,12 @@ def instructions():
         reading_save = pd.read_csv(f_reading_save)
         r_checkpoint = reading_save.columns[0]
         task.j = int(r_checkpoint)
-        if task.j > len(reading_arr)+1 and participant.first_task == "reading":
+        if task.j >= len(reading_arr)+1 and participant.first_task == "reading":
             task.first_task_done == True
+            task.progress += 50
             participant.first_task = "writing"
+        else:
+            task.progress += (task.j/(len(reading_arr)))*50
     except:
         print("This checkpoint for reading doesn't exist yet")
         
@@ -192,6 +197,16 @@ def writing():
     # Halfway through writing task, take a break
     with open(f_writing_save, "w") as f:
         f.write(str(task.i))
+        
+    if task.i > len(writing_arr) +1:
+        task.progress = 0  # resetting progress for next participant
+        task.is_finished = True
+        try:
+            my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
+        except:
+            UnboundLocalError(
+                "WARNING: no eyetracker, but experiment has ended")
+        return render_template('goodbye.html')
     
     if task.i == len(writing_arr)+1: # end of writing stimuli has been reached
         fid = writing_stimuli.iloc[writing_arr[task.i-2], 1] # identifying info for current function
@@ -276,6 +291,16 @@ def reading():
     task.j += 1
     with open(f_reading_save, "w") as f:
         f.write(str(task.j))
+        
+    if task.j > len(reading_arr) + 1:
+        task.progress = 0  # resetting progress for next participant
+        task.is_finished = True
+        try:
+            my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
+        except:
+            UnboundLocalError(
+                "WARNING: no eyetracker, but experiment has ended")
+        return render_template('goodbye.html')
     
     if task.j == len(reading_arr)+1:
         fid = reading_stimuli.iloc[reading_arr[task.j-2], 1]
