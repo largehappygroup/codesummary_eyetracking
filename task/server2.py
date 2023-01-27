@@ -8,16 +8,14 @@ from datetime import datetime
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
-# FIXME - pseudorandomize human written/ai written
-# FIXME - unsubscribe from eye-tracker in between tasks
 
 ### STIMULI 
-#arr = list(range(0, 5)) # list of indices 
 arr = list(range(0, 167)) # looking at all stimuli for testing purposes
 writing_arr = list(range(0, 16)) # 60% plus one that gets eaten up by the rest trial
 reading_arr = list(range(0, 28)) # 60%
 writing_stimuli = pd.read_csv('./stimuli/writing_stimuli.csv') # stimuli --> snippets of code
 reading_stimuli = pd.read_csv('./stimuli/reading_stimuli.csv') # stimuli --> snippets of code
+human_or_ai_summary = pd.read_csv('./stimuli/human_or_ai_summary.csv') # pseudorandomized choice of human-written or AI-written summaries
 
 # class for participant
 class Participant_Info():
@@ -29,7 +27,7 @@ class Task_Progress():
     i = 0 # incrementer for writing task
     j = 0 # incrementer for reading task
     at_rest = False
-    current_task = None
+    current_task = None # reading/writing
     progress = 0 # incremented as participant continues with task
     first_task_done = False
     is_finished = False
@@ -38,6 +36,8 @@ class Task_Progress():
 # data files are:
 # 1. keystrokes 
 # 2. high-level task data (e.g. code summary ratings, summaries written)
+# 3. save point for writing task
+# 4. save point for reading task
 def make_files(pid):
     global f_keystrokes, f_task, f_gaze_root, f_writing_save, f_reading_save
     path = 'data/%s'%str(pid)
@@ -62,8 +62,8 @@ def make_files(pid):
 
     with open(f_task, 'a+') as f:
         ctemp = csv.writer(f)
-        ctemp.writerow(['participant_id', 'function_name', 'function_id', 'task', 'summary', 'how_accurate', 
-        'missing_info', 'unnecessary_info'])
+        ctemp.writerow(['participant_id', 'function_name', 'function_id', 'task', 'participant_summary', 
+                        'given_summary', 'summary_author', 'how_accurate', 'missing_info', 'unnecessary_info'])
 
 ### EYE-TRACKING
 # setting up eye-tracker and making sure we can get data from it
@@ -109,6 +109,7 @@ def welcome():
 
 # FIXME: make HTML so they have to enter a value for pid
 # instructions at the beginning of the experiment
+# all the work of creating files and randomizing task order is done here
 @app.route('/instructions', methods=['POST'])
 def instructions():
     global task, participant, writing_arr, reading_arr, f_writing_save, f_reading_save
@@ -120,31 +121,34 @@ def instructions():
     # finalizing participant's stimuli
     variable_writing = random.Random(pid).sample(range(16, 74), 10) # change the last number in this line to +/- stimuli to writing task
     variable_reading = random.Random(pid).sample(range(28, 93), 18) # change the last number in this line to +/- stimuli to the reading task
+    
     if not task.is_finished:
         writing_arr = writing_arr + variable_writing
         reading_arr = reading_arr + variable_reading
+        
     random.Random(pid).shuffle(writing_arr)
     random.Random(pid).shuffle(reading_arr)
-    print("after shuffling")
-    print("writing", len(writing_arr), writing_arr)
-    print("reading", len(reading_arr), reading_arr)
+    #print("after shuffling")
+    #print("writing", len(writing_arr), writing_arr)
+    #print("reading", len(reading_arr), reading_arr)
+    
     make_files(pid)  # and make folder/files for each participant
     participant.first_task = random.Random(pid).choice(['reading', 'writing'])
 
-    try:
-        writing_save = pd.read_csv(f_writing_save)
+    try: # logic for restarting from a save point if the server shut down
+        writing_save = pd.read_csv(f_writing_save) # trying to read file if it exists
         w_checkpoint = writing_save.columns[0]
-        task.i = int(w_checkpoint)
-        if task.i >= len(writing_arr)+1 and participant.first_task == "writing":
+        task.i = int(w_checkpoint) # progress will be here 
+        if task.i >= len(writing_arr)+1 and participant.first_task == "writing": # if they finished the writing task, which was the first task
             task.first_task_done == True
             task.progress += 50
             participant.first_task = "reading"
         else:
-            task.progress += (task.i/(len(writing_arr)))*50
+            task.progress += (task.i/(len(writing_arr)))*50 # if participant is in the middle of the task, increment progress bar accordingly
     except:
         print("This checkpoint for writing doesn't exist yet")
     
-    try:
+    try: # same thing as above, but for the reading task
         reading_save = pd.read_csv(f_reading_save)
         r_checkpoint = reading_save.columns[0]
         task.j = int(r_checkpoint)
@@ -158,8 +162,7 @@ def instructions():
         print("This checkpoint for reading doesn't exist yet")
         
     # random choice whether reading/writing is first
-
-    print("first task:", participant.first_task)
+    #print("first task:", participant.first_task)
     
     if participant.first_task == "writing":
         return render_template('instructions.html', first_task = "writing")
@@ -173,17 +176,17 @@ def writing():
     if task.current_task != "writing":
         task.current_task = "writing"
     
-    if task.at_rest == True:
+    if task.at_rest == True: # recording eye-tracking again after rest
         try:
             my_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, tobii_data_callback, as_dictionary=True)
         except:
             UnboundLocalError("WARNING: couldn't find eyetracker")
         task.at_rest = False
         
-    if task.i == math.floor((len(writing_arr)+1)/2):
+    if task.i == math.floor((len(writing_arr)+1)/2): # halfway through each task, take a break
         task.at_rest = True
         task.i += 1
-        try:
+        try: # stop recording eye-tracking data
             my_eyetracker.unsubscribe_from(
                 tr.EYETRACKER_GAZE_DATA, tobii_data_callback)  # stop recording gaze data
         except:
@@ -191,31 +194,30 @@ def writing():
         return render_template('rest.html', next_task="writing")
         
     task.i += 1 # preincrementing because can't increment after return render template
-    # Halfway through writing task, take a break
-    with open(f_writing_save, "w") as f:
-        f.write(str(task.i))
+    with open(f_writing_save, "w") as f: # saving 
+        f.write(str(task.i-1))
         
     if task.i > len(writing_arr) +1:
         task.progress = 0  # resetting progress for next participant
         task.is_finished = True
-        try:
+        try: # stop recording eye-tracking data
             my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
         except:
             UnboundLocalError(
                 "WARNING: no eyetracker, but experiment has ended")
         return render_template('goodbye.html')
     
+    # identifying info for current function
+    fid = writing_stimuli.iloc[writing_arr[task.i-2], 1]
+    func_name = writing_stimuli.iloc[writing_arr[task.i-2], 2]
     if task.i == len(writing_arr)+1: # end of writing stimuli has been reached
-        fid = writing_stimuli.iloc[writing_arr[task.i-2], 1] # identifying info for current function
-        func_name = writing_stimuli.iloc[writing_arr[task.i-2], 2]
-        summary = request.form['summary'] # summary written by participant
+        summary = request.form['summary']  # summary written by participant
         task.i = 0 # resetting writing incrementer
-
         with open(f_task, 'a+') as ft: # writing the last stimulus for participants
             cw = csv.writer(ft)
-            cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None])
+            cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None, None, None])
             
-        try:  # FIXME - move this outside of if statement
+        try: 
             my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
         except:
             UnboundLocalError(
@@ -225,19 +227,21 @@ def writing():
             task.progress = 0 # resetting progress for next participant
             task.is_finished = True
             return render_template('goodbye.html')
-        else: # halfway through
+        else: # halfway through the whole task
             task.at_rest = True
             task.first_task_done = True 
             task.progress = 50
             return render_template('rest.html', next_task="reading")
     else:
         if task.i > 1: # on first trial, participant won't have written a summary
-            summary = request.form.get('summary')
-            fid = writing_stimuli.iloc[writing_arr[task.i-2], 1]
-            func_name = writing_stimuli.iloc[writing_arr[task.i-2], 2]
+            try:
+                summary = request.form['summary']  # summary written by participant
+            except:
+                summary = "Empty: server may have restarted"
+                print("Server may have restarted")
             with open(f_task, 'a+') as ft:
                 cw = csv.writer(ft)
-                cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None])
+                cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None, None, None])
 
         task.progress = task.progress + (1/(len(writing_arr)))*50 # incrementing progress
         percent = task.progress
@@ -272,25 +276,26 @@ def reading():
     if task.current_task != "reading":
         task.current_task = "reading"
         
-    if task.at_rest == True:
+    if task.at_rest == True: # same as above, record eye-tracking data again after taking a break
         try:
             my_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, tobii_data_callback, as_dictionary=True)
         except:
             UnboundLocalError("WARNING: couldn't find eyetracker")
         task.at_rest = False
         
-    if task.j == math.floor((len(reading_arr)+1)/2):
+    if task.j == math.floor((len(reading_arr)+1)/2): # halfway through reading task
         task.at_rest = True
         task.j += 1
-        try:
+        try: # stop recording eye-tracking data
             my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
         except:
             UnboundLocalError("WARNING: no eyetracker, but resting")
         return render_template('rest.html', next_task="reading")
     
+    
     task.j += 1
     with open(f_reading_save, "w") as f:
-        f.write(str(task.j))
+        f.write(str(task.j-1))
         
     if task.j > len(reading_arr) + 1:
         task.progress = 0  # resetting progress for next participant
@@ -302,23 +307,29 @@ def reading():
                 "WARNING: no eyetracker, but resting")
         return render_template('goodbye.html')
     
+    # retrieving task data from each trial
+    fid = reading_stimuli.iloc[reading_arr[task.j-2], 1]
+    func_name = reading_stimuli.iloc[reading_arr[task.j-2], 2]
+    prev_summary_index = int(human_or_ai_summary.iloc[task.j-2])
+    prev_summary = reading_stimuli.iloc[reading_arr[task.j-2], prev_summary_index]
+    author = reading_stimuli.columns[prev_summary_index]
+    if author == "ref":
+        author = "human"
+    accurate = request.form.get('accurate') # values from likert scale questions
+    missing = request.form.get('missing')
+    unnecessary = request.form.get('unnecessary')
+    
     if task.j == len(reading_arr)+1:
-        fid = reading_stimuli.iloc[reading_arr[task.j-2], 1]
-        func_name = reading_stimuli.iloc[reading_arr[task.j-2], 2]
-        accurate = request.form.get('accurate') # values from likert scale questions
-        missing = request.form.get('missing')
-        unnecessary = request.form.get('unnecessary')
-        task.j = 0
-            
+        
+        task.j = 0   
         with open(f_task, 'a+') as ft:
             cw = csv.writer(ft)
-            cw.writerow([str(participant.pid), func_name, fid, "reading", None, accurate, missing, unnecessary])
+            cw.writerow([str(participant.pid), func_name, fid, "reading", None, prev_summary, author, accurate, missing, unnecessary])
 
-        try:
+        try: # stop recording eye-tracking data after last trial
             my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
         except:
-            UnboundLocalError(
-                "WARNING: no eyetracker, but resting")
+            UnboundLocalError("WARNING: no eyetracker, but task is over")
             
         if task.first_task_done:
             task.progress = 0
@@ -331,24 +342,16 @@ def reading():
             return render_template('rest.html', next_task="writing")
     else:
         if task.j > 1:
-            accurate = request.form.get('accurate') # values from likert scale questions
-            missing = request.form.get('missing')
-            unnecessary = request.form.get('unnecessary')
-            fid = reading_stimuli.iloc[reading_arr[task.j-2], 1]
-            func_name = reading_stimuli.iloc[reading_arr[task.j-2], 2]
-            print("fid", fid)
-            print("func name", func_name)
             with open(f_task, 'a+') as ft:
                 cw = csv.writer(ft)
-                cw.writerow([str(participant.pid), func_name, fid, "reading", None, accurate, missing, unnecessary])
+                cw.writerow([str(participant.pid), func_name, fid, "reading", None, prev_summary, author, accurate, missing, unnecessary])
 
         task.progress = task.progress + (1/(len(reading_arr)))*50
         percent = task.progress
         code = reading_stimuli.iloc[reading_arr[task.j-1], 5]
-        human_summary = reading_stimuli.iloc[reading_arr[task.j-1], 3]
-        ai_summary = reading_stimuli.iloc[reading_arr[task.j-1], 4]
-        
-        return render_template('reading.html', code=code, summary=random.choice([human_summary, ai_summary]), percent=percent) 
+        curr_summary_index = int(human_or_ai_summary.iloc[task.j-1])
+        curr_summary = reading_stimuli.iloc[reading_arr[task.j-1], curr_summary_index]
+        return render_template('reading.html', code=code, summary=curr_summary, percent=percent) 
         
         
 if __name__ == "__main__":

@@ -1,0 +1,26 @@
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+participant_id,function_name,function_id,key_pressed,timestamp
+008,testGetCodigo,11950130,T,2023-01-27 10:49:06.460289
+008,testGetCodigo,11950130,H,2023-01-27 10:49:06.525159
+008,testGetCodigo,11950130,I,2023-01-27 10:49:06.598409
+008,testGetCodigo,11950130,S,2023-01-27 10:49:06.814089
+008,testGetCodigo,11950130, ,2023-01-27 10:49:06.908448
+008,testGetCodigo,11950130,I,2023-01-27 10:49:07.299322
+008,testGetCodigo,11950130,S,2023-01-27 10:49:07.409765
+008,testGetCodigo,11950130, ,2023-01-27 10:49:07.499717
+008,testGetCodigo,11950130,A,2023-01-27 10:49:07.654774
+008,testGetCodigo,11950130, ,2023-01-27 10:49:07.700054
+008,testGetCodigo,11950130,T,2023-01-27 10:49:08.101848
+008,testGetCodigo,11950130,E,2023-01-27 10:49:08.211734
+008,testGetCodigo,11950130,S,2023-01-27 10:49:08.348678
+008,testGetCodigo,11950130,T,2023-01-27 10:49:08.436019
+008,testGetCodigo,11950130, ,2023-01-27 10:49:08.539609
+008,testGetCodigo,11950130,S,2023-01-27 10:49:08.685455
+008,testGetCodigo,11950130,U,2023-01-27 10:49:08.762068
+008,testGetCodigo,11950130,M,2023-01-27 10:49:09.046312
+008,testGetCodigo,11950130,M,2023-01-27 10:49:09.134254
+008,testGetCodigo,11950130,A,2023-01-27 10:49:09.259418
+008,testGetCodigo,11950130,R,2023-01-27 10:49:09.350796
+008,testGetCodigo,11950130,Y,2023-01-27 10:49:09.528276
