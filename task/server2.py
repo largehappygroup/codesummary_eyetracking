@@ -183,7 +183,7 @@ def writing():
             UnboundLocalError("WARNING: couldn't find eyetracker")
         task.at_rest = False
         
-    if task.i == math.floor((len(writing_arr)+1)/2): # halfway through each task, take a break
+    if task.i == math.floor((len(writing_arr))/2): # halfway through each task, take a break
         task.at_rest = True
         task.i += 1
         try: # stop recording eye-tracking data
@@ -283,7 +283,7 @@ def reading():
             UnboundLocalError("WARNING: couldn't find eyetracker")
         task.at_rest = False
         
-    if task.j == math.floor((len(reading_arr)+1)/2): # halfway through reading task
+    if task.j == math.floor((len(reading_arr))/2): # halfway through reading task
         task.at_rest = True
         task.j += 1
         try: # stop recording eye-tracking data
