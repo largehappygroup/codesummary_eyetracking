@@ -25,12 +25,12 @@
                     );
             </script>
         </div>
-        <div id="col-b">
+        <div id="col-b" style="margin-top:75px;">
             <p align="center"><strong>Summary</strong></p>
-            <textarea readonly class="form-control" id="summary" style="font-size:18px; font-family: Arial;" rows="3" cols="2">{{summary}}</textarea>
-            <p style="font-size:20px;"><strong>Please indicate the level to which you agree with the following statements:</strong></p>
-            <div>
-                <p><strong>Independent of other factors, I feel that the summary is accurate.</strong></p>
+            <textarea readonly class="form-control" id="summary" style="font-size:18px; font-family: Arial; margin-left:20px;" rows="3" cols="2">{{summary}}</textarea>
+            <p style="font-size:20px;margin-top:80px;margin-left:30px;"><strong>Please indicate the level to which you agree with the following statements:</strong></p>
+            <div style="margin-left:30px;">
+                <p>Independent of other factors, I feel that the summary is accurate.</p>
                 <label for="s_disagree"> Strongly disagree<br />
                     <input type="radio" id="s_disagree" name="accurate" value="s_disagree">
                 </label>
@@ -51,10 +51,10 @@
 
             <!-- add another positive rating-->
 
-            <div>
+            <div style="margin-left:30px;">
                 <br>
-                <p><strong>The summary is missing some important information, <br>
-                    which limits my understanding.</strong></p>
+                <p>The summary is missing some important information, <br>
+                    which limits my understanding.</p>
                 <label for="s_disagree"> Strongly disagree<br />
                     <input type="radio" id="s_disagree" name="missing" value="s_disagree">
                 </label>
@@ -73,9 +73,9 @@
                 <br>
             </div>
 
-            <div>
+            <div style="margin-left:30px;">
                 <br>
-                <p><strong>The summary contains a lot of unnecessary information.</strong></p>
+                <p>The summary contains a lot of unnecessary information.</p>
                 <label for="s_disagree"> Strongly disagree<br />
                     <input type="radio" id="s_disagree" name="unnecessary" value="s_disagree">
                 </label>
@@ -91,8 +91,30 @@
                 <label for="s_agree"> Strongly agree<br />
                     <input type="radio" id="s_agree" name="unnecessary" value="s_agree">
                 </label>
+            </div>
+            
+            <div style="margin-left:30px;">
+                <br>
+                <p><br />The summary is readable.</p>
+                <label for="s_disagree"> Strongly disagree<br />
+                    <input type="radio" id="s_disagree" name="readable" value="s_disagree">
+                </label>
+                <label for="disagree"> Disagree<br />
+                    <input type="radio" id="disagree" name="readable" value="disagree">
+                </label>
+                <label for="neutral"> Neutral<br />
+                    <input type="radio" id="neutral" name="readable" value="neutral">
+                </label>
+                <label for="agree"> Agree<br />
+                    <input type="radio" id="agree" name="readable" value="agree">
+                </label>
+                <label for="s_agree"> Strongly agree<br />
+                    <input type="radio" id="s_agree" name="readable" value="s_agree">
+                </label>
+                <br>
             </div>           
         </div>
+
         <div>
             <input type="submit" value="next" class="btn button form-input" style="position:relative; left: 575px;">
         </div>

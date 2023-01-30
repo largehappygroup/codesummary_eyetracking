@@ -12,7 +12,7 @@ app = Flask(__name__)
 ### STIMULI 
 arr = list(range(0, 167)) # looking at all stimuli for testing purposes
 writing_arr = list(range(0, 16)) # 60% plus one that gets eaten up by the rest trial
-reading_arr = list(range(0, 28)) # 60%
+reading_arr = list(range(0, 25)) # 60%
 writing_stimuli = pd.read_csv('./stimuli/writing_stimuli.csv') # stimuli --> snippets of code
 reading_stimuli = pd.read_csv('./stimuli/reading_stimuli.csv') # stimuli --> snippets of code
 human_or_ai_summary = pd.read_csv('./stimuli/human_or_ai_summary.csv') # pseudorandomized choice of human-written or AI-written summaries
@@ -120,7 +120,7 @@ def instructions():
     
     # finalizing participant's stimuli
     variable_writing = random.Random(pid).sample(range(16, 74), 10) # change the last number in this line to +/- stimuli to writing task
-    variable_reading = random.Random(pid).sample(range(28, 93), 18) # change the last number in this line to +/- stimuli to the reading task
+    variable_reading = random.Random(pid).sample(range(28, 93), 16) # change the last number in this line to +/- stimuli to the reading task
     
     if not task.is_finished:
         writing_arr = writing_arr + variable_writing
@@ -215,7 +215,7 @@ def writing():
         task.i = 0 # resetting writing incrementer
         with open(f_task, 'a+') as ft: # writing the last stimulus for participants
             cw = csv.writer(ft)
-            cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None, None, None])
+            cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None, None, None, None])
             
         try: 
             my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
@@ -241,7 +241,7 @@ def writing():
                 print("Server may have restarted")
             with open(f_task, 'a+') as ft:
                 cw = csv.writer(ft)
-                cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None, None, None])
+                cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None, None, None, None])
 
         task.progress = task.progress + (1/(len(writing_arr)))*50 # incrementing progress
         percent = task.progress
@@ -318,13 +318,14 @@ def reading():
     accurate = request.form.get('accurate') # values from likert scale questions
     missing = request.form.get('missing')
     unnecessary = request.form.get('unnecessary')
+    readable = request.form.get('readable')
     
     if task.j == len(reading_arr)+1:
         
         task.j = 0   
         with open(f_task, 'a+') as ft:
             cw = csv.writer(ft)
-            cw.writerow([str(participant.pid), func_name, fid, "reading", None, prev_summary, author, accurate, missing, unnecessary])
+            cw.writerow([str(participant.pid), func_name, fid, "reading", None, prev_summary, author, accurate, missing, unnecessary, readable])
 
         try: # stop recording eye-tracking data after last trial
             my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
@@ -344,7 +345,7 @@ def reading():
         if task.j > 1:
             with open(f_task, 'a+') as ft:
                 cw = csv.writer(ft)
-                cw.writerow([str(participant.pid), func_name, fid, "reading", None, prev_summary, author, accurate, missing, unnecessary])
+                cw.writerow([str(participant.pid), func_name, fid, "reading", None, prev_summary, author, accurate, missing, unnecessary, readable])
 
         task.progress = task.progress + (1/(len(reading_arr)))*50
         percent = task.progress
