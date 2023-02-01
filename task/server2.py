@@ -10,7 +10,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 ### STIMULI 
-arr = list(range(0, 167)) # looking at all stimuli for testing purposes
+arr = list(range(0, 162)) # looking at all stimuli for testing purposes
 writing_arr = list(range(0, 16)) # 60% plus one that gets eaten up by the rest trial
 reading_arr = list(range(0, 25)) # 60%
 writing_stimuli = pd.read_csv('./stimuli/writing_stimuli.csv') # stimuli --> snippets of code
