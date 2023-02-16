@@ -119,8 +119,8 @@ def instructions():
     task = Task_Progress()
     
     # finalizing participant's stimuli
-    variable_writing = random.Random(pid).sample(range(16, 74), 10) # change the last number in this line to +/- stimuli to writing task
-    variable_reading = random.Random(pid).sample(range(28, 93), 16) # change the last number in this line to +/- stimuli to the reading task
+    variable_writing = random.Random(pid).sample(range(16, 68), 10) # change the last number in this line to +/- stimuli to writing task
+    variable_reading = random.Random(pid).sample(range(28, 92), 16) # change the last number in this line to +/- stimuli to the reading task
     
     if not task.is_finished:
         writing_arr = writing_arr + variable_writing
