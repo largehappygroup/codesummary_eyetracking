@@ -1,5 +1,6 @@
 import os
 import csv
+import time
 import math
 import random
 import pandas as pd
@@ -63,7 +64,7 @@ def make_files(pid):
     with open(f_task, 'a+') as f:
         ctemp = csv.writer(f)
         ctemp.writerow(['participant_id', 'function_name', 'function_id', 'task', 'participant_summary', 
-                        'given_summary', 'summary_author', 'how_accurate', 'missing_info', 'unnecessary_info', 'timestamp'])
+                        'given_summary', 'summary_author', 'how_accurate', 'missing_info', 'unnecessary_info', 'end_timestamp'])
 
 ### EYE-TRACKING
 # setting up eye-tracker and making sure we can get data from it
@@ -217,7 +218,7 @@ def writing():
         task.i = 0 # resetting writing incrementer
         with open(f_task, 'a+') as ft: # writing the last stimulus for participants
             cw = csv.writer(ft)
-            cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None, None, None, None])
+            cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None, None, None, None, str(datetime.now())])
             
         try: 
             my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
@@ -243,7 +244,7 @@ def writing():
                 print("Server may have restarted")
             with open(f_task, 'a+') as ft:
                 cw = csv.writer(ft)
-                cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None, None, None, None])
+                cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None, None, None, None, str(datetime.now())])
 
         task.progress = task.progress + (1/(len(writing_arr)))*50 # incrementing progress
         percent = task.progress
@@ -327,7 +328,7 @@ def reading():
         task.j = 0   
         with open(f_task, 'a+') as ft:
             cw = csv.writer(ft)
-            cw.writerow([str(participant.pid), func_name, fid, "reading", None, prev_summary, author, accurate, missing, unnecessary, readable])
+            cw.writerow([str(participant.pid), func_name, fid, "reading", None, prev_summary, author, accurate, missing, unnecessary, readable, str(datetime.now())])
 
         try: # stop recording eye-tracking data after last trial
             my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
@@ -347,7 +348,7 @@ def reading():
         if task.j > 1:
             with open(f_task, 'a+') as ft:
                 cw = csv.writer(ft)
-                cw.writerow([str(participant.pid), func_name, fid, "reading", None, prev_summary, author, accurate, missing, unnecessary, readable])
+                cw.writerow([str(participant.pid), func_name, fid, "reading", None, prev_summary, author, accurate, missing, unnecessary, readable, str(datetime.now())])
 
         task.progress = task.progress + (1/(len(reading_arr)))*50
         percent = task.progress

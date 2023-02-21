@@ -1,1 +1,5 @@
 participant_id,function_name,function_id,task,participant_summary,given_summary,summary_author,how_accurate,missing_info,unnecessary_info,timestamp
+participant_id,function_name,function_id,task,participant_summary,given_summary,summary_author,how_accurate,missing_info,unnecessary_info,end_timestamp
+000,readFromFile,16777940,writing,This is a test,,,,,,,2023-02-20 21:20:13.689373
+000,go,14477536,writing,This is another test,,,,,,,2023-02-20 21:20:39.281099
+000,getImageWithSource,1782360,writing,And another test,,,,,,,2023-02-20 21:21:01.922419
