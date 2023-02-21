@@ -53,7 +53,7 @@ def make_files(pid):
     f_writing_save = 'data/{pid}/{pid}_writing_save.csv'.format(pid=pid)
     f_reading_save = 'data/{pid}/{pid}_reading_save.csv'.format(pid=pid)
     # header for gaze files
-    # ['participant_id', 'function_name', 'function_id', 'system_timestamp', 'device_timestamp', 'valid_gaze_left', 'valid_gaze_right', 'gaze_left_eye', 'gaze_right_eye', 'valid_pd_left', 'valid_pd_right', 'gaze_left', 'gaze_right']
+    # ['participant_id', 'function_name', 'function_id', 'system_timestamp', 'device_timestamp', 'valid_gaze_left', 'valid_gaze_right', 'gaze_left_eye', 'gaze_right_eye', 'valid_pd_left', 'valid_pd_right', 'pd_left', 'pd_right']
 
     # Writing headers
     with open(f_keystrokes, 'a+') as f:
@@ -101,6 +101,9 @@ def tobii_data_callback(gaze_data):
         cg = csv.writer(fg)
         cg.writerow([str(participant.pid), func_name, fid, system_timestamp, device_timestamp, gaze_validity_left, 
         gaze_validity_right, gaze_left_eye, gaze_right_eye, valid_left_eye_pd, valid_right_eye_pd, pd_left, pd_right])
+        
+['participant_id', 'function_name', 'function_id', 'system_timestamp', 'device_timestamp', 'valid_gaze_left', 
+ 'valid_gaze_right', 'gaze_left_eye', 'gaze_right_eye', 'valid_pd_left', 'valid_pd_right', 'pd_left', 'pd_right']
 
 # Start of UI, welcome page
 @app.route('/')

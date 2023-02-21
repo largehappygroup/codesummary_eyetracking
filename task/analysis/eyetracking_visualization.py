@@ -28,16 +28,44 @@ def return_x_y(gaze):
     return x, y
 
 def plot_points(root, eye_file, image_file):
-    print("root", root)
-    print("image_file", image_file)
-    #image = cv2.imread('{root}{image_file}'.format(image_file))
-    eye_file = pd.read_csv('{root}{eye_file}'.format(root=root, eye_file=eye_file))
-    print(eye_file.shape)
+    # print("root", root)
+    # print("image_file", image_file)
+    image = cv2.imread('../bounding_boxes/final_stimuli/{image_file}'.format(root=root, image_file=image_file))
+    eye_file = pd.read_csv('{root}{eye_file}'.format(root=root, eye_file=eye_file), names=['participant_id', 'function_name', 'function_id', 'system_timestamp', 'device_timestamp', 'valid_gaze_left', 'valid_gaze_right', 'gaze_left_eye', 'gaze_right_eye', 'valid_pd_left', 'valid_pd_right', 'pd_left', 'pd_right'])
+    dimensions = image.shape
+    # print(eye_file.shape[0])
+    # for i in range(eye_file.shape[0]):
+    #     pass
     # find image associated with file
     # iterate through eye-tracking file
     # plot points on new image
     # output to folder
+    df_valid = eye_file[(eye_file['valid_gaze_left'] == 1)]
+    df_valid = eye_file[(eye_file['valid_gaze_right'] == 1)]
+    df_valid = eye_file[(eye_file['valid_pd_right'] == 1)]
+    df_valid = eye_file[(eye_file['valid_pd_left'] == 1)]
+
+    # height, width, number of channels in image
+    height = image.shape[0]
+    width = image.shape[1]
+    for i in range(df_valid.shape[0]):
+        gaze_l = df_valid.loc[i, 'gaze_left_eye']
+        gaze_r = df_valid.loc[i, 'gaze_right_eye']
+        cv_x_l, cv_y_l = return_x_y(gaze_l)
+        cv_x_r, cv_y_r = return_x_y(gaze_r)
+
+        temp = [cv_x_l, cv_y_l, cv_x_r, cv_y_r]
+        if "oof" in temp:
+            continue
+
+        img = cv2.imread(img_path)
+        cv2.circle(img, (cv_x_l, cv_y_l), 10, (0, 255, 0), -1)
+        cv2.circle(img, (cv_x_r, cv_y_r), 10, (255, 0, 0), -1)
+        cv2.imwrite(frame_out_dir + '/' +
+                    re.findall("\d+", i)[0] + '.jpg', image)
+           
     return
+
     for k, j in enumerate(tqdm(filelist)):
             # subtract frame numbers here if starting in the middle
         i = int(re.findall("\d+", j)[0]) - 333
@@ -94,8 +122,6 @@ def plot_points(root, eye_file, image_file):
 root = '../data/{pid}/gaze/'.format(pid=pid)
 filelist = os.listdir(root)
 stimlist = os.listdir('../bounding_boxes/final_stimuli')
-# print(framelist)
-# print(stimlist)
 frame_out_dir = './video_frames_out/{pid}/'.format(pid=str(pid))
 filelen = len(filelist)
 filelist.sort()
@@ -106,7 +132,6 @@ try:
 except:
     pass
 
-counter = 0 
 for i in range(filelen):
     #print(type(framelist[i]))
     if re.search("reading", filelist[i]):
