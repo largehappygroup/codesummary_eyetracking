@@ -1,0 +1,66 @@
+participant_id,function_name,function_id,task,participant_summary,given_summary,summary_author,how_accurate,missing_info,unnecessary_info,end_time
+008,getInstitutions,19280843,reading,,this method returns a collection or institution bean objects,human,,,,,2023-02-21 16:55:53.681949
+008,exit,4453291,reading,, exit the event ,callcon,,,,,2023-02-21 16:55:57.011709
+008,getStatusFlagFields,22622479,reading,, returns the list of status flag for the specified ,callcon,,,,,2023-02-21 16:55:58.686655
+008,testAddCountryWithSequenceGenerator,1046788,reading,,flow 2 positive case hibernate sequence generator,human,,,,,2023-02-21 16:56:00.747978
+008,setTopAttributes,22628734,reading,,populate top level attributes with opml type specific data attributes from,human,,,,,2023-02-21 16:56:02.779885
+008,clone,48104729,reading,,clone the format object,human,,,,,2023-02-21 16:56:05.155940
+008,testOccThm,19498298,reading,, test the value of input and target ,callcon,,,,,2023-02-21 16:56:14.566996
+008,modifyRoleInCache,1118165,reading,, modifies the role in the cache ,callcon,,,,,2023-02-21 16:56:16.807146
+008,addRelativeHeaders,48861766,reading,,add relative header,human,,,,,2023-02-21 16:56:18.983047
+008,genIdents,29854794,reading,, generate a evaluation sequence ,callcon,,,,,2023-02-21 16:56:21.120556
+008,setCombo_Value,19344536,reading,, set the value of combo value ,callcon,,,,,2023-02-21 16:56:25.838513
+008,pluginRegistryContains,27798254,reading,, check if the plugin is already contained in the registry ,callcon,,,,,2023-02-21 16:56:27.716043
+008,testLogin,3456415,reading,,check that the user login and password are set on session,human,,,,,2023-02-21 16:56:29.668781
+008,testGetEvtIDs,33719118,reading,,test of get evt ids method of class com,human,,,,,2023-02-21 16:56:31.515103
+008,openCursor,45888514,reading,, opens a cursor to the specified source ,callcon,,,,,2023-02-21 16:56:33.656416
+008,testGetClassification,33719607,reading,, test of get classification method of class vgrabber ,callcon,,,,,2023-02-21 16:56:35.658572
+008,fetchString,24245709,reading,,internal helper function read a string from the device,human,,,,,2023-02-21 16:56:37.401367
+008,addDigit,38221537,reading,,adds the digit to the indicator text editor,human,,,,,2023-02-21 16:56:39.038250
+008,show,21359951,reading,,show dialog with existing or new null contact,human,,,,,2023-02-21 16:56:40.801146
+008,connectionErrorOccurred,26412118,reading,,responds to an error event,human,,,,,2023-02-21 16:56:42.636743
+008,testGetCodigo,11950130,reading,, test of get tmp method of class com ,callcon,,,,,2023-02-21 16:56:54.272899
+008,split,29859244,reading,, split a line to the current list of characters ,callcon,,,,,2023-02-21 16:57:02.222769
+008,close,34413807,reading,,notifies all views to de register from their view controllers,human,,,,,2023-02-21 16:57:04.059698
+008,asMap,22624602,reading,, maps a map as a map as a map ,callcon,,,,,2023-02-21 16:57:05.789775
+008,getCollaborateCollection,250694,reading,, get a list of addresses that are logged in ,callcon,,,,,2023-02-21 16:57:07.377017
+008,getMessage,51122387,reading,, returns the message ,callcon,,,,,2023-02-21 16:57:08.956288
+008,addLimit,34426334,reading,,helper method which creates and adds an option for limit to the specified,human,,,,,2023-02-21 16:57:10.944635
+008,getOkCommand18,40879350,reading,, returns an initiliazed instance of ok command18 component ,callcon,,,,,2023-02-21 16:57:12.482135
+008,createNewServerProcess,3457090,reading,, creates a new server process on the server ,callcon,,,,,2023-02-21 16:57:14.151187
+008,print,2896279,reading,, prints a tab ,callcon,,,,,2023-02-21 16:57:16.415815
+008,resetSchedConflict,1736289,reading,, resets the time conflict in the data store ,callcon,,,,,2023-02-21 16:57:17.934999
+008,capitalizeString,1412807,reading,, capitalize the first letter of the beginning of a string ,callcon,,,,,2023-02-21 16:57:19.402605
+008,actionLoadNotes,34425716,reading,,called when the user selects to load the in game notes file,human,,,,,2023-02-21 16:57:21.020639
+008,createServerChooser,35553791,reading,, creates the server chooser ,callcon,,,,,2023-02-21 16:57:22.782229
+008,init,43040436,reading,, initializes the package ,callcon,,,,,2023-02-21 16:57:25.666815
+008,openNewContainerWindow,34413723,reading,,open a window to start the import process,human,,,,,2023-02-21 16:57:27.318748
+008,joinTableRender,18252350,reading,, creates the table interaction table ,callcon,,,,,2023-02-21 16:57:28.973221
+008,refreshTreePanel,35553511,reading,, refreshes the tree panel ,callcon,,,,,2023-02-21 16:57:30.520202
+008,getAllSourceRoots,47479282,reading,, returns the source roots of the plugin name ,callcon,,,,,2023-02-21 16:57:32.159448
+008,initOptionsMenu,34426938,reading,, initializes the options menu ,callcon,,,,,2023-02-21 16:57:33.841553
+008,go,14477536,writing,,,,,,,,2023-02-21 16:57:41.493437
+008,showLatestPlan,18418213,writing,show latest,,,,,,,2023-02-21 16:57:45.715828
+008,setPhoto,50994916,writing,set photo,,,,,,,2023-02-21 16:57:54.179289
+008,addPKColumn,51577053,writing,add pk column,,,,,,,2023-02-21 16:57:58.515786
+008,getImageWithSource,1782360,writing,get image with source,,,,,,,2023-02-21 16:58:02.975689
+008,getUserNameFromCookie,1694531,writing,get username from cookie,,,,,,,2023-02-21 16:58:13.433069
+008,invalidateSession,18354735,writing,invalidate session,,,,,,,2023-02-21 16:58:18.116157
+008,createChecklistItem,49866815,writing,create checklist,,,,,,,2023-02-21 16:58:22.952245
+008,makeUniqueParagraphForGlobalWithLength,34105249,writing,make unique paragraph,,,,,,,2023-02-21 16:58:31.739266
+008,listen,29572299,writing,,,,,,,,2023-02-21 17:09:10.221369
+008,appendDeclarations,36405409,writing,append,,,,,,,2023-02-21 17:09:15.248194
+008,swapItems,36634895,writing,swap items,,,,,,,2023-02-21 17:09:26.256683
+008,add,4114383,writing,add,,,,,,,2023-02-21 17:09:29.933119
+008,getMenuAdministracion,28631042,writing,get menu,,,,,,,2023-02-21 17:09:44.755442
+008,testNegativeParseCases,31696447,writing,negative parse cases,,,,,,,2023-02-21 17:10:03.576747
+008,updateGain,26215341,writing,update gain,,,,,,,2023-02-21 17:10:07.645856
+008,messageSent,19413001,writing,message sent,,,,,,,2023-02-21 17:10:12.397796
+008,updateSchema,4627680,writing,udpate schema,,,,,,,2023-02-21 17:10:20.735641
+008,setGenJarDir,31789275,writing,set genjar,,,,,,,2023-02-21 17:10:25.738141
+008,clearFieldersFromField,45147874,writing,cleasr,,,,,,,2023-02-21 17:10:29.571546
+008,equals,10222579,writing,equals,,,,,,,2023-02-21 17:10:32.717417
+008,toString,39120328,writing,tostring,,,,,,,2023-02-21 17:10:36.693606
+008,saveSetting,46026508,writing,save,,,,,,,2023-02-21 17:10:40.192742
+008,print,7957602,writing,print,,,,,,,2023-02-21 17:10:43.357799
+008,actionPerformed,12725774,writing,action,,,,,,,2023-02-21 17:10:48.088380
