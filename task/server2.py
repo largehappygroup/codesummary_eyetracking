@@ -53,7 +53,7 @@ def make_files(pid):
     f_writing_save = 'data/{pid}/{pid}_writing_save.csv'.format(pid=pid)
     f_reading_save = 'data/{pid}/{pid}_reading_save.csv'.format(pid=pid)
     # header for gaze files
-    # ['participant_id', 'function_name', 'function_id', 'system_timestamp', 'device_timestamp', 'valid_gaze_left', 'valid_gaze_right', 'gaze_left_eye', 'gaze_right_eye', 'valid_pd_left', 'valid_pd_right', 'pd_left', 'pd_right']
+    # ['participant_id', 'function_name', 'function_id', 'system_timestamp', 'device_timestamp', 'valid_gaze_left', 'valid_gaze_right', 'gaze_left_eye', 'gaze_right_eye', 'valid_pd_left', 'valid_pd_right', 'gaze_left', 'gaze_right']
 
     # Writing headers
     with open(f_keystrokes, 'a+') as f:
@@ -63,7 +63,7 @@ def make_files(pid):
     with open(f_task, 'a+') as f:
         ctemp = csv.writer(f)
         ctemp.writerow(['participant_id', 'function_name', 'function_id', 'task', 'participant_summary', 
-                        'given_summary', 'summary_author', 'how_accurate', 'missing_info', 'unnecessary_info', 'end_timestamp'])
+                        'given_summary', 'summary_author', 'how_accurate', 'missing_info', 'unnecessary_info', 'end_time'])
 
 ### EYE-TRACKING
 # setting up eye-tracker and making sure we can get data from it
@@ -101,8 +101,6 @@ def tobii_data_callback(gaze_data):
         cg = csv.writer(fg)
         cg.writerow([str(participant.pid), func_name, fid, system_timestamp, device_timestamp, gaze_validity_left, 
         gaze_validity_right, gaze_left_eye, gaze_right_eye, valid_left_eye_pd, valid_right_eye_pd, pd_left, pd_right])
-        
-#['participant_id', 'function_name', 'function_id', 'system_timestamp', 'device_timestamp', 'valid_gaze_left', 'valid_gaze_right', 'gaze_left_eye', 'gaze_right_eye', 'valid_pd_left', 'valid_pd_right', 'pd_left', 'pd_right']
 
 # Start of UI, welcome page
 @app.route('/')
@@ -130,9 +128,9 @@ def instructions():
         
     random.Random(pid).shuffle(writing_arr)
     random.Random(pid).shuffle(reading_arr)
-    #print("after shuffling")
-    #print("writing", len(writing_arr), writing_arr)
-    #print("reading", len(reading_arr), reading_arr)
+    # print("after shuffling")
+    # print("writing", len(writing_arr), writing_arr)
+    # print("reading", len(reading_arr), reading_arr)
     
     make_files(pid)  # and make folder/files for each participant
     participant.first_task = random.Random(pid).choice(['reading', 'writing'])
@@ -189,6 +187,12 @@ def writing():
         task.at_rest = True
         task.i += 1
         try: # stop recording eye-tracking data
+            fid = writing_stimuli.iloc[writing_arr[task.i-2], 1]
+            func_name = writing_stimuli.iloc[writing_arr[task.i-2], 2]
+            summary = request.form['summary']  # summary written by participant
+            with open(f_task, 'a+') as ft: # writing the last stimulus for participants
+                cw = csv.writer(ft)
+                cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None, None, None, None, str(datetime.now())])
             my_eyetracker.unsubscribe_from(
                 tr.EYETRACKER_GAZE_DATA, tobii_data_callback)  # stop recording gaze data
         except:
@@ -238,12 +242,12 @@ def writing():
         if task.i > 1: # on first trial, participant won't have written a summary
             try:
                 summary = request.form['summary']  # summary written by participant
+                with open(f_task, 'a+') as ft:
+                    cw = csv.writer(ft)
+                    cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None, None, None, None, str(datetime.now())])
             except:
                 summary = "Empty: server may have restarted"
                 print("Server may have restarted")
-            with open(f_task, 'a+') as ft:
-                cw = csv.writer(ft)
-                cw.writerow([str(participant.pid), func_name, fid, "writing", summary, None, None, None, None, None, None, str(datetime.now())])
 
         task.progress = task.progress + (1/(len(writing_arr)))*50 # incrementing progress
         percent = task.progress
@@ -289,6 +293,21 @@ def reading():
         task.at_rest = True
         task.j += 1
         try: # stop recording eye-tracking data
+            fid = reading_stimuli.iloc[reading_arr[task.j-2], 1]
+            func_name = reading_stimuli.iloc[reading_arr[task.j-2], 2]
+            prev_summary_index = int(human_or_ai_summary.iloc[task.j-2])
+            prev_summary = reading_stimuli.iloc[reading_arr[task.j-2], prev_summary_index]
+            author = reading_stimuli.columns[prev_summary_index]
+            if author == "ref":
+                author = "human"
+            accurate = request.form.get('accurate') # values from likert scale questions
+            missing = request.form.get('missing')
+            unnecessary = request.form.get('unnecessary')
+            readable = request.form.get('readable')
+            with open(f_task, 'a+') as ft:
+                cw = csv.writer(ft)
+                cw.writerow([str(participant.pid), func_name, fid, "reading", None, prev_summary, author, accurate, missing, unnecessary, readable, str(datetime.now())])
+
             my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, tobii_data_callback)
         except:
             UnboundLocalError("WARNING: no eyetracker, but resting")
@@ -344,7 +363,8 @@ def reading():
             task.progress = 50
             return render_template('rest.html', next_task="writing")
     else:
-        if task.j > 1:
+        print("j", task.j)
+        if task.j > 1 and task.j-2 != math.floor((len(reading_arr))/2):
             with open(f_task, 'a+') as ft:
                 cw = csv.writer(ft)
                 cw.writerow([str(participant.pid), func_name, fid, "reading", None, prev_summary, author, accurate, missing, unnecessary, readable, str(datetime.now())])
