@@ -548,7 +548,7 @@ public void removeSelection( IEntity selection ) {
         
 } 
 "
-7957602,print,print a textual description of this expr info, print out the <UNK> ,"
+7957602,println,print a textual description of this expr info, print out the <UNK> ,"
 
 protected void print() {
     System.out.println( ""Print for "" + prototype + ""------------------"" );
@@ -1492,7 +1492,7 @@ public WebImage getImageWithSource( String source ) {
     return null;
 } 
 "
-40865212,getBackCommand2,returns an initiliazed instance of back command2 component, returns an initiliazed instance of back command2 component ,"
+40865212,getBackCommand22,returns an initiliazed instance of back command2 component, returns an initiliazed instance of back command2 component ,"
 
 public Command getBackCommand2() {
     if ( backCommand2 == null ) {//GEN-END: | 233-getter | 0 | 233-preInit
@@ -1589,7 +1589,7 @@ public void makeUniqueParagraphForGlobalWithLength( String global, int length ) 
     utils.setGlobal( global, paragraph );
 } 
 "
-43040436,init,initializes the class, initializes the package ,"
+43040436,init2,initializes the class, initializes the package ,"
 
 private void init() throws CoreException {
     final String name = getClassName();

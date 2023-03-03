@@ -128,9 +128,9 @@ def instructions():
         
     random.Random(pid).shuffle(writing_arr)
     random.Random(pid).shuffle(reading_arr)
-    # print("after shuffling")
-    # print("writing", len(writing_arr), writing_arr)
-    # print("reading", len(reading_arr), reading_arr)
+    print("after shuffling")
+    print("writing", len(writing_arr), writing_arr)
+    print("reading", len(reading_arr), reading_arr)
     
     make_files(pid)  # and make folder/files for each participant
     participant.first_task = random.Random(pid).choice(['reading', 'writing'])
@@ -363,7 +363,6 @@ def reading():
             task.progress = 50
             return render_template('rest.html', next_task="writing")
     else:
-        print("j", task.j)
         if task.j > 1 and task.j-2 != math.floor((len(reading_arr))/2):
             with open(f_task, 'a+') as ft:
                 cw = csv.writer(ft)

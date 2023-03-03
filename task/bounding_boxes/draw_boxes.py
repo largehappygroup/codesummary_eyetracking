@@ -1,15 +1,27 @@
+import os
 import cv2
 import numpy as np
 import pandas as pd
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import pytesseract
+import keras_ocr
 
 #pytesseract.pytesseract.tesseract_cmd = '/home/zachkaras/.local/bin/pytesseract'
 
 # Add code here for reading in input
+
+
 img = cv2.imread('./final_stimuli/add.png')
 img = img[100:1000, 10:1150]
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+print(img.shape)
+print(gray.shape)
 filename = 'FIXME'
+pipeline = keras_ocr.pipeline.Pipeline()
+test = keras_ocr.tools.read(gray)
+test = pipeline.recognize(gray)
+print(gray)
+exit(1)
 
 # Doing some preprocessing on the screenshot https://www.geeksforgeeks.org/text-detection-and-extraction-using-opencv-and-ocr/
 ret, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_OTSU | cv2.THRESH_BINARY_INV)
@@ -19,13 +31,13 @@ contours, hierarchy = cv2.findContours(dilation, cv2.RETR_EXTERNAL, cv2.CHAIN_AP
 
 img2 = img.copy()
 
-coordinates = pd.DataFrame() # putting all coordinates for each function's bounding boxes into their own CSVs
-c = 1
-test = []
-kernel = np.array([[0, -1, 0],
-                   [-1, 5,-1],
-                   [0, -1, 0]])
-#kernel = np.ones((5, 5), np.uint8)
+# coordinates = pd.DataFrame() # putting all coordinates for each function's bounding boxes into their own CSVs
+# c = 1
+# test = []
+# kernel = np.array([[0, -1, 0],
+#                    [-1, 5,-1],
+#                    [0, -1, 0]])
+# #kernel = np.ones((5, 5), np.uint8)
 
 # adding coordinates for each word into two separate lists
 for box in contours:
