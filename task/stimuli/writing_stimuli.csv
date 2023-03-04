@@ -805,7 +805,7 @@ public void setPhoto( JdaiPhoto photo ) {
     setNewPhoto( photo );
 } 
 "
-99,40865212,getBackCommand2,returns an initiliazed instance of back command2 component, returns an initiliazed instance of back command2 component ,"
+99,40865212,getBackCommand22,returns an initiliazed instance of back command2 component, returns an initiliazed instance of back command2 component ,"
 
 public Command getBackCommand2() {
     if ( backCommand2 == null ) {//GEN-END: | 233-getter | 0 | 233-preInit

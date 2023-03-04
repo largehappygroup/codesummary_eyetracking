@@ -15,7 +15,8 @@ writing_arr = list(range(0, 16)) # 60% plus one that gets eaten up by the rest t
 reading_arr = list(range(0, 25)) # 60%
 writing_stimuli = pd.read_csv('./stimuli/writing_stimuli.csv') # stimuli --> snippets of code
 reading_stimuli = pd.read_csv('./stimuli/reading_stimuli.csv') # stimuli --> snippets of code
-human_or_ai_summary = pd.read_csv('./stimuli/human_or_ai_summary.csv') # pseudorandomized choice of human-written or AI-written summaries
+#human_or_ai_summary = pd.read_csv('./stimuli/human_or_ai_summary.csv') # pseudorandomized choice of human-written or AI-written summaries
+human_or_ai_summary = pd.read_csv('./stimuli/human_or_ai_summary_inverted.csv')
 
 # class for participant
 class Participant_Info():

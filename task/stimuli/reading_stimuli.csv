@@ -344,7 +344,7 @@ public List getCollaborateCollection( String userID ) throws AccessException {
     return list;
 } 
 "
-106,43040436,init,initializes the class, initializes the package ,"
+106,43040436,init2,initializes the class, initializes the package ,"
 
 private void init() throws CoreException {
     final String name = getClassName();

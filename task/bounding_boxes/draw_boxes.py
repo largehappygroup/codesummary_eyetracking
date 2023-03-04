@@ -21,7 +21,6 @@ pipeline = keras_ocr.pipeline.Pipeline()
 test = keras_ocr.tools.read(gray)
 test = pipeline.recognize(gray)
 print(gray)
-exit(1)
 
 # Doing some preprocessing on the screenshot https://www.geeksforgeeks.org/text-detection-and-extraction-using-opencv-and-ocr/
 ret, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_OTSU | cv2.THRESH_BINARY_INV)
