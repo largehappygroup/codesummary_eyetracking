@@ -89,6 +89,10 @@ def tobii_data_callback(gaze_data):
     valid_right_eye_pd = gaze_data['right_pupil_validity']
     pd_left = gaze_data['left_pupil_diameter']
     pd_right = gaze_data['right_pupil_diameter']
+    irl_left_coord = gaze_data['left_gaze_origin_in_user_coordinate_system']
+    irl_right_coord = gaze_data['right_gaze_origin_in_user_coordinate_system']
+    irl_left_point_on_screen = gaze_data['left_gaze_point_in_user_coordinate_system']
+    irl_right_point_on_screen = gaze_data['right_gaze_point_in_user_coordinate_system']
     # FIXME - check how bad the drifting is
     if task.current_task == "writing":
         fid = writing_stimuli.iloc[writing_arr[task.i-1], 1]
@@ -101,7 +105,8 @@ def tobii_data_callback(gaze_data):
     with open(gaze_file, 'a+') as fg:
         cg = csv.writer(fg)
         cg.writerow([str(participant.pid), func_name, fid, system_timestamp, device_timestamp, gaze_validity_left, 
-        gaze_validity_right, gaze_left_eye, gaze_right_eye, valid_left_eye_pd, valid_right_eye_pd, pd_left, pd_right])
+        gaze_validity_right, gaze_left_eye, gaze_right_eye, valid_left_eye_pd, valid_right_eye_pd, pd_left, pd_right,
+        irl_left_coord, irl_right_coord, irl_left_point_on_screen, irl_right_point_on_screen])
 
 # Start of UI, welcome page
 @app.route('/')
