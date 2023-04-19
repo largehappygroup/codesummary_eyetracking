@@ -3,18 +3,16 @@ import re
 import decimal
 import pandas as pd
 
+
 pid = 168
 
-
-again = decimal.Decimal(72) / decimal.Decimal(7)
-print(again)
-
+# This is a crude metric for calculating "noise" in the data (aka the ratio of NaNs to valid gaze points)
 def calculate_noise(root, eye_file):
 
     eye_file = pd.read_csv('{root}{eye_file}'.format(root=root, eye_file=eye_file), names=['participant_id', 'function_name', 'function_id', 'system_timestamp', 'device_timestamp', 'valid_gaze_left', 'valid_gaze_right', 'gaze_left_eye', 'gaze_right_eye', 'valid_pd_left', 'valid_pd_right', 'pd_left', 'pd_right'])
 
     noise = 0
-    half_noise = 0
+    half_noise = 0 # for when one eye is valid but the other isn't
     for i in range(eye_file.shape[0]):
         if (eye_file['valid_gaze_left'][i] == 0) and (eye_file['valid_gaze_right'][i] == 0):
             noise += 1
@@ -24,7 +22,7 @@ def calculate_noise(root, eye_file):
             continue
     
     with decimal.localcontext() as ctx:
-        ctx.prec = 3
+        ctx.prec = 3 # precision
         all_noise = decimal.Decimal((half_noise+noise))/decimal.Decimal(eye_file.shape[0])
         print(all_noise)
         one_eye = decimal.Decimal(half_noise)/decimal.Decimal(eye_file.shape[0])
@@ -39,6 +37,7 @@ filelen = len(filelist)
 filelist.sort()
 func_noise = []
 
+# writing files
 for i in range(filelen):
     if re.search("reading", filelist[i]):
         task = "reading"

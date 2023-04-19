@@ -6,13 +6,15 @@ from matplotlib import pyplot as plt
 import pandas as pd
 from tqdm import tqdm
 
+########################
+### Work in Progress ###
+########################
 
 pid = 168
 #os.chdir('../data/{pid}/gaze/'.format(pid=str(pid)))
 #eye_files = '../data/168/'
 
 # given the gaze vector, return the x/y position for the gaze point in open-cv video
-
 
 def return_x_y(gaze):
     pattern = "[()]"
