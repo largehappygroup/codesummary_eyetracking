@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getRelFeedItems_wrapped.java"><expr_stmt><expr><operator>`</operator><operator>`</operator><operator>`</operator><name>java</name>
+<specifier>public</specifier> <name>class</name> <name>FeedQuery</name> <block>{
+    <expr><specifier>public</specifier> <name><name>List</name><argument_list type="generic">&lt;<argument><name>FeedItem</name></argument>&gt;</argument_list></name> <call><name>getRelFeedItems</name><argument_list>(<argument><expr><name>FeedItem</name> <name>feedItem</name></expr></argument>)</argument_list></call> <block>{
+        <expr><name>final</name> <name>int</name> <name>feedId</name> <operator>=</operator> <call><name><name>feedItem</name><operator>.</operator><name>getFeed</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getFeedId</name><argument_list>()</argument_list></call></expr>;
+        <expr><name>final</name> <name>String</name> <name>sql</name> <operator>=</operator> <literal type="string">"select * from T_FeedItem where FEED_ID ="</literal> <operator>+</operator> <name>feedId</name></expr>;
+        <return>return <expr><call><name>getPagedListByNativeSQL</name><argument_list>(<argument><expr><name><name>FeedItem</name><operator>.</operator><name>class</name></name></expr></argument>, <argument><expr><name>sql</name></expr></argument>, <argument><expr><literal type="string">" id desc"</literal></expr></argument>, <argument><expr><literal type="number">1</literal></expr></argument>, <argument><expr><literal type="number">20</literal></expr></argument>)</argument_list></call></expr>;</return></block></expr>
+    }</block></expr></expr_stmt>
+}
+`<expr><operator>`</operator><operator>`</operator></expr></unit>

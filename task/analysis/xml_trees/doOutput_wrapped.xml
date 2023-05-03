@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/doOutput_wrapped.java"><class><specifier>public</specifier> class <name>MyClass</name> <block>{
+
+    <function><type><specifier>protected</specifier> <name>void</name></type> <name>doOutput</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>lvl</name></decl></parameter>, <parameter><decl><type><name>Object</name></type> <name>message</name></decl></parameter>, <parameter><decl><type><name>Throwable</name></type> <name>t</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>print</name></name><argument_list>(<argument><expr><literal type="string">"["</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>print</name></name><argument_list>(<argument><expr><name>_taskName</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>print</name></name><argument_list>(<argument><expr><literal type="string">" - "</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>print</name></name><argument_list>(<argument><expr><name><name>LEVEL</name><index>[<expr><name>lvl</name></expr>]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>print</name></name><argument_list>(<argument><expr><literal type="string">"]"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><name>message</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>t</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>t</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+
+}</block></class></unit>

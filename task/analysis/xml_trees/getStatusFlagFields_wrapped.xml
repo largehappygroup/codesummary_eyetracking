@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getStatusFlagFields_wrapped.java"><expr_stmt><expr><name>Unfortunately</name></expr><operator>,</operator> <expr><name>as</name> <name>an</name> <name>AI</name> <name>language</name> <name>model</name></expr><operator>,</operator> <expr><name>I</name> <name>am</name> <name>not</name> <name>able</name> <name>to</name> <name>create</name> <name><name>files</name><operator>.</operator> <name>However</name></name></expr><operator>,</operator> <expr><name>I</name> <name>can</name> <name>provide</name> <name>you</name> <name>with</name> <name>the</name> <name>class</name> <name>structure</name> <name>you</name> <name>can</name> <name>use</name> <name>to</name> <name>wrap</name> <name>your</name> <name>function</name><operator>:</operator>
+
+<specifier>public</specifier> <name>class</name> <name>MyClass</name> <block>{
+    
+    <expr><specifier>public</specifier> <name>List</name> <call><name>getStatusFlagFields</name><argument_list>()</argument_list></call> <block>{
+        <expr><name>List</name> <name>list</name> <operator>=</operator> <operator>new</operator> <call><name>ArrayList</name><argument_list>()</argument_list></call></expr>;
+        <expr><name>String</name> <name>statusFlagPath</name> <operator>=</operator> <literal type="string">"/collectionConfigRecord/statusFlags/statusFlag/status"</literal></expr>;
+        <for>for <control>( <init><decl><type><name>Iterator</name></type> <name>i</name> <init>= <expr><call><name><name>im</name><operator>.</operator><name>getInputFields</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>iterator</name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>i</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr/>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>InputField</name></type> <name>field</name> <init>= <expr><operator>(</operator> <name>InputField</name> <operator>)</operator> <call><name><name>i</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <comment type="line">// prtln ( field.toString() );</comment>
+            <if_stmt><if>if <condition>( <expr><call><name><name>field</name><operator>.</operator><name>getNormalizedXPath</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>startsWith</name><argument_list>( <argument><expr><name>statusFlagPath</name></expr></argument> )</argument_list></call></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>list</name><operator>.</operator><name>add</name></name><argument_list>( <argument><expr><name>field</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt/></block_content></block></if></if_stmt></block_content></block></for>}</block></expr>
+        }</block></expr></expr_stmt>
+        <return>return <expr><name>list</name></expr>;</return>
+    }
+} 
+
+<expr_stmt><expr><name>Make</name> <name>sure</name> <name>to</name></expr></expr_stmt> <import>import <name>the</name> <name>necessary</name> <name>libraries</name> <name>and</name> <name>instantiate</name> <name>the</name> <name>InputField</name> <name>object</name> <name>in</name> <name>your</name> <name><name>code</name><operator>.</operator></name></import></unit>

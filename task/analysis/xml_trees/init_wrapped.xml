@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/init_wrapped.java"><class><specifier>public</specifier> class <name>MyClass</name> <block>{
+    <decl_stmt><decl><type><specifier>private</specifier> <name><name>Map</name><argument_list type="generic">&lt;<argument><name>String</name></argument>, <argument><name>Object</name></argument>&gt;</argument_list></name></type> <name>_innerData</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier>private</specifier> <name><name>ListModel</name><argument_list type="generic">&lt;<argument><name>Object</name></argument>&gt;</argument_list></name></type> <name>_srcModel</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier>private</specifier> <name>ListDataListener</name></type> <name>_srcListener</name></decl>;</decl_stmt>
+
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>init</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name>_innerData</name> <operator>=</operator> <call><name><name>Collections</name><operator>.</operator><name>synchronizedMap</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name><name>LinkedHashMap</name><argument_list type="generic">&lt;<argument><name>String</name></argument>, <argument><name>Object</name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <decl_stmt><decl><type><name><name>Iterator</name><argument_list type="generic">&lt;<argument><name><name>Entry</name><argument_list type="generic">&lt;<argument><name>String</name></argument>, <argument><name>Object</name></argument>&gt;</argument_list></name></argument>&gt;</argument_list></name></type> <name>itr</name> <init>= <expr><call><name><name>_srcModel</name><operator>.</operator><name>entrySet</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>iterator</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <while>while <condition>(<expr><call><name><name>itr</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name><name>Entry</name><argument_list type="generic">&lt;<argument><name>String</name></argument>, <argument><name>Object</name></argument>&gt;</argument_list></name></type> <name>entry</name> <init>= <expr><call><name><name>itr</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name><name>_innerData</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><call><name><name>entry</name><operator>.</operator><name>getKey</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name><name>entry</name><operator>.</operator><name>getValue</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></while>
+
+        <expr_stmt><expr><name>_srcListener</name> <operator>=</operator> <operator>new</operator> <class><super><name>ListDataListener</name></super><argument_list>()</argument_list> <block>{
+            <function><type><specifier>public</specifier> <name>void</name></type> <name>onChange</name><parameter_list>(<parameter><decl><type><name>ListDataEvent</name></type> <name>event</name></decl></parameter>)</parameter_list> <block>{<block_content>
+                <expr_stmt><expr><call><name>onListDataChange</name><argument_list>(<argument><expr><name>event</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></function>
+        }</block></class></expr>;</expr_stmt>
+        
+        <expr_stmt><expr><call><name><name>_srcModel</name><operator>.</operator><name>addListDataListener</name></name><argument_list>(<argument><expr><name>_srcListener</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+
+    <function><type><specifier>private</specifier> <name>void</name></type> <name>onListDataChange</name><parameter_list>(<parameter><decl><type><name>ListDataEvent</name></type> <name>event</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">// do something on list data change</comment>
+    </block_content>}</block></function>
+}</block></class></unit>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/asMap_wrapped.java"><class><specifier>public</specifier> class <name>MapConverter</name> <block>{
+    <function><type><specifier>public</specifier> <name>Map</name></type> <name>asMap</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Map</name></type> <name>map</name> <init>= <expr><operator>new</operator> <call><name>HashMap</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <comment type="line">// map.put ( "org_id", org_id );</comment>
+        <expr_stmt><expr><call><name><name>map</name><operator>.</operator><name>put</name></name><argument_list>( <argument><expr><literal type="string">"startDate"</literal></expr></argument>, <argument><expr><name>start_date</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>map</name><operator>.</operator><name>put</name></name><argument_list>( <argument><expr><literal type="string">"endDate"</literal></expr></argument>, <argument><expr><name>end_date</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+        <if_stmt><if>if <condition>( <expr><name><name>this</name><operator>.</operator><name>organization</name></name> <operator>!=</operator> <literal type="null">null</literal></expr> )</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><call><name><name>map</name><operator>.</operator><name>put</name></name><argument_list>( <argument><expr><literal type="string">"organization"</literal></expr></argument>, <argument><expr><name><name>this</name><operator>.</operator><name>organization</name><operator>.</operator><name>acronym</name></name></expr></argument> )</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        <expr_stmt><expr><call><name><name>map</name><operator>.</operator><name>put</name></name><argument_list>( <argument><expr><literal type="string">"type"</literal></expr></argument>, <argument><expr><operator>(</operator> <ternary><condition><expr><call><name><name>this</name><operator>.</operator><name>isVisitor</name></name><argument_list>()</argument_list></call></expr> ?</condition><then> <expr><literal type="string">"Visitor"</literal></expr> </then><else>: <expr><literal type="string">"Employee"</literal></expr></else></ternary> <operator>)</operator></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <comment type="line">// return new JSONObject( map );</comment>
+        <return>return <expr><name>map</name></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/setGenJarDir_wrapped.java"><class><specifier>public</specifier> class <name>MyClass</name> <block>{
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>setGenJarDir</name><parameter_list>( <parameter><decl><type><name>File</name></type> <name>genJarDir</name></decl></parameter>,<parameter><decl><type><name>SandProject</name></type> <name>proj</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>proj</name><operator>.</operator><name>getAntProject</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>setProperty</name><argument_list>( <argument><expr><literal type="string">"genJarDir"</literal></expr></argument>, <argument><expr><call><name><name>genJarDir</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <decl_stmt><decl><type><name><name>SandProject</name><index>[]</index></name></type> <name>downstream</name> <init>= <expr><call><name><name>proj</name><operator>.</operator><name>getRequiredBy</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <for>for<control>( <init><decl><type><name>int</name></type> <name>i</name><init>=<expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>downstream</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr> )</control> <block>{<block_content>
+            <expr_stmt><expr><call><name>setGenJarDir</name><argument_list>( <argument><expr><name>genJarDir</name></expr></argument>, <argument><expr><name><name>downstream</name><index>[ <expr><name>i</name></expr> ]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt> 
+        </block_content>}</block></for>
+    </block_content>}</block></function>
+}</block></class></unit>

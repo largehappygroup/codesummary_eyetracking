@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/encode_wrapped.java"><class><specifier>public</specifier> class <name>Encoder</name> <block>{
+    
+    <function><type><specifier>public</specifier> <name>String</name></type> <name>encode</name><parameter_list>( <parameter><decl><type><name>String</name></type> <name>string</name></decl></parameter> )</parameter_list> <throws>throws <argument><expr><name>EncoderException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name><name>byte</name><index>[]</index></name></type> <name>bytes</name></decl>, <decl><type ref="prev"/><name>encoded_bytes</name></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>encoded_string</name> <init>= <expr><literal type="string">""</literal></expr></init></decl>;</decl_stmt>
+            
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><name>bytes</name> <operator>=</operator> <call><name><name>string</name><operator>.</operator><name>getBytes</name></name><argument_list>( <argument><expr><literal type="string">"UTF-8"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name>encoded_bytes</name> <operator>=</operator> <call><name>encodeBase64</name><argument_list>( <argument><expr><name>bytes</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name>encoded_string</name> <operator>=</operator> <operator>new</operator> <call><name>String</name><argument_list>( <argument><expr><name>encoded_bytes</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            
+        </block_content>}</block> <catch>catch <parameter_list>( <parameter><decl><type><name>UnsupportedEncodingException</name></type> <name>ex</name></decl></parameter> )</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>ex</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch></try>
+        <return>return <expr><name>encoded_string</name></expr>;</return>
+    </block_content>}</block></function>
+
+    <function><type><specifier>private</specifier> <name><name>byte</name><index>[]</index></name></type> <name>encodeBase64</name><parameter_list>( <parameter><decl><type><name><name>byte</name><index>[]</index></name></type> <name>bytes</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <comment type="line">// implementation of Base64 encoding logic</comment>
+    </block_content>}</block></function>
+}</block></class></unit>

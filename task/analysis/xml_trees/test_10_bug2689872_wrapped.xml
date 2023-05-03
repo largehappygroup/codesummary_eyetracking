@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/test_10_bug2689872_wrapped.java"><class><specifier>public</specifier> class <name>TestClass</name> <block>{
+    
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>test_10_bug2689872</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>E</name></type> <name>con</name> <init>= <expr><call><name>getGeneric</name><argument_list>()</argument_list></call><operator>.</operator><call><name>createElement</name><argument_list>( <argument><expr><literal type="string">"elt"</literal></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name>getGeneric</name><argument_list>()</argument_list></call><operator>.</operator><call><name>addPredicates</name><argument_list>( <argument><expr><name>con</name></expr></argument>, <argument><expr><call><name>makeSList</name><argument_list>( <argument><expr><literal type="string">"A1"</literal></expr></argument> )</argument_list></call></expr></argument>, <argument><expr><call><name>makeSList</name><argument_list>( <argument><expr><literal type="string">"0/=1"</literal></expr></argument> )</argument_list></call></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>getGeneric</name><argument_list>()</argument_list></call><operator>.</operator><call><name>save</name><argument_list>( <argument><expr><name>con</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>runBuilder</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <decl_stmt><decl><type><name>SCE</name></type> <name>file</name> <init>= <expr><call><name>getGeneric</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getSCElement</name><argument_list>( <argument><expr><name>con</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name>getGeneric</name><argument_list>()</argument_list></call><operator>.</operator><call><name>containsPredicates</name><argument_list>( <argument><expr><name>file</name></expr></argument>, <argument><expr><name>emptyEnv</name></expr></argument>, <argument><expr><call><name>makeSList</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name>makeSList</name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name>hasMarker</name><argument_list>( <argument><expr><call><name>getGeneric</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getPredicates</name><argument_list>( <argument><expr><name>con</name></expr></argument> )</argument_list></call><index>[ <expr><literal type="number">0</literal></expr> ]</index></expr></argument>,
+            <argument><expr><name><name>EventBAttributes</name><operator>.</operator><name>PREDICATE_ATTRIBUTE</name></name></expr></argument>,
+            <argument><expr><name><name>ParseProblem</name><operator>.</operator><name>LexerError</name></name></expr></argument>,
+            <argument><expr><literal type="string">"/"</literal></expr></argument>
+            )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

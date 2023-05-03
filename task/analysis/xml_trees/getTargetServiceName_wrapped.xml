@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getTargetServiceName_wrapped.java"><class><specifier>public</specifier> class <name>Parser</name> <block>{
+    <function><type><specifier>protected</specifier> <name>String</name></type> <name>getTargetServiceName</name><parameter_list>( <parameter><decl><type><name>AddressingHeaders</name></type> <name>headers</name></decl></parameter> )</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>To</name></type> <name>toURI</name> <init>= <expr><call><name><name>headers</name><operator>.</operator><name>getTo</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>( <expr><name>toURI</name> <operator>==</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+            <return>return <expr><literal type="null">null</literal></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>to</name> <init>= <expr><call><name><name>toURI</name><operator>.</operator><name>getPath</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>( <expr><name>to</name> <operator>==</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+            <return>return <expr><literal type="null">null</literal></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+        <comment type="line">// set the target service</comment>
+        <return>return <expr><operator>(</operator> <call><name><name>to</name><operator>.</operator><name>substring</name></name><argument_list>( <argument><expr><call><name><name>to</name><operator>.</operator><name>lastIndexOf</name></name><argument_list>( <argument><expr><literal type="char">'/'</literal></expr></argument> )</argument_list></call> <operator>+</operator> <literal type="number">1</literal></expr></argument> )</argument_list></call><operator>)</operator></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

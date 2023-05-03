@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getFastestGenerator_wrapped.java"><class><specifier>public</specifier> class <name>WordFormGeneratorParser</name> <block>{
+
+    <function><type><specifier>public</specifier> <name>WordFormGenerator</name></type> <name>getFastestGenerator</name><parameter_list>( <parameter><decl><type><specifier>final</specifier> <name>Locale</name></type> <name>locale</name></decl></parameter> )</parameter_list> <throws>throws <argument><expr><name>MorphologyException</name></expr></argument></throws> <block>{<block_content>
+        <if_stmt><if>if <condition>( <expr><name>locale</name> <operator>==</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>( <argument><expr><literal type="string">"The 'loc' argument cannot be null."</literal></expr></argument> )</argument_list></call></expr>;</throw>
+        </block_content>}</block></if></if_stmt>
+        <decl_stmt><decl><type><name>WordFormGenerator</name></type> <name>component</name> <init>= <expr><operator>(</operator> <name>WordFormGenerator</name> <operator>)</operator> <call><name><name>fastestGenerators</name><operator>.</operator><name>get</name></name><argument_list>( <argument><expr><name>locale</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>( <expr><name>component</name> <operator>==</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>MorphologyException</name><argument_list>( <argument><expr><literal type="string">"Cannot find generator for locales : "</literal> <operator>+</operator> <call><name><name>locale</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</throw>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>component</name></expr>;</return>
+    </block_content>}</block></function>
+
+}</block></class></unit>

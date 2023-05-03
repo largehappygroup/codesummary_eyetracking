@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/testSetEvtID_wrapped.java"><class><specifier>public</specifier> class <name>Email_DBImplTest</name> <block>{
+
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>testSetEvtID</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>( <argument><expr><literal type="string">"setEvtID"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>    
+        <decl_stmt><decl><type><name>String</name></type> <name>evtID</name> <init>= <expr><literal type="string">""</literal></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Email_DBImpl</name></type> <name>instance</name> <init>= <expr><operator>new</operator> <call><name>Email_DBImpl</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>instance</name><operator>.</operator><name>setEvtID</name></name><argument_list>( <argument><expr><name>evtID</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+        <comment type="line">// TODO review the generated test code and remove the default call to fail.</comment>
+        <expr_stmt><expr><call><name>fail</name><argument_list>( <argument><expr><literal type="string">"The test case is a prototype."</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function> 
+
+}</block></class></unit>

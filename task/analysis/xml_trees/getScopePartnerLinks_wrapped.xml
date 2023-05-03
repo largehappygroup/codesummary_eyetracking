@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getScopePartnerLinks_wrapped.java"><class><specifier>public</specifier> class <name>ScopePartnerLinkFinder</name> <block>{
+    <function><type><specifier>public</specifier> <name>EList</name></type> <name>getScopePartnerLinks</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>EObject</name></type> <name>process</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>TreeIterator</name></type> <name>contents</name> <init>= <expr><call><name><name>process</name><operator>.</operator><name>eAllContents</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>EList</name></type> <name>results</name> <init>= <expr><operator>new</operator> <call><name>BasicEList</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            
+        <while>while <condition>(<expr><call><name><name>contents</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>EObject</name></type> <name>obj</name> <init>= <expr><operator>(</operator><name>EObject</name><operator>)</operator> <call><name><name>contents</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+                
+            <if_stmt><if>if <condition>(<expr><name>obj</name> <operator>instanceof</operator> <name>Scope</name></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>results</name><operator>.</operator><name>addAll</name></name><argument_list>(<argument><expr><operator>(</operator><operator>(</operator><name>Scope</name><operator>)</operator> <name>obj</name><operator>)</operator><operator>.</operator><call><name>getPartnerLinks</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getChildren</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>   
+        </block_content>}</block></while>
+        <return>return <expr><name>results</name></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

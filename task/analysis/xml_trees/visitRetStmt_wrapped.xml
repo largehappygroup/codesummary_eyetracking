@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/visitRetStmt_wrapped.java"><class><specifier>public</specifier> class <name>RetStmtVisitor</name> <block>{
+    
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>visitRetStmt</name><parameter_list>( <parameter><decl><type><name>RetStmt</name></type> <name>stmt</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Set</name></type> <name>targets</name> <init>= <expr><operator>new</operator> <call><name>LinkedHashSet</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Iterator</name></type> <name>iter</name> <init>= <expr><call><name><name>stmt</name><operator>.</operator><name>sub</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>paths</name><argument_list>()</argument_list></call><operator>.</operator><call><name>iterator</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <while>while <condition>( <expr><call><name><name>iter</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr> )</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name><name>Block</name><index>[]</index></name></type> <name>path</name> <init>= <expr><operator>(</operator> <name><name>Block</name><index>[]</index></name><operator>)</operator> <call><name><name>iter</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name><name>targets</name><operator>.</operator><name>add</name></name><argument_list>( <argument><expr><name><name>path</name><index>[ <expr><literal type="number">1</literal></expr> ]</index></name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></while>
+
+        <expr_stmt><expr><call><name><name>targets</name><operator>.</operator><name>addAll</name></name><argument_list>( <argument><expr><call><name><name>stmt</name><operator>.</operator><name>catchTargets</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>verifyTargets</name><argument_list>( <argument><expr><call><name><name>stmt</name><operator>.</operator><name>block</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>targets</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>visitNode</name><argument_list>( <argument><expr><name>stmt</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+
+    <function><type><specifier>private</specifier> <name>void</name></type> <name>verifyTargets</name><parameter_list>(<parameter><decl><type><name>Block</name></type> <name>block</name></decl></parameter>, <parameter><decl><type><name>Set</name></type> <name>targets</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">// implementation left out for brevity</comment>
+    </block_content>}</block></function>
+
+    <function><type><specifier>private</specifier> <name>void</name></type> <name>visitNode</name><parameter_list>(<parameter><decl><type><name>RetStmt</name></type> <name>stmt</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">// implementation left out for brevity</comment>
+    </block_content>}</block></function>
+}</block></class></unit>

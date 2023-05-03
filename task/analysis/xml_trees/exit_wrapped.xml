@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/exit_wrapped.java"><class><specifier>public</specifier> class <name>ExitFunction</name> <block>{
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>exit</name><parameter_list>( <parameter><decl><type><name>EventObject</name></type> <name>event</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <for>for <control>( <init><decl><type><name>ExitListener</name></type> <name>listener</name> <range>: <expr><name>exitListeners</name></expr></range></decl></init> )</control> <block>{<block_content>
+            <if_stmt><if>if <condition>( <expr><operator>!</operator><call><name><name>listener</name><operator>.</operator><name>canExit</name></name><argument_list>( <argument><expr><name>event</name></expr></argument> )</argument_list></call></expr>)</condition> <block>{<block_content>
+                <return>return;</return>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+        <try>try <block>{<block_content>
+            <for>for <control>( <init><decl><type><name>ExitListener</name></type> <name>listener</name> <range>: <expr><name>exitListeners</name></expr></range></decl></init> )</control> <block>{<block_content>
+                <try>try <block>{<block_content>
+                    <expr_stmt><expr><call><name><name>listener</name><operator>.</operator><name>willExit</name></name><argument_list>( <argument><expr><name>event</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+                </block_content>}</block> <catch>catch <parameter_list>( <parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content> 
+                    <expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>log</name></name><argument_list>( <argument><expr><name><name>Level</name><operator>.</operator><name>WARNING</name></name></expr></argument>, <argument><expr><literal type="string">"ExitListener.willExit() failed"</literal></expr></argument>, <argument><expr><name>e</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+                </block_content>}</block></catch></try>
+            </block_content>}</block></for>
+            <expr_stmt><expr><call><name>shutdown</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>( <parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content> 
+            <expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>log</name></name><argument_list>( <argument><expr><name><name>Level</name><operator>.</operator><name>WARNING</name></name></expr></argument>, <argument><expr><literal type="string">"unexpected error in Application.shutdown()"</literal></expr></argument>, <argument><expr><name>e</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch>
+        <finally>finally <block>{<block_content>
+            <expr_stmt><expr><call><name>end</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></finally></try>
+    </block_content>}</block></function> 
+}</block></class></unit>

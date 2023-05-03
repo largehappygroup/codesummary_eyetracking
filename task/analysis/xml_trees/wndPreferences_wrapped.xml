@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/wndPreferences_wrapped.java"><class><specifier>public</specifier> class <name>MainWindow</name> <block>{
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>wndPreferences</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>entering</name></name><argument_list>( <argument><expr><literal type="string">"MainWindow"</literal></expr></argument>, <argument><expr><literal type="string">"wndPreferences"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <decl_stmt><decl><type><name>PropertiesDlg</name></type> <name>propDlg</name> <init>= <expr><operator>new</operator> <call><name>PropertiesDlg</name><argument_list>( <argument><expr><name>this</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>propDlg</name><operator>.</operator><name>setModal</name></name><argument_list>( <argument><expr><literal type="boolean">true</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>propDlg</name><operator>.</operator><name>setVisible</name></name><argument_list>( <argument><expr><literal type="boolean">true</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>exiting</name></name><argument_list>( <argument><expr><literal type="string">"MainWindow"</literal></expr></argument>, <argument><expr><literal type="string">"wndPreferences"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

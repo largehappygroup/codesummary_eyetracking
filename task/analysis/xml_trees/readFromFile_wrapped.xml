@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/readFromFile_wrapped.java"><class><specifier>public</specifier> class <name>FileHandler</name> <block>{
+	
+	<decl_stmt><decl><type><specifier>private</specifier> <name>String</name></type> <name>credentials</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><specifier>private</specifier> <name>String</name></type> <name>username</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><specifier>private</specifier> <name>String</name></type> <name>password</name></decl>;</decl_stmt>
+	
+	<constructor><specifier>public</specifier> <name>FileHandler</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>credentials</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><name><name>this</name><operator>.</operator><name>credentials</name></name> <operator>=</operator> <name>credentials</name></expr>;</expr_stmt>
+	</block_content>}</block></constructor>
+	
+	<function><type><specifier>private</specifier> <name>void</name></type> <name>readFromFile</name><parameter_list>()</parameter_list> <block>{<block_content>
+	    <try>try <block>{<block_content>
+	        <decl_stmt><decl><type><name>FileReader</name></type> <name>fr</name> <init>= <expr><operator>new</operator> <call><name>FileReader</name><argument_list>( <argument><expr><name><name>this</name><operator>.</operator><name>credentials</name></name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+	        <decl_stmt><decl><type><name>BufferedReader</name></type> <name>br</name> <init>= <expr><operator>new</operator> <call><name>BufferedReader</name><argument_list>( <argument><expr><name>fr</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+	        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>username</name></name> <operator>=</operator> <call><name><name>br</name><operator>.</operator><name>readLine</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>password</name></name> <operator>=</operator> <call><name><name>br</name><operator>.</operator><name>readLine</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	        <expr_stmt><expr><call><name><name>br</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	        <expr_stmt><expr><call><name><name>fr</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	    </block_content>}</block>
+	    <catch>catch <parameter_list>( <parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content>
+	        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>username</name></name> <operator>=</operator> <literal type="string">""</literal></expr>;</expr_stmt>
+	        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>password</name></name> <operator>=</operator> <literal type="string">""</literal></expr>;</expr_stmt>
+	    </block_content>}</block></catch></try>
+	</block_content>}</block></function>
+}</block></class></unit>

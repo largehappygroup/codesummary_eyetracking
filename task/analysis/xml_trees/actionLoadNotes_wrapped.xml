@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/actionLoadNotes_wrapped.java"><class><specifier>public</specifier> class <name>NotesLoader</name> <block>{
+    <function><type><specifier>private</specifier> <name>void</name></type> <name>actionLoadNotes</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name>enableUserActions</name><argument_list>( <argument><expr><literal type="boolean">false</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    
+        <comment type="line">// set focus, otherwise it gives focus to "clear" &gt;&gt; scary/not wanted</comment>
+        <expr_stmt><expr><call><name><name>multiSubmitButton</name><operator>.</operator><name>requestFocusInWindow</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    
+        <expr_stmt><expr><call><name>resetSingleTextFields</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>multipleGUIList</name><operator>.</operator><name>clearSelection</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>multipleResources</name> <operator>=</operator> <call><name>loadNotesFile</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>updateMultiList</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>enableUserActions</name><argument_list>( <argument><expr><literal type="boolean">true</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

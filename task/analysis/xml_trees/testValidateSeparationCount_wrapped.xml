@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/testValidateSeparationCount_wrapped.java"><class><specifier>public</specifier> class <name>LinearDimensionTest</name> <block>{
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>testValidateSeparationCount</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><call><name><name>LinearDimension</name><operator>.</operator><name>validateSeparationCount</name></name><argument_list>( <argument><expr><literal type="number">0</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>fail</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>( <parameter><decl><type><name>IllegalArgumentException</name></type> <name>ex</name></decl></parameter> )</parameter_list> <block>{<block_content>
+            <comment type="line">// ok</comment>
+        </block_content>}</block></catch></try>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><call><name><name>LinearDimension</name><operator>.</operator><name>validateSeparationCount</name></name><argument_list>( <argument><expr><operator>-</operator><literal type="number">2</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>fail</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>( <parameter><decl><type><name>IllegalArgumentException</name></type> <name>ex</name></decl></parameter> )</parameter_list> <block>{<block_content>
+            <comment type="line">// ok</comment>
+        </block_content>}</block></catch></try>
+        <expr_stmt><expr><call><name><name>LinearDimension</name><operator>.</operator><name>validateSeparationCount</name></name><argument_list>( <argument><expr><literal type="number">1</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>LinearDimension</name><operator>.</operator><name>validateSeparationCount</name></name><argument_list>( <argument><expr><literal type="number">2988</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function> 
+}</block></class></unit>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/abstractMatrix3D_wrapped.java"><class><specifier>public</specifier> class <name>Matrix3D</name> <super_list><extends>extends <super><name>AbstractMatrix3D</name></super></extends></super_list> <block>{
+    
+    <function><type><specifier>protected</specifier> <name>AbstractMatrix3D</name></type> <name>vDice</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>axis0</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>axis1</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>axis2</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>vDice</name></name><argument_list>(<argument><expr><name>axis0</name></expr></argument>, <argument><expr><name>axis1</name></expr></argument>, <argument><expr><name>axis2</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <comment type="line">// swap offsets</comment>
+        <decl_stmt><decl><type><name><name>int</name><index>[]</index><index>[]</index></name></type> <name>offsets</name> <init>= <expr><operator>new</operator> <name><name>int</name><index>[<expr><literal type="number">3</literal></expr>]</index><index>[]</index></name></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><name><name>offsets</name><index>[<expr><literal type="number">0</literal></expr>]</index></name> <operator>=</operator> <name><name>this</name><operator>.</operator><name>sliceOffsets</name></name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>offsets</name><index>[<expr><literal type="number">1</literal></expr>]</index></name> <operator>=</operator> <name><name>this</name><operator>.</operator><name>rowOffsets</name></name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>offsets</name><index>[<expr><literal type="number">2</literal></expr>]</index></name> <operator>=</operator> <name><name>this</name><operator>.</operator><name>columnOffsets</name></name></expr>;</expr_stmt>
+
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>sliceOffsets</name></name> <operator>=</operator> <name><name>offsets</name><index>[<expr><name>axis0</name></expr>]</index></name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>rowOffsets</name></name> <operator>=</operator> <name><name>offsets</name><index>[<expr><name>axis1</name></expr>]</index></name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>columnOffsets</name></name> <operator>=</operator> <name><name>offsets</name><index>[<expr><name>axis2</name></expr>]</index></name></expr>;</expr_stmt>
+
+        <return>return <expr><name>this</name></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

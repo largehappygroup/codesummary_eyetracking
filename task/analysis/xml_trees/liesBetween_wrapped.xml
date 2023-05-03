@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/liesBetween_wrapped.java"><class><specifier>public</specifier> class <name>MyClass</name> <block>{
+    <decl_stmt><decl><type><specifier>private</specifier> <specifier>static</specifier> <specifier>final</specifier> <name>double</name></type> <name>ACCURACY</name> <init>= <expr><literal type="number">0.0001</literal></expr></init></decl>;</decl_stmt>
+
+    <function><type><specifier>private</specifier> <name>boolean</name></type> <name>liesBetween</name><parameter_list>(<parameter><decl><type><name>double</name></type> <name>x1</name></decl></parameter>, <parameter><decl><type><name>double</name></type> <name>x2</name></decl></parameter>, <parameter><decl><type><name>double</name></type> <name>x3</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><operator>(</operator><name>x1</name> <operator>&lt;=</operator> <name>x2</name><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><name>x3</name> <operator>&gt;=</operator> <name>x1</name> <operator>-</operator> <name>ACCURACY</name> <operator>&amp;&amp;</operator> <name>x3</name> <operator>&lt;=</operator> <name>x2</name> <operator>+</operator> <name>ACCURACY</name><operator>)</operator></expr>)</condition><block type="pseudo"><block_content>
+            <return>return <expr><literal type="boolean">true</literal></expr>;</return></block_content></block></if></if_stmt>
+        <if_stmt><if>if <condition>(<expr><operator>(</operator><name>x1</name> <operator>&gt;=</operator> <name>x2</name><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><name>x3</name> <operator>&gt;=</operator> <name>x2</name> <operator>-</operator> <name>ACCURACY</name> <operator>&amp;&amp;</operator> <name>x3</name> <operator>&lt;=</operator> <name>x1</name> <operator>+</operator> <name>ACCURACY</name><operator>)</operator></expr>)</condition><block type="pseudo"><block_content>
+            <return>return <expr><literal type="boolean">true</literal></expr>;</return></block_content></block></if></if_stmt>
+
+        <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

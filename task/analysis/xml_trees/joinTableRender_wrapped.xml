@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/joinTableRender_wrapped.java"><class><specifier>public</specifier> class <name>JoinTableRender</name> <block>{
+
+  <decl_stmt><decl><type><specifier>private</specifier> <name>Datamodel</name></type> <name>datamodel</name></decl>;</decl_stmt>
+
+  <constructor><specifier>public</specifier> <name>JoinTableRender</name><parameter_list>(<parameter><decl><type><name>Datamodel</name></type> <name>datamodel</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <expr_stmt><expr><name><name>this</name><operator>.</operator><name>datamodel</name></name> <operator>=</operator> <name>datamodel</name></expr>;</expr_stmt>
+  </block_content>}</block></constructor>
+
+  <function><type><specifier>public</specifier> <name>String</name></type> <name>joinTableRender</name><parameter_list>(<parameter><decl><type><name>Table</name></type> <name>from</name></decl></parameter>, <parameter><decl><type><name>Association</name></type> <name>association</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>int</name></type> <name>n</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+
+    <for>for <control>(<init><decl><type><name>Association</name></type> <name>a</name> <range>: <expr><name><name>from</name><operator>.</operator><name>associations</name></name></expr></range></decl></init>)</control> <block>{<block_content>
+      <if_stmt><if>if <condition>(<expr><name><name>a</name><operator>.</operator><name>destination</name></name> <operator>==</operator> <name><name>association</name><operator>.</operator><name>destination</name></name></expr>)</condition> <block>{<block_content>
+        <expr_stmt><expr><operator>++</operator><name>n</name></expr>;</expr_stmt>
+      </block_content>}</block></if></if_stmt>
+    </block_content>}</block></for>
+    <return>return <expr><call><name><name>datamodel</name><operator>.</operator><name>getDisplayName</name></name><argument_list>(<argument><expr><name><name>association</name><operator>.</operator><name>destination</name></name></expr></argument>)</argument_list></call> <operator>+</operator> <operator>(</operator><ternary><condition><expr><name>n</name> <operator>&gt;</operator> <literal type="number">1</literal></expr> ?</condition><then> <expr><literal type="string">" on "</literal> <operator>+</operator> <call><name><name>association</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr> </then><else>: <expr><literal type="string">""</literal></expr></else></ternary><operator>)</operator></expr>;</return>
+  </block_content>}</block></function>
+}</block></class></unit>

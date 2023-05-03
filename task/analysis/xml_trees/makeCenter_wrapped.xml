@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/makeCenter_wrapped.java"><class><specifier>public</specifier> class <name>CenterMaker</name> <block>{
+    <function><type><specifier>public</specifier> <name>Component</name></type> <name>makeCenter</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>JPanel</name></type> <name>imageCanvas</name> <init>= <expr><operator>new</operator> <call><name>JPanel</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>imageCanvas</name><operator>.</operator><name>addMouseListener</name></name><argument_list>( <argument><expr><operator>new</operator> <class><super><name>MouseAdapter</name></super><argument_list>()</argument_list> <block>{
+            <function><annotation>@<name>SuppressWarnings</name><argument_list>( <argument><expr><literal type="string">"synthetic-access"</literal></expr></argument> )</argument_list></annotation>
+            <annotation>@<name>Override</name></annotation>
+            <type><specifier>public</specifier> <name>void</name></type> <name>mouseClicked</name><parameter_list>( <parameter><decl><type><name>MouseEvent</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content>
+                <expr_stmt><expr><call><name>actionImageMouse</name><argument_list>( <argument><expr><name>e</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></function>
+        }</block></class></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name><name>imageCanvas</name><operator>.</operator><name>add</name></name><argument_list>( <argument><expr><operator>new</operator> <call><name>JLabel</name><argument_list>( <argument><expr><operator>new</operator> <call><name>ImageIcon</name><argument_list>( <argument><expr><call><name><name>SWGFrame</name><operator>.</operator><name><name>class</name><operator>.</operator><name>getResource</name></name></name><argument_list>( <argument><expr><literal type="string">"images/swg.png"</literal></expr></argument> )</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <return>return <expr><operator>new</operator> <call><name>JScrollPane</name><argument_list>( <argument><expr><name>imageCanvas</name></expr></argument> )</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+
+    <function><type><specifier>private</specifier> <name>void</name></type> <name>actionImageMouse</name><parameter_list>( <parameter><decl><type><name>MouseEvent</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <comment type="line">// implementation details</comment>
+    </block_content>}</block></function>
+}</block></class></unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getRodinDBStatus_wrapped.java"><class><specifier>public</specifier> class <name>RodinDBStatusParser</name> <block>{
+
+    <function><type><specifier>public</specifier> <name>IRodinDBStatus</name></type> <name>getRodinDBStatus</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>IStatus</name></type> <name>status</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>getStatus</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>status</name> <operator>instanceof</operator> <name>IRodinDBStatus</name></expr>)</condition> <block>{<block_content>
+            <return>return <expr><operator>(</operator><name>IRodinDBStatus</name><operator>)</operator> <name>status</name></expr>;</return>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <comment type="line">// A regular IStatus is created only in the case of a CoreException.</comment>
+            <comment type="line">// See bug 13492 Should handle RodinDBExceptions that contains</comment>
+            <comment type="line">// CoreException more gracefully</comment>
+            <return>return <expr><operator>new</operator> <call><name>RodinDBStatus</name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>nestedCoreException</name></name></expr></argument>)</argument_list></call></expr>;</return>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

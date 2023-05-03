@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/removeRedundantOperations_wrapped.java"><class><specifier>public</specifier> class <name>RedundantOperationsRemover</name> <block>{
+    <function><type><specifier>private</specifier> <name>void</name></type> <name>removeRedundantOperations</name><parameter_list>( <parameter><decl><type><name>OBEXElement</name></type> <name>file</name></decl></parameter>, <parameter><decl><type><name><name>List</name><argument_list type="generic">&lt; <argument><name>OBEXElement</name></argument> &gt;</argument_list></name></type> <name>filesToRemove</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>OBEXElement</name></type> <name>parentFolder</name> <init>= <expr><name>file</name></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>debug</name></name><argument_list>( <argument><expr><literal type="string">"Removing redundant operations"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+        <while>while <condition>(<expr><operator>(</operator> <name>parentFolder</name> <operator>=</operator> <call><name><name>parentFolder</name><operator>.</operator><name>getParent</name></name><argument_list>()</argument_list></call> <operator>)</operator> <operator>!=</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+            <if_stmt><if>if <condition>( <expr><call><name><name>filesToRemove</name><operator>.</operator><name>contains</name></name><argument_list>( <argument><expr><name>parentFolder</name></expr></argument> )</argument_list></call></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>filesToRemove</name><operator>.</operator><name>remove</name></name><argument_list>( <argument><expr><name>file</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt><expr><name>file</name> <operator>=</operator> <name>parentFolder</name></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></while>
+    </block_content>}</block></function>
+}</block></class></unit>

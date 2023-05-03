@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/selectBracketingEntries_wrapped.java"><class><specifier>public</specifier> class <name>Wrapper</name> <block>{
+
+    <function><type><specifier>protected</specifier> <name>boolean</name></type> <name>selectBracketingEntries</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>AbsoluteDate</name></type> <name>date</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <comment type="line">// select the bracketing elements</comment>
+            <expr_stmt><expr><name>next</name> <operator>=</operator> <operator>(</operator><name>TimeStampedEntry</name><operator>)</operator> <operator>(</operator><call><name><name>eop</name><operator>.</operator><name>tailSet</name></name><argument_list>(<argument><expr><name>date</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>first</name><argument_list>()</argument_list></call><operator>)</operator></expr>;</expr_stmt>
+            <expr_stmt><expr><name>previous</name> <operator>=</operator> <operator>(</operator><name>TimeStampedEntry</name><operator>)</operator> <operator>(</operator><call><name><name>eop</name><operator>.</operator><name>headSet</name></name><argument_list>(<argument><expr><name>next</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>last</name><argument_list>()</argument_list></call><operator>)</operator></expr>;</expr_stmt>
+            <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>NoSuchElementException</name></type> <name>nsee</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><name>previous</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+            <expr_stmt><expr><name>next</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+            <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+}</block></class></unit>

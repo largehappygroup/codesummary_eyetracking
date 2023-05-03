@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/resolveValue_wrapped.java"><class><specifier>public</specifier> class <name>TemplateResolver</name> <block>{
+    <function><type><specifier>protected</specifier> <name>String</name></type> <name>resolveValue</name><parameter_list>(<parameter><decl><type><name>MagnetContext</name></type> <name>aContext</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>aValue</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>RenderingException</name></expr></argument></throws> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name>aValue</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+                <return>return <expr><literal type="null">null</literal></expr>;</return>
+            </block_content>}</block></if> <else>else <block>{<block_content>
+                <decl_stmt><decl><type><name>TemplateElementIF</name></type> <name>aTemplate</name> <init>= <expr><call><name><name>_theTemplateFactory</name><operator>.</operator><name>parse</name></name><argument_list>(<argument><expr><name>aValue</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+                <return>return <expr><call><name><name>aTemplate</name><operator>.</operator><name>render</name></name><argument_list>(<argument><expr><name>aContext</name></expr></argument>)</argument_list></call></expr>;</return>
+            </block_content>}</block></else></if_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>TemplateException</name></type> <name>te</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>RenderingException</name><argument_list>(<argument><expr><literal type="string">"Unable to resolve the value "</literal> <operator>+</operator> <name>aValue</name></expr></argument>, <argument><expr><name>te</name></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+}</block></class></unit>

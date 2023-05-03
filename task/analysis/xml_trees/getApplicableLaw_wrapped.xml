@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getApplicableLaw_wrapped.java"><class><specifier>public</specifier> class <name>InfluenceLawFinder</name> <block>{
+    <decl_stmt><decl><type><specifier>private</specifier> <name><name>List</name><argument_list type="generic">&lt;<argument><name>InfluenceLaw</name></argument>&gt;</argument_list></name></type> <name>influenceLaws</name></decl>;</decl_stmt>
+
+    <constructor><specifier>public</specifier> <name>InfluenceLawFinder</name><parameter_list>(<parameter><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>InfluenceLaw</name></argument>&gt;</argument_list></name></type> <name>influenceLaws</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>influenceLaws</name></name> <operator>=</operator> <name>influenceLaws</name></expr>;</expr_stmt>
+    </block_content>}</block></constructor>
+
+    <function><type><specifier>public</specifier> <name>InfluenceLaw</name></type> <name>getApplicableLaw</name><parameter_list>(<parameter><decl><type><name>Influence</name></type> <name>inf</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>inf</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>()</argument_list></call></expr>;</throw>
+        </block_content>}</block></if></if_stmt>
+        <for>for <control>(<init><decl><type><name><name>Iterator</name><argument_list type="generic">&lt;<argument><name>InfluenceLaw</name></argument>&gt;</argument_list></name></type> <name>iter</name> <init>= <expr><call><name><name>influenceLaws</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>iter</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>InfluenceLaw</name></type> <name>infLaw</name> <init>= <expr><call><name><name>iter</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><call><name><name>infLaw</name><operator>.</operator><name>isApplicableTo</name></name><argument_list>(<argument><expr><name>inf</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+                <return>return <expr><name>infLaw</name></expr>;</return>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+        <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

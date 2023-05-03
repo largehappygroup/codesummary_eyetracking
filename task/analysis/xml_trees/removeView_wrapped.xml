@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/removeView_wrapped.java"><class><specifier>public</specifier> class <name>ViewRemover</name> <block>{
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>removeView</name><parameter_list>(<parameter><decl><type><name>StateViewSmall</name></type> <name>view</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>view</name><operator>.</operator><name>setVisible</name></name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <comment type="line">// remove from scenario</comment>
+        <decl_stmt><decl><type><name>int</name></type> <name>removedPosition</name> <init>= <expr><call><name>indexOfView</name><argument_list>(<argument><expr><name>view</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>mScenarioPanel</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>removedPosition</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <comment type="line">// take care of the big ( detailed ) view</comment>
+
+        <if_stmt><if>if <condition>(<expr><name>mCurrentSmallView</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <call><name><name>mCurrentSmallView</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>view</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>mCurrentBigView</name><operator>.</operator><name>setVisible</name></name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name>mCurrentBigView</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+            <expr_stmt><expr><name>mCurrentSmallView</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        <comment type="line">// compute the new number of pixels per scenario position</comment>
+        <expr_stmt><expr><call><name><name>mTimeBar</name><operator>.</operator><name>scaleNumberOfPixelsPerPosition</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>refresh</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

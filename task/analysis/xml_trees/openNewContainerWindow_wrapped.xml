@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/openNewContainerWindow_wrapped.java"><class><specifier>public</specifier> class <name>ContainerOpener</name> <block>{
+    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>openNewContainerWindow</name><parameter_list>( <parameter><decl><type><name>String</name></type> <name>containerName</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>containerDescription</name></decl></parameter> )</parameter_list><block>{<block_content>
+        <comment type="line">//if name is blank, disable use default option</comment>
+        <decl_stmt><decl><type><name>NewContainerImportWindow</name></type> <name>window</name></decl>;</decl_stmt>
+        <if_stmt><if>if<condition>( <expr><call><name><name>containerName</name><operator>.</operator><name>equals</name></name><argument_list>( <argument><expr><literal type="string">""</literal></expr></argument> )</argument_list></call></expr>)</condition><block>{<block_content>
+            <expr_stmt><expr><name>window</name> <operator>=</operator> <operator>new</operator> <call><name>NewContainerImportWindow</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if>
+        <else>else<block>{<block_content>
+            <expr_stmt><expr><name>window</name> <operator>=</operator> <operator>new</operator> <call><name>NewContainerImportWindow</name><argument_list>( <argument><expr><name>containerName</name></expr></argument>,<argument><expr><name>containerDescription</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></else></if_stmt>
+        <expr_stmt><expr><call><name><name>window</name><operator>.</operator><name>setParent</name></name><argument_list>( <argument><expr><name><name>OrganiserView</name><operator>.</operator><name>this</name></name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <try>try<block>{<block_content>
+            <expr_stmt><expr><call><name><name>window</name><operator>.</operator><name>doModal</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block>
+        <catch>catch<parameter_list>( <parameter><decl><type><name>InterruptedException</name></type> <name>ie</name></decl></parameter> )</parameter_list><block>{<block_content>
+            <expr_stmt><expr><call><name><name>ie</name><operator>.</operator><name>printStackTrace</name></name><argument_list>( <argument><expr><name><name>System</name><operator>.</operator><name>err</name></name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch></try>
+        <if_stmt><if>if<condition>( <expr><name>doImport</name></expr> )</condition><block>{<block_content>
+            <expr_stmt><expr><call><name><name>importer</name><operator>.</operator><name>setContainerName</name></name><argument_list>( <argument><expr><call><name><name>window</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>importer</name><operator>.</operator><name>setContainerDescription</name></name><argument_list>( <argument><expr><call><name><name>window</name><operator>.</operator><name>getDescription</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>doImport</name></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

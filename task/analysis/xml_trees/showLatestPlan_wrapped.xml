@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/showLatestPlan_wrapped.java"><class><specifier>public</specifier> class <name>PlanManager</name> <block>{
+    <function><type><specifier>public</specifier> <name>String</name></type> <name>showLatestPlan</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">// clear previous protocols</comment>
+        <expr_stmt><expr><name>mCurrPlanProt</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>    
+        <try>try <block>{<block_content>
+            <decl_stmt><decl><type><name>PatientController</name></type> <name>han</name> <init>= <expr><operator>new</operator> <call><name>PatientController</name><argument_list>( <argument><expr><name>mCurrPatient</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+            <decl_stmt><decl><type><name>NutPlan</name></type> <name>plan</name> <init>= <expr><call><name><name>han</name><operator>.</operator><name>getLatestNutritionPlan</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <decl_stmt><decl><type><name>NutritionController</name></type> <name>controller</name> <init>= <expr><call><name><name>NutritionController</name><operator>.</operator><name>editPlan</name></name><argument_list>( <argument><expr><name>plan</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+
+            <expr_stmt><expr><name>mCurrPlanProt</name> <operator>=</operator> <call><name><name>WebPlanProtocol</name><operator>.</operator><name>createPlan</name></name><argument_list>( <argument><expr><name>controller</name></expr></argument>, <argument><expr><name>plan</name></expr></argument>, <argument><expr><name>mCurrPatient</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            <return>return <expr><literal type="string">"success"</literal></expr>;</return>
+
+        </block_content>}</block> <catch>catch <parameter_list>( <parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch></try>
+        <return>return <expr><literal type="string">"failure"</literal></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

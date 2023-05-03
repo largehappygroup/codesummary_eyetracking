@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/play_wrapped.java"><class><specifier>public</specifier> class <name>Simulator</name> <block>{
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>play</name><parameter_list>()</parameter_list><block>{<block_content>
+        <if_stmt><if>if<condition>( <expr><name>currentState</name> <operator>==</operator> <name><name>SimulatorState</name><operator>.</operator><name>STOPPED</name></name></expr> )</condition><block>{<block_content>
+            <expr_stmt><expr><call><name>setSimulationTime</name><argument_list>( <argument><expr><literal type="number">0</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>simItem</name><operator>.</operator><name>initialize</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>startTimer</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>setState</name><argument_list>( <argument><expr><name><name>SimulatorState</name><operator>.</operator><name>PLAYING</name></name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if>
+        <if type="elseif">else if<condition>( <expr><name>currentState</name> <operator>==</operator> <name><name>SimulatorState</name><operator>.</operator><name>PAUSED</name></name></expr> )</condition><block>{<block_content>
+            <expr_stmt><expr><call><name>startTimer</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>setState</name><argument_list>( <argument><expr><name><name>SimulatorState</name><operator>.</operator><name>PLAYING</name></name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

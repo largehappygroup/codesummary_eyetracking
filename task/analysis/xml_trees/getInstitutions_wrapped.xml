@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getInstitutions_wrapped.java"><class><specifier>public</specifier> class <name>InstitutionManager</name> <block>{
+    
+    <decl_stmt><decl><type><specifier>private</specifier> <name>Collection</name></type> <name>iInstitutions</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier>private</specifier> <name>Logger</name></type> <name>logger</name></decl>;</decl_stmt>
+    
+    <constructor><specifier>public</specifier> <name>InstitutionManager</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>logger</name></name> <operator>=</operator> <operator>new</operator> <call><name>Logger</name><argument_list>()</argument_list></call></expr>;</expr_stmt> <comment type="line">//Assuming Logger is a pre-defined class</comment>
+    </block_content>}</block></constructor>
+    
+    <function><type><specifier>public</specifier> <name>Collection</name></type> <name>getInstitutions</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <if_stmt><if>if <condition>( <expr><name>iInstitutions</name> <operator>==</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name>refreshInstitutions</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>debug</name></name><argument_list>( <argument><expr><literal type="string">"Institutions were null while getting them. Attempting to refresh."</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+            <return>return <expr><name>iInstitutions</name></expr>;</return>
+        </block_content>}</block>
+        <catch>catch <parameter_list>( <parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>warn</name></name><argument_list>( <argument><expr><call><name><name>e</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>e</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            <return>return <expr><name><name>Collections</name><operator>.</operator><name>EMPTY_LIST</name></name></expr>;</return>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+    
+    <function><type><specifier>private</specifier> <name>void</name></type> <name>refreshInstitutions</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">//Implementation for refreshing institutions goes here</comment>
+    </block_content>}</block></function>
+}</block></class></unit>

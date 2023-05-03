@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getRemoteObject_wrapped.java"><class><specifier>public</specifier> class <name>MyClass</name> <block>{
+    <function><type><specifier>public</specifier> <name>DBusInterface</name></type> <name>getRemoteObject</name><parameter_list>( <parameter><decl><type><name>String</name></type> <name>objectpath</name></decl></parameter> )</parameter_list> <throws>throws <argument><expr><name>DBusException</name></expr></argument></throws> <block>{<block_content>
+        <if_stmt><if>if <condition>( <expr><literal type="null">null</literal> <operator>==</operator> <name>objectpath</name></expr> )</condition> <block>{<block_content> 
+            <throw>throw <expr><operator>new</operator> <call><name>DBusException</name><argument_list>(<argument><expr><call><name>_</name><argument_list>( <argument><expr><literal type="string">"Invalid object path: null"</literal></expr></argument> )</argument_list></call></expr></argument>)</argument_list></call></expr>;</throw> 
+        </block_content>}</block></if></if_stmt>
+        <if_stmt><if>if <condition>( <expr><operator>!</operator><call><name><name>objectpath</name><operator>.</operator><name>matches</name></name><argument_list>( <argument><expr><name>OBJECT_REGEX</name></expr></argument> )</argument_list></call><operator>||</operator><operator>(</operator> <call><name><name>objectpath</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>&gt;</operator> <name>MAX_NAME_LENGTH</name> <operator>)</operator></expr>)</condition><block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>DBusException</name><argument_list>(<argument><expr><operator>(</operator> <literal type="string">"Invalid object path: "</literal> <operator>)</operator> <operator>+</operator> <name>objectpath</name></expr></argument>)</argument_list></call></expr>;</throw> 
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><call><name>dynamicProxy</name><argument_list>( <argument><expr><name>objectpath</name></expr></argument> )</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

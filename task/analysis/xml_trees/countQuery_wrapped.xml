@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/countQuery_wrapped.java"><class><specifier>public</specifier> class <name>QueryCounter</name> <block>{
+    <decl_stmt><decl><type><specifier>private</specifier> <name>PersistenceBroker</name></type> <name>pride2Broker</name></decl>;</decl_stmt>
+
+    <function><type><specifier>protected</specifier> <name>int</name></type> <name>countQuery</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>Query</name></type> <name>query</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>PersistenceException</name></expr></argument></throws> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>query</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name>pride2Broker</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+                <return>return <expr><call><name><name>pride2Broker</name><operator>.</operator><name>getCount</name></name><argument_list>(<argument><expr><name>query</name></expr></argument>)</argument_list></call></expr>;</return>
+            </block_content>}</block></if> <else>else <block>{<block_content>
+                <throw>throw <expr><operator>new</operator> <call><name>PersistenceException</name><argument_list>(<argument><expr><literal type="string">"Query called on uninitialized PersistenceBroker"</literal></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr>;</throw>
+            </block_content>}</block></else></if_stmt>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>PersistenceException</name><argument_list>(<argument><expr><literal type="string">"No query specified!"</literal></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

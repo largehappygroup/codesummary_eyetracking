@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/onAttach_wrapped.java"><class><specifier>public</specifier> class <name>Widget</name> <block>{
+
+    <function><type><specifier>protected</specifier> <name>void</name></type> <name>onAttach</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>( <expr><name>attached</name></expr> )</condition><block type="pseudo"><block_content>
+            <return>return;</return></block_content></block></if></if_stmt>
+        
+        <expr_stmt><expr><name>attached</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+        
+        <comment type="line">// Set the main element's event listener. This should only be set</comment>
+        <comment type="line">// while the widget is attached, because it creates a circular</comment>
+        <comment type="line">// reference between JavaScript and the DOM.</comment>
+        <expr_stmt><expr><call><name><name>DOM</name><operator>.</operator><name>setEventListener</name></name><argument_list>( <argument><expr><call><name>getElement</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>this</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        
+        <comment type="line">// Now that the widget is attached, call onLoad().</comment>
+        <expr_stmt><expr><call><name>onLoad</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+    
+}</block></class></unit>

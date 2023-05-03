@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/modifyRoleInCache_wrapped.java"><class><specifier>public</specifier> class <name>RoleCacheModifier</name> <block>{
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>modifyRoleInCache</name><parameter_list>(<parameter><decl><type><name>Role</name></type> <name>role</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>orgRolename</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Set</name></type> <name>users</name> <init>= <expr><call><name><name>role</name><operator>.</operator><name>getUsers</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <for>for <control>(<init><decl><type><name>Iterator</name></type> <name>iter</name> <init>= <expr><call><name><name>users</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>iter</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>User</name></type> <name>user</name> <init>= <expr><operator>(</operator><name>User</name><operator>)</operator> <call><name><name>iter</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name>userDetailsInCache</name><argument_list>(<argument><expr><name>user</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+        <for>for <control>(<init><decl><type><name>Iterator</name></type> <name>iter</name> <init>= <expr><call><name><name>role</name><operator>.</operator><name>getRescs</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>iterator</name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>iter</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>Resource</name></type> <name>resource</name> <init>= <expr><operator>(</operator><name>Resource</name><operator>)</operator> <call><name><name>iter</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name>resourceDetailsInCache</name><argument_list>(<argument><expr><name>resource</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+    </block_content>}</block></function>
+}</block></class></unit>

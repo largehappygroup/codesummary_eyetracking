@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/setNamedItem_wrapped.java"><class><specifier>public</specifier> class <name>MyClass</name> <block>{
+    
+    <function><type><specifier>public</specifier> <name>Node</name></type> <name>setNamedItem</name><parameter_list>( <parameter><decl><type><name>Node</name></type> <name>arg</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <return>return <expr><call><name><name>NodeImpl</name><operator>.</operator><name>build</name></name><argument_list>( <argument><expr><call><name><name>XMLParserImpl</name><operator>.</operator><name>setNamedItem</name></name><argument_list>( <argument><expr><call><name><name>this</name><operator>.</operator><name>getJsObject</name></name><argument_list>()</argument_list></call></expr></argument>,
+            <argument><expr><operator>(</operator><operator>(</operator> <name>DOMItem</name> <operator>)</operator> <name>arg</name> <operator>)</operator><operator>.</operator><call><name>getJsObject</name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+        </block_content>}</block> <catch>catch <parameter_list>( <parameter><decl><type><name>JavaScriptException</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>DOMNodeException</name><argument_list>( <argument><expr><name><name>DOMNodeException</name><operator>.</operator><name>INVALID_MODIFICATION_ERR</name></name></expr></argument>, <argument><expr><name>e</name></expr></argument>, <argument><expr><name>this</name></expr></argument> )</argument_list></call></expr>;</throw>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+    
+}</block></class></unit>

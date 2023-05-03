@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/addToTechnicalComment_wrapped.java"><class><specifier>public</specifier> class <name>TechnicalCommentModifier</name> <block>{
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>addToTechnicalComment</name><parameter_list>( <parameter><decl><type><specifier>final</specifier> <name>String</name></type> <name>add_to_technical_comment</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>( <expr><call><name>getTechnicalComment</name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <call><name>getTechnicalComment</name><argument_list>()</argument_list></call><operator>.</operator><call><name>length</name><argument_list>()</argument_list></call> <operator>&gt;</operator> <literal type="number">0</literal></expr> )</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>setTechnicalComment</name><argument_list>( <argument><expr><call><name>getTechnicalComment</name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">"|n"</literal> <operator>+</operator> <name>add_to_technical_comment</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if>
+        <else>else <block>{<block_content>
+            <expr_stmt><expr><call><name>setTechnicalComment</name><argument_list>( <argument><expr><name>add_to_technical_comment</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+
+    <function><type><specifier>private</specifier> <name>String</name></type> <name>getTechnicalComment</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">// implementation of getTechnicalComment()</comment>
+    </block_content>}</block></function>
+
+    <function><type><specifier>private</specifier> <name>void</name></type> <name>setTechnicalComment</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>technicalComment</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">// implementation of setTechnicalComment()</comment>
+    </block_content>}</block></function>
+}</block></class></unit>

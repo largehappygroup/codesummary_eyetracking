@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/load_wrapped.java"><class><specifier>public</specifier> class <name>LockedFileLoader</name> <block>{
+    
+    <function><type><specifier>private</specifier> <name>void</name></type> <name>load</name><parameter_list>( <parameter><decl><type><name>LockedFile</name></type> <name>file</name></decl></parameter> )</parameter_list> <throws>throws <argument><expr><name>SQLIOException</name></expr></argument></throws> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>file</name><operator>.</operator><name>setPosition</name></name><argument_list>( <argument><expr><name>POS_HEADER</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    
+        <decl_stmt><decl><type><name><name>byte</name><index>[]</index></name></type> <name>buffer</name> <init>= <expr><operator>new</operator> <name><name>byte</name><index>[ <expr><name>BASE_HEADER_SIZE</name></expr> ]</index></name></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>file</name><operator>.</operator><name>read</name></name><argument_list>( <argument><expr><name>buffer</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>BASE_HEADER_SIZE</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    
+        <expr_stmt><expr><name>type</name> <operator>=</operator> <name><name>buffer</name><index>[ <expr><name>POS_TYPE</name></expr> ]</index></name></expr>;</expr_stmt>
+        <expr_stmt><expr><name>lastUpdate</name> <operator>=</operator> <call><name>decode3Date</name><argument_list>( <argument><expr><name>buffer</name></expr></argument>, <argument><expr><name>POS_LAST_UDPATE</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>recordsNum</name> <operator>=</operator> <call><name><name>DbfUtils</name><operator>.</operator><name>decodeLittleUint16</name></name><argument_list>( <argument><expr><name>buffer</name></expr></argument>, <argument><expr><name>POS_RECORDS_NUM</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>recordSize</name> <operator>=</operator> <call><name><name>DbfUtils</name><operator>.</operator><name>decodeLittleUint16</name></name><argument_list>( <argument><expr><name>buffer</name></expr></argument>, <argument><expr><name>POS_RECORD_SIZE</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>headerSize</name> <operator>=</operator> <call><name><name>DbfUtils</name><operator>.</operator><name>decodeLittleUint16</name></name><argument_list>( <argument><expr><name>buffer</name></expr></argument>, <argument><expr><name>POS_HEADER_SIZE</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    
+        <expr_stmt><expr><call><name>verifyAndFixHeader</name><argument_list>( <argument><expr><name>file</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function> 
+
+}</block></class></unit>

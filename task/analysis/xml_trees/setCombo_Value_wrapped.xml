@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/setCombo_Value_wrapped.java"><expr_stmt><expr><operator>`</operator><operator>`</operator><operator>`</operator>
+<specifier>public</specifier> <name>class</name> <name>ComboSetter</name> <block>{
+    <expr><specifier>public</specifier> <name>void</name> <call><name>setCombo_Value</name><argument_list>( <argument><expr><name>String</name> <name>val</name></expr></argument> )</argument_list></call> <block>{
+        <expr><call><name>If</name> <argument_list>(<argument><expr><operator>(</operator> <name>val</name> <operator>==</operator> <literal type="null">null</literal> <operator>||</operator> <literal type="string">""</literal><operator>.</operator><call><name>equals</name><argument_list>( <argument><expr><name>val</name></expr></argument> )</argument_list></call><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator> <name>Combo_Value</name> <operator>==</operator> <literal type="null">null</literal> <operator>||</operator> <literal type="string">""</literal><operator>.</operator><call><name>equals</name><argument_list>( <argument><expr><name>Combo_Value</name></expr></argument> )</argument_list></call><operator>)</operator></expr></argument>)</argument_list></call> <block>{
+            <return>return;</return></block></expr>
+        }</block></expr>
+        <if_stmt><if>if <condition>(<expr><operator>(</operator> <name>val</name> <operator>==</operator> <literal type="null">null</literal> <operator>)</operator> <operator>||</operator> <operator>(</operator> <operator>!</operator><call><name><name>val</name><operator>.</operator><name>equals</name></name><argument_list>( <argument><expr><name>Combo_Value</name></expr></argument> )</argument_list></call><operator>)</operator> <operator>||</operator> <operator>(</operator> <name>updateStatus</name> <operator>==</operator> <name>NULL_INT_VALUE</name> <operator>)</operator></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>Combo_Value</name> <operator>=</operator> <name>val</name></expr>;</expr_stmt>
+            <expr_stmt><expr><name>updateStatus</name> <operator>=</operator> <name>UPDATED</name></expr>;</expr_stmt>
+        <expr_stmt/></block_content></block></if></if_stmt>}</block></expr></expr_stmt>
+    }
+}
+<expr><operator>`</operator><operator>`</operator><operator>`</operator></expr></unit>

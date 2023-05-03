@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/setButtonText_wrapped.java"><class><specifier>public</specifier> class <name>ButtonTextSetter</name> <block>{
+    
+    <decl_stmt><decl><type><specifier>private</specifier> <name>MenuItem</name></type> <name>menuItem</name></decl>;</decl_stmt>
+    
+    <constructor><specifier>public</specifier> <name>ButtonTextSetter</name><parameter_list>(<parameter><decl><type><name>MenuItem</name></type> <name>menuItem</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>menuItem</name></name> <operator>=</operator> <name>menuItem</name></expr>;</expr_stmt>
+    </block_content>}</block></constructor>
+    
+    <function><type><specifier>private</specifier> <name>void</name></type> <name>setButtonText</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>txt</name> <init>= <expr><call><name><name>menuItem</name><operator>.</operator><name>getTitle</name></name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">" ("</literal> <operator>+</operator> <call><name><name>menuItem</name><operator>.</operator><name>getStock</name></name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">" in Stock)"</literal></expr></init></decl>;</decl_stmt>
+        <try>try <block>{<block_content>
+            <decl_stmt><decl><type><name>Course</name></type> <name>tmpCourse</name> <init>= <expr><operator>(</operator> <name>Course</name> <operator>)</operator><name>menuItem</name></expr></init></decl>;</decl_stmt>
+
+            <if_stmt><if>if <condition>( <expr><call><name><name>tmpCourse</name><operator>.</operator><name>getCourseType</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name><name>Course</name><operator>.</operator><name>FIRST_COURSE</name></name></expr> )</condition> <block>{<block_content>
+                <expr_stmt><expr><name>txt</name> <operator>=</operator> <literal type="string">"1st: "</literal> <operator>+</operator> <name>txt</name></expr>;</expr_stmt>
+            </block_content>}</block></if> <else>else <block>{<block_content>
+                <expr_stmt><expr><name>txt</name> <operator>=</operator> <literal type="string">"2nd: "</literal> <operator>+</operator> <name>txt</name></expr>;</expr_stmt>
+            </block_content>}</block></else></if_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>( <parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content>
+            <comment type="line">// TODO: handle exception</comment>
+        </block_content>}</block></catch></try>
+        <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>setText</name></name><argument_list>( <argument><expr><name>txt</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

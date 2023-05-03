@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/updateGain_wrapped.java"><class><specifier>public</specifier> class <name>MidiUpdater</name> <block>{
+    <decl_stmt><decl><type><specifier>private</specifier> <name>Synthesizer</name></type> <name>synthesizer</name></decl>;</decl_stmt>
+
+    <constructor><specifier>public</specifier> <name>MidiUpdater</name><parameter_list>(<parameter><decl><type><name>Synthesizer</name></type> <name>synth</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>synthesizer</name></name> <operator>=</operator> <name>synth</name></expr>;</expr_stmt>
+    </block_content>}</block></constructor>
+
+    <function><type><specifier>private</specifier> <name>void</name></type> <name>updateGain</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>pos</name> <init>= <expr><call><name>getValue</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>int</name></type> <name>value</name> <init>= <expr><operator>(</operator><name>int</name><operator>)</operator> <operator>(</operator> <literal type="number">127</literal> <operator>*</operator> <operator>(</operator> <name>double</name> <operator>)</operator> <operator>(</operator> <name>pos</name> <operator>/</operator> <literal type="number">100.0</literal> <operator>)</operator><operator>)</operator></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name><name>MidiChannel</name><index>[]</index></name></type> <name>cs</name> <init>= <expr><call><name><name>synthesizer</name><operator>.</operator><name>getChannels</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <for>for<control>( <init><decl><type><name>int</name></type> <name>I</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>I</name> <operator>&lt;</operator> <name><name>cs</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr> )</control> <block>{<block_content>
+            <expr_stmt><expr><name><name>cs</name><index>[ <expr><name>i</name></expr> ]</index></name><operator>.</operator><call><name>controlChange</name><argument_list>( <argument><expr><literal type="number">7</literal></expr></argument>, <argument><expr><name>value</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+    </block_content>}</block></function>
+}</block></class></unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/messageSent_wrapped.java"><expr_stmt><expr><operator>`</operator><operator>`</operator><operator>`</operator><name>java</name>
+<specifier>public</specifier> <name>class</name> <name>MyClass</name> <block>{
+
+    <expr><specifier>public</specifier> <name>void</name> <call><name>messageSent</name><argument_list>( <argument><expr><name>MessageEvent</name> <name>e</name></expr></argument> )</argument_list></call> <block>{
+        <expr><name>String</name> <name>str</name> <operator>=</operator> <call><name><name>e</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr>;
+
+        <if_stmt><if>if <condition>( <expr><call><name><name>str</name><operator>.</operator><name>endsWith</name></name><argument_list>( <argument><expr><name>DIR_ADDED</name></expr></argument> )</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>str</name> <operator>=</operator> <call><name><name>str</name><operator>.</operator><name>substring</name></name><argument_list>( <argument><expr><call><name><name>DIRECTORY</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name><name>str</name><operator>.</operator><name>indexOf</name></name><argument_list>( <argument><expr><name>DIR_ADDED</name></expr></argument> )</argument_list></call></expr></argument>)</argument_list></call><operator>.</operator><call><name>trim</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>createCvsFiles</name><argument_list>( <argument><expr><name>str</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt/></block_content></block></if></if_stmt>}</block>
+        <call><name><name>super</name><operator>.</operator><name>messageSent</name></name><argument_list>( <argument><expr><name>e</name></expr></argument> )</argument_list></call></expr>;
+    }</block></expr></expr_stmt>
+
+}
+`<expr><operator>`</operator><operator>`</operator></expr></unit>

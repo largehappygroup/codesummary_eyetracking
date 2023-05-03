@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/setUrls_wrapped.java"><class><specifier>public</specifier> class <name>UrlSetter</name> <block>{
+    <decl_stmt><decl><type><specifier>private</specifier> <name><name>String</name><index>[]</index></name></type> <name>urls</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier>private</specifier> <name>String</name></type> <name>illegalPostProssingMsg</name> <init>= <expr><literal type="string">"Illegal Post-Processing"</literal></expr></init></decl>;</decl_stmt>
+
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>setUrls</name><parameter_list>( <parameter><decl><type><name><name>String</name><index>[]</index></name></type> <name>theUrls</name></decl></parameter> )</parameter_list> <throws>throws <argument><expr><name>IllegalStateException</name></expr></argument></throws> <block>{<block_content>
+        <if_stmt><if>if <condition>( <expr><name>xmlProcessed</name></expr> )</condition><block type="pseudo"><block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>IllegalStateException</name><argument_list>( <argument><expr><name>illegalPostProssingMsg</name></expr></argument> )</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+		
+        <if_stmt><if>if<condition>( <expr><name>theUrls</name> <operator>!=</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+            <expr_stmt><expr><name><name>this</name><operator>.</operator><name>urls</name></name> <operator>=</operator> <operator>new</operator> <name><name>String</name> <index>[ <expr><name><name>theUrls</name><operator>.</operator><name>length</name></name></expr> ]</index></name></expr>;</expr_stmt>
+            <for>for<control>( <init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>theUrls</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr> )</control><block type="pseudo"><block_content>
+                <expr_stmt><expr><name><name>this</name><operator>.</operator><name>urls</name><index>[ <expr><name>i</name></expr> ]</index></name> <operator>=</operator> <call><name><name>UrlHelper</name><operator>.</operator><name>normalize</name></name><argument_list>( <argument><expr><name><name>theUrls</name><index>[ <expr><name>i</name></expr> ]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></for>
+        </block_content>}</block></if>
+        <else>else<block type="pseudo"><block_content>
+            <expr_stmt><expr><name><name>this</name><operator>.</operator><name>urls</name></name> <operator>=</operator> <name>urls</name></expr>;</expr_stmt></block_content></block></else></if_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getUserNameFromCookie_wrapped.java"><class><specifier>public</specifier> class <name>CookieParser</name> <block>{
+    <decl_stmt><decl><type><specifier>private</specifier> <name><name>javax</name><operator>.</operator><name>servlet</name><operator>.</operator><name>http</name><operator>.</operator><name>HttpServletRequest</name></name></type> <name>servletRequest</name></decl>;</decl_stmt>
+
+    <constructor><specifier>public</specifier> <name>CookieParser</name><parameter_list>(<parameter><decl><type><name><name>javax</name><operator>.</operator><name>servlet</name><operator>.</operator><name>http</name><operator>.</operator><name>HttpServletRequest</name></name></type> <name>servletRequest</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>servletRequest</name></name> <operator>=</operator> <name>servletRequest</name></expr>;</expr_stmt>
+    </block_content>}</block></constructor>
+
+    <function><type><specifier>private</specifier> <name>String</name></type> <name>getUserNameFromCookie</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>userName</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+        <comment type="line">// get user name</comment>
+        <decl_stmt><decl><type><name><name>Cookie</name><index>[]</index></name></type> <name>cookies</name> <init>= <expr><call><name><name>servletRequest</name><operator>.</operator><name>getCookies</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>cookies</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>Cookie</name></type> <name>cookie</name> <init>= <expr><name><name>cookies</name><index>[<expr><name>i</name></expr>]</index></name></expr></init></decl>;</decl_stmt>
+
+            <if_stmt><if>if <condition>(<expr><name>cookie</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <call><name><name>cookie</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><literal type="string">"platform.username"</literal></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+                <decl_stmt><decl><type><name>String</name></type> <name>value</name> <init>= <expr><call><name><name>cookie</name><operator>.</operator><name>getValue</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+                <expr_stmt><expr><name>userName</name> <operator>=</operator> <call><name><name>DesEncrypter</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>decrypt</name><argument_list>(<argument><expr><name>value</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <break>break;</break>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+        <return>return <expr><name>userName</name></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

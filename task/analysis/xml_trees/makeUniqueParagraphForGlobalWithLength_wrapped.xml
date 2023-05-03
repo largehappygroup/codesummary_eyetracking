@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/makeUniqueParagraphForGlobalWithLength_wrapped.java"><class><specifier>public</specifier> class <name>MyClass</name> <block>{
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>makeUniqueParagraphForGlobalWithLength</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>global</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>length</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>paragraph</name> <init>= <expr><literal type="string">""</literal></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>word</name></decl>;</decl_stmt>
+
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>x</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>x</name> <operator>&lt;</operator> <name>length</name></expr>;</condition> <incr><expr><name>x</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <expr_stmt><expr><name>word</name> <operator>=</operator> <call><name>makeUniqueStringForGlobalWithLength</name><argument_list>(<argument><expr><name>global</name></expr></argument>, <argument><expr><operator>(</operator><name>int</name><operator>)</operator> <operator>(</operator><call><name><name>Math</name><operator>.</operator><name>random</name></name><argument_list>()</argument_list></call> <operator>*</operator> <literal type="number">8</literal><operator>)</operator> <operator>+</operator> <literal type="number">2</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name>paragraph</name> <operator>+=</operator> <name>word</name> <operator>+</operator> <literal type="string">" "</literal></expr>;</expr_stmt>
+        </block_content>}</block></for>
+        <expr_stmt><expr><call><name><name>utils</name><operator>.</operator><name>setGlobal</name></name><argument_list>(<argument><expr><name>global</name></expr></argument>, <argument><expr><name>paragraph</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

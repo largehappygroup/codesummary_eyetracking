@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/store_wrapped.java"><expr_stmt><expr><operator>`</operator><operator>`</operator><operator>`</operator><name>java</name>
+<specifier>public</specifier> <name>class</name> <name>ZipFileHandler</name> <block>{
+    <expr><specifier>public</specifier> <name>void</name> <call><name>store</name><argument_list>(<argument><expr><name>String</name> <name>path</name></expr></argument>, <argument><expr><name>InputStream</name> <name>stream</name></expr></argument>)</argument_list></call> <throws>throws <argument><expr><name>IOException</name> <block>{
+        <expr><call><name><name>toIgnore</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name>normalizePath</name><argument_list>(<argument><expr><name>path</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></block></expr></argument></throws></expr>;
+        <expr><name>ZipEntry</name> <name>entry</name> <operator>=</operator> <operator>new</operator> <call><name>ZipEntry</name><argument_list>(<argument><expr><name>path</name></expr></argument>)</argument_list></call></expr>;
+        <expr><call><name><name>zipOutput</name><operator>.</operator><name>putNextEntry</name></name><argument_list>(<argument><expr><name>entry</name></expr></argument>)</argument_list></call></expr>;
+        <expr><call><name><name>IOUtils</name><operator>.</operator><name>copy</name></name><argument_list>(<argument><expr><name>stream</name></expr></argument>, <argument><expr><name>zipOutput</name></expr></argument>)</argument_list></call></expr>;
+        <expr><call><name><name>zipOutput</name><operator>.</operator><name>closeEntry</name></name><argument_list>()</argument_list></call></expr>;
+    }</block></expr></expr_stmt>
+}
+`<expr><operator>`</operator><operator>`</operator></expr></unit>

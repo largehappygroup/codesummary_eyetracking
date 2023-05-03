@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getJSplitPane_wrapped.java"><class><specifier>public</specifier> class <name>SplitPaneParser</name> <block>{
+
+    <decl_stmt><decl><type><specifier>private</specifier> <name>JSplitPane</name></type> <name>jSplitPane</name></decl>;</decl_stmt>
+
+    <function><type><specifier>public</specifier> <name>JSplitPane</name></type> <name>getJSplitPane</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>jSplitPane</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>jSplitPane</name> <operator>=</operator> <operator>new</operator> <call><name>JSplitPane</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+            <decl_stmt><decl><type><name>DevicesTreePanel</name></type> <name>p</name> <init>= <expr><operator>new</operator> <call><name>DevicesTreePanel</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name><name>p</name><operator>.</operator><name>addSelectionChangeListener</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>jSplitPane</name><operator>.</operator><name>setLeftComponent</name></name><argument_list>(<argument><expr><name>p</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>jSplitPane</name><operator>.</operator><name>setRightComponent</name></name><argument_list>(<argument><expr><call><name>getJTabbedPane</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+            <expr_stmt><expr><call><name><name>jSplitPane</name><operator>.</operator><name>setDividerSize</name></name><argument_list>(<argument><expr><literal type="number">5</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>jSplitPane</name><operator>.</operator><name>setDividerLocation</name></name><argument_list>(<argument><expr><literal type="number">200</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>jSplitPane</name></expr>;</return>
+    </block_content>}</block></function>
+
+    <function><type><specifier>private</specifier> <name>JTabbedPane</name></type> <name>getJTabbedPane</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">// implementation logic for getting JTabbedPane</comment>
+    </block_content>}</block></function>
+}</block></class></unit>

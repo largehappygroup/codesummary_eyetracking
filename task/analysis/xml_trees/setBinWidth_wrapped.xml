@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/setBinWidth_wrapped.java"><class><specifier>public</specifier> class <name>BinWidthSetter</name> <block>{
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>setBinWidth</name><parameter_list>(<parameter><decl><type><name>double</name></type> <name>new_bin_width</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>double</name></type> <name>old_bin_width</name> <init>= <expr><name>binWidth</name></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><name>binWidth</name> <operator>=</operator> <name>new_bin_width</name></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>pcs</name><operator>.</operator><name>firePropertyChange</name></name><argument_list>(<argument><expr><literal type="string">"binWidth"</literal></expr></argument>,
+                <argument><expr><operator>new</operator> <call><name>Double</name><argument_list>(<argument><expr><name>old_bin_width</name></expr></argument>)</argument_list></call></expr></argument>,
+                <argument><expr><operator>new</operator> <call><name>Double</name><argument_list>(<argument><expr><name>new_bin_width</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>repaint</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function> <comment type="line">// setBinWidth(double)</comment>
+
+    <decl_stmt><decl><type><specifier>private</specifier> <name>double</name></type> <name>binWidth</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier>private</specifier> <specifier>final</specifier> <name>PropertyChangeSupport</name></type> <name>pcs</name> <init>= <expr><operator>new</operator> <call><name>PropertyChangeSupport</name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>addPropertyChangeListener</name><parameter_list>(<parameter><decl><type><name>PropertyChangeListener</name></type> <name>listener</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>pcs</name><operator>.</operator><name>addPropertyChangeListener</name></name><argument_list>(<argument><expr><name>listener</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>removePropertyChangeListener</name><parameter_list>(<parameter><decl><type><name>PropertyChangeListener</name></type> <name>listener</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>pcs</name><operator>.</operator><name>removePropertyChangeListener</name></name><argument_list>(<argument><expr><name>listener</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+
+    <function><type><specifier>private</specifier> <name>void</name></type> <name>repaint</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">// implementation of repaint method</comment>
+    </block_content>}</block></function>
+}</block></class></unit>

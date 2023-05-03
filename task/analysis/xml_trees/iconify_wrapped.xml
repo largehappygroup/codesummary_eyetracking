@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/iconify_wrapped.java"><class><specifier>public</specifier> class <name>IconifyFunction</name> <block>{
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>iconify</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>Frame</name></type> <name>frame</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Point</name></type> <name>loc</name> <init>= <expr><call><name>getIconifyLocation</name><argument_list>(<argument><expr><name>frame</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>loc</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>mouseMove</name><argument_list>(<argument><expr><name>frame</name></expr></argument>, <argument><expr><name><name>loc</name><operator>.</operator><name>x</name></name></expr></argument>, <argument><expr><name><name>loc</name><operator>.</operator><name>y</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        <expr_stmt><expr><call><name>invokeLater</name><argument_list>(<argument><expr><name>frame</name></expr></argument>, <argument><expr><operator>new</operator> <class><super><name>Runnable</name></super><argument_list>()</argument_list> <block>{
+            <function><type><specifier>public</specifier> <name>void</name></type> <name>run</name><parameter_list>()</parameter_list> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>frame</name><operator>.</operator><name>setState</name></name><argument_list>(<argument><expr><name><name>Frame</name><operator>.</operator><name>ICONIFIED</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></function>
+        }</block></class></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

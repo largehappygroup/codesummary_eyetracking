@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/show_wrapped.java"><class><specifier>public</specifier> class <name>ContactDialog</name> <block>{
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>show</name><parameter_list>( <parameter><decl><type><name>Contact</name></type> <name>contact</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>fine</name></name><argument_list>( <argument><expr><literal type="string">"Showing edit contact dialog for contact: "</literal> <operator>+</operator> <name>contact</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>contact</name></name> <operator>=</operator> <name>contact</name></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>init</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>setLocationRelativeTo</name><argument_list>( <argument><expr><name><name>Context</name><operator>.</operator><name>mainFrame</name></name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>optionPane</name><operator>.</operator><name>setValue</name></name><argument_list>( <argument><expr><name><name>JOptionPane</name><operator>.</operator><name>UNINITIALIZED_VALUE</name></name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>panel</name><operator>.</operator><name>setContact</name></name><argument_list>( <argument><expr><name>contact</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>panel</name><operator>.</operator><name>prepareForShow</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>setVisible</name><argument_list>( <argument><expr><literal type="boolean">true</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

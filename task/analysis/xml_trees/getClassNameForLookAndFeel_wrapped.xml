@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getClassNameForLookAndFeel_wrapped.java"><class><specifier>public</specifier> class <name>LookAndFeel</name> <block>{
+    
+    <function><type><specifier>public</specifier> <name>String</name></type> <name>getClassNameForLookAndFeel</name><parameter_list>( <parameter><decl><type><name>String</name></type> <name>name</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>( <expr><call><name><name>lfNameToLookAndFeel</name><operator>.</operator><name>containsKey</name></name><argument_list>( <argument><expr><name>name</name></expr></argument> )</argument_list></call></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name><name>UIManager</name><operator>.</operator><name>LookAndFeelInfo</name></name></type> <name>lookAndFeelInfo</name> <init>=
+                    <expr><operator>(</operator> <name><name>UIManager</name><operator>.</operator><name>LookAndFeelInfo</name></name> <operator>)</operator> <call><name><name>lfNameToLookAndFeel</name><operator>.</operator><name>get</name></name><argument_list>( <argument><expr><name>name</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+            <return>return <expr><call><name><name>lookAndFeelInfo</name><operator>.</operator><name>getClassName</name></name><argument_list>()</argument_list></call></expr>;</return>
+        </block_content>}</block></if>
+        <else>else <block>{<block_content>
+            <return>return <expr><literal type="null">null</literal></expr>;</return>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+    
+}</block></class></unit>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/genIdents_wrapped.java"><class><specifier>public</specifier> class <name>GenIdents</name> <block>{
+
+    <function><type><specifier>public</specifier> <name>JExpression</name></type> <name>genIdents</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>TokenReference</name></type> <name>ref</name> <init>= <expr><call><name>getTokenReference</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name><name>Jexpression</name><index>[]</index></name></type> <name>init</name> <init>= <expr><operator>new</operator> <name><name>JExpression</name><index>[ <expr><name><name>codes</name><operator>.</operator><name>length</name></name></expr> ]</index></name></expr></init></decl>;</decl_stmt>
+
+        <for>for <control>( <init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>codes</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr> )</control> <block>{<block_content>
+            <expr_stmt><expr><name><name>init</name><index>[ <expr><name>i</name></expr> ]</index></name> <operator>=</operator> <operator>new</operator> <call><name>JStringLiteral</name><argument_list>( <argument><expr><name>ref</name></expr></argument>, <argument><expr><name><name>codes</name><index>[ <expr><name>i</name></expr> ]</index></name><operator>.</operator><call><name>getIdent</name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+        <return>return <expr><call><name><name>VKUtils</name><operator>.</operator><name>createArray</name></name><argument_list>( <argument><expr><name>ref</name></expr></argument>, <argument><expr><name><name>CStdType</name><operator>.</operator><name>String</name></name></expr></argument>, <argument><expr><name>init</name></expr></argument> )</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/markStart_wrapped.java"><class><specifier>public</specifier> class <name>TimerClass</name> <block>{
+    <decl_stmt><decl><type><specifier>private</specifier> <name><name>Map</name><argument_list type="generic">&lt;<argument><name>Object</name></argument>, <argument><name>Long</name></argument>&gt;</argument_list></name></type> <name>pair2startTimeMap</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier>private</specifier> <name>Clock</name></type> <name>clock</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier>private</specifier> <name>int</name></type> <name>maxWait</name></decl>;</decl_stmt>
+
+    <constructor><specifier>public</specifier> <name>TimerClass</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name>pair2startTimeMap</name> <operator>=</operator> <operator>new</operator> <call><name><name>HashMap</name><argument_list type="generic">&lt;&gt;</argument_list></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>clock</name> <operator>=</operator> <operator>new</operator> <call><name>Clock</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>maxWait</name> <operator>=</operator> <literal type="number">1000</literal></expr>;</expr_stmt>
+    </block_content>}</block></constructor>
+
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>markStart</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>tag</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <synchronized>synchronized <init>(<expr><name>pair2startTimeMap</name></expr>)</init> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>pair2startTimeMap</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>tag</name></expr></argument>, <argument><expr><call><name><name>clock</name><operator>.</operator><name>getCurrentTime</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <decl_stmt><decl><type><name>Timer</name></type> <name>removalTimer</name> <init>= <expr><call><name><name>clock</name><operator>.</operator><name>createNewTimer</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name><name>removalTimer</name><operator>.</operator><name>addTimerListener</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>GarbageCollectionTimerListener</name><argument_list>(<argument><expr><name>tag</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>removalTimer</name><operator>.</operator><name>schedule</name></name><argument_list>(<argument><expr><call><name><name>Time</name><operator>.</operator><name>inMilliseconds</name></name><argument_list>(<argument><expr><name>maxWait</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></synchronized>
+    </block_content>}</block></function>
+
+    <class><specifier>private</specifier> class <name>GarbageCollectionTimerListener</name> <super_list><implements>implements <super><name>TimerListener</name></super></implements></super_list> <block>{
+        <decl_stmt><decl><type><name>Object</name></type> <name>tag</name></decl>;</decl_stmt>
+
+        <constructor><specifier>public</specifier> <name>GarbageCollectionTimerListener</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>tag</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><name><name>this</name><operator>.</operator><name>tag</name></name> <operator>=</operator> <name>tag</name></expr>;</expr_stmt>
+        </block_content>}</block></constructor>
+
+        <function><annotation>@<name>Override</name></annotation>
+        <type><specifier>public</specifier> <name>void</name></type> <name>onTimerExpired</name><parameter_list>()</parameter_list> <block>{<block_content>
+            <synchronized>synchronized <init>(<expr><name>pair2startTimeMap</name></expr>)</init> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>pair2startTimeMap</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>tag</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></synchronized>
+        </block_content>}</block></function>
+    }</block></class>
+
+    <interface><specifier>private</specifier> interface <name>TimerListener</name> <block>{
+        <function_decl><type><name>void</name></type> <name>onTimerExpired</name><parameter_list>()</parameter_list>;</function_decl>
+    }</block></interface>
+
+    <class><specifier>private</specifier> <specifier>static</specifier> class <name>Timer</name> <block>{
+        <decl_stmt><decl><type><specifier>private</specifier> <name>TimerListener</name></type> <name>listener</name></decl>;</decl_stmt>
+
+        <function><type><specifier>public</specifier> <name>void</name></type> <name>addTimerListener</name><parameter_list>(<parameter><decl><type><name>TimerListener</name></type> <name>listener</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><name><name>this</name><operator>.</operator><name>listener</name></name> <operator>=</operator> <name>listener</name></expr>;</expr_stmt>
+        </block_content>}</block></function>
+
+        <function><type><specifier>public</specifier> <name>void</name></type> <name>schedule</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>time</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <comment type="line">// No-op for demo purposes</comment>
+        </block_content>}</block></function>
+    }</block></class>
+
+    <class><specifier>private</specifier> <specifier>static</specifier> class <name>Time</name> <block>{
+        <function><type><specifier>public</specifier> <specifier>static</specifier> <name>int</name></type> <name>inMilliseconds</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>seconds</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <return>return <expr><name>seconds</name> <operator>*</operator> <literal type="number">1000</literal></expr>;</return>
+        </block_content>}</block></function>
+    }</block></class>
+
+    <class><specifier>private</specifier> <specifier>static</specifier> class <name>Clock</name> <block>{
+        <function><type><specifier>public</specifier> <name>long</name></type> <name>getCurrentTime</name><parameter_list>()</parameter_list> <block>{<block_content>
+            <return>return <expr><call><name><name>System</name><operator>.</operator><name>currentTimeMillis</name></name><argument_list>()</argument_list></call></expr>;</return>
+        </block_content>}</block></function>
+
+        <function><type><specifier>public</specifier> <name>Timer</name></type> <name>createNewTimer</name><parameter_list>()</parameter_list> <block>{<block_content>
+            <return>return <expr><operator>new</operator> <call><name>Timer</name><argument_list>()</argument_list></call></expr>;</return>
+        </block_content>}</block></function>
+    }</block></class>
+}</block></class></unit>

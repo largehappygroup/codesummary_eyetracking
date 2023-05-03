@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/tellAgain_wrapped.java"><class><specifier>public</specifier> class <name>MyClass</name> <block>{
+    <function><type><specifier>protected</specifier> <name>void</name></type> <name>tellAgain</name><parameter_list>( <parameter><decl><type><specifier>final</specifier> <name>QName</name></type> <name>message</name></decl></parameter> )</parameter_list> <throws>throws <argument><expr><name>RemoteException</name></expr></argument></throws><block>{<block_content>
+        <decl_stmt><decl><type><specifier>final</specifier> <name>AbstractCoordParticipantProxy</name></type> <name>proxy</name> <init>=
+            <expr><call><name><name>this</name><operator>.</operator><name>getParticipantProxy</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>( <expr><call><name><name>State</name><operator>.</operator><name>MESSAGE_CANCEL</name><operator>.</operator><name>equals</name></name><argument_list>( <argument><expr><name>message</name></expr></argument> )</argument_list></call></expr>)</condition><block>{<block_content>
+            <expr_stmt><expr><call><name><name>proxy</name><operator>.</operator><name>cancelOperation</name></name><argument_list>( <argument><expr><literal type="null">null</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+        </block_content>}</block></if> <if type="elseif">else if <condition>( <expr><call><name><name>State</name><operator>.</operator><name>MESSAGE_COMPENSATE</name><operator>.</operator><name>equals</name></name><argument_list>( <argument><expr><name>message</name></expr></argument> )</argument_list></call></expr>)</condition><block>{<block_content>
+            <expr_stmt><expr><call><name><name>proxy</name><operator>.</operator><name>compensateOperation</name></name><argument_list>( <argument><expr><literal type="null">null</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+        </block_content>}</block></if> <if type="elseif">else if <condition>( <expr><call><name><name>State</name><operator>.</operator><name>MESSAGE_CLOSE</name><operator>.</operator><name>equals</name></name><argument_list>( <argument><expr><name>message</name></expr></argument> )</argument_list></call></expr>)</condition><block>{<block_content>
+            <expr_stmt><expr><call><name><name>proxy</name><operator>.</operator><name>closeOperation</name></name><argument_list>( <argument><expr><literal type="null">null</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+        </block_content>}</block></if> <if type="elseif">else if <condition>( <expr><call><name><name>State</name><operator>.</operator><name>MESSAGE_EXITED</name><operator>.</operator><name>equals</name></name><argument_list>( <argument><expr><name>message</name></expr></argument> )</argument_list></call></expr>)</condition><block>{<block_content>
+            <expr_stmt><expr><call><name><name>proxy</name><operator>.</operator><name>exitedOperation</name></name><argument_list>( <argument><expr><literal type="null">null</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+        </block_content>}</block></if> <if type="elseif">else if <condition>( <expr><call><name><name>State</name><operator>.</operator><name>MESSAGE_FAULTED</name><operator>.</operator><name>equals</name></name><argument_list>( <argument><expr><name>message</name></expr></argument> )</argument_list></call></expr>)</condition><block>{<block_content>
+            <expr_stmt><expr><call><name><name>proxy</name><operator>.</operator><name>faultedOperation</name></name><argument_list>( <argument><expr><literal type="null">null</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+        </block_content>}</block></if> <if type="elseif">else if <condition>( <expr><call><name><name>State</name><operator>.</operator><name>MESSAGE_GETSTATUS</name><operator>.</operator><name>equals</name></name><argument_list>( <argument><expr><name>message</name></expr></argument> )</argument_list></call></expr>)</condition><block>{<block_content>
+            <expr_stmt><expr><call><name><name>proxy</name><operator>.</operator><name>getStatusOperation</name></name><argument_list>( <argument><expr><literal type="null">null</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+        </block_content>}</block></if> <else>else<block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>( <argument><expr><literal type="string">"Sorry, cannot tell a participant "</literal> <operator>+</operator> <name>message</name></expr></argument> )</argument_list></call></expr>;</throw>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

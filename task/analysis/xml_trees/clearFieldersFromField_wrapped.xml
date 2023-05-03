@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/clearFieldersFromField_wrapped.java"><import>import <name><name>java</name><operator>.</operator><name>io</name><operator>.</operator><name>*</name></name>;</import>
+
+<class><specifier>public</specifier> class <name>FieldClearer</name> <block>{
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>clearFieldersFromField</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">// clear all fielders from field</comment>
+        <for>for <control>( <init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name>boardXDimension</name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr> )</control> <block>{<block_content>
+            <for>for <control>( <init><decl><type><name>int</name></type> <name>j</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>j</name> <operator>&lt;</operator> <name>boardYDimension</name></expr>;</condition> <incr><expr><name>j</name><operator>++</operator></expr></incr> )</control> <block>{<block_content>
+                <for>for <control>( <init><decl><type><name>int</name></type> <name>a</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>a</name> <operator>&lt;</operator> <name>boardZDimension</name></expr>;</condition> <incr><expr><name>a</name><operator>++</operator></expr></incr> )</control> <block>{<block_content>
+                    <expr_stmt><expr><name><name>cricketFieldPositions</name><index>[ <expr><name>i</name></expr> ]</index><index>[ <expr><name>j</name></expr> ]</index><index>[ <expr><name>a</name></expr> ]</index></name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>
+                </block_content>}</block></for>
+            </block_content>}</block></for>
+        </block_content>}</block></for>
+    </block_content>}</block></function>
+}</block></class></unit>

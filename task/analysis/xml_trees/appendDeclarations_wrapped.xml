@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/appendDeclarations_wrapped.java"><class><specifier>public</specifier> class <name>LaTeXDocument</name> <block>{
+  <function><type><specifier>public</specifier> <name>void</name></type> <name>appendDeclarations</name><parameter_list>(<parameter><decl><type><name>LaTeXDocumentPortion</name></type> <name>pack</name></decl></parameter>, <parameter><decl><type><name>LaTeXDocumentPortion</name></type> <name>decl</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><name>bContainsEndnotes</name></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><call><name><name>pack</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="string">"\\usepackage{endnotes}"</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>nl</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></if></if_stmt>
+    <if_stmt><if>if <condition>(<expr><name>bContainsFootnotes</name></expr>)</condition><block type="pseudo"><block_content>
+      <expr_stmt><expr><call><name>convertFootnotesConfiguration</name><argument_list>(<argument><expr><name>decl</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+    <if_stmt><if>if <condition>(<expr><name>bContainsEndnotes</name></expr>)</condition><block type="pseudo"><block_content>
+      <expr_stmt><expr><call><name>convertEndnotesConfiguration</name><argument_list>(<argument><expr><name>decl</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+  </block_content>}</block></function>
+}</block></class></unit>

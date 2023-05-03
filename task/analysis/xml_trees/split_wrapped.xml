@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/split_wrapped.java"><class><specifier>public</specifier> class <name>Splitter</name> <block>{
+    <function><type><specifier>public</specifier> <name>List</name></type> <name>split</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>line</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>List</name></type> <name>result</name></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>line</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>result</name> <operator>=</operator> <operator>new</operator> <call><name>ArrayList</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <decl_stmt><decl><type><name>StringTokenizer</name></type> <name>tok</name></decl>;</decl_stmt>
+            <expr_stmt><expr><name>tok</name> <operator>=</operator> <operator>new</operator> <call><name>StringTokenizer</name><argument_list>(<argument><expr><name>line</name></expr></argument>, <argument><expr><literal type="string">","</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name>result</name> <operator>=</operator> <operator>new</operator> <call><name>ArrayList</name><argument_list>(<argument><expr><call><name><name>tok</name><operator>.</operator><name>countTokens</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+            <while>while <condition>(<expr><call><name><name>tok</name><operator>.</operator><name>hasMoreTokens</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>result</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name><name>tok</name><operator>.</operator><name>nextToken</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></while>
+        </block_content>}</block></else></if_stmt>
+        <return>return <expr><name>result</name></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/leaveAll_wrapped.java"><class><specifier>public</specifier> class <name>MyClass</name> <block>{
+    <function><type><specifier>private</specifier> <name>void</name></type> <name>leaveAll</name><parameter_list>( <parameter><decl><type><name><name>MouseEvent</name><argument_list type="generic">&lt;<argument><name>?</name> <extends>extends <name>EventHandler</name></extends></argument> &gt;</argument_list></name></type> <name>event</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>LocInfo</name></type> <name>locInfo</name> <init>= <expr><operator>new</operator> <call><name>LocInfo</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <assert>assert<expr><operator>(</operator> <operator>!</operator><call><name><name>locInfo</name><operator>.</operator><name>isVertexLocValid</name></name><argument_list>()</argument_list></call> <operator>)</operator></expr>;</assert>
+        <assert>assert<expr><operator>(</operator> <operator>!</operator><call><name><name>locInfo</name><operator>.</operator><name>isVerticalEdgeLocValid</name></name><argument_list>()</argument_list></call> <operator>)</operator></expr>;</assert>
+        <assert>assert<expr><operator>(</operator> <operator>!</operator><call><name><name>locInfo</name><operator>.</operator><name>isHorizontalEdgeLocValid</name></name><argument_list>()</argument_list></call> <operator>)</operator></expr>;</assert>
+        <assert>assert<expr><operator>(</operator> <operator>!</operator><call><name><name>locInfo</name><operator>.</operator><name>isCellLocValid</name></name><argument_list>()</argument_list></call> <operator>)</operator></expr>;</assert>
+        <expr_stmt><expr><call><name>handleLeaveEvents</name><argument_list>( <argument><expr><name>locInfo</name></expr></argument>, <argument><expr><name>event</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>lastLocInfo</name><operator>.</operator><name>copy</name></name><argument_list>( <argument><expr><name>locInfo</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

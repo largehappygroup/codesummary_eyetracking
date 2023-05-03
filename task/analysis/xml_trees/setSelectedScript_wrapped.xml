@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/setSelectedScript_wrapped.java"><class><specifier>public</specifier> class <name>MyClass</name> <block>{
+
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>setSelectedScript</name><parameter_list>( <parameter><decl><type><name>Object</name></type> <name>script</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Object</name></type> <name>selectedScript</name> <init>= <expr><name>script</name></expr></init></decl>;</decl_stmt>
+
+        <comment type="line">// expand to and select the specified container</comment>
+        <decl_stmt><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>Object</name></argument>&gt;</argument_list></name></type> <name>itemsToExpand</name> <init>= <expr><operator>new</operator> <call><name><name>ArrayList</name><argument_list type="generic">&lt;&gt;</argument_list></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>IContainer</name></type> <name>parent</name> <init>= <expr><call><name><name>project</name><operator>.</operator><name>getParent</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <while>while <condition>( <expr><name>parent</name> <operator>!=</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>itemsToExpand</name><operator>.</operator><name>add</name></name><argument_list>( <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>parent</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name>parent</name> <operator>=</operator> <call><name><name>parent</name><operator>.</operator><name>getParent</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></while>
+        <expr_stmt><expr><call><name><name>treeViewer</name><operator>.</operator><name>setExpandedElements</name></name><argument_list>( <argument><expr><call><name><name>itemsToExpand</name><operator>.</operator><name>toArray</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>treeViewer</name><operator>.</operator><name>setSelection</name></name><argument_list>( <argument><expr><operator>new</operator> <call><name>StructuredSelection</name><argument_list>( <argument><expr><name>project</name></expr></argument> )</argument_list></call></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

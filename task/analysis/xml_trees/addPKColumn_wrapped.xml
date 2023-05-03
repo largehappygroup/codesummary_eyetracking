@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/addPKColumn_wrapped.java"><class><specifier>public</specifier> class <name>Table</name> <block>{
+    <decl_stmt><decl><type><specifier>private</specifier> <name><name>Map</name><argument_list type="generic">&lt;<argument><name>String</name></argument>, <argument><name>Column</name></argument>&gt;</argument_list></name></type> <name>colMap</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier>private</specifier> <name><name>List</name><argument_list type="generic">&lt;<argument><name>Column</name></argument>&gt;</argument_list></name></type> <name>pkColumns</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier>private</specifier> <name>String</name></type> <name>name</name></decl>;</decl_stmt>
+
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>addPKColumn</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>aPKColName</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IllegalArgumentException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>Column</name></type> <name>col</name> <init>= <expr><operator>(</operator><name>Column</name><operator>)</operator> <call><name><name>colMap</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>aPKColName</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>col</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><literal type="string">"The column |"</literal> <operator>+</operator> <name>aPKColName</name> <operator>+</operator> <literal type="string">"| does not belong to the table |"</literal>
+                    <operator>+</operator> <name>name</name> <operator>+</operator> <literal type="string">"|"</literal></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></if></if_stmt>
+
+        <expr_stmt><expr><call><name><name>pkColumns</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>col</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

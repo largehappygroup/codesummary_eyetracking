@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/setPhoto_wrapped.java"><class><specifier>public</specifier> class <name>PhotoSetter</name> <block>{
+
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>setPhoto</name><parameter_list>( <parameter><decl><type><name>JdaiPhoto</name></type> <name>photo</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>text</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>( <expr><name>photo</name> <operator>!=</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>label</name><operator>.</operator><name>setText</name></name><argument_list>( <argument><expr><literal type="string">""</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            <try>try <block>{<block_content>
+                <expr_stmt><expr><name>text</name> <operator>=</operator> <call><name><name>photo</name><operator>.</operator><name>getSection</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getInfoStore</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getCaption</name><argument_list>(<argument><expr><name>photo</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block> <catch>catch <parameter_list>( <parameter><decl><type><name>JdaiReadException</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>JdaiGuiHelpers</name><operator>.</operator><name>reportException</name></name><argument_list>( <argument><expr><literal type="string">"Unable to read caption"</literal></expr></argument>, <argument><expr><name>e</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></catch></try>
+            <if_stmt><if>if <condition>( <expr><name>text</name> <operator>==</operator> <literal type="null">null</literal> <operator>||</operator> <call><name><name>text</name><operator>.</operator><name>equals</name></name><argument_list>( <argument><expr><literal type="string">""</literal></expr></argument> )</argument_list></call></expr> )</condition><block type="pseudo"><block_content>
+                <expr_stmt><expr><name>text</name> <operator>=</operator> <literal type="string">"No caption set"</literal></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <expr_stmt><expr><call><name><name>label</name><operator>.</operator><name>setIcon</name></name><argument_list>( <argument><expr><literal type="null">null</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></else></if_stmt>
+        <expr_stmt><expr><call><name><name>label</name><operator>.</operator><name>setToolTipText</name></name><argument_list>( <argument><expr><name>text</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>setNewPhoto</name><argument_list>( <argument><expr><name>photo</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function> 
+}</block></class></unit>

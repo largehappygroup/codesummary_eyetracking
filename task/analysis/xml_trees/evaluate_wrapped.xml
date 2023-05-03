@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/evaluate_wrapped.java"><class><specifier>public</specifier> class <name>FunctionWrapper</name> <block>{
+
+    <function><type><specifier>public</specifier> <name>Value</name></type> <name>evaluate</name><parameter_list>( <parameter><decl><type><name>Value</name></type> <name>value</name></decl></parameter> )</parameter_list> <throws>throws <argument><expr><name>ExternalFunctionException</name></expr></argument></throws> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><operator>!</operator><operator>(</operator> <name>value</name> <operator>instanceof</operator> <name>Literal</name> <operator>)</operator></expr>)</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>ExternalFunctionException</name><argument_list>( <argument><expr><literal type="string">"Values need to be literals to be understood"</literal></expr></argument> )</argument_list></call></expr>;</throw>
+        </block_content>}</block></if></if_stmt>    
+        <decl_stmt><decl><type><name>DateTime</name></type> <name>date</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>converter</name><operator>.</operator><name>convertDateTime</name></name><argument_list>(<argument><expr><operator>(</operator> <name>Literal</name> <operator>)</operator> <name>value</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+        
+        <return>return <expr><call><name><name>this</name><operator>.</operator><name>converter</name><operator>.</operator><name>convertInteger</name></name><argument_list>( <argument><expr><call><name><name>date</name><operator>.</operator><name>getHour</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+    
+}</block></class></unit>

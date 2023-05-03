@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getBackCommand12_wrapped.java"><expr_stmt><expr><operator>`</operator><operator>`</operator><operator>`</operator><name>java</name>
+<specifier>public</specifier> <name>class</name> <name>MyClass</name> <block>{
+    <expr><specifier>public</specifier> <name>Command</name> <call><name>getBackCommand12</name><argument_list>()</argument_list></call> <block>{
+        <if_stmt><if>if <condition>( <expr><name>backCommand12</name> <operator>==</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content><comment type="line">//GEN-END:|264-getter|0|264-preInit</comment>
+            <comment type="line">// write pre-init user code here</comment>
+            <expr_stmt><expr><name>backCommand12</name> <operator>=</operator> <operator>new</operator> <call><name>Command</name><argument_list>( <argument><expr><literal type="string">"OK"</literal></expr></argument>, <argument><expr><name><name>Command</name><operator>.</operator><name>BACK</name></name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt><comment type="line">//GEN-LINE: | 264-getter | 1 | 264-postInit</comment>
+            <comment type="line">// write post-init user code here</comment>
+        <expr_stmt/></block_content></block></if></if_stmt>}</block></expr><comment type="line">//GEN-BEGIN: | 264-getter | 2 |</comment>
+        <return>return <expr><name>backCommand12</name></expr>;</return>
+    }</block></expr></expr_stmt>
+}
+`<expr><operator>`</operator><operator>`</operator></expr></unit>

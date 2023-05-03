@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/removeSelection_wrapped.java"><class><specifier>public</specifier> class <name>EntityRemover</name> <block>{
+    
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>removeSelection</name><parameter_list>(<parameter><decl><type><name>IEntity</name></type> <name>selection</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>selection</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>String</name></type> <name>msg</name> <init>= <expr><literal type="string">"Argument 'selection' cannot be null."</literal></expr></init></decl>;</decl_stmt>
+            <throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><name>msg</name></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></if></if_stmt>
+        
+        <expr_stmt><expr><call><name><name>entitySel</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><call><name><name>selection</name><operator>.</operator><name>getEntityId</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <if_stmt><if>if <condition>(<expr><call><name><name>selection</name><operator>.</operator><name>getType</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name><name>EntityType</name><operator>.</operator><name>MEMBER</name></name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>memberCount</name><operator>--</operator></expr>;</expr_stmt>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <expr_stmt><expr><name>groupCount</name><operator>--</operator></expr>;</expr_stmt>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

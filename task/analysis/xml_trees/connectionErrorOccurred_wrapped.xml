@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/connectionErrorOccurred_wrapped.java"><class><specifier>public</specifier> class <name>ConnectionClass</name> <block>{
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>connectionErrorOccurred</name><parameter_list>(<parameter><decl><type><name>ConnectionEvent</name></type> <name>event</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>warn</name></name><argument_list>(<argument><expr><literal type="string">"Received Connection Error event from a conection in pool "</literal> <operator>+</operator> <call><name><name>info</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <if_stmt><if>if <condition>(<expr><call><name><name>info</name><operator>.</operator><name>isRemoveOnExceptions</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>checkIn</name><argument_list>(<argument><expr><call><name><name>event</name><operator>.</operator><name>getSource</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>warn</name></name><argument_list>(<argument><expr><literal type="string">"removeOnExceptions == true, closed connection"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

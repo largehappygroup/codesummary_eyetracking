@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/searchRecipe_wrapped.java"><class><specifier>public</specifier> class <name>RecipeSearcher</name> <block>{
+    
+    <function><type><specifier>private</specifier> <name>Recipe</name></type> <name>searchRecipe</name> <parameter_list>( <parameter><decl><type><name>Recipe</name></type> <name>re</name></decl></parameter> )</parameter_list> <block>{<block_content>	
+        <decl_stmt><decl><type><name>Recipe</name></type> <name>recipe</name></decl>;</decl_stmt>
+    		
+        <for>for <control>( <init><decl><type><name>IngredientAmount</name></type> <name>iam</name> <range>: <expr><call><name><name>re</name><operator>.</operator><name>getIngredients</name></name><argument_list>()</argument_list></call></expr></range></decl></init> )</control> <block>{<block_content>
+            <if_stmt><if>if <condition>( <expr><call><name><name>iam</name><operator>.</operator><name>getFood</name></name><argument_list>()</argument_list></call> <operator>instanceof</operator> <name>Recipe</name></expr> )</condition> <block>{<block_content>
+                <if_stmt><if>if <condition>(<expr><operator>(</operator> <name>Recipe</name> <operator>)</operator><call><name><name>iam</name><operator>.</operator><name>getFood</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name>m_ActiveRecipe</name></expr> )</condition> <block>{<block_content>
+                    <return>return <expr><name>re</name></expr>;</return>
+                </block_content>}</block></if> <else>else <block>{<block_content>
+                    <expr_stmt><expr><name>recipe</name> <operator>=</operator> <call><name>searchRecipe</name> <argument_list>(<argument><expr><operator>(</operator> <name>Recipe</name> <operator>)</operator> <call><name><name>iam</name><operator>.</operator><name>getFood</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    					
+                    <if_stmt><if>if <condition>( <expr><name>recipe</name> <operator>!=</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+                        <return>return <expr><name>recipe</name></expr>;</return>
+                    </block_content>}</block></if></if_stmt>
+                </block_content>}</block></else></if_stmt>
+            </block_content>}</block></if></if_stmt>			
+        </block_content>}</block></for>		
+        <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></function>
+    
+}</block></class></unit>

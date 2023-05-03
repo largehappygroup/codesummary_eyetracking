@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/testAddCountryWithSequenceGenerator_wrapped.java"><class><specifier>public</specifier> class <name>CountryTest</name> <block>{
+    
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>testAddCountryWithSequenceGenerator</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>CountryWithSequence</name></type> <name>country1</name> <init>= <expr><operator>new</operator> <call><name>CountryWithSequence</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>country1</name><operator>.</operator><name>setCountryId</name></name><argument_list>( <argument><expr><literal type="string">"KR"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>country1</name><operator>.</operator><name>setCountryName</name></name><argument_list>( <argument><expr><literal type="string">"Korea"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+        <decl_stmt><decl><type><name>Integer</name></type> <name>countryCode</name> <init>= <expr><operator>(</operator> <name>Integer</name> <operator>)</operator> <call><name><name>session</name><operator>.</operator><name>save</name></name><argument_list>( <argument><expr><name>country1</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name>assertEquals</name><argument_list>( <argument><expr><literal type="string">"fail to generate a new countryCode."</literal></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><call><name><name>countryCode</name><operator>.</operator><name>intValue</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>assertNotNull</name><argument_list>( <argument><expr><literal type="string">"fail to add a new country with sequence generator."</literal></expr></argument>, <argument><expr><name>countryCode</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

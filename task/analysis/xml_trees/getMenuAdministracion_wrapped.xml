@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getMenuAdministracion_wrapped.java"><class><specifier>public</specifier> class <name>MenuAdministracion</name> <block>{
+    
+    <decl_stmt><decl><type><specifier>private</specifier> <name>JMenu</name></type> <name>menuAdministracion</name></decl>;</decl_stmt>
+
+    <function><type><specifier>public</specifier> <name>JMenu</name></type> <name>getMenuAdministracion</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>( <expr><name>menuAdministracion</name> <operator>==</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+            <expr_stmt><expr><name>menuAdministracion</name> <operator>=</operator> <operator>new</operator> <call><name>JMenu</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>menuAdministracion</name><operator>.</operator><name>setText</name></name><argument_list>( <argument><expr><call><name><name>Messages</name><operator>.</operator><name>getString</name></name><argument_list>( <argument><expr><literal type="string">"gui.GUI.57"</literal></expr></argument> )</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">//$NON-NLS-1$</comment>
+            <expr_stmt><expr><call><name><name>menuAdministracion</name><operator>.</operator><name>setIcon</name></name><argument_list>( <argument><expr><operator>new</operator> <call><name>ImageIcon</name><argument_list>( <argument><expr><literal type="string">"data/icons/package_system.png"</literal></expr></argument> )</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">//$NON-NLS-1$</comment>
+            <expr_stmt><expr><call><name><name>menuAdministracion</name><operator>.</operator><name>add</name></name><argument_list>( <argument><expr><call><name>getMenuItemAdminUsuarios</name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>menuAdministracion</name><operator>.</operator><name>add</name></name><argument_list>( <argument><expr><call><name>getMenuItemAdminResorces</name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>menuAdministracion</name></expr>;</return>
+    </block_content>}</block></function>
+
+    <function><type><specifier>private</specifier> <name>JMenuItem</name></type> <name>getMenuItemAdminUsuarios</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">// Implementation of the getMenuItemAdminUsuarios method</comment>
+    </block_content>}</block></function>
+    
+    <function><type><specifier>private</specifier> <name>JMenuItem</name></type> <name>getMenuItemAdminResorces</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">// Implementation of the getMenuItemAdminResorces method</comment>
+    </block_content>}</block></function>
+        
+}</block></class></unit>

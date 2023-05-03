@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/equals_wrapped.java"><class><specifier>public</specifier> class <name>CSSConditionalSelectorImpl</name> <block>{
+    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>equals</name><parameter_list>( <parameter><decl><type><name>Object</name></type> <name>obj</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>( <expr><name>obj</name> <operator>==</operator> <literal type="null">null</literal> <operator>||</operator> <operator>(</operator> <call><name><name>obj</name><operator>.</operator><name>getClass</name></name><argument_list>()</argument_list></call> <operator>!=</operator> <call><name>getClass</name><argument_list>()</argument_list></call> <operator>)</operator></expr>)</condition> <block>{<block_content>
+            <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+        <decl_stmt><decl><type><name>CSSConditionalSelectorImpl</name></type> <name>s</name> <init>= <expr><operator>(</operator> <name>CSSConditionalSelectorImpl</name> <operator>)</operator> <name>obj</name></expr></init></decl>;</decl_stmt>
+        <return>return <expr><operator>(</operator> <call><name><name>s</name><operator>.</operator><name>simpleSelector</name><operator>.</operator><name>equals</name></name><argument_list>( <argument><expr><name>simpleSelector</name></expr></argument> )</argument_list></call> <operator>&amp;&amp;</operator> <call><name><name>s</name><operator>.</operator><name>condition</name><operator>.</operator><name>equals</name></name><argument_list>( <argument><expr><name>condition</name></expr></argument> )</argument_list></call><operator>)</operator></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

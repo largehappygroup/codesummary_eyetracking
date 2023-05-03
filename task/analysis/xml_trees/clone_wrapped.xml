@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/clone_wrapped.java"><class><specifier>public</specifier> class <name>Format</name> <block>{
+
+    <function><type><specifier>public</specifier> <name>Object</name></type> <name>clone</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Format</name></type> <name>result</name> <init>= <expr><operator>new</operator> <call><name>Format</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <expr_stmt><expr><name><name>result</name><operator>.</operator><name>datatype</name></name> <operator>=</operator> <name>datatype</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>result</name><operator>.</operator><name>datatypeID</name></name> <operator>=</operator> <name>datatypeID</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>result</name><operator>.</operator><name>respectCase</name></name> <operator>=</operator> <name>respectCase</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>result</name><operator>.</operator><name>gap</name></name> <operator>=</operator> <name>gap</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>result</name><operator>.</operator><name>missing</name></name> <operator>=</operator> <name>missing</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>result</name><operator>.</operator><name>labels</name></name> <operator>=</operator> <name>labels</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>result</name><operator>.</operator><name>labelQuotes</name></name> <operator>=</operator> <name>labelQuotes</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>result</name><operator>.</operator><name>transpose</name></name> <operator>=</operator> <name>transpose</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>result</name><operator>.</operator><name>interleave</name></name> <operator>=</operator> <name>interleave</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>result</name><operator>.</operator><name>diploid</name></name> <operator>=</operator> <name>diploid</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>result</name><operator>.</operator><name>tokens</name></name> <operator>=</operator> <name>tokens</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>result</name><operator>.</operator><name>symbols</name></name> <operator>=</operator> <name>symbols</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>result</name><operator>.</operator><name>matchChar</name></name> <operator>=</operator> <name>matchChar</name></expr>;</expr_stmt>
+
+        <return>return <expr><name>result</name></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

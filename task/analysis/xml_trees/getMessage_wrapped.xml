@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getMessage_wrapped.java"><decl_stmt><decl><type><name>Please</name> <name>note</name> <name>that</name> <name>since</name> <name>I</name> <name>am</name> <name>an</name> <name>AI</name> <name>language</name></type> <name>model</name></decl>, <decl><type ref="prev"/><name>I</name> <name>cannot</name> <name>directly</name> <name>create</name> <name>or</name> <name>parse</name> <name><name>files</name><operator>.</operator> <name>However</name></name></decl>, <decl><type ref="prev"/><name>I</name> <name>can</name> <name>provide</name> <name>you</name> <name>a</name> <name>java</name> <name>class</name> <name>format</name> <name>corresponding</name> <name>to</name> <name>the</name> <name>given</name> <name><name>function</name><operator>.</operator> <name>Here</name></name> <name>is</name> <name>the</name> <name>class</name> <name>format</name> <name>you</name> <name>can</name> <name>use</name><range>:
+
+<expr><specifier>public</specifier> <name>class</name> <name>MyClass</name> <block>{
+    
+    <expr><specifier>public</specifier> <name>String</name> <call><name>getMessage</name><argument_list>()</argument_list></call> <block>{
+        <expr><name>StringBuffer</name> <name>sb</name> <operator>=</operator> <operator>new</operator> <call><name>StringBuffer</name><argument_list>()</argument_list></call></expr>;
+
+        <if_stmt><if>if <condition>( <expr><name>messages</name> <operator>!=</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+            <for>for <control>( <init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <call><name><name>messages</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr> )</control> <block>{<block_content>
+                <decl_stmt><decl><type><name>Object</name></type> <name>o</name> <init>= <expr><call><name><name>messages</name><operator>.</operator><name>elementAt</name></name><argument_list>( <argument><expr><name>i</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+
+                <if_stmt><if>if <condition>( <expr><name>o</name> <operator>!=</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+                    <expr_stmt><expr><call><name><name>sb</name><operator>.</operator><name>append</name></name><argument_list>( <argument><expr><call><name><name>o</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+                    <expr_stmt><expr><call><name><name>sb</name><operator>.</operator><name>append</name></name><argument_list>( <argument><expr><literal type="string">"|n"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt/>}</block_content>
+            }
+        }
+        
+        return sb.toString(</block></if></if_stmt>)</block_content></block><empty_stmt>;</empty_stmt></for>
+    <expr_stmt/>}</block_content>
+} 
+
+Make sure to add the required imports or modify the code if needed.</block></if></if_stmt></block></expr></block></expr></range></decl></decl_stmt></unit>

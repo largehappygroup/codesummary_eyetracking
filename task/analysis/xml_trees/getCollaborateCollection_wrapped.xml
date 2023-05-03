@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getCollaborateCollection_wrapped.java"><class><specifier>public</specifier> class <name>CollaborateCollection</name> <block>{
+    <function><type><specifier>public</specifier> <name><name>List</name><argument_list type="generic">&lt;<argument><name>String</name></argument>&gt;</argument_list></name></type> <name>getCollaborateCollection</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>userID</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>AccessException</name></expr></argument></throws> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"entering getCollaborateCollection()"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>query</name> <init>= <expr><literal type="string">"SELECT collection.PID PID, collection.TITLE TITLE,"</literal>
+                <operator>+</operator> <literal type="string">" collectionrole.ROLE ROLE FROM collectionrole, collection WHERE "</literal>
+                <operator>+</operator> <literal type="string">" collectionrole.USERID = '"</literal> <operator>+</operator> <name>userID</name> <operator>+</operator> <literal type="string">"'"</literal>
+                <operator>+</operator> <literal type="string">" AND collectionrole.COLLECTIONPID = collection.PID"</literal>
+                <operator>+</operator> <literal type="string">" AND collection.ROOT = '1'"</literal></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>String</name></argument>&gt;</argument_list></name></type> <name>list</name> <init>= <expr><call><name>buildResult</name><argument_list>(<argument><expr><name>query</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <return>return <expr><name>list</name></expr>;</return>
+    </block_content>}</block></function>
+
+    <comment type="line">// Build result method</comment>
+    <function><type><specifier>private</specifier> <name><name>List</name><argument_list type="generic">&lt;<argument><name>String</name></argument>&gt;</argument_list></name></type> <name>buildResult</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>query</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">// implementation code</comment>
+    </block_content>}</block></function>
+
+    <comment type="line">// Logger</comment>
+    <decl_stmt><decl><type><specifier>private</specifier> <specifier>static</specifier> <specifier>final</specifier> <name>Logger</name></type> <name>logger</name> <init>= <expr><call><name><name>Logger</name><operator>.</operator><name>getLogger</name></name><argument_list>(<argument><expr><name><name>CollaborateCollection</name><operator>.</operator><name>class</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+}</block></class></unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/genSql_wrapped.java"><expr_stmt><expr><operator>`</operator><operator>`</operator><operator>`</operator><name>java</name>
+<specifier>public</specifier> <name>class</name> <name>SqlGenerator</name> <block>{
+    <expr><specifier>public</specifier> <name>void</name> <call><name>genSql</name><argument_list>()</argument_list></call> <throws>throws <argument><expr><name>PositionedError</name> <block>{</block></expr></argument></throws></expr>
+        <try>try <block>{<block_content>
+            <decl_stmt><decl><type><name>SqlcPrettyPrinter</name></type> <name>spp</name></decl>;</decl_stmt>
+            <expr_stmt><expr><name>spp</name> <operator>=</operator> <operator>new</operator> <call><name>SqlcPrettyPrinter</name><argument_list>( <argument><expr><call><name><name>ref</name><operator>.</operator><name>getFile</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>spp</name><operator>.</operator><name>printCUnit</name></name><argument_list>( <argument><expr><name>elems</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>spp</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt/></block_content></block></try>}</block></expr></expr_stmt> <catch>catch <parameter_list>( <parameter><decl><type><name>IOException</name></type> <name>ioe</name></decl></parameter> )</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>ioe</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>err</name><operator>.</operator><name>println</name></name><argument_list>( <argument><expr><literal type="string">"cannot write: "</literal> <operator>+</operator> <call><name><name>ref</name><operator>.</operator><name>getFile</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch>
+    }
+}
+<expr><operator>`</operator><operator>`</operator><operator>`</operator></expr></unit>

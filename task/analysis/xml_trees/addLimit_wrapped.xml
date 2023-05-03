@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/addLimit_wrapped.java"><class><specifier>public</specifier> class <name>MenuOptions</name> <block>{
+    <function><type><specifier>private</specifier> <name>void</name></type> <name>addLimit</name><parameter_list>( <parameter><decl><type><name>JPopupMenu</name></type> <name>popup</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>JMenuItem</name></type> <name>limit</name> <init>= <expr><call><name>makeMenuItem</name><argument_list>( <argument><expr><literal type="string">"Write option: Limit days..."</literal></expr></argument>,<argument><expr><literal type="string">"
+                                   Specify a limit for the written output, in days"</literal></expr></argument>,
+                                   <argument><expr><operator>new</operator> <class><super><name>ActionListener</name></super><argument_list>()</argument_list> <block>{
+                                       <function><annotation>@<name>SuppressWarnings</name><argument_list>( <argument><expr><literal type="string">"synthetic-access"</literal></expr></argument> )</argument_list></annotation>
+                                       <annotation>@<name>Override</name></annotation>
+                                       <type><specifier>public</specifier> <name>void</name></type> <name>actionPerformed</name><parameter_list>( <parameter><decl><type><name>ActionEvent</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content>
+                                           <expr_stmt><expr><call><name>actionLimit</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+                                       </block_content>}</block></function>
+                                   }</block></class></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>popup</name><operator>.</operator><name>add</name></name><argument_list>( <argument><expr><name>limit</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+
+    <function><type><specifier>private</specifier> <name>JMenuItem</name></type> <name>makeMenuItem</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>s</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>s1</name></decl></parameter>, <parameter><decl><type><name>ActionListener</name></type> <name>actionListener</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <return>return <expr><operator>new</operator> <call><name>JMenuItem</name><argument_list>(<argument><expr><name>s</name></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+
+    <function><type><specifier>private</specifier> <name>void</name></type> <name>actionLimit</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">// do something</comment>
+    </block_content>}</block></function>
+}</block></class></unit>

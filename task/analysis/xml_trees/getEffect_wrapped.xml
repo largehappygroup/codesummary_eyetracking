@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getEffect_wrapped.java"><class><specifier>public</specifier> class <name>StatusEffectParser</name> <block>{
+    <function><type><specifier>public</specifier> <name>StatusEffect</name></type> <name>getEffect</name><parameter_list>( <parameter><decl><type><name>int</name></type> <name>lock</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <synchronized>synchronized <init>( <expr><name>m_statuses</name></expr> )</init> <block>{<block_content>
+            <decl_stmt><decl><type><name>Iterator</name></type> <name>i</name> <init>= <expr><call><name><name>m_statuses</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+            <while>while <condition>( <expr><call><name><name>i</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr> )</condition> <block>{<block_content>
+                <decl_stmt><decl><type><name>StatusEffect</name></type> <name>eff</name> <init>= <expr><operator>(</operator> <name>StatusEffect</name> <operator>)</operator><call><name><name>i</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+                <if_stmt><if>if <condition>(<expr><operator>(</operator> <name>eff</name> <operator>==</operator> <literal type="null">null</literal> <operator>)</operator> <operator>||</operator> <operator>!</operator><call><name><name>eff</name><operator>.</operator><name>isActive</name></name><argument_list>()</argument_list></call></expr> )</condition> <block>{<block_content>
+                    <continue>continue;</continue>
+                </block_content>}</block></if></if_stmt>
+                <if_stmt><if>if <condition>( <expr><call><name><name>eff</name><operator>.</operator><name>getLock</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name>lock</name></expr> )</condition> <block>{<block_content>
+                    <return>return <expr><name>eff</name></expr>;</return>
+                </block_content>}</block></if></if_stmt>
+            </block_content>}</block></while>
+        </block_content>}</block></synchronized>
+        <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

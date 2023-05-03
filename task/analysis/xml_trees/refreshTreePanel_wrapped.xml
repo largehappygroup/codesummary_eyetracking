@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/refreshTreePanel_wrapped.java"><class><specifier>public</specifier> class <name>TreePanelRefresh</name> <block>{
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>refreshTreePanel</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>DefaultMutableTreeNode</name></type> <name>root</name> <init>= <expr><operator>new</operator> <call><name>DefaultMutableTreeNode</name><argument_list>( <argument><expr><literal type="string">"ALL"</literal></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>DefaultTreeModel</name></type> <name>treeModel</name> <init>= <expr><operator>new</operator> <call><name>DefaultTreeModel</name><argument_list>( <argument><expr><name>root</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>tree</name><operator>.</operator><name>setModel</name></name><argument_list>( <argument><expr><name>treeModel</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>tree</name><operator>.</operator><name>setBounds</name></name><argument_list>( <argument><expr><operator>new</operator> <call><name>Rectangle</name><argument_list>( <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="number">196</literal></expr></argument>, <argument><expr><literal type="number">443</literal></expr></argument> )</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>tree</name><operator>.</operator><name>setLayout</name></name><argument_list>( <argument><expr><literal type="null">null</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>tree</name><operator>.</operator><name>setBackground</name></name><argument_list>( <argument><expr><name><name>Color</name><operator>.</operator><name>white</name></name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>tree</name><operator>.</operator><name>setCellRenderer</name></name><argument_list>( <argument><expr><operator>new</operator> <call><name>UserIconRenderer</name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name>addAllUsers</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+        <decl_stmt><decl><type><name>TreePath</name></type> <name>treePath</name> <init>= <expr><call><name><name>tree</name><operator>.</operator><name>getPathForRow</name></name><argument_list>( <argument><expr><literal type="number">0</literal></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>tree</name><operator>.</operator><name>fireTreeExpanded</name></name><argument_list>( <argument><expr><name>treePath</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

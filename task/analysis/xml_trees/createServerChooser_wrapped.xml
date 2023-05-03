@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/createServerChooser_wrapped.java"><class><specifier>public</specifier> class <name>ServerChooserClass</name> <block>{
+
+    <function><type><specifier>public</specifier> <specifier>static</specifier> <name>void</name></type> <name>createServerChooser</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>MainMenuBar</name></type> <name>mainMenuBar</name> <init>= <expr><call><name><name>MainMenuBar</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <decl_stmt><decl><type><name>int</name></type> <name>nodeId</name> <init>= <expr><call><name><name>dbMgr</name><operator>.</operator><name>getNodeId</name></name><argument_list>(<argument><expr><operator>(</operator> <name>String</name> <operator>)</operator> <call><name><name>cbNE</name><operator>.</operator><name>getSelectedItem</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <decl_stmt><decl><type><name>DownloadFileChooser</name></type> <name>downloadFile</name> <init>= <expr><operator>new</operator> <call><name>DownloadFileChooser</name><argument_list>( <argument><expr><name>nodeId</name></expr></argument>, <argument><expr><name><name>DBDataDesc</name><operator>.</operator><name>SHELF_OLT1</name></name></expr></argument>, <argument><expr><name>tfFileName</name></expr></argument>, <argument><expr><name>tfFileNameOnly</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <expr_stmt><expr><call><name><name>mainMenuBar</name><operator>.</operator><name>putCommand</name></name><argument_list>(<argument><expr><operator>(</operator> <name>Object</name> <operator>)</operator> <name>downloadFile</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>downloadFile</name><operator>.</operator><name>setViewId</name></name><argument_list>( <argument><expr><call><name><name>mainMenuBar</name><operator>.</operator><name>getViewId</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>downloadFile</name><operator>.</operator><name>setVisible</name></name><argument_list>( <argument><expr><literal type="boolean">true</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+    
+}</block></class></unit>

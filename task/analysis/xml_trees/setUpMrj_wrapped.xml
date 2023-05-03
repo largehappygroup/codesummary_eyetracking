@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/setUpMrj_wrapped.java"><class><specifier>public</specifier> class <name>Belvedere4</name> <block>{
+    <decl_stmt><decl><type><specifier>private</specifier> <specifier>static</specifier> <name>String</name></type> <name>mrjVersion</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier>private</specifier> <specifier>static</specifier> <name>double</name></type> <name>mrjMajorVersion</name></decl>;</decl_stmt>
+
+    <function><type><specifier>private</specifier> <name>void</name></type> <name>setUpMrj</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name>mrjVersion</name> <operator>=</operator> <call><name><name>System</name><operator>.</operator><name>getProperty</name></name><argument_list>(<argument><expr><literal type="string">"mrj.version"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>mrjVersion</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+            <return>return;</return></block_content></block></if></if_stmt>
+
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><name>mrjMajorVersion</name> <operator>=</operator> <call><name><name>Double</name><operator>.</operator><name>valueOf</name></name><argument_list>(<argument><expr><call><name><name>mrjVersion</name><operator>.</operator><name>substring</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="number">3</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call><operator>.</operator><call><name>doubleValue</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><name>mrjMajorVersion</name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+}</block></class></unit>

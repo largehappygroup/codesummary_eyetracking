@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/BFSdist_wrapped.java"><class><specifier>public</specifier> class <name>BFSDistClass</name> <block>{
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>BFSdist</name><parameter_list>(<parameter><decl><type><name>Node</name></type> <name>n</name></decl></parameter>, <parameter><decl><type><name>Vector</name></type> <name>ToDo</name></decl></parameter>, <parameter><decl><type><name><name>int</name><index>[]</index></name></type> <name>indirConn</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Node</name></type> <name>n2</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+        <for>for <control>(<init><decl><type><name>Enumeration</name></type> <name>es</name> <init>= <expr><call><name><name>n</name><operator>.</operator><name>adjEdges</name><operator>.</operator><name>elements</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>es</name><operator>.</operator><name>hasMoreElements</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+            <expr_stmt><expr><name>n2</name> <operator>=</operator> <call><name><name>n</name><operator>.</operator><name>adjNode</name></name><argument_list>(<argument><expr><operator>(</operator><name>Edge</name><operator>)</operator> <call><name><name>es</name><operator>.</operator><name>nextElement</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <if_stmt><if>if <condition>(<expr><name><name>n2</name><operator>.</operator><name>dist</name></name> <operator>&lt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><name><name>n2</name><operator>.</operator><name>dist</name></name> <operator>=</operator> <name><name>n</name><operator>.</operator><name>dist</name></name> <operator>+</operator> <literal type="number">1</literal></expr>;</expr_stmt>
+                <expr_stmt><expr><name><name>indirConn</name><index>[<expr><name><name>n2</name><operator>.</operator><name>dist</name></name></expr>]</index></name><operator>++</operator></expr>;</expr_stmt>
+     
+                <comment type="line">// important add adds to the end of the list</comment>
+                <expr_stmt><expr><call><name><name>ToDo</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>n2</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+        <if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>ToDo</name><operator>.</operator><name>isEmpty</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>n2</name> <operator>=</operator> <operator>(</operator><name>Node</name><operator>)</operator> <call><name><name>ToDo</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>BFSdist</name><argument_list>(<argument><expr><name>n2</name></expr></argument>, <argument><expr><name>ToDo</name></expr></argument>, <argument><expr><name>indirConn</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

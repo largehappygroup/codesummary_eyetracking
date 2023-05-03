@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/readResponse_wrapped.java"><class><specifier>public</specifier> class <name>ResponseReader</name> <block>{
+   
+    <function><type><specifier>private</specifier> <name>String</name></type> <name>readResponse</name><parameter_list>( <parameter><decl><type><name>InputStream</name></type> <name>stream</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>BufferedReader</name></type> <name>input</name> <init>= <expr><operator>new</operator> <call><name>BufferedReader</name><argument_list>( <argument><expr><operator>new</operator> <call><name>InputStreamReader</name><argument_list>( <argument><expr><name>stream</name></expr></argument> )</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>StringBuffer</name></type> <name>sb</name> <init>= <expr><operator>new</operator> <call><name>StringBuffer</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>line</name></decl>;</decl_stmt>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><name>line</name> <operator>=</operator> <call><name><name>input</name><operator>.</operator><name>readLine</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>( <parameter><decl><type><name>IOException</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><name>line</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+        </block_content>}</block></catch></try>
+        <while>while <condition>( <expr><name>line</name> <operator>!=</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+            <if_stmt><if>if <condition>( <expr><operator>!</operator><call><name><name>line</name><operator>.</operator><name>trim</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>( <argument><expr><literal type="string">""</literal></expr></argument> )</argument_list></call></expr> )</condition> <block>{<block_content>
+                <if_stmt><if>if <condition>( <expr><call><name><name>sb</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>&gt;</operator> <literal type="number">0</literal></expr> )</condition><block type="pseudo"><block_content> <expr_stmt><expr><call><name><name>sb</name><operator>.</operator><name>append</name></name><argument_list>( <argument><expr><literal type="string">"|n"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+                <expr_stmt><expr><call><name><name>sb</name><operator>.</operator><name>append</name></name><argument_list>( <argument><expr><name>line</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+            <try>try <block>{<block_content>
+                <expr_stmt><expr><name>line</name> <operator>=</operator> <call><name><name>input</name><operator>.</operator><name>readLine</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block> <catch>catch <parameter_list>( <parameter><decl><type><name>IOException</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content>
+                <expr_stmt><expr><name>line</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+            </block_content>}</block></catch></try>
+        </block_content>}</block></while>
+        <return>return <expr><call><name><name>sb</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+    
+}</block></class></unit>

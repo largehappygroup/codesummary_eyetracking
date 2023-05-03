@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/isInvalidEmailLink_wrapped.java"><class><specifier>public</specifier> class <name>EmailLinkChecker</name> <block>{
+    
+    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>isInvalidEmailLink</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>textLink</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>wikiFileURL</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <return>return <expr><call><name><name>textLink</name><operator>.</operator><name>contains</name></name><argument_list>( <argument><expr><name><name>ArticleLink</name><operator>.</operator><name>EMAIL_AT_SEPARATOR</name></name></expr></argument> )</argument_list></call> <operator>&amp;&amp;</operator>
+            <operator>!</operator><call><name><name>textLink</name><operator>.</operator><name>toLowerCase</name></name><argument_list>( <argument><expr><call><name><name>Locale</name><operator>.</operator><name>getDefault</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call><operator>.</operator><call><name>startsWith</name><argument_list>( <argument><expr><literal type="string">"mailto:"</literal></expr></argument> )</argument_list></call> <operator>&amp;&amp;</operator> <comment type="line">//$NON-NLS-1$</comment>
+            <call><name><name>wikiFileURL</name><operator>.</operator><name>getWikiFileName</name></name><argument_list>( <argument><expr><literal type="boolean">true</literal></expr></argument> )</argument_list></call><operator>.</operator><call><name>contains</name><argument_list>( <argument><expr><name><name>ArticleLink</name><operator>.</operator><name>EMAIL_AT_SEPARATOR</name></name></expr></argument> )</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+    
+}</block></class></unit>

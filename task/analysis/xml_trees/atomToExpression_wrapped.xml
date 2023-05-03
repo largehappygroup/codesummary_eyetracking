@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/atomToExpression_wrapped.java"><class><specifier>public</specifier> class <name>AtomToExpressionParser</name> <block>{
+    <function><type><specifier>private</specifier> <specifier>static</specifier> <name>String</name></type> <name>atomToExpression</name><parameter_list>( <parameter><decl><type><name>Atom</name></type> <name>atom</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>name</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>expr</name> <init>= <expr><name>name</name> <operator>+</operator> <literal type="string">" = "</literal></expr></init></decl>;</decl_stmt>
+		
+        <if_stmt><if>if <condition>( <expr><name>atom</name> <operator>instanceof</operator> <name>BooleanAtom</name></expr> )</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>BooleanAtom</name></type> <name>booleanAtom</name> <init>= <expr><operator>(</operator> <name>BooleanAtom</name> <operator>)</operator> <name>atom</name></expr></init></decl>;</decl_stmt>
+            <try>try <block>{<block_content>
+                <if_stmt><if>if<condition>( <expr><call><name><name>booleanAtom</name><operator>.</operator><name>getBooleanValue</name></name><argument_list>()</argument_list></call></expr> )</condition><block type="pseudo"><block_content>
+                    <expr_stmt><expr><name>expr</name> <operator>+=</operator> <literal type="string">"'T'"</literal></expr>;</expr_stmt></block_content></block></if>
+                <else>else<block type="pseudo"><block_content>
+                    <expr_stmt><expr><name>expr</name> <operator>+=</operator> <literal type="string">"'F'"</literal></expr>;</expr_stmt></block_content></block></else></if_stmt>
+            </block_content>}</block> <catch>catch <parameter_list>( <parameter><decl><type><name>InvalidStateException</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content>
+                <throw>throw <expr><operator>new</operator> <call><name>Error</name><argument_list>( <argument><expr><literal type="string">"Thing in invalid boolean state"</literal></expr></argument> )</argument_list></call></expr>;</throw>
+            </block_content>}</block></catch></try>
+        </block_content>}</block></if>		
+        <if type="elseif">else if <condition>( <expr><name>atom</name> <operator>instanceof</operator> <name>TextAtom</name></expr> )</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><name>expr</name> <operator>+=</operator> <literal type="string">"'"</literal> <operator>+</operator> <call><name><name>atom</name><operator>.</operator><name>getValue</name></name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">"'"</literal></expr>;</expr_stmt></block_content></block></if>
+        <else>else<block type="pseudo"><block_content>
+            <expr_stmt><expr><name>expr</name> <operator>+=</operator> <call><name><name>atom</name><operator>.</operator><name>getValue</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+
+        <return>return <expr><name>expr</name></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

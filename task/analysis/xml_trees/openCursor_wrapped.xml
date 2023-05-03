@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/openCursor_wrapped.java"><class><specifier>public</specifier> class <name>CursorOpener</name> <block>{
+    <function><type><specifier>public</specifier> <name>Cursor</name></type> <name>openCursor</name><parameter_list>(<parameter><decl><type><name>Context</name></type> <name>context</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>selection</name></decl></parameter>, <parameter><decl><type><name><name>String</name><index>[]</index></name></type> <name>selectionArgs</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>mSourcesUri</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>NullPointerException</name><argument_list>(<argument><expr><literal type="string">"Sources uri not set."</literal></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><call><name><name>context</name><operator>.</operator><name>getContentResolver</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>query</name><argument_list>(<argument><expr><name>mSourcesUri</name></expr></argument>, <argument><expr><name>mProjection</name></expr></argument>, <argument><expr><name>selection</name></expr></argument>, <argument><expr><name>selectionArgs</name></expr></argument>, <argument><expr><name><name>Sources</name><operator>.</operator><name>SourcesTable</name><operator>.</operator><name>NAME</name></name></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

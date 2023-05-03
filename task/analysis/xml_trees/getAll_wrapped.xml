@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getAll_wrapped.java"><class><specifier>public</specifier> class <name>MyClass</name> <block>{
+
+    <function><type><specifier>public</specifier> <name>List</name></type> <name>getAll</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>key</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Object</name></type> <name>value</name> <init>= <expr><call><name><name>mMap</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>key</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>value</name> <operator>instanceof</operator> <name>List</name></expr>)</condition> <block>{<block_content>
+            <return>return <expr><operator>(</operator><operator>(</operator><name>List</name><operator>)</operator> <name>value</name><operator>)</operator></expr>;</return>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <decl_stmt><decl><type><name>List</name></type> <name>list</name> <init>= <expr><operator>new</operator> <call><name>ArrayList</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+            <if_stmt><if>if <condition>(<expr><name>value</name> <operator>!=</operator> <literal type="null">null</literal> <operator>||</operator> <call><name><name>mMap</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><name>key</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>list</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>value</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+            <expr_stmt><expr><call><name><name>mMap</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>key</name></expr></argument>, <argument><expr><name>list</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+            <return>return <expr><name>list</name></expr>;</return>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

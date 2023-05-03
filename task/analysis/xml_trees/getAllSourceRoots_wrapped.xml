@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getAllSourceRoots_wrapped.java"><class><specifier>public</specifier> class <name>MyClass</name> <block>{
+
+    <function><type><specifier>public</specifier> <name>Set</name></type> <name>getAllSourceRoots</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>pluginName</name></decl></parameter>, <parameter><decl><type><name>Version</name></type> <name>pluginVersion</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Set</name></type> <name>pluginSourceRoots</name> <init>= <expr><operator>new</operator> <call><name>HashSet</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name><name>ManifestElement</name><index>[]</index></name></type> <name>manifestElements</name> <init>= <expr><call><name>getSourceEntries</name><argument_list>(<argument><expr><name>pluginName</name></expr></argument>, <argument><expr><name>pluginVersion</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>manifestElements</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <for>for <control>(<init><decl><type><name>int</name></type> <name>j</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>j</name> <operator>&lt;</operator> <name><name>manifestElements</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>j</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+                <decl_stmt><decl><type><name>ManifestElement</name></type> <name>currentElement</name> <init>= <expr><name><name>manifestElements</name><index>[<expr><name>j</name></expr>]</index></name></expr></init></decl>;</decl_stmt>
+                <expr_stmt><expr><call><name>addSourceRoots</name><argument_list>(<argument><expr><call><name><name>currentElement</name><operator>.</operator><name>getDirective</name></name><argument_list>(<argument><expr><literal type="string">"roots"</literal></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><name>pluginSourceRoots</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">//$NON-NLS-1$</comment>
+            </block_content>}</block></for>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>pluginSourceRoots</name></expr>;</return>
+    </block_content>}</block></function>
+
+    <function><type><specifier>private</specifier> <name>void</name></type> <name>addSourceRoots</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>directive</name></decl></parameter>, <parameter><decl><type><name>Set</name></type> <name>pluginSourceRoots</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">// implementation omitted</comment>
+    </block_content>}</block></function>
+
+    <function><type><specifier>private</specifier> <name><name>ManifestElement</name><index>[]</index></name></type> <name>getSourceEntries</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>pluginName</name></decl></parameter>, <parameter><decl><type><name>Version</name></type> <name>pluginVersion</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">// implementation omitted</comment>
+    </block_content>}</block></function>
+}</block></class></unit>

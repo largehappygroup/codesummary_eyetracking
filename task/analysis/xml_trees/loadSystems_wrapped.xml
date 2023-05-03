@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/loadSystems_wrapped.java"><class><specifier>public</specifier> class <name>SystemLoader</name> <block>{
+    <decl_stmt><decl><type><specifier>private</specifier> <name><name>JComboBox</name><argument_list type="generic">&lt;<argument><name>String</name></argument>&gt;</argument_list></name></type> <name>systemCombo</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier>private</specifier> <name>CopyBookInterface</name></type> <name>copyBookInterface</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier>private</specifier> <name><name>ArrayList</name><argument_list type="generic">&lt;<argument><name>SystemItem</name></argument>&gt;</argument_list></name></type> <name>systems</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier>private</specifier> <name>JTextArea</name></type> <name>message</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier>private</specifier> <name>boolean</name></type> <name>dbLink</name></decl>;</decl_stmt>
+
+    <function><type><specifier>public</specifier> <name>void</name></type> <name>loadSystems</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>i</name></decl>, <decl><type ref="prev"/><name>num</name></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>SystemItem</name></type> <name>dtls</name></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>systemCombo</name><operator>.</operator><name>removeAllItems</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>systemCombo</name><operator>.</operator><name>addItem</name></name><argument_list>(<argument><expr><literal type="string">"&lt;All&gt;"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><name>dbLink</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><name>systems</name> <operator>=</operator> <call><name><name>copyBookInterface</name><operator>.</operator><name>getSystems</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name>message</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>message</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><call><name><name>ex</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt><expr><call><name><name>message</name><operator>.</operator><name>setCaretPosition</name></name><argument_list>(<argument><expr><literal type="number">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+            <expr_stmt><expr><call><name><name>ex</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name>systems</name> <operator>=</operator> <operator>new</operator> <call><name><name>ArrayList</name><argument_list type="generic">&lt;<argument><name>SystemItem</name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name>dbLink</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+        </block_content>}</block></catch></try>
+        <expr_stmt><expr><name>num</name> <operator>=</operator> <call><name><name>systems</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+        <for>for <control>(<init><expr><name>i</name> <operator>=</operator> <literal type="number">0</literal></expr>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name>num</name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <expr_stmt><expr><name>dtls</name> <operator>=</operator> <call><name><name>systems</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>systemCombo</name><operator>.</operator><name>addItem</name></name><argument_list>(<argument><expr><name><name>dtls</name><operator>.</operator><name>description</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+    </block_content>}</block></function>
+}</block></class></unit>

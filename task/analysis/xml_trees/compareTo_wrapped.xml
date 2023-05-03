@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/compareTo_wrapped.java"><class><specifier>public</specifier> class <name>TPoint</name> <super_list><implements>implements <super><name><name>Comparable</name><argument_list type="generic">&lt;<argument><name>TPoint</name></argument>&gt;</argument_list></name></super></implements></super_list> <block>{
+    <decl_stmt><decl><type><specifier>private</specifier> <name>int</name></type> <name>value</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><specifier>private</specifier> <name>int</name></type> <name>tstamp</name></decl>;</decl_stmt>
+
+    <constructor><specifier>public</specifier> <name>TPoint</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>value</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>tstamp</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>value</name></name> <operator>=</operator> <name>value</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>tstamp</name></name> <operator>=</operator> <name>tstamp</name></expr>;</expr_stmt>
+    </block_content>}</block></constructor>
+
+    <function><type><specifier>public</specifier> <name>int</name></type> <name>compareTo</name><parameter_list>(<parameter><decl><type><name>TPoint</name></type> <name>o</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><operator>(</operator><name><name>this</name><operator>.</operator><name>value</name></name> <operator>==</operator> <call><name><name>o</name><operator>.</operator><name>value</name></name><argument_list>()</argument_list></call><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><name><name>this</name><operator>.</operator><name>tstamp</name></name> <operator>==</operator> <call><name><name>o</name><operator>.</operator><name>tstamp</name></name><argument_list>()</argument_list></call><operator>)</operator></expr>)</condition> <block>{<block_content>
+            <return>return <expr><literal type="number">0</literal></expr>;</return>
+        </block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name><name>this</name><operator>.</operator><name>tstamp</name></name> <operator>&gt;</operator> <name><name>o</name><operator>.</operator><name>tstamp</name></name></expr>)</condition> <block>{<block_content>
+            <return>return <expr><literal type="number">1</literal></expr>;</return>
+        </block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name><name>this</name><operator>.</operator><name>tstamp</name></name> <operator>&lt;</operator> <name><name>o</name><operator>.</operator><name>tstamp</name></name></expr>)</condition> <block>{<block_content>
+            <return>return <expr><operator>-</operator><literal type="number">1</literal></expr>;</return>
+        </block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name><name>this</name><operator>.</operator><name>value</name></name> <operator>&gt;</operator> <name><name>o</name><operator>.</operator><name>value</name></name></expr>)</condition> <block>{<block_content>
+            <return>return <expr><literal type="number">1</literal></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><operator>-</operator><literal type="number">1</literal></expr>;</return>
+    </block_content>}</block></function>
+
+    <function><type><specifier>public</specifier> <name>int</name></type> <name>value</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <return>return <expr><name>value</name></expr>;</return>
+    </block_content>}</block></function>
+
+    <function><type><specifier>public</specifier> <name>int</name></type> <name>tstamp</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <return>return <expr><name>tstamp</name></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>

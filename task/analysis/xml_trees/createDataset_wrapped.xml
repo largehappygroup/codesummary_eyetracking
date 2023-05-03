@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/createDataset_wrapped.java"><class><specifier>public</specifier> class <name>ChartData</name> <block>{
+
+    <function><type><specifier>public</specifier> <name>XYDataset</name></type> <name>createDataset</name><parameter_list>(<parameter><decl><type><name><name>double</name><index>[]</index></name></type> <name>values</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>name</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><specifier>final</specifier> <name>XYSeries</name></type> <name>series</name> <init>= <expr><operator>new</operator> <call><name>XYSeries</name><argument_list>(<argument><expr><name>name</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>values</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>series</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>, <argument><expr><name><name>values</name><index>[<expr><name>i</name></expr>]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+        <decl_stmt><decl><type><specifier>final</specifier> <name>XYSeriesCollection</name></type> <name>collection</name> <init>= <expr><operator>new</operator> <call><name>XYSeriesCollection</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>collection</name><operator>.</operator><name>addSeries</name></name><argument_list>(<argument><expr><name>series</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <return>return <expr><name>collection</name></expr>;</return>
+    </block_content>}</block></function>
+}</block></class></unit>
