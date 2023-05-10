@@ -53,8 +53,10 @@ def make_files(pid):
     f_gaze_root = 'data/{pid}/gaze/{pid}_gaze'.format(pid=pid)
     f_writing_save = 'data/{pid}/{pid}_writing_save.csv'.format(pid=pid)
     f_reading_save = 'data/{pid}/{pid}_reading_save.csv'.format(pid=pid)
-    # header for gaze files
-    # ['participant_id', 'function_name', 'function_id', 'system_timestamp', 'device_timestamp', 'valid_gaze_left', 'valid_gaze_right', 'gaze_left_eye', 'gaze_right_eye', 'valid_pd_left', 'valid_pd_right', 'gaze_left', 'gaze_right']
+    # header for OLD gaze files
+    # ['participant_id', 'function_name', 'function_id', 'system_timestamp', 'device_timestamp', 'valid_gaze_left', 'valid_gaze_right', 'gaze_left_eye', 'gaze_right_eye', 'valid_pd_left', 'valid_pd_right', 'pd_left', 'pd_right']
+    # header for NEW gaze files
+    # ['participant_id', 'function_name', 'function_fid', 'system_timestamp', 'device_timestamp', 'valid_gaze_left', 'valid_gaze_right', 'gaze_left_eye', 'gaze_right_eye', 'valid_pd_left', 'valid_pd_right', 'pd_left', 'pd_right', 'irl_left_eye_coordinates', 'irl_right_eye_coordinates', 'irl_left_point_on_screen', 'irl_right_point_on_screen']
 
     # Writing headers
     with open(f_keystrokes, 'a+') as f:
