@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/onAttach_wrapped.java"><class><specifier>public</specifier> class <name>Widget</name> <block>{
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="wrapped_functions/onAttach_wrapped.java" pos:tabs="8"><class pos:start="1:1" pos:end="18:1"><specifier pos:start="1:1" pos:end="1:6">public</specifier> class <name pos:start="1:14" pos:end="1:19">Widget</name> <block pos:start="1:21" pos:end="18:1">{
 
-    <function><type><specifier>protected</specifier> <name>void</name></type> <name>onAttach</name><parameter_list>()</parameter_list> <block>{<block_content>
-        <if_stmt><if>if <condition>( <expr><name>attached</name></expr> )</condition><block type="pseudo"><block_content>
-            <return>return;</return></block_content></block></if></if_stmt>
+    <function pos:start="3:5" pos:end="16:5"><type pos:start="3:5" pos:end="3:18"><specifier pos:start="3:5" pos:end="3:13">protected</specifier> <name pos:start="3:15" pos:end="3:18">void</name></type> <name pos:start="3:20" pos:end="3:27">onAttach</name><parameter_list pos:start="3:28" pos:end="3:29">()</parameter_list> <block pos:start="3:31" pos:end="16:5">{<block_content pos:start="4:9" pos:end="15:17">
+        <if_stmt pos:start="4:9" pos:end="5:19"><if pos:start="4:9" pos:end="5:19">if <condition pos:start="4:12" pos:end="4:23">( <expr pos:start="4:14" pos:end="4:21"><name pos:start="4:14" pos:end="4:21">attached</name></expr> )</condition><block type="pseudo" pos:start="5:13" pos:end="5:19"><block_content pos:start="5:13" pos:end="5:19">
+            <return pos:start="5:13" pos:end="5:19">return;</return></block_content></block></if></if_stmt>
         
-        <expr_stmt><expr><name>attached</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+        <expr_stmt pos:start="7:9" pos:end="7:24"><expr pos:start="7:9" pos:end="7:23"><name pos:start="7:9" pos:end="7:16">attached</name> <operator pos:start="7:18" pos:end="7:18">=</operator> <literal type="boolean" pos:start="7:20" pos:end="7:23">true</literal></expr>;</expr_stmt>
         
-        <comment type="line">// Set the main element's event listener. This should only be set</comment>
-        <comment type="line">// while the widget is attached, because it creates a circular</comment>
-        <comment type="line">// reference between JavaScript and the DOM.</comment>
-        <expr_stmt><expr><call><name><name>DOM</name><operator>.</operator><name>setEventListener</name></name><argument_list>( <argument><expr><call><name>getElement</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>this</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <comment type="line" pos:start="9:9" pos:end="9:73">// Set the main element's event listener. This should only be set</comment>
+        <comment type="line" pos:start="10:9" pos:end="10:70">// while the widget is attached, because it creates a circular</comment>
+        <comment type="line" pos:start="11:9" pos:end="11:52">// reference between JavaScript and the DOM.</comment>
+        <expr_stmt pos:start="12:9" pos:end="12:51"><expr pos:start="12:9" pos:end="12:50"><call pos:start="12:9" pos:end="12:50"><name pos:start="12:9" pos:end="12:28"><name pos:start="12:9" pos:end="12:11">DOM</name><operator pos:start="12:12" pos:end="12:12">.</operator><name pos:start="12:13" pos:end="12:28">setEventListener</name></name><argument_list pos:start="12:29" pos:end="12:50">( <argument pos:start="12:31" pos:end="12:42"><expr pos:start="12:31" pos:end="12:42"><call pos:start="12:31" pos:end="12:42"><name pos:start="12:31" pos:end="12:40">getElement</name><argument_list pos:start="12:41" pos:end="12:42">()</argument_list></call></expr></argument>, <argument pos:start="12:45" pos:end="12:48"><expr pos:start="12:45" pos:end="12:48"><name pos:start="12:45" pos:end="12:48">this</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
         
-        <comment type="line">// Now that the widget is attached, call onLoad().</comment>
-        <expr_stmt><expr><call><name>onLoad</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <comment type="line" pos:start="14:9" pos:end="14:58">// Now that the widget is attached, call onLoad().</comment>
+        <expr_stmt pos:start="15:9" pos:end="15:17"><expr pos:start="15:9" pos:end="15:16"><call pos:start="15:9" pos:end="15:16"><name pos:start="15:9" pos:end="15:14">onLoad</name><argument_list pos:start="15:15" pos:end="15:16">()</argument_list></call></expr>;</expr_stmt>
     </block_content>}</block></function>
     
 }</block></class></unit>

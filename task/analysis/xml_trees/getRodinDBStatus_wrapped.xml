@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="wrapped_functions/getRodinDBStatus_wrapped.java"><class><specifier>public</specifier> class <name>RodinDBStatusParser</name> <block>{
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="wrapped_functions/getRodinDBStatus_wrapped.java" pos:tabs="8"><class pos:start="1:1" pos:end="15:1"><specifier pos:start="1:1" pos:end="1:6">public</specifier> class <name pos:start="1:14" pos:end="1:32">RodinDBStatusParser</name> <block pos:start="1:34" pos:end="15:1">{
 
-    <function><type><specifier>public</specifier> <name>IRodinDBStatus</name></type> <name>getRodinDBStatus</name><parameter_list>()</parameter_list> <block>{<block_content>
-        <decl_stmt><decl><type><name>IStatus</name></type> <name>status</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>getStatus</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <function pos:start="3:5" pos:end="14:5"><type pos:start="3:5" pos:end="3:25"><specifier pos:start="3:5" pos:end="3:10">public</specifier> <name pos:start="3:12" pos:end="3:25">IRodinDBStatus</name></type> <name pos:start="3:27" pos:end="3:42">getRodinDBStatus</name><parameter_list pos:start="3:43" pos:end="3:44">()</parameter_list> <block pos:start="3:46" pos:end="14:5">{<block_content pos:start="4:9" pos:end="13:9">
+        <decl_stmt pos:start="4:9" pos:end="4:42"><decl pos:start="4:9" pos:end="4:41"><type pos:start="4:9" pos:end="4:15"><name pos:start="4:9" pos:end="4:15">IStatus</name></type> <name pos:start="4:17" pos:end="4:22">status</name> <init pos:start="4:24" pos:end="4:41">= <expr pos:start="4:26" pos:end="4:41"><call pos:start="4:26" pos:end="4:41"><name pos:start="4:26" pos:end="4:39"><name pos:start="4:26" pos:end="4:29">this</name><operator pos:start="4:30" pos:end="4:30">.</operator><name pos:start="4:31" pos:end="4:39">getStatus</name></name><argument_list pos:start="4:40" pos:end="4:41">()</argument_list></call></expr></init></decl>;</decl_stmt>
 
-        <if_stmt><if>if <condition>(<expr><name>status</name> <operator>instanceof</operator> <name>IRodinDBStatus</name></expr>)</condition> <block>{<block_content>
-            <return>return <expr><operator>(</operator><name>IRodinDBStatus</name><operator>)</operator> <name>status</name></expr>;</return>
-        </block_content>}</block></if> <else>else <block>{<block_content>
-            <comment type="line">// A regular IStatus is created only in the case of a CoreException.</comment>
-            <comment type="line">// See bug 13492 Should handle RodinDBExceptions that contains</comment>
-            <comment type="line">// CoreException more gracefully</comment>
-            <return>return <expr><operator>new</operator> <call><name>RodinDBStatus</name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>nestedCoreException</name></name></expr></argument>)</argument_list></call></expr>;</return>
+        <if_stmt pos:start="6:9" pos:end="13:9"><if pos:start="6:9" pos:end="8:9">if <condition pos:start="6:12" pos:end="6:45">(<expr pos:start="6:13" pos:end="6:44"><name pos:start="6:13" pos:end="6:18">status</name> <operator pos:start="6:20" pos:end="6:29">instanceof</operator> <name pos:start="6:31" pos:end="6:44">IRodinDBStatus</name></expr>)</condition> <block pos:start="6:47" pos:end="8:9">{<block_content pos:start="7:13" pos:end="7:43">
+            <return pos:start="7:13" pos:end="7:43">return <expr pos:start="7:20" pos:end="7:42"><operator pos:start="7:20" pos:end="7:20">(</operator><name pos:start="7:21" pos:end="7:34">IRodinDBStatus</name><operator pos:start="7:35" pos:end="7:35">)</operator> <name pos:start="7:37" pos:end="7:42">status</name></expr>;</return>
+        </block_content>}</block></if> <else pos:start="8:11" pos:end="13:9">else <block pos:start="8:16" pos:end="13:9">{<block_content pos:start="12:13" pos:end="12:63">
+            <comment type="line" pos:start="9:13" pos:end="9:80">// A regular IStatus is created only in the case of a CoreException.</comment>
+            <comment type="line" pos:start="10:13" pos:end="10:74">// See bug 13492 Should handle RodinDBExceptions that contains</comment>
+            <comment type="line" pos:start="11:13" pos:end="11:44">// CoreException more gracefully</comment>
+            <return pos:start="12:13" pos:end="12:63">return <expr pos:start="12:20" pos:end="12:62"><operator pos:start="12:20" pos:end="12:22">new</operator> <call pos:start="12:24" pos:end="12:62"><name pos:start="12:24" pos:end="12:36">RodinDBStatus</name><argument_list pos:start="12:37" pos:end="12:62">(<argument pos:start="12:38" pos:end="12:61"><expr pos:start="12:38" pos:end="12:61"><name pos:start="12:38" pos:end="12:61"><name pos:start="12:38" pos:end="12:41">this</name><operator pos:start="12:42" pos:end="12:42">.</operator><name pos:start="12:43" pos:end="12:61">nestedCoreException</name></name></expr></argument>)</argument_list></call></expr>;</return>
         </block_content>}</block></else></if_stmt>
     </block_content>}</block></function>
 }</block></class></unit>
