@@ -1,4 +1,3 @@
-```
 public class ServiceRemover {
     public void removeService(String type) {
         CService service = (CService) services.get(type);
@@ -10,4 +9,3 @@ public class ServiceRemover {
         }
     }
 }
-```

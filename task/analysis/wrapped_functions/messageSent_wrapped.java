@@ -1,4 +1,3 @@
-```java
 public class MyClass {
 
     public void messageSent( MessageEvent e ) {
@@ -12,4 +11,3 @@ public class MyClass {
     }
 
 }
-```

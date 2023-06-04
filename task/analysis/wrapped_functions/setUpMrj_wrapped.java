@@ -1,17 +1,17 @@
-public class Belvedere4 {
-    private static String mrjVersion;
-    private static double mrjMajorVersion;
-
+public class MyClass {
     private void setUpMrj() {
-        mrjVersion = System.getProperty("mrj.version");
+        Belvedere4.mrjVersion = System.getProperty( "mrj.version" );
 
-        if (mrjVersion == null)
-            return;
-
+        if ( Belvedere4.mrjVersion == null ) return;
         try {
-            mrjMajorVersion = Double.valueOf(mrjVersion.substring(0, 3)).doubleValue();
-        } catch (Exception e) {
-            mrjMajorVersion = 0;
+            Belvedere4.mrjMajorVersion = Double.valueOf( Belvedere4.mrjVersion.substring( 0, 3 )).doubleValue();
+        } catch ( Exception e ) {
+            Belvedere4.mrjMajorVersion = 0;
         }
+    }
+
+    static class Belvedere4 {
+        static String mrjVersion;
+        static double mrjMajorVersion;
     }
 }

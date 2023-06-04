@@ -1,4 +1,3 @@
-```java
 public class SchemaUpdater {
 
     public void updateSchema( String kind, SchemaTO schemaTO ) {
@@ -10,4 +9,3 @@ public class SchemaUpdater {
     }
 
 }
-```

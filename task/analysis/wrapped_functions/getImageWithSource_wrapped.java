@@ -1,4 +1,3 @@
-```
 public class ImageParser {
     public WebImage getImageWithSource( String source ) {
         WebImage[] images = getImages();
@@ -9,4 +8,3 @@ public class ImageParser {
         return null;
     }
 }
-```

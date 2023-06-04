@@ -1,4 +1,3 @@
-```
 public class ComboSetter {
     public void setCombo_Value( String val ) {
         If (( val == null || "".equals( val )) && ( Combo_Value == null || "".equals( Combo_Value ))) {
@@ -10,4 +9,3 @@ public class ComboSetter {
         }
     }
 }
-```

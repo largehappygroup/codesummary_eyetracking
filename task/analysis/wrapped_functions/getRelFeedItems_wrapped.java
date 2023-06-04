@@ -1,4 +1,3 @@
-```java
 public class FeedQuery {
     public List<FeedItem> getRelFeedItems(FeedItem feedItem) {
         final int feedId = feedItem.getFeed().getFeedId();
@@ -6,4 +5,3 @@ public class FeedQuery {
         return getPagedListByNativeSQL(FeedItem.class, sql, " id desc", 1, 20);
     }
 }
-```

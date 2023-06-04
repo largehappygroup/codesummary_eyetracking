@@ -1,4 +1,3 @@
-```java
 public class SqlGenerator {
     public void genSql() throws PositionedError {
         try {
@@ -12,4 +11,3 @@ public class SqlGenerator {
         }
     }
 }
-```

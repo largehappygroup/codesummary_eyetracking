@@ -1,4 +1,3 @@
-```java
 public class MyClass {
     public Command getBackCommand12() {
         if ( backCommand12 == null ) {//GEN-END:|264-getter|0|264-preInit
@@ -9,4 +8,3 @@ public class MyClass {
         return backCommand12;
     }
 }
-```

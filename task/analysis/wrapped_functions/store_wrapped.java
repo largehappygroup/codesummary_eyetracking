@@ -1,4 +1,3 @@
-```java
 public class ZipFileHandler {
     public void store(String path, InputStream stream) throws IOException {
         toIgnore.add(normalizePath(path));
@@ -8,4 +7,3 @@ public class ZipFileHandler {
         zipOutput.closeEntry();
     }
 }
-```

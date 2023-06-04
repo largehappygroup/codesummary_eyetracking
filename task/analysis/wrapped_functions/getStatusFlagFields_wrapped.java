@@ -1,5 +1,3 @@
-Unfortunately, as an AI language model, I am not able to create files. However, I can provide you with the class structure you can use to wrap your function:
-
 public class MyClass {
     
     public List getStatusFlagFields() {
@@ -15,5 +13,3 @@ public class MyClass {
         return list;
     }
 } 
-
-Make sure to import the necessary libraries and instantiate the InputField object in your code.
