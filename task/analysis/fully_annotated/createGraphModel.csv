@@ -1,0 +1,42 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+public,0,,"['function', 'type', 'specifier']",22,135,69,24,0.011458333,0.125,0.0359375,0.022222222
+GraphModel,0,,"['function', 'type', 'name']",96,135,114,24,0.05,0.125,0.059375,0.022222222
+createGraphModel,0,,"['function', 'name']",216,135,177,24,0.1125,0.125,0.0921875,0.022222222
+List,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",422,135,46,20,0.219791667,0.125,0.023958333,0.018518519
+includedNodes,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",475,135,145,20,0.247395833,0.125,0.075520833,0.018518519
+num_models,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'name']",65,162,142,23,0.033854167,0.15,0.073958333,0.021296296
+System,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",64,189,69,24,0.033333333,0.175,0.0359375,0.022222222
+out,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",133,189,35,24,0.069270833,0.175,0.018229167,0.022222222
+println,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",168,189,81,24,0.0875,0.175,0.0421875,0.022222222
+"""PGraphModel: creating a new non-super graphmodel: """,100,"""PGraphModel:","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",282,189,141,24,0.146875,0.175,0.0734375,0.022222222
+"""PGraphModel: creating a new non-super graphmodel: """,100,creating,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",432,189,90,24,0.225,0.175,0.046875,0.022222222
+"""PGraphModel: creating a new non-super graphmodel: """,100,a,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",529,189,16,17,0.275520833,0.175,0.008333333,0.015740741
+"""PGraphModel: creating a new non-super graphmodel: """,100,new,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",551,189,38,17,0.286979167,0.175,0.019791667,0.015740741
+"""PGraphModel: creating a new non-super graphmodel: """,100,non-super,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",594,189,101,21,0.309375,0.175,0.052604167,0.019444444
+"""PGraphModel: creating a new non-super graphmodel: """,100,graphmodel:,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",702,189,120,24,0.365625,0.175,0.0625,0.022222222
+"""PGraphModel: creating a new non-super graphmodel: """,100,"""","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",833,189,13,13,0.433854167,0.175,0.006770833,0.012037037
++,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'operator']",853,189,16,16,0.444270833,0.175,0.008333333,0.014814815
+num_models,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",875,189,112,22,0.455729167,0.175,0.058333333,0.02037037
+GraphModel,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name']",64,243,113,24,0.033333333,0.225,0.058854167,0.022222222
+model,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",183,243,59,20,0.0953125,0.225,0.030729167,0.018518519
+=,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",248,243,16,13,0.129166667,0.225,0.008333333,0.012037037
+new,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'operator']",281,243,37,17,0.146354167,0.225,0.019270833,0.015740741
+PGraphModel,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name']",324,243,132,24,0.16875,0.225,0.06875,0.022222222
+"""Phoebe""",0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",465,243,89,20,0.2421875,0.225,0.046354167,0.018518519
++,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'argument_list', 'argument', 'expr', 'operator']",561,243,16,16,0.2921875,0.225,0.008333333,0.014814815
+num_models,2,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",583,243,120,23,0.303645833,0.225,0.0625,0.021296296
+getModelSubSet,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name']",712,243,165,24,0.370833333,0.225,0.0859375,0.022222222
+includedNodes,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",885,243,145,20,0.4609375,0.225,0.075520833,0.018518519
+getCommunity(),0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",64,270,162,24,0.033333333,0.25,0.084375,0.022222222
+add,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",226,270,35,24,0.117708333,0.25,0.018229167,0.022222222
+model,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",280,270,59,20,0.145833333,0.25,0.030729167,0.018518519
+"//return new PGraphModel ""Phoebe"" + num_models getModelSubSet includedNodes",200,//return,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",64,297,91,20,0.033333333,0.275,0.047395833,0.018518519
+"//return new PGraphModel ""Phoebe"" + num_models getModelSubSet includedNodes",200,new,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",162,297,38,17,0.084375,0.275,0.019791667,0.015740741
+"//return new PGraphModel ""Phoebe"" + num_models getModelSubSet includedNodes",200,PGraphModel,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",205,297,132,24,0.106770833,0.275,0.06875,0.022222222
+"//return new PGraphModel ""Phoebe"" + num_models getModelSubSet includedNodes",200,"""Phoebe""","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",346,297,89,20,0.180208333,0.275,0.046354167,0.018518519
+"//return new PGraphModel ""Phoebe"" + num_models getModelSubSet includedNodes",200,+,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",442,297,16,16,0.230208333,0.275,0.008333333,0.014814815
+"//return new PGraphModel ""Phoebe"" + num_models getModelSubSet includedNodes",200,num_models,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",465,297,119,23,0.2421875,0.275,0.061979167,0.021296296
+"//return new PGraphModel ""Phoebe"" + num_models getModelSubSet includedNodes",200,getModelSubSet,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",594,297,164,24,0.309375,0.275,0.085416667,0.022222222
+"//return new PGraphModel ""Phoebe"" + num_models getModelSubSet includedNodes",200,includedNodes,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",766,297,145,20,0.398958333,0.275,0.075520833,0.018518519
+return,0,,"['function', 'block', 'block_content', 'return']",65,351,69,19,0.033854167,0.325,0.0359375,0.017592593
+model,2,,"['function', 'block', 'block_content', 'return', 'expr', 'name']",140,351,67,23,0.072916667,0.325,0.034895833,0.021296296

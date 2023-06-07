@@ -1,0 +1,54 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+protected,0,,"['function', 'type', 'specifier']",22,135,101,24,0.011458333,0.125,0.052604167,0.022222222
+void,0,,"['function', 'type', 'name']",129,135,48,20,0.0671875,0.125,0.025,0.018518519
+onAttach,0,,"['function', 'name']",183,135,111,24,0.0953125,0.125,0.0578125,0.022222222
+if,0,,"['function', 'block', 'block_content', 'if_stmt', 'if']",64,162,27,20,0.033333333,0.15,0.0140625,0.018518519
+attached,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name']",118,162,91,20,0.061458333,0.15,0.047395833,0.018518519
+return;,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'return']",109,190,76,22,0.056770833,0.175925926,0.039583333,0.02037037
+attached,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'name']",64,243,91,20,0.033333333,0.225,0.047395833,0.018518519
+=,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'operator']",161,243,16,13,0.083854167,0.225,0.008333333,0.012037037
+TRUE,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'literal']",184,243,55,22,0.095833333,0.225,0.028645833,0.02037037
+// Set the main element's event listener. This should only be set,200,//,"['function', 'block', 'block_content', 'comment']",64,297,27,20,0.033333333,0.275,0.0140625,0.018518519
+// Set the main element's event listener. This should only be set,200,Set,"['function', 'block', 'block_content', 'comment']",96,297,37,19,0.05,0.275,0.019270833,0.017592593
+// Set the main element's event listener. This should only be set,200,the,"['function', 'block', 'block_content', 'comment']",140,297,37,20,0.072916667,0.275,0.019270833,0.018518519
+// Set the main element's event listener. This should only be set,200,main,"['function', 'block', 'block_content', 'comment']",183,297,48,20,0.0953125,0.275,0.025,0.018518519
+// Set the main element's event listener. This should only be set,200,element's,"['function', 'block', 'block_content', 'comment']",237,297,102,20,0.1234375,0.275,0.053125,0.018518519
+// Set the main element's event listener. This should only be set,200,event,"['function', 'block', 'block_content', 'comment']",345,297,58,19,0.1796875,0.275,0.030208333,0.017592593
+// Set the main element's event listener. This should only be set,200,listener.,"['function', 'block', 'block_content', 'comment']",411,297,87,20,0.2140625,0.275,0.0453125,0.018518519
+// Set the main element's event listener. This should only be set,200,This,"['function', 'block', 'block_content', 'comment']",518,297,48,20,0.269791667,0.275,0.025,0.018518519
+// Set the main element's event listener. This should only be set,200,should,"['function', 'block', 'block_content', 'comment']",573,297,68,20,0.2984375,0.275,0.035416667,0.018518519
+// Set the main element's event listener. This should only be set,200,only,"['function', 'block', 'block_content', 'comment']",648,297,48,24,0.3375,0.275,0.025,0.022222222
+// Set the main element's event listener. This should only be set,200,be,"['function', 'block', 'block_content', 'comment']",702,297,26,20,0.365625,0.275,0.013541667,0.018518519
+// Set the main element's event listener. This should only be set,200,set,"['function', 'block', 'block_content', 'comment']",735,297,35,19,0.3828125,0.275,0.018229167,0.017592593
+// while the widget is attached because it creates a circular,201,//,"['function', 'block', 'block_content', 'comment']",64,324,27,20,0.033333333,0.3,0.0140625,0.018518519
+// while the widget is attached because it creates a circular,201,while,"['function', 'block', 'block_content', 'comment']",96,324,60,20,0.05,0.3,0.03125,0.018518519
+// while the widget is attached because it creates a circular,201,the,"['function', 'block', 'block_content', 'comment']",162,324,37,20,0.084375,0.3,0.019270833,0.018518519
+// while the widget is attached because it creates a circular,201,widget,"['function', 'block', 'block_content', 'comment']",204,324,70,24,0.10625,0.3,0.036458333,0.022222222
+// while the widget is attached because it creates a circular,201,is,"['function', 'block', 'block_content', 'comment']",280,324,26,20,0.145833333,0.3,0.013541667,0.018518519
+// while the widget is attached because it creates a circular,201,attached,"['function', 'block', 'block_content', 'comment']",313,324,98,23,0.163020833,0.3,0.051041667,0.021296296
+// while the widget is attached because it creates a circular,201,because,"['function', 'block', 'block_content', 'comment']",421,324,80,20,0.219270833,0.3,0.041666667,0.018518519
+// while the widget is attached because it creates a circular,201,it,"['function', 'block', 'block_content', 'comment']",507,324,26,20,0.2640625,0.3,0.013541667,0.018518519
+// while the widget is attached because it creates a circular,201,creates,"['function', 'block', 'block_content', 'comment']",540,324,80,19,0.28125,0.3,0.041666667,0.017592593
+// while the widget is attached because it creates a circular,201,a,"['function', 'block', 'block_content', 'comment']",626,324,16,17,0.326041667,0.3,0.008333333,0.015740741
+// while the widget is attached because it creates a circular,201,circular,"['function', 'block', 'block_content', 'comment']",648,324,91,20,0.3375,0.3,0.047395833,0.018518519
+// reference between JavaScript and the DOM.,202,//,"['function', 'block', 'block_content', 'comment']",64,351,27,20,0.033333333,0.325,0.0140625,0.018518519
+// reference between JavaScript and the DOM.,202,reference,"['function', 'block', 'block_content', 'comment']",98,351,101,20,0.051041667,0.325,0.052604167,0.018518519
+// reference between JavaScript and the DOM.,202,between,"['function', 'block', 'block_content', 'comment']",205,351,80,20,0.106770833,0.325,0.041666667,0.018518519
+// reference between JavaScript and the DOM.,202,JavaScript,"['function', 'block', 'block_content', 'comment']",292,351,111,24,0.152083333,0.325,0.0578125,0.022222222
+// reference between JavaScript and the DOM.,202,and,"['function', 'block', 'block_content', 'comment']",410,351,37,20,0.213541667,0.325,0.019270833,0.018518519
+// reference between JavaScript and the DOM.,202,the,"['function', 'block', 'block_content', 'comment']",454,351,37,20,0.236458333,0.325,0.019270833,0.018518519
+// reference between JavaScript and the DOM.,202,DOM.,"['function', 'block', 'block_content', 'comment']",497,351,33,19,0.258854167,0.325,0.0171875,0.017592593
+DOM,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",65,378,34,24,0.033854167,0.35,0.017708333,0.022222222
+setEventListener,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",99,378,183,24,0.0515625,0.35,0.0953125,0.022222222
+getElement,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name']",302,378,142,24,0.157291667,0.35,0.073958333,0.022222222
+this,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",454,378,47,20,0.236458333,0.35,0.024479167,0.018518519
+"// Now that the widget is attached, call onLoad().",203,//,"['function', 'block', 'block_content', 'comment']",64,432,27,20,0.033333333,0.4,0.0140625,0.018518519
+"// Now that the widget is attached, call onLoad().",203,Now,"['function', 'block', 'block_content', 'comment']",97,432,38,19,0.050520833,0.4,0.019791667,0.017592593
+"// Now that the widget is attached, call onLoad().",203,that,"['function', 'block', 'block_content', 'comment']",140,432,47,20,0.072916667,0.4,0.024479167,0.018518519
+"// Now that the widget is attached, call onLoad().",203,the,"['function', 'block', 'block_content', 'comment']",194,432,37,20,0.101041667,0.4,0.019270833,0.018518519
+"// Now that the widget is attached, call onLoad().",203,widget,"['function', 'block', 'block_content', 'comment']",236,432,70,24,0.122916667,0.4,0.036458333,0.022222222
+"// Now that the widget is attached, call onLoad().",203,is,"['function', 'block', 'block_content', 'comment']",313,432,26,20,0.163020833,0.4,0.013541667,0.018518519
+"// Now that the widget is attached, call onLoad().",203,"attached,","['function', 'block', 'block_content', 'comment']",345,432,99,23,0.1796875,0.4,0.0515625,0.021296296
+"// Now that the widget is attached, call onLoad().",203,call,"['function', 'block', 'block_content', 'comment']",453,432,48,20,0.2359375,0.4,0.025,0.018518519
+"// Now that the widget is attached, call onLoad().",203,onLoad().,"['function', 'block', 'block_content', 'comment']",507,432,99,24,0.2640625,0.4,0.0515625,0.022222222
+onLoad,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",64,459,100,24,0.033333333,0.425,0.052083333,0.022222222

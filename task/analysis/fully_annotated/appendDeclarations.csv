@@ -1,0 +1,23 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+public,0,,"['function', 'type', 'specifier']",22,135,69,24,0.011458333,0.125,0.0359375,0.022222222
+void,0,,"['function', 'type', 'name']",96,135,48,20,0.05,0.125,0.025,0.018518519
+appendDeclarations,0,,"['function', 'name']",151,135,208,24,0.078645833,0.125,0.108333333,0.022222222
+LaTeXDocumentPortion,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",368,135,219,20,0.191666667,0.125,0.1140625,0.018518519
+pack,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",594,135,55,24,0.309375,0.125,0.028645833,0.022222222
+LaTeXDocumentPortion,1,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",659,135,220,20,0.343229167,0.125,0.114583333,0.018518519
+decl,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",885,135,48,20,0.4609375,0.125,0.025,0.018518519
+if,0,,"['function', 'block', 'block_content', 'if_stmt', 'if']",64,162,27,20,0.033333333,0.15,0.0140625,0.018518519
+bContainsEndnotes,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name']",119,162,187,20,0.061979167,0.15,0.097395833,0.018518519
+pack,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",108,189,48,24,0.05625,0.175,0.025,0.022222222
+append,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",156,189,72,24,0.08125,0.175,0.0375,0.022222222
+"""\\usepackage{endnotes}""",0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",249,189,251,24,0.1296875,0.175,0.130729167,0.022222222
+),0,,[],509,189,19,24,0.265104167,0.175,0.009895833,0.022222222
+nl,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",528,189,38,24,0.275,0.175,0.019791667,0.022222222
+if,1,,"['function', 'block', 'block_content', 'if_stmt', 'if']",64,243,27,20,0.033333333,0.225,0.0140625,0.018518519
+bContainsFootnotes,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name']",119,243,198,20,0.061979167,0.225,0.103125,0.018518519
+convertFootnotesConfiguration,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",345,243,327,24,0.1796875,0.225,0.1703125,0.022222222
+decl,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",680,243,48,20,0.354166667,0.225,0.025,0.018518519
+if,2,,"['function', 'block', 'block_content', 'if_stmt', 'if']",64,270,27,20,0.033333333,0.25,0.0140625,0.018518519
+bContainsEndnotes,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name']",119,270,187,20,0.061979167,0.25,0.097395833,0.018518519
+convertEndnotesConfiguration,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",334,270,316,24,0.173958333,0.25,0.164583333,0.022222222
+decl,2,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",658,270,49,20,0.342708333,0.25,0.025520833,0.018518519

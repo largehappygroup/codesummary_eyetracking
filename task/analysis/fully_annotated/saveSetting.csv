@@ -1,0 +1,30 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+private,0,,"['function', 'type', 'specifier']",22,135,80,24,0.011458333,0.125,0.041666667,0.022222222
+void,0,,"['function', 'type', 'name']",107,135,48,20,0.055729167,0.125,0.025,0.018518519
+saveSetting,0,,"['function', 'name']",162,135,132,24,0.084375,0.125,0.06875,0.022222222
+CustomProperties,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",302,135,177,24,0.157291667,0.125,0.0921875,0.022222222
+prop,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",486,135,48,21,0.253125,0.125,0.025,0.019444444
+prop,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",65,162,46,24,0.033854167,0.15,0.023958333,0.022222222
+setProperty,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",111,162,128,24,0.0578125,0.15,0.066666667,0.022222222
+"""avalanchefever.gametype""",0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",260,162,281,24,0.135416667,0.15,0.146354167,0.022222222
+mapSet,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",550,162,69,23,0.286458333,0.15,0.0359375,0.021296296
+prop,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",65,189,46,24,0.033854167,0.175,0.023958333,0.022222222
+setProperty,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",111,189,128,24,0.0578125,0.175,0.066666667,0.022222222
+"""avalanchefever.outlinetype""",0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",260,189,313,24,0.135416667,0.175,0.163020833,0.022222222
+outlinetype,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",583,189,124,24,0.303645833,0.175,0.064583333,0.022222222
+prop,3,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",65,216,46,24,0.033854167,0.2,0.023958333,0.022222222
+setProperty,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",111,216,128,24,0.0578125,0.2,0.066666667,0.022222222
+"""avalanchefever.numcolors""",0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",260,216,292,23,0.135416667,0.2,0.152083333,0.021296296
+numColors,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",562,216,101,20,0.292708333,0.2,0.052604167,0.018518519
+prop,4,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",65,243,46,24,0.033854167,0.225,0.023958333,0.022222222
+setProperty,3,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",111,243,128,24,0.0578125,0.225,0.066666667,0.022222222
+"""avalanchefever.version""",0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",260,243,270,23,0.135416667,0.225,0.140625,0.021296296
+version,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",539,243,81,20,0.280729167,0.225,0.0421875,0.018518519
+prop,5,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",65,270,46,24,0.033854167,0.25,0.023958333,0.022222222
+setProperty,4,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",111,270,128,24,0.0578125,0.25,0.066666667,0.022222222
+"""avalanchefever.chainDisplayType""",0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",260,270,367,24,0.135416667,0.25,0.191145833,0.022222222
+chainDisplayType,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",637,270,178,24,0.331770833,0.25,0.092708333,0.022222222
+prop,6,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",65,297,46,24,0.033854167,0.275,0.023958333,0.022222222
+setProperty,5,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",111,297,128,24,0.0578125,0.275,0.066666667,0.022222222
+"""avalanchefever.bigDisplay""",0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",260,297,302,24,0.135416667,0.275,0.157291667,0.022222222
+bigDisplay,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",573,297,112,24,0.2984375,0.275,0.058333333,0.022222222

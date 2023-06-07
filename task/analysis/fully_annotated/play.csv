@@ -1,0 +1,26 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+public,0,,"['function', 'type', 'specifier']",22,135,69,24,0.011458333,0.125,0.0359375,0.022222222
+void,0,,"['function', 'type', 'name']",96,135,48,20,0.05,0.125,0.025,0.018518519
+play,0,,"['function', 'name']",151,135,80,24,0.078645833,0.125,0.041666667,0.022222222
+if,0,,"['function', 'block', 'block_content', 'if_stmt', 'if']",64,162,35,24,0.033333333,0.15,0.018229167,0.022222222
+currentState,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name']",108,162,134,19,0.05625,0.15,0.069791667,0.017592593
+==,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'operator']",248,162,27,13,0.129166667,0.15,0.0140625,0.012037037
+SimulatorState,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name', 'name']",280,162,155,20,0.145833333,0.15,0.080729167,0.018518519
+STOPPED,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name', 'name']",435,162,77,20,0.2265625,0.15,0.040104167,0.018518519
+setSimulationTime,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",108,189,197,24,0.05625,0.175,0.102604167,0.022222222
+0,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",313,189,16,19,0.163020833,0.175,0.008333333,0.017592593
+simItem,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",108,216,89,24,0.05625,0.2,0.046354167,0.022222222
+initialize,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",197,216,127,24,0.102604167,0.2,0.066145833,0.022222222
+startTimer,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",108,243,142,24,0.05625,0.225,0.073958333,0.022222222
+setState,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",108,270,99,24,0.05625,0.25,0.0515625,0.022222222
+SimulatorState,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",215,270,155,20,0.111979167,0.25,0.080729167,0.018518519
+PLAYING,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",370,270,77,20,0.192708333,0.25,0.040104167,0.018518519
+else if,0,,"['function', 'block', 'block_content', 'if_stmt', 'if']",64,324,87,20,0.033333333,0.3,0.0453125,0.018518519
+currentState,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name']",162,324,134,19,0.084375,0.3,0.069791667,0.017592593
+==,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'operator']",302,324,27,13,0.157291667,0.3,0.0140625,0.012037037
+SimulatorState,2,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name', 'name']",334,324,155,20,0.173958333,0.3,0.080729167,0.018518519
+PAUSED,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name', 'name']",489,324,66,20,0.2546875,0.3,0.034375,0.018518519
+startTimer,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",108,351,142,24,0.05625,0.325,0.073958333,0.022222222
+setState,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",108,378,99,24,0.05625,0.35,0.0515625,0.022222222
+SimulatorState,3,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",215,378,155,20,0.111979167,0.35,0.080729167,0.018518519
+PLAYING,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",370,378,77,20,0.192708333,0.35,0.040104167,0.018518519

@@ -1,0 +1,42 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+public,0,,"['function', 'type', 'specifier']",22,135,69,24,0.011458333,0.125,0.0359375,0.022222222
+void,0,,"['function', 'type', 'name']",96,135,48,20,0.05,0.125,0.025,0.018518519
+testSetWelcomeMsg,0,,"['function', 'name']",151,135,208,24,0.078645833,0.125,0.108333333,0.022222222
+System,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",64,162,69,24,0.033333333,0.15,0.0359375,0.022222222
+out,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",133,162,35,24,0.069270833,0.15,0.018229167,0.022222222
+println,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",168,162,81,24,0.0875,0.15,0.0421875,0.022222222
+"""setWelcomeMsg""",0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",282,162,164,24,0.146875,0.15,0.085416667,0.022222222
+String,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name']",64,189,70,24,0.033333333,0.175,0.036458333,0.022222222
+welcomeMsg,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",139,189,113,24,0.072395833,0.175,0.058854167,0.022222222
+=,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",259,189,16,13,0.134895833,0.175,0.008333333,0.012037037
+"""""",0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'literal']",282,189,33,23,0.146875,0.175,0.0171875,0.021296296
+SystemClient_DBImpl,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name']",64,216,211,24,0.033333333,0.2,0.109895833,0.022222222
+instance,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",280,216,92,20,0.145833333,0.2,0.047916667,0.018518519
+=,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",377,216,16,13,0.196354167,0.2,0.008333333,0.012037037
+new,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'operator']",400,216,37,17,0.208333333,0.2,0.019270833,0.015740741
+SystemClient_DBImpl,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name']",442,216,240,24,0.230208333,0.2,0.125,0.022222222
+instance,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",64,243,91,24,0.033333333,0.225,0.047395833,0.022222222
+setWelcomeMsg,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",155,243,148,24,0.080729167,0.225,0.077083333,0.022222222
+welcomeMsg,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",323,243,113,24,0.168229167,0.225,0.058854167,0.022222222
+// TODO review the generated test code and remove the default call to fail.,200,//,"['function', 'block', 'block_content', 'comment']",64,297,27,20,0.033333333,0.275,0.0140625,0.018518519
+// TODO review the generated test code and remove the default call to fail.,200,TODO,"['function', 'block', 'block_content', 'comment']",96,297,49,19,0.05,0.275,0.025520833,0.017592593
+// TODO review the generated test code and remove the default call to fail.,200,review,"['function', 'block', 'block_content', 'comment']",152,297,69,20,0.079166667,0.275,0.0359375,0.018518519
+// TODO review the generated test code and remove the default call to fail.,200,the,"['function', 'block', 'block_content', 'comment']",227,297,37,20,0.118229167,0.275,0.019270833,0.018518519
+// TODO review the generated test code and remove the default call to fail.,200,generated,"['function', 'block', 'block_content', 'comment']",270,297,101,24,0.140625,0.275,0.052604167,0.022222222
+// TODO review the generated test code and remove the default call to fail.,200,test,"['function', 'block', 'block_content', 'comment']",378,297,47,19,0.196875,0.275,0.024479167,0.017592593
+// TODO review the generated test code and remove the default call to fail.,200,code,"['function', 'block', 'block_content', 'comment']",432,297,48,20,0.225,0.275,0.025,0.018518519
+// TODO review the generated test code and remove the default call to fail.,200,and,"['function', 'block', 'block_content', 'comment']",486,297,36,20,0.253125,0.275,0.01875,0.018518519
+// TODO review the generated test code and remove the default call to fail.,200,remove,"['function', 'block', 'block_content', 'comment']",530,297,69,17,0.276041667,0.275,0.0359375,0.015740741
+// TODO review the generated test code and remove the default call to fail.,200,the,"['function', 'block', 'block_content', 'comment']",605,297,37,20,0.315104167,0.275,0.019270833,0.018518519
+// TODO review the generated test code and remove the default call to fail.,200,default,"['function', 'block', 'block_content', 'comment']",648,297,79,20,0.3375,0.275,0.041145833,0.018518519
+// TODO review the generated test code and remove the default call to fail.,200,call,"['function', 'block', 'block_content', 'comment']",734,297,48,20,0.382291667,0.275,0.025,0.018518519
+// TODO review the generated test code and remove the default call to fail.,200,to,"['function', 'block', 'block_content', 'comment']",789,297,26,19,0.4109375,0.275,0.013541667,0.017592593
+// TODO review the generated test code and remove the default call to fail.,200,fail.,"['function', 'block', 'block_content', 'comment']",820,297,45,20,0.427083333,0.275,0.0234375,0.018518519
+fail,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",64,324,57,24,0.033333333,0.3,0.0296875,0.022222222
+"""The test case is a prototype. """,100,"""The","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'literal']",130,324,47,20,0.067708333,0.3,0.024479167,0.018518519
+"""The test case is a prototype. """,100,test,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'literal']",184,324,46,19,0.095833333,0.3,0.023958333,0.017592593
+"""The test case is a prototype. """,100,case,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'literal']",237,324,48,17,0.1234375,0.3,0.025,0.015740741
+"""The test case is a prototype. """,100,is,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'literal']",291,324,26,20,0.1515625,0.3,0.013541667,0.018518519
+"""The test case is a prototype. """,100,a,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'literal']",324,324,16,17,0.16875,0.3,0.008333333,0.015740741
+"""The test case is a prototype. """,100,prototype.,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'literal']",346,324,99,24,0.180208333,0.3,0.0515625,0.022222222
+"""The test case is a prototype. """,100,"""","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'literal']",445,324,11,24,0.231770833,0.3,0.005729167,0.022222222

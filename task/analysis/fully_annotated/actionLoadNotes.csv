@@ -1,0 +1,29 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+private,0,,"['function', 'type', 'specifier']",22,135,80,24,0.011458333,0.125,0.041666667,0.022222222
+void,0,,"['function', 'type', 'name']",107,135,48,20,0.055729167,0.125,0.025,0.018518519
+actionLoadNotes,0,,"['function', 'name']",162,135,186,24,0.084375,0.125,0.096875,0.022222222
+enableUserActions,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",64,162,197,24,0.033333333,0.15,0.102604167,0.022222222
+FALSE,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",270,162,59,20,0.140625,0.15,0.030729167,0.018518519
+"// set focus otherwise it gives focus to ""clear"" >> scary/not wanted",200,//,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",64,216,27,20,0.033333333,0.2,0.0140625,0.018518519
+"// set focus otherwise it gives focus to ""clear"" >> scary/not wanted",200,set,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",97,216,36,19,0.050520833,0.2,0.01875,0.017592593
+"// set focus otherwise it gives focus to ""clear"" >> scary/not wanted",200,focus,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",140,216,66,23,0.072916667,0.2,0.034375,0.021296296
+"// set focus otherwise it gives focus to ""clear"" >> scary/not wanted",200,otherwise,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",216,216,102,20,0.1125,0.2,0.053125,0.018518519
+"// set focus otherwise it gives focus to ""clear"" >> scary/not wanted",200,it,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",324,216,25,20,0.16875,0.2,0.013020833,0.018518519
+"// set focus otherwise it gives focus to ""clear"" >> scary/not wanted",200,gives,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",356,216,58,24,0.185416667,0.2,0.030208333,0.022222222
+"// set focus otherwise it gives focus to ""clear"" >> scary/not wanted",200,focus,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",421,216,58,20,0.219270833,0.2,0.030208333,0.018518519
+"// set focus otherwise it gives focus to ""clear"" >> scary/not wanted",200,to,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",486,216,26,19,0.253125,0.2,0.013541667,0.017592593
+"// set focus otherwise it gives focus to ""clear"" >> scary/not wanted",200,"""clear""","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",519,216,78,20,0.2703125,0.2,0.040625,0.018518519
+"// set focus otherwise it gives focus to ""clear"" >> scary/not wanted",200,>>,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",604,216,27,16,0.314583333,0.2,0.0140625,0.014814815
+"// set focus otherwise it gives focus to ""clear"" >> scary/not wanted",200,scary/not,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",638,216,100,24,0.332291667,0.2,0.052083333,0.022222222
+"// set focus otherwise it gives focus to ""clear"" >> scary/not wanted",200,wanted,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'comment']",744,216,70,20,0.3875,0.2,0.036458333,0.018518519
+multiSubmitButton,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",64,243,199,24,0.033333333,0.225,0.103645833,0.022222222
+requestFocusInWindow,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",263,243,234,24,0.136979167,0.225,0.121875,0.022222222
+resetSingleTextFields,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",65,297,261,24,0.033854167,0.275,0.1359375,0.022222222
+multipleGUIList,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",64,324,180,24,0.033333333,0.3,0.09375,0.022222222
+clearSelection,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",244,324,168,24,0.127083333,0.3,0.0875,0.022222222
+multipleResources,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'name']",64,351,188,24,0.033333333,0.325,0.097916667,0.022222222
+=,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'operator']",259,351,16,13,0.134895833,0.325,0.008333333,0.012037037
+loadNotesFile,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",282,351,173,24,0.146875,0.325,0.090104167,0.022222222
+updateMultiList,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",65,378,196,24,0.033854167,0.35,0.102083333,0.022222222
+enableUserActions,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",64,405,197,24,0.033333333,0.375,0.102604167,0.022222222
+TRUE,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",270,405,48,19,0.140625,0.375,0.025,0.017592593

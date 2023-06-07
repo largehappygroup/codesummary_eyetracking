@@ -1,0 +1,35 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+public,0,,"['function', 'type', 'specifier']",22,135,69,24,0.011458333,0.125,0.0359375,0.022222222
+void,0,,"['function', 'type', 'name']",96,135,48,20,0.05,0.125,0.025,0.018518519
+connectionErrorOccurred,0,,"['function', 'name']",151,135,262,24,0.078645833,0.125,0.136458333,0.022222222
+ConnectionEvent,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",421,135,166,20,0.219270833,0.125,0.086458333,0.018518519
+event,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",594,135,58,19,0.309375,0.125,0.030208333,0.017592593
+logger,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",66,162,71,24,0.034375,0.15,0.036979167,0.022222222
+warn,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",137,162,48,24,0.071354167,0.15,0.025,0.022222222
+"""Received Connection Error event from a conection in pool """,100,"""Received","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",206,162,100,20,0.107291667,0.15,0.052083333,0.018518519
+"""Received Connection Error event from a conection in pool """,100,Connection,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",313,162,112,20,0.163020833,0.15,0.058333333,0.018518519
+"""Received Connection Error event from a conection in pool """,100,Error,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",432,162,58,19,0.225,0.15,0.030208333,0.017592593
+"""Received Connection Error event from a conection in pool """,100,event,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",496,162,58,19,0.258333333,0.15,0.030208333,0.017592593
+"""Received Connection Error event from a conection in pool """,100,from,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",561,162,49,20,0.2921875,0.15,0.025520833,0.018518519
+"""Received Connection Error event from a conection in pool """,100,a,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",615,162,16,17,0.3203125,0.15,0.008333333,0.015740741
+"""Received Connection Error event from a conection in pool """,100,conection,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",637,162,102,20,0.331770833,0.15,0.053125,0.018518519
+"""Received Connection Error event from a conection in pool """,100,in,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",745,162,26,20,0.388020833,0.15,0.013541667,0.018518519
+"""Received Connection Error event from a conection in pool """,100,pool,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",778,162,47,24,0.405208333,0.15,0.024479167,0.022222222
+"""Received Connection Error event from a conection in pool """,100,"""","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",833,162,13,13,0.433854167,0.15,0.006770833,0.012037037
++,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'operator']",853,162,16,16,0.444270833,0.15,0.008333333,0.014814815
+info,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",874,162,52,24,0.455208333,0.15,0.027083333,0.022222222
+getName,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",926,162,90,24,0.482291667,0.15,0.046875,0.022222222
+if,0,,"['function', 'block', 'block_content', 'if_stmt', 'if']",64,216,27,20,0.033333333,0.2,0.0140625,0.018518519
+info,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'call', 'name', 'name']",118,216,47,24,0.061458333,0.2,0.024479167,0.022222222
+isRemoveOnExceptions,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'call', 'name', 'name']",165,216,236,24,0.0859375,0.2,0.122916667,0.022222222
+checkIn,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",108,243,89,24,0.05625,0.225,0.046354167,0.022222222
+event,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",205,243,65,24,0.106770833,0.225,0.033854167,0.022222222
+getSource,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",270,243,117,24,0.140625,0.225,0.0609375,0.022222222
+TRUE,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",410,243,48,19,0.213541667,0.225,0.025,0.017592593
+logger,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",109,270,71,24,0.056770833,0.25,0.036979167,0.022222222
+warn,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",180,270,48,24,0.09375,0.25,0.025,0.022222222
+"""removeOnExceptions == TRUE closed connection""",101,"""removeOnExceptions","['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'literal']",249,270,209,24,0.1296875,0.25,0.108854167,0.022222222
+"""removeOnExceptions == TRUE closed connection""",101,==,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'literal']",464,270,27,13,0.241666667,0.25,0.0140625,0.012037037
+"""removeOnExceptions == TRUE closed connection""",101,TRUE,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'literal']",497,270,55,22,0.258854167,0.25,0.028645833,0.02037037
+"""removeOnExceptions == TRUE closed connection""",101,closed,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'literal']",561,270,69,20,0.2921875,0.25,0.0359375,0.018518519
+"""removeOnExceptions == TRUE closed connection""",101,"connection""","['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'literal']",637,270,122,20,0.331770833,0.25,0.063541667,0.018518519

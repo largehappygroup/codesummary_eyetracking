@@ -1,0 +1,51 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+private,0,,"['function', 'type', 'specifier']",22,135,80,24,0.011458333,0.125,0.041666667,0.022222222
+int,0,,"['function', 'type', 'name']",108,135,36,20,0.05625,0.125,0.01875,0.018518519
+handleHalt,0,,"['function', 'name']",151,135,132,24,0.078645833,0.125,0.06875,0.022222222
+//need to test that this is the root process,200,//need,"['function', 'comment']",64,162,70,20,0.033333333,0.15,0.036458333,0.018518519
+//need to test that this is the root process,200,to,"['function', 'comment']",140,162,27,19,0.072916667,0.15,0.0140625,0.017592593
+//need to test that this is the root process,200,test,"['function', 'comment']",173,162,47,19,0.090104167,0.15,0.024479167,0.017592593
+//need to test that this is the root process,200,that,"['function', 'comment']",227,162,47,20,0.118229167,0.15,0.024479167,0.018518519
+//need to test that this is the root process,200,this,"['function', 'comment']",281,162,47,20,0.146354167,0.15,0.024479167,0.018518519
+//need to test that this is the root process,200,is,"['function', 'comment']",334,162,26,20,0.173958333,0.15,0.013541667,0.018518519
+//need to test that this is the root process,200,the,"['function', 'comment']",367,162,37,20,0.191145833,0.15,0.019270833,0.018518519
+//need to test that this is the root process,200,root,"['function', 'comment']",411,162,46,19,0.2140625,0.15,0.023958333,0.017592593
+//need to test that this is the root process,200,process,"['function', 'comment']",465,162,79,21,0.2421875,0.15,0.041145833,0.019444444
+if,0,,"['function', 'block', 'block_content', 'if_stmt', 'if']",64,189,35,24,0.033333333,0.175,0.018229167,0.022222222
+processID,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name']",108,189,102,23,0.05625,0.175,0.053125,0.021296296
+==,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'operator']",215,189,27,13,0.111979167,0.175,0.0140625,0.012037037
+0,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'literal']",248,189,16,19,0.129166667,0.175,0.008333333,0.017592593
+Machine,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",108,216,96,24,0.05625,0.2,0.05,0.022222222
+halt,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",204,216,55,24,0.10625,0.2,0.028645833,0.022222222
+else,0,,"['function', 'block', 'block_content', 'if_stmt', 'else']",86,243,59,24,0.044791667,0.225,0.030729167,0.022222222
+"//System err println ""non-root process trying to call halt"" );",201,//System,"['function', 'block', 'block_content', 'if_stmt', 'comment']",108,270,92,24,0.05625,0.25,0.047916667,0.022222222
+"//System err println ""non-root process trying to call halt"" );",201,err,"['function', 'block', 'block_content', 'if_stmt', 'comment']",200,270,34,24,0.104166667,0.25,0.017708333,0.022222222
+"//System err println ""non-root process trying to call halt"" );",201,println,"['function', 'block', 'block_content', 'if_stmt', 'comment']",234,270,80,24,0.121875,0.25,0.041666667,0.022222222
+"//System err println ""non-root process trying to call halt"" );",201,"""non-root","['function', 'block', 'block_content', 'if_stmt', 'comment']",346,270,100,20,0.180208333,0.25,0.052083333,0.018518519
+"//System err println ""non-root process trying to call halt"" );",201,process,"['function', 'block', 'block_content', 'if_stmt', 'comment']",454,270,79,21,0.236458333,0.25,0.041145833,0.019444444
+"//System err println ""non-root process trying to call halt"" );",201,trying,"['function', 'block', 'block_content', 'if_stmt', 'comment']",540,270,69,24,0.28125,0.25,0.0359375,0.022222222
+"//System err println ""non-root process trying to call halt"" );",201,to,"['function', 'block', 'block_content', 'if_stmt', 'comment']",616,270,26,19,0.320833333,0.25,0.013541667,0.017592593
+"//System err println ""non-root process trying to call halt"" );",201,call,"['function', 'block', 'block_content', 'if_stmt', 'comment']",648,270,48,20,0.3375,0.25,0.025,0.018518519
+"//System err println ""non-root process trying to call halt"" );",201,"halt"" );","['function', 'block', 'block_content', 'if_stmt', 'comment']",702,270,57,20,0.365625,0.25,0.0296875,0.018518519
+return,0,,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'return']",109,297,68,19,0.056770833,0.275,0.035416667,0.017592593
+1,0,,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'return', 'expr', 'literal']",185,297,33,22,0.096354167,0.275,0.0171875,0.02037037
+//This is not the root process so ignore this one,202,//This,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'return', 'expr', 'comment']",226,297,70,20,0.117708333,0.275,0.036458333,0.018518519
+//This is not the root process so ignore this one,202,is,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'return', 'expr', 'comment']",302,297,26,20,0.157291667,0.275,0.013541667,0.018518519
+//This is not the root process so ignore this one,202,not,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'return', 'expr', 'comment']",335,297,36,19,0.174479167,0.275,0.01875,0.017592593
+//This is not the root process so ignore this one,202,the,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'return', 'expr', 'comment']",378,297,37,20,0.196875,0.275,0.019270833,0.018518519
+//This is not the root process so ignore this one,202,root,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'return', 'expr', 'comment']",422,297,46,19,0.219791667,0.275,0.023958333,0.017592593
+//This is not the root process so ignore this one,202,process,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'return', 'expr', 'comment']",475,297,80,21,0.247395833,0.275,0.041666667,0.019444444
+//This is not the root process so ignore this one,202,so,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'return', 'expr', 'comment']",562,297,26,17,0.292708333,0.275,0.013541667,0.015740741
+//This is not the root process so ignore this one,202,ignore,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'return', 'expr', 'comment']",594,297,69,24,0.309375,0.275,0.0359375,0.022222222
+//This is not the root process so ignore this one,202,this,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'return', 'expr', 'comment']",670,297,47,20,0.348958333,0.275,0.024479167,0.018518519
+//This is not the root process so ignore this one,202,one,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'return', 'expr', 'comment']",723,297,38,17,0.3765625,0.275,0.019791667,0.015740741
+Lib,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",65,351,34,24,0.033854167,0.325,0.017708333,0.022222222
+assertNotReached,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",99,351,183,24,0.0515625,0.325,0.0953125,0.022222222
+"""Machine halt did not halt machine!""",100,"""Machine","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'literal']",303,351,101,24,0.1578125,0.325,0.052604167,0.022222222
+"""Machine halt did not halt machine!""",100,halt,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'literal']",404,351,50,24,0.210416667,0.325,0.026041667,0.022222222
+"""Machine halt did not halt machine!""",100,did,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'literal']",475,351,37,20,0.247395833,0.325,0.019270833,0.018518519
+"""Machine halt did not halt machine!""",100,not,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'literal']",519,351,35,19,0.2703125,0.325,0.018229167,0.017592593
+"""Machine halt did not halt machine!""",100,halt,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'literal']",562,351,46,20,0.292708333,0.325,0.023958333,0.018518519
+"""Machine halt did not halt machine!""",100,"machine!""","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'literal']",615,351,101,20,0.3203125,0.325,0.052604167,0.018518519
+return,1,,"['function', 'block', 'block_content', 'return']",65,379,69,19,0.033854167,0.350925926,0.0359375,0.017592593
+0,1,,"['function', 'block', 'block_content', 'return', 'expr', 'literal']",140,379,24,22,0.072916667,0.350925926,0.0125,0.02037037

@@ -1,0 +1,43 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+public,0,,"['function', 'type', 'specifier']",22,135,69,24,0.011458333,0.125,0.0359375,0.022222222
+void,0,,"['function', 'type', 'name']",96,135,48,20,0.05,0.125,0.025,0.018518519
+addPKColumn,0,,"['function', 'name']",151,135,132,24,0.078645833,0.125,0.06875,0.022222222
+String,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",291,135,69,24,0.1515625,0.125,0.0359375,0.022222222
+aPKColName,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",367,135,113,20,0.191145833,0.125,0.058854167,0.018518519
+throws,0,,"['function', 'throws']",508,135,68,20,0.264583333,0.125,0.035416667,0.018518519
+IllegalArgumentException,0,,"['function', 'throws', 'argument', 'expr', 'name']",583,135,264,24,0.303645833,0.125,0.1375,0.022222222
+Column,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name']",64,162,70,20,0.033333333,0.15,0.036458333,0.018518519
+col,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",140,162,37,20,0.072916667,0.15,0.019270833,0.018518519
+=,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",183,162,16,13,0.0953125,0.15,0.008333333,0.012037037
+Column,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'name']",226,162,70,20,0.117708333,0.15,0.036458333,0.018518519
+colMap,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",324,162,73,24,0.16875,0.15,0.038020833,0.022222222
+get,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",397,162,36,24,0.206770833,0.15,0.01875,0.022222222
+aPKColName,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",453,162,113,20,0.2359375,0.15,0.058854167,0.018518519
+if,0,,"['function', 'block', 'block_content', 'if_stmt', 'if']",64,216,27,20,0.033333333,0.2,0.0140625,0.018518519
+col,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name']",118,216,38,20,0.061458333,0.2,0.019791667,0.018518519
+==,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'operator']",161,216,27,13,0.083854167,0.2,0.0140625,0.012037037
+,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'literal']",194,216,48,20,0.101041667,0.2,0.025,0.018518519
+throw,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw']",108,243,59,20,0.05625,0.225,0.030729167,0.018518519
+new,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'operator']",173,243,37,17,0.090104167,0.225,0.019270833,0.015740741
+IllegalArgumentException,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'name']",216,243,263,24,0.1125,0.225,0.136979167,0.022222222
+"""The column |""",100,"""The","['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",508,243,47,20,0.264583333,0.225,0.024479167,0.018518519
+"""The column |""",100,column,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",561,243,69,20,0.2921875,0.225,0.0359375,0.018518519
+"""The column |""",100,"|""","['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",640,243,22,24,0.333333333,0.225,0.011458333,0.022222222
++,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'operator']",669,243,16,16,0.3484375,0.225,0.008333333,0.014814815
+aPKColName,2,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",691,243,113,20,0.359895833,0.225,0.058854167,0.018518519
++,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'operator']",280,270,16,16,0.145833333,0.25,0.008333333,0.014814815
+"""| does not belong to the table |""",101,"""|","['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",303,270,22,24,0.1578125,0.25,0.011458333,0.022222222
+"""| does not belong to the table |""",101,does,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",334,270,48,20,0.173958333,0.25,0.025,0.018518519
+"""| does not belong to the table |""",101,not,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",389,270,36,19,0.202604167,0.25,0.01875,0.017592593
+"""| does not belong to the table |""",101,belong,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",432,270,69,24,0.225,0.25,0.0359375,0.022222222
+"""| does not belong to the table |""",101,to,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",508,270,26,19,0.264583333,0.25,0.013541667,0.017592593
+"""| does not belong to the table |""",101,the,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",540,270,37,20,0.28125,0.25,0.019270833,0.018518519
+"""| does not belong to the table |""",101,table,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",583,270,59,20,0.303645833,0.25,0.030729167,0.018518519
+"""| does not belong to the table |""",101,"|""","['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",651,270,22,24,0.3390625,0.25,0.011458333,0.022222222
++,2,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'operator']",680,270,16,16,0.354166667,0.25,0.008333333,0.014814815
+name,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",702,270,48,17,0.365625,0.25,0.025,0.015740741
++,3,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'operator']",755,270,16,16,0.393229167,0.25,0.008333333,0.014814815
+"""|""",0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",779,270,34,24,0.405729167,0.25,0.017708333,0.022222222
+pkColumns,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",65,324,106,24,0.033854167,0.3,0.055208333,0.022222222
+add,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",171,324,35,24,0.0890625,0.3,0.018229167,0.022222222
+col,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",226,324,38,20,0.117708333,0.3,0.019791667,0.018518519

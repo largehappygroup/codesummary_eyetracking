@@ -1,0 +1,31 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+private,0,,"['function', 'type', 'specifier']",22,135,80,24,0.011458333,0.125,0.041666667,0.022222222
+void,0,,"['function', 'type', 'name']",107,135,48,20,0.055729167,0.125,0.025,0.018518519
+addRelativeHeaders,0,,"['function', 'name']",162,135,207,24,0.084375,0.125,0.1078125,0.022222222
+Response,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",378,135,91,23,0.196875,0.125,0.047395833,0.021296296
+response,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",476,135,97,21,0.247916667,0.125,0.050520833,0.019444444
+int,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",583,135,36,20,0.303645833,0.125,0.01875,0.018518519
+timeInSeconds,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",627,135,144,20,0.3265625,0.125,0.075,0.018518519
+response,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",65,162,92,24,0.033854167,0.15,0.047916667,0.022222222
+setHeader,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",157,162,104,24,0.081770833,0.15,0.054166667,0.022222222
+CACHE_CONTROL_HEADER,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",280,162,228,22,0.145833333,0.15,0.11875,0.02037037
+String,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",518,162,71,24,0.269791667,0.15,0.036979167,0.022222222
+format,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",589,162,71,24,0.306770833,0.15,0.036979167,0.022222222
+"""max-age=%d""",0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",681,162,141,24,0.3546875,0.15,0.0734375,0.022222222
+timeInSeconds,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",832,162,144,20,0.433333333,0.15,0.075,0.018518519
+Calendar,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name']",64,189,91,20,0.033333333,0.175,0.047395833,0.018518519
+expires,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",162,189,80,24,0.084375,0.175,0.041666667,0.022222222
+=,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",248,189,16,13,0.129166667,0.175,0.008333333,0.012037037
+Calendar,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",269,189,100,24,0.140104167,0.175,0.052083333,0.022222222
+getInstance,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",369,189,138,24,0.1921875,0.175,0.071875,0.022222222
+expires,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",64,216,85,24,0.033333333,0.2,0.044270833,0.022222222
+add,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",149,216,36,24,0.077604167,0.2,0.01875,0.022222222
+Calendar,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",205,216,93,23,0.106770833,0.2,0.0484375,0.021296296
+SECOND,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",298,216,70,23,0.155208333,0.2,0.036458333,0.021296296
+timeInSeconds,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",389,216,144,20,0.202604167,0.2,0.075,0.018518519
+response,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",65,243,92,24,0.033854167,0.225,0.047916667,0.022222222
+setHeader,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",157,243,104,24,0.081770833,0.225,0.054166667,0.022222222
+"""Expires""",0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",282,243,108,24,0.146875,0.225,0.05625,0.022222222
+DATE_FORMAT,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",399,243,127,24,0.2078125,0.225,0.066145833,0.022222222
+format,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",526,243,69,24,0.273958333,0.225,0.0359375,0.022222222
+expires,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",615,243,80,24,0.3203125,0.225,0.041666667,0.022222222

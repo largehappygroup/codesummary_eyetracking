@@ -1,0 +1,36 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+private,0,,"['function', 'type', 'specifier']",22,135,80,24,0.011458333,0.125,0.041666667,0.022222222
+void,0,,"['function', 'type', 'name']",107,135,48,20,0.055729167,0.125,0.025,0.018518519
+setUpMrj,0,,"['function', 'name']",162,135,111,24,0.084375,0.125,0.0578125,0.022222222
+Belvedere4,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'name', 'name']",65,162,110,24,0.033854167,0.15,0.057291667,0.022222222
+mrjVersion,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'name', 'name']",175,162,110,24,0.091145833,0.15,0.057291667,0.022222222
+=,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'operator']",302,162,16,13,0.157291667,0.15,0.008333333,0.012037037
+System,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",323,162,70,24,0.168229167,0.15,0.036458333,0.022222222
+getProperty,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",393,162,128,24,0.2046875,0.15,0.066666667,0.022222222
+"""mrj.version""",0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",541,162,142,24,0.281770833,0.15,0.073958333,0.022222222
+if,0,,"['function', 'block', 'block_content', 'if_stmt', 'if']",64,216,27,20,0.033333333,0.2,0.0140625,0.018518519
+Belvedere4,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name', 'name']",119,216,110,24,0.061979167,0.2,0.057291667,0.022222222
+mrjVersion,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name', 'name']",229,216,110,24,0.119270833,0.2,0.057291667,0.022222222
+==,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'operator']",356,216,27,13,0.185416667,0.2,0.0140625,0.012037037
+,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'literal']",389,216,48,20,0.202604167,0.2,0.025,0.018518519
+return;,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'return']",465,216,77,22,0.2421875,0.2,0.040104167,0.02037037
+try,0,,"['function', 'block', 'block_content', 'try']",65,243,37,23,0.033854167,0.225,0.019270833,0.021296296
+Belvedere4,2,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'name', 'name']",108,270,110,24,0.05625,0.25,0.057291667,0.022222222
+mrjMajorVersion,0,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'name', 'name']",218,270,164,24,0.113541667,0.25,0.085416667,0.022222222
+=,1,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'operator']",399,270,16,13,0.2078125,0.25,0.008333333,0.012037037
+Double,0,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",421,270,71,24,0.219270833,0.25,0.036979167,0.022222222
+valueOf,0,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",492,270,82,24,0.25625,0.25,0.042708333,0.022222222
+Belvedere4,3,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",594,270,112,24,0.309375,0.25,0.058333333,0.022222222
+mrjVersion,2,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",706,270,112,24,0.367708333,0.25,0.058333333,0.022222222
+substring,0,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",818,270,101,24,0.426041667,0.25,0.052604167,0.022222222
+0,0,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",950,270,23,22,0.494791667,0.25,0.011979167,0.02037037
+3,0,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",983,270,15,19,0.511979167,0.25,0.0078125,0.017592593
+)),0,,[],23,297,26,24,0.011979167,0.275,0.013541667,0.022222222
+doubleValue,0,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",49,297,145,24,0.025520833,0.275,0.075520833,0.022222222
+catch,0,,"['function', 'block', 'block_content', 'try', 'catch']",86,324,58,20,0.044791667,0.3,0.030208333,0.018518519
+Exception,0,,"['function', 'block', 'block_content', 'try', 'catch', 'parameter_list', 'parameter', 'decl', 'type', 'name']",173,324,101,24,0.090104167,0.3,0.052604167,0.022222222
+e,0,,"['function', 'block', 'block_content', 'try', 'catch', 'parameter_list', 'parameter', 'decl', 'name']",280,324,16,17,0.145833333,0.3,0.008333333,0.015740741
+Belvedere4,4,,"['function', 'block', 'block_content', 'try', 'catch', 'block', 'block_content', 'expr_stmt', 'expr', 'name', 'name']",108,351,110,24,0.05625,0.325,0.057291667,0.022222222
+mrjMajorVersion,1,,"['function', 'block', 'block_content', 'try', 'catch', 'block', 'block_content', 'expr_stmt', 'expr', 'name', 'name']",218,351,164,24,0.113541667,0.325,0.085416667,0.022222222
+=,2,,"['function', 'block', 'block_content', 'try', 'catch', 'block', 'block_content', 'expr_stmt', 'expr', 'operator']",399,351,16,13,0.2078125,0.325,0.008333333,0.012037037
+0,1,,"['function', 'block', 'block_content', 'try', 'catch', 'block', 'block_content', 'expr_stmt', 'expr', 'literal']",421,351,23,22,0.219270833,0.325,0.011979167,0.02037037

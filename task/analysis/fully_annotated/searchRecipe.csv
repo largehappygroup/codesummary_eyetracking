@@ -1,0 +1,42 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+private,0,,"['function', 'type', 'specifier']",22,135,80,24,0.011458333,0.125,0.041666667,0.022222222
+Recipe,0,,"['function', 'type', 'name']",108,135,69,24,0.05625,0.125,0.0359375,0.022222222
+searchRecipe,0,,"['function', 'name']",184,135,134,24,0.095833333,0.125,0.069791667,0.022222222
+Recipe,1,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",345,135,70,24,0.1796875,0.125,0.036458333,0.022222222
+re,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",422,135,25,17,0.219791667,0.125,0.013020833,0.015740741
+Recipe,2,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name']",65,162,69,24,0.033854167,0.15,0.0359375,0.022222222
+recipe,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",141,162,77,24,0.0734375,0.15,0.040104167,0.022222222
+for,0,,"['function', 'block', 'block_content', 'for']",64,216,37,20,0.033333333,0.2,0.019270833,0.018518519
+IngredientAmount,0,,"['function', 'block', 'block_content', 'for', 'control', 'init', 'decl', 'type', 'name']",130,216,176,24,0.067708333,0.2,0.091666667,0.022222222
+iam,0,,"['function', 'block', 'block_content', 'for', 'control', 'init', 'decl', 'name']",313,216,37,20,0.163020833,0.2,0.019270833,0.018518519
+:,0,,"['function', 'block', 'block_content', 'for', 'control', 'init', 'decl', 'range']",359,216,9,17,0.186979167,0.2,0.0046875,0.015740741
+re,1,,"['function', 'block', 'block_content', 'for', 'control', 'init', 'decl', 'range', 'expr', 'call', 'name', 'name']",379,216,24,24,0.197395833,0.2,0.0125,0.022222222
+getIngredients,0,,"['function', 'block', 'block_content', 'for', 'control', 'init', 'decl', 'range', 'expr', 'call', 'name', 'name']",403,216,170,24,0.209895833,0.2,0.088541667,0.022222222
+if,0,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if']",108,243,26,20,0.05625,0.225,0.013541667,0.018518519
+iam,1,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'call', 'name', 'name']",162,243,39,24,0.084375,0.225,0.0203125,0.022222222
+getFood,0,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'call', 'name', 'name']",201,243,91,24,0.1046875,0.225,0.047395833,0.022222222
+instanceof,0,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'operator']",313,243,113,20,0.163020833,0.225,0.058854167,0.018518519
+Recipe,3,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name']",432,243,69,24,0.225,0.225,0.0359375,0.022222222
+if,1,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'if']",151,270,26,20,0.078645833,0.25,0.013541667,0.018518519
+Recipe,4,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name']",216,270,69,24,0.1125,0.25,0.0359375,0.022222222
+iam,2,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'call', 'name', 'name']",293,270,51,24,0.152604167,0.25,0.0265625,0.022222222
+getFood,1,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'call', 'name', 'name']",344,270,89,24,0.179166667,0.25,0.046354167,0.022222222
+==,0,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'operator']",453,270,27,13,0.2359375,0.25,0.0140625,0.012037037
+m_ActiveRecipe,0,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name']",485,270,157,24,0.252604167,0.25,0.081770833,0.022222222
+return,0,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'return']",195,298,68,19,0.1015625,0.275925926,0.035416667,0.017592593
+re,2,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'return', 'expr', 'name']",271,298,33,20,0.141145833,0.275925926,0.0171875,0.018518519
+else,0,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'else']",172,324,49,20,0.089583333,0.3,0.025520833,0.018518519
+recipe,1,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'expr_stmt', 'expr', 'name']",195,351,69,24,0.1015625,0.325,0.0359375,0.022222222
+=,0,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'expr_stmt', 'expr', 'operator']",269,351,16,13,0.140104167,0.325,0.008333333,0.012037037
+searchRecipe,1,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",292,351,134,24,0.152083333,0.325,0.069791667,0.022222222
+Recipe,5,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",464,351,70,24,0.241666667,0.325,0.036458333,0.022222222
+iam,3,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",561,351,45,24,0.2921875,0.325,0.0234375,0.022222222
+getFood,2,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",606,351,104,24,0.315625,0.325,0.054166667,0.022222222
+if,2,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'if_stmt', 'if']",194,405,27,20,0.101041667,0.375,0.0140625,0.018518519
+recipe,2,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name']",249,405,69,24,0.1296875,0.375,0.0359375,0.022222222
+!=,0,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'operator']",327,405,23,19,0.1703125,0.375,0.011979167,0.017592593
+,0,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'literal']",356,405,48,20,0.185416667,0.375,0.025,0.018518519
+return,1,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'return']",238,432,68,19,0.123958333,0.4,0.035416667,0.017592593
+recipe,3,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'return', 'expr', 'name']",314,432,76,24,0.163541667,0.4,0.039583333,0.022222222
+return,2,,"['function', 'block', 'block_content', 'return']",65,567,69,19,0.033854167,0.525,0.0359375,0.017592593
+,1,,"['function', 'block', 'block_content', 'return', 'expr', 'literal']",140,567,56,23,0.072916667,0.525,0.029166667,0.021296296

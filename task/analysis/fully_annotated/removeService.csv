@@ -1,0 +1,29 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+public,0,,"['function', 'type', 'specifier']",22,135,69,24,0.011458333,0.125,0.0359375,0.022222222
+void,0,,"['function', 'type', 'name']",96,135,48,20,0.05,0.125,0.025,0.018518519
+removeService,0,,"['function', 'name']",152,135,153,24,0.079166667,0.125,0.0796875,0.022222222
+String,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",313,135,69,24,0.163020833,0.125,0.0359375,0.022222222
+type,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",389,135,48,23,0.202604167,0.125,0.025,0.021296296
+CService,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name']",64,162,92,20,0.033333333,0.15,0.047916667,0.018518519
+service,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",162,162,80,20,0.084375,0.15,0.041666667,0.018518519
+=,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",248,162,16,13,0.129166667,0.15,0.008333333,0.012037037
+CService,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'name']",291,162,92,20,0.1515625,0.15,0.047916667,0.018518519
+services,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",411,162,95,24,0.2140625,0.15,0.049479167,0.022222222
+get,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",506,162,36,24,0.263541667,0.15,0.01875,0.022222222
+type,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",562,162,47,23,0.292708333,0.15,0.024479167,0.021296296
+if,0,,"['function', 'block', 'block_content', 'if_stmt', 'if']",64,216,27,20,0.033333333,0.2,0.0140625,0.018518519
+service,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name']",119,216,80,20,0.061979167,0.2,0.041666667,0.018518519
+!=,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'operator']",208,216,23,19,0.108333333,0.2,0.011979167,0.017592593
+,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'literal']",238,216,47,20,0.123958333,0.2,0.024479167,0.018518519
+service,2,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",108,243,88,24,0.05625,0.225,0.045833333,0.022222222
+unsetContext,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",196,243,150,24,0.102083333,0.225,0.078125,0.022222222
+services,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",108,270,93,24,0.05625,0.25,0.0484375,0.022222222
+remove,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",201,270,70,24,0.1046875,0.25,0.036458333,0.022222222
+type,2,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",292,270,47,23,0.152083333,0.25,0.024479167,0.021296296
+fireServiceChanged,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",108,297,207,24,0.05625,0.275,0.1078125,0.022222222
+new,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'operator']",324,297,38,17,0.16875,0.275,0.019791667,0.015740741
+CServiceEvent,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name']",367,297,154,24,0.191145833,0.275,0.080208333,0.022222222
+this,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",529,297,55,23,0.275520833,0.275,0.028645833,0.021296296
+service,3,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",594,297,87,23,0.309375,0.275,0.0453125,0.021296296
+CServiceEvent,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",691,297,144,20,0.359895833,0.275,0.075,0.018518519
+REMOVED,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",835,297,77,20,0.434895833,0.275,0.040104167,0.018518519

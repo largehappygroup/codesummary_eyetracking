@@ -1,0 +1,56 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+public,0,,"['function', 'type', 'specifier']",22,135,69,24,0.011458333,0.125,0.0359375,0.022222222
+void,0,,"['function', 'type', 'name']",96,135,48,20,0.05,0.125,0.025,0.018518519
+deleteCascade,0,,"['function', 'name']",151,135,154,24,0.078645833,0.125,0.080208333,0.022222222
+VyhladavaciAlgoritmus,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",312,135,232,24,0.1625,0.125,0.120833333,0.022222222
+algorithm,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",550,135,103,24,0.286458333,0.125,0.053645833,0.022222222
+//searcheds,0,,"['function', 'block', 'block_content', 'comment']",64,162,124,20,0.033333333,0.15,0.064583333,0.018518519
+getHibernateTemplate,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",64,189,247,24,0.033333333,0.175,0.128645833,0.022222222
+bulkUpdate,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",311,189,112,24,0.161979167,0.175,0.058333333,0.022222222
+"""DELETE Searched WHERE algorithm = ?""",100,"""DELETE","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",109,216,79,20,0.056770833,0.2,0.041145833,0.018518519
+"""DELETE Searched WHERE algorithm = ?""",100,Searched,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",194,216,91,20,0.101041667,0.2,0.047395833,0.018518519
+"""DELETE Searched WHERE algorithm = ?""",100,WHERE,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",290,216,60,19,0.151041667,0.2,0.03125,0.017592593
+"""DELETE Searched WHERE algorithm = ?""",100,algorithm,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",356,216,102,24,0.185416667,0.2,0.053125,0.022222222
+"""DELETE Searched WHERE algorithm = ?""",100,=,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",464,216,16,13,0.241666667,0.2,0.008333333,0.012037037
+"""DELETE Searched WHERE algorithm = ?""",100,"?""","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",486,216,33,23,0.253125,0.2,0.0171875,0.021296296
+new,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'operator']",389,243,37,17,0.202604167,0.225,0.019270833,0.015740741
+Object,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",431,243,89,24,0.224479167,0.225,0.046354167,0.022222222
+algorithm,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'block', 'expr', 'name']",550,243,103,24,0.286458333,0.225,0.053645833,0.022222222
+//plans,0,,"['function', 'block', 'block_content', 'comment']",64,270,80,24,0.033333333,0.25,0.041666667,0.022222222
+getHibernateTemplate,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",64,297,247,24,0.033333333,0.275,0.128645833,0.022222222
+bulkUpdate,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",311,297,112,24,0.161979167,0.275,0.058333333,0.022222222
+"""DELETE SearchPlan WHERE algorithm = ?""",101,"""DELETE","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",109,324,79,20,0.056770833,0.3,0.041145833,0.018518519
+"""DELETE SearchPlan WHERE algorithm = ?""",101,SearchPlan,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",194,324,112,20,0.101041667,0.3,0.058333333,0.018518519
+"""DELETE SearchPlan WHERE algorithm = ?""",101,WHERE,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",312,324,60,19,0.1625,0.3,0.03125,0.017592593
+"""DELETE SearchPlan WHERE algorithm = ?""",101,algorithm,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",378,324,102,24,0.196875,0.3,0.053125,0.022222222
+"""DELETE SearchPlan WHERE algorithm = ?""",101,=,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",485,324,16,13,0.252604167,0.3,0.008333333,0.012037037
+"""DELETE SearchPlan WHERE algorithm = ?""",101,"?""","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",507,324,34,23,0.2640625,0.3,0.017708333,0.021296296
+new,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'operator']",335,351,37,17,0.174479167,0.325,0.019270833,0.015740741
+Object,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",377,351,89,24,0.196354167,0.325,0.046354167,0.022222222
+algorithm,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'block', 'expr', 'name']",496,351,103,24,0.258333333,0.325,0.053645833,0.022222222
+//prefs,0,,"['function', 'block', 'block_content', 'comment']",64,378,80,24,0.033333333,0.35,0.041666667,0.022222222
+getHibernateTemplate,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",64,405,247,24,0.033333333,0.375,0.128645833,0.022222222
+bulkUpdate,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",311,405,112,24,0.161979167,0.375,0.058333333,0.022222222
+"""DELETE SearchPrefs WHERE algorithm = ?""",102,"""DELETE","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",109,432,79,20,0.056770833,0.4,0.041145833,0.018518519
+"""DELETE SearchPrefs WHERE algorithm = ?""",102,SearchPrefs,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",194,432,123,20,0.101041667,0.4,0.0640625,0.018518519
+"""DELETE SearchPrefs WHERE algorithm = ?""",102,WHERE,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",323,432,60,19,0.168229167,0.4,0.03125,0.017592593
+"""DELETE SearchPrefs WHERE algorithm = ?""",102,algorithm,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",388,432,103,24,0.202083333,0.4,0.053645833,0.022222222
+"""DELETE SearchPrefs WHERE algorithm = ?""",102,=,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",496,432,16,13,0.258333333,0.4,0.008333333,0.012037037
+"""DELETE SearchPrefs WHERE algorithm = ?""",102,"?""","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",518,432,34,23,0.269791667,0.4,0.017708333,0.021296296
+new,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'operator']",346,459,37,17,0.180208333,0.425,0.019270833,0.015740741
+Object,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",388,459,89,24,0.202083333,0.425,0.046354167,0.022222222
+algorithm,3,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'block', 'expr', 'name']",507,459,103,24,0.2640625,0.425,0.053645833,0.022222222
+//categories,0,,"['function', 'block', 'block_content', 'comment']",64,486,134,24,0.033333333,0.45,0.069791667,0.022222222
+getHibernateTemplate,3,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",64,513,247,24,0.033333333,0.475,0.128645833,0.022222222
+bulkUpdate,3,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",311,513,112,24,0.161979167,0.475,0.058333333,0.022222222
+"""DELETE SearchCategory WHERE algorithm = ?""",103,"""DELETE","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",109,540,79,20,0.056770833,0.5,0.041145833,0.018518519
+"""DELETE SearchCategory WHERE algorithm = ?""",103,SearchCategory,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",194,540,156,24,0.101041667,0.5,0.08125,0.022222222
+"""DELETE SearchCategory WHERE algorithm = ?""",103,WHERE,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",355,540,60,19,0.184895833,0.5,0.03125,0.017592593
+"""DELETE SearchCategory WHERE algorithm = ?""",103,algorithm,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",421,540,102,24,0.219270833,0.5,0.053125,0.022222222
+"""DELETE SearchCategory WHERE algorithm = ?""",103,=,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",529,540,16,13,0.275520833,0.5,0.008333333,0.012037037
+"""DELETE SearchCategory WHERE algorithm = ?""",103,"?""","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",550,540,34,23,0.286458333,0.5,0.017708333,0.021296296
+new,3,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'operator']",410,567,38,17,0.213541667,0.525,0.019791667,0.015740741
+Object,3,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",453,567,89,24,0.2359375,0.525,0.046354167,0.022222222
+algorithm,4,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'block', 'expr', 'name']",572,567,102,24,0.297916667,0.525,0.053125,0.022222222
+delete,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",64,594,79,24,0.033333333,0.55,0.041145833,0.022222222
+algorithm,5,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",151,594,102,24,0.078645833,0.55,0.053125,0.022222222

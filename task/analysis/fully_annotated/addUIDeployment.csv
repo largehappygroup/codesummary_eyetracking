@@ -1,0 +1,34 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+public,0,,"['function', 'type', 'specifier']",22,135,69,24,0.011458333,0.125,0.0359375,0.022222222
+void,0,,"['function', 'type', 'name']",96,135,48,20,0.05,0.125,0.025,0.018518519
+addUIDeployment,0,,"['function', 'name']",151,135,175,24,0.078645833,0.125,0.091145833,0.022222222
+SandUIDeployment,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",334,135,177,24,0.173958333,0.125,0.0921875,0.022222222
+uidep,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",519,135,58,24,0.2703125,0.125,0.030208333,0.022222222
+SandUIDeployment,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name', 'name']",64,162,197,24,0.033333333,0.15,0.102604167,0.022222222
+olduis,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",270,162,69,20,0.140625,0.15,0.0359375,0.018518519
+=,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",345,162,16,13,0.1796875,0.15,0.008333333,0.012037037
+getSandUIDeployments,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name']",367,162,250,24,0.191145833,0.15,0.130208333,0.022222222
+SandUIDeployment,2,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name', 'name']",64,189,197,24,0.033333333,0.175,0.102604167,0.022222222
+newuis,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",270,189,69,20,0.140625,0.175,0.0359375,0.018518519
+=,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",345,189,16,13,0.1796875,0.175,0.008333333,0.012037037
+new,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'operator']",367,189,38,17,0.191145833,0.175,0.019791667,0.015740741
+SandUIDeployment,3,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'name', 'name']",410,189,187,24,0.213541667,0.175,0.097395833,0.022222222
+olduis,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'name', 'index', 'expr', 'name', 'name']",604,189,78,20,0.314583333,0.175,0.040625,0.018518519
+length,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'name', 'index', 'expr', 'name', 'name']",681,189,68,24,0.3546875,0.175,0.035416667,0.022222222
++,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'name', 'index', 'expr', 'operator']",755,189,16,16,0.393229167,0.175,0.008333333,0.014814815
+1,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'name', 'index', 'expr', 'literal']",777,189,16,19,0.4046875,0.175,0.008333333,0.017592593
+System,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",64,216,70,24,0.033333333,0.2,0.036458333,0.022222222
+arraycopy,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",134,216,105,24,0.069791667,0.2,0.0546875,0.022222222
+olduis,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",259,216,77,23,0.134895833,0.2,0.040104167,0.021296296
+0,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",345,216,23,22,0.1796875,0.2,0.011979167,0.02037037
+newuis,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",378,216,76,23,0.196875,0.2,0.039583333,0.021296296
+0,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",464,216,23,22,0.241666667,0.2,0.011979167,0.02037037
+olduis,3,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",496,216,78,20,0.258333333,0.2,0.040625,0.018518519
+length,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",573,216,68,24,0.2984375,0.2,0.035416667,0.022222222
+newuis,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'name', 'name']",65,243,79,24,0.033854167,0.225,0.041145833,0.022222222
+olduis,4,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'name', 'index', 'expr', 'name', 'name']",151,243,77,20,0.078645833,0.225,0.040104167,0.018518519
+length,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'name', 'index', 'expr', 'name', 'name']",259,243,31,24,0.134895833,0.225,0.016145833,0.022222222
+=,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'operator']",323,243,16,13,0.168229167,0.225,0.008333333,0.012037037
+uidep,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'name']",346,243,66,24,0.180208333,0.225,0.034375,0.022222222
+setSandUIDeployments,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",65,270,229,24,0.033854167,0.25,0.119270833,0.022222222
+newuis,3,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",302,270,69,20,0.157291667,0.25,0.0359375,0.018518519

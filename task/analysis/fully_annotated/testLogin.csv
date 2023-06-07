@@ -1,0 +1,38 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+public,0,,"['function', 'type', 'specifier']",22,135,69,24,0.011458333,0.125,0.0359375,0.022222222
+void,0,,"['function', 'type', 'name']",96,135,48,20,0.05,0.125,0.025,0.018518519
+testLogin,0,,"['function', 'name']",151,135,122,24,0.078645833,0.125,0.063541667,0.022222222
+SessionManager,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name']",64,162,156,24,0.033333333,0.15,0.08125,0.022222222
+manager,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",226,162,80,21,0.117708333,0.15,0.041666667,0.019444444
+=,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",313,162,16,13,0.163020833,0.15,0.008333333,0.012037037
+new,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'operator']",335,162,37,17,0.174479167,0.15,0.019270833,0.015740741
+SimpleSessionManager,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name']",377,162,251,24,0.196354167,0.15,0.130729167,0.022222222
+String,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name']",64,189,70,24,0.033333333,0.175,0.036458333,0.022222222
+sessionId,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",141,189,101,20,0.0734375,0.175,0.052604167,0.018518519
+=,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",248,189,16,13,0.129166667,0.175,0.008333333,0.012037037
+manager,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",269,189,80,24,0.140104167,0.175,0.041666667,0.022222222
+createSession,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",349,189,149,24,0.181770833,0.175,0.077604167,0.022222222
+,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",519,189,54,23,0.2703125,0.175,0.028125,0.021296296
+,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",583,189,48,20,0.303645833,0.175,0.025,0.018518519
+Session,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name']",64,216,80,20,0.033333333,0.2,0.041666667,0.018518519
+session,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",152,216,79,20,0.079166667,0.2,0.041145833,0.018518519
+=,2,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",237,216,16,13,0.1234375,0.2,0.008333333,0.012037037
+manager,2,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",259,216,81,24,0.134895833,0.2,0.0421875,0.022222222
+getSession,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",340,216,116,24,0.177083333,0.2,0.060416667,0.022222222
+sessionId,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",476,216,100,20,0.247916667,0.2,0.052083333,0.018518519
+manager,3,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",64,243,77,21,0.033333333,0.225,0.040104167,0.019444444
+login,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",152,243,66,24,0.079166667,0.225,0.034375,0.022222222
+session,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",227,243,87,23,0.118229167,0.225,0.0453125,0.021296296
+"""user""",0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",325,243,75,23,0.169270833,0.225,0.0390625,0.021296296
+"""password""",0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",411,243,110,24,0.2140625,0.225,0.057291667,0.022222222
+assertEquals,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",64,297,143,24,0.033333333,0.275,0.074479167,0.022222222
+"""user""",1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",217,297,75,23,0.113020833,0.275,0.0390625,0.021296296
+session,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",303,297,85,24,0.1578125,0.275,0.044270833,0.022222222
+getUserId,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",388,297,110,24,0.202083333,0.275,0.057291667,0.022222222
+assertEquals,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",64,324,143,24,0.033333333,0.3,0.074479167,0.022222222
+"""password""",1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",217,324,119,24,0.113020833,0.3,0.061979167,0.022222222
+session,3,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",346,324,83,24,0.180208333,0.3,0.043229167,0.022222222
+getUserPassword,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",429,324,177,24,0.2234375,0.3,0.0921875,0.022222222
+assertTrue,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",64,351,122,24,0.033333333,0.325,0.063541667,0.022222222
+session,4,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",195,351,85,24,0.1015625,0.325,0.044270833,0.022222222
+isLoggedIn,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",280,351,121,24,0.145833333,0.325,0.063020833,0.022222222

@@ -1,0 +1,48 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+public,0,,"['function', 'type', 'specifier']",22,135,69,24,0.011458333,0.125,0.0359375,0.022222222
+IRodinDBStatus,0,,"['function', 'type', 'name']",97,135,155,20,0.050520833,0.125,0.080729167,0.018518519
+getRodinDBStatus,0,,"['function', 'name']",259,135,197,24,0.134895833,0.125,0.102604167,0.022222222
+IStatus,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name']",65,162,79,19,0.033854167,0.15,0.041145833,0.017592593
+status,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",152,162,68,19,0.079166667,0.15,0.035416667,0.017592593
+=,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",226,162,16,13,0.117708333,0.15,0.008333333,0.012037037
+this,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",248,162,53,24,0.129166667,0.15,0.027604167,0.022222222
+getStatus,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",301,162,120,24,0.156770833,0.15,0.0625,0.022222222
+if,0,,"['function', 'block', 'block_content', 'if_stmt', 'if']",64,216,27,20,0.033333333,0.2,0.0140625,0.018518519
+status,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name']",98,216,90,24,0.051041667,0.2,0.046875,0.022222222
+instanceof,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'operator']",194,216,113,20,0.101041667,0.2,0.058854167,0.018518519
+IRodinDBStatus,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name']",313,216,176,24,0.163020833,0.2,0.091666667,0.022222222
+return,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'return']",109,243,68,19,0.056770833,0.225,0.035416667,0.017592593
+IRodinDBStatus,2,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'return', 'expr', 'name']",185,243,196,24,0.096354167,0.225,0.102083333,0.022222222
+status,2,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'return', 'expr', 'name']",389,243,77,22,0.202604167,0.225,0.040104167,0.02037037
+else,0,,"['function', 'block', 'block_content', 'if_stmt', 'else']",86,270,48,20,0.044791667,0.25,0.025,0.018518519
+// A regular IStatus is created only in the case of a CoreException,200,//,"['function', 'block', 'block_content', 'if_stmt', 'comment']",108,297,26,20,0.05625,0.275,0.013541667,0.018518519
+// A regular IStatus is created only in the case of a CoreException,200,A,"['function', 'block', 'block_content', 'if_stmt', 'comment']",139,297,18,19,0.072395833,0.275,0.009375,0.017592593
+// A regular IStatus is created only in the case of a CoreException,200,regular,"['function', 'block', 'block_content', 'if_stmt', 'comment']",163,297,79,24,0.084895833,0.275,0.041145833,0.022222222
+// A regular IStatus is created only in the case of a CoreException,200,IStatus,"['function', 'block', 'block_content', 'if_stmt', 'comment']",248,297,80,19,0.129166667,0.275,0.041666667,0.017592593
+// A regular IStatus is created only in the case of a CoreException,200,is,"['function', 'block', 'block_content', 'if_stmt', 'comment']",334,297,26,20,0.173958333,0.275,0.013541667,0.018518519
+// A regular IStatus is created only in the case of a CoreException,200,created,"['function', 'block', 'block_content', 'if_stmt', 'comment']",367,297,80,20,0.191145833,0.275,0.041666667,0.018518519
+// A regular IStatus is created only in the case of a CoreException,200,only,"['function', 'block', 'block_content', 'if_stmt', 'comment']",453,297,49,24,0.2359375,0.275,0.025520833,0.022222222
+// A regular IStatus is created only in the case of a CoreException,200,in,"['function', 'block', 'block_content', 'if_stmt', 'comment']",507,297,26,20,0.2640625,0.275,0.013541667,0.018518519
+// A regular IStatus is created only in the case of a CoreException,200,the,"['function', 'block', 'block_content', 'if_stmt', 'comment']",540,297,37,20,0.28125,0.275,0.019270833,0.018518519
+// A regular IStatus is created only in the case of a CoreException,200,case,"['function', 'block', 'block_content', 'if_stmt', 'comment']",583,297,48,17,0.303645833,0.275,0.025,0.015740741
+// A regular IStatus is created only in the case of a CoreException,200,of,"['function', 'block', 'block_content', 'if_stmt', 'comment']",637,297,26,20,0.331770833,0.275,0.013541667,0.018518519
+// A regular IStatus is created only in the case of a CoreException,200,a,"['function', 'block', 'block_content', 'if_stmt', 'comment']",669,297,16,17,0.3484375,0.275,0.008333333,0.015740741
+// A regular IStatus is created only in the case of a CoreException,200,CoreException,"['function', 'block', 'block_content', 'if_stmt', 'comment']",691,297,153,24,0.359895833,0.275,0.0796875,0.022222222
+// See bug 13492 Should handle RodinDBExceptions that contains,201,//,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'comment']",108,324,26,20,0.05625,0.3,0.013541667,0.018518519
+// See bug 13492 Should handle RodinDBExceptions that contains,201,See,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'comment']",140,324,37,19,0.072916667,0.3,0.019270833,0.017592593
+// See bug 13492 Should handle RodinDBExceptions that contains,201,bug,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'comment']",184,324,36,24,0.095833333,0.3,0.01875,0.022222222
+// See bug 13492 Should handle RodinDBExceptions that contains,201,13492,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'comment']",227,324,58,19,0.118229167,0.3,0.030208333,0.017592593
+// See bug 13492 Should handle RodinDBExceptions that contains,201,Should,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'comment']",291,324,69,20,0.1515625,0.3,0.0359375,0.018518519
+// See bug 13492 Should handle RodinDBExceptions that contains,201,handle,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'comment']",367,324,70,20,0.191145833,0.3,0.036458333,0.018518519
+// See bug 13492 Should handle RodinDBExceptions that contains,201,RodinDBExceptions,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'comment']",443,324,187,24,0.230729167,0.3,0.097395833,0.022222222
+// See bug 13492 Should handle RodinDBExceptions that contains,201,that,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'comment']",637,324,47,20,0.331770833,0.3,0.024479167,0.018518519
+// See bug 13492 Should handle RodinDBExceptions that contains,201,contains,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'comment']",691,324,91,20,0.359895833,0.3,0.047395833,0.018518519
+// CoreException more gracefully,202,//,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'comment']",108,351,26,20,0.05625,0.325,0.013541667,0.018518519
+// CoreException more gracefully,202,CoreException,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'comment']",140,351,145,24,0.072916667,0.325,0.075520833,0.022222222
+// CoreException more gracefully,202,more,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'comment']",291,351,48,17,0.1515625,0.325,0.025,0.015740741
+// CoreException more gracefully,202,gracefully,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'comment']",345,351,113,24,0.1796875,0.325,0.058854167,0.022222222
+return,1,,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'return']",109,378,68,19,0.056770833,0.35,0.035416667,0.017592593
+new,0,,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'return', 'expr', 'operator']",184,378,37,17,0.095833333,0.35,0.019270833,0.015740741
+RodinDBStatus,0,,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'return', 'expr', 'call', 'name']",227,378,153,24,0.118229167,0.35,0.0796875,0.022222222
+this,1,,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'return', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",389,378,44,24,0.202604167,0.35,0.022916667,0.022222222
+nestedCoreException,0,,"['function', 'block', 'block_content', 'if_stmt', 'else', 'block', 'block_content', 'return', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",433,378,208,24,0.225520833,0.35,0.108333333,0.022222222

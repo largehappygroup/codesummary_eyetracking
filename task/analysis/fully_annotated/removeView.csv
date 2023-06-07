@@ -1,0 +1,59 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+public,0,,"['function', 'type', 'specifier']",22,135,69,24,0.011458333,0.125,0.0359375,0.022222222
+void,0,,"['function', 'type', 'name']",96,135,48,20,0.05,0.125,0.025,0.018518519
+removeView,0,,"['function', 'name']",152,135,120,24,0.079166667,0.125,0.0625,0.022222222
+StateViewSmall,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",280,135,157,20,0.145833333,0.125,0.081770833,0.018518519
+view,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",442,135,49,20,0.230208333,0.125,0.025520833,0.018518519
+view,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",64,162,47,24,0.033333333,0.15,0.024479167,0.022222222
+setVisible,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",111,162,117,24,0.0578125,0.15,0.0609375,0.022222222
+FALSE,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",248,162,59,20,0.129166667,0.15,0.030729167,0.018518519
+// remove from scenario,200,//,"['function', 'block', 'block_content', 'comment']",64,189,27,20,0.033333333,0.175,0.0140625,0.018518519
+// remove from scenario,200,remove,"['function', 'block', 'block_content', 'comment']",98,189,69,17,0.051041667,0.175,0.0359375,0.015740741
+// remove from scenario,200,from,"['function', 'block', 'block_content', 'comment']",172,189,49,20,0.089583333,0.175,0.025520833,0.018518519
+// remove from scenario,200,scenario,"['function', 'block', 'block_content', 'comment']",227,189,91,20,0.118229167,0.175,0.047395833,0.018518519
+int,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name']",64,216,37,20,0.033333333,0.2,0.019270833,0.018518519
+removedPosition,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",109,216,165,20,0.056770833,0.2,0.0859375,0.018518519
+=,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",280,216,16,13,0.145833333,0.2,0.008333333,0.012037037
+indexOfView,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name']",302,216,132,24,0.157291667,0.2,0.06875,0.022222222
+view,2,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",442,216,49,20,0.230208333,0.2,0.025520833,0.018518519
+mScenarioPanel,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",64,243,161,24,0.033333333,0.225,0.083854167,0.022222222
+remove,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",225,243,69,24,0.1171875,0.225,0.0359375,0.022222222
+removedPosition,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",314,243,165,20,0.163541667,0.225,0.0859375,0.018518519
+// take care of the big ( detailed ) view,201,//,"['function', 'block', 'block_content', 'comment']",64,270,27,20,0.033333333,0.25,0.0140625,0.018518519
+// take care of the big ( detailed ) view,201,take,"['function', 'block', 'block_content', 'comment']",97,270,48,20,0.050520833,0.25,0.025,0.018518519
+// take care of the big ( detailed ) view,201,care,"['function', 'block', 'block_content', 'comment']",151,270,48,17,0.078645833,0.25,0.025,0.015740741
+// take care of the big ( detailed ) view,201,of,"['function', 'block', 'block_content', 'comment']",205,270,26,20,0.106770833,0.25,0.013541667,0.018518519
+// take care of the big ( detailed ) view,201,the,"['function', 'block', 'block_content', 'comment']",238,270,37,20,0.123958333,0.25,0.019270833,0.018518519
+// take care of the big ( detailed ) view,201,big,"['function', 'block', 'block_content', 'comment']",281,270,36,24,0.146354167,0.25,0.01875,0.022222222
+// take care of the big ( detailed ) view,201,( detailed ),"['function', 'block', 'block_content', 'comment']",345,270,91,20,0.1796875,0.25,0.047395833,0.018518519
+// take care of the big ( detailed ) view,201,view,"['function', 'block', 'block_content', 'comment']",464,270,49,20,0.241666667,0.25,0.025520833,0.018518519
+if,0,,"['function', 'block', 'block_content', 'if_stmt', 'if']",64,324,27,20,0.033333333,0.3,0.0140625,0.018518519
+mCurrentSmallView,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name']",118,324,190,20,0.061458333,0.3,0.098958333,0.018518519
+!=,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'operator']",316,324,23,19,0.164583333,0.3,0.011979167,0.017592593
+,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'literal']",346,324,47,20,0.180208333,0.3,0.024479167,0.018518519
+&&,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'operator']",398,324,29,19,0.207291667,0.3,0.015104167,0.017592593
+mCurrentSmallView,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'call', 'name', 'name']",431,324,193,24,0.224479167,0.3,0.100520833,0.022222222
+equals,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'call', 'name', 'name']",624,324,68,24,0.325,0.3,0.035416667,0.022222222
+view,3,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",712,324,49,20,0.370833333,0.3,0.025520833,0.018518519
+mCurrentBigView,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",107,351,170,24,0.055729167,0.325,0.088541667,0.022222222
+setVisible,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",277,351,113,24,0.144270833,0.325,0.058854167,0.022222222
+FALSE,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",410,351,59,20,0.213541667,0.325,0.030729167,0.018518519
+mCurrentBigView,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'name']",107,378,168,24,0.055729167,0.35,0.0875,0.022222222
+=,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'operator']",280,378,16,13,0.145833333,0.35,0.008333333,0.012037037
+,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'literal']",302,378,56,23,0.157291667,0.35,0.029166667,0.021296296
+mCurrentSmallView,2,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'name']",107,405,190,20,0.055729167,0.375,0.098958333,0.018518519
+=,2,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'operator']",302,405,16,13,0.157291667,0.375,0.008333333,0.012037037
+,2,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'literal']",324,405,56,23,0.16875,0.375,0.029166667,0.021296296
+// compute the new number of pixels per scenario position,202,//,"['function', 'block', 'block_content', 'comment']",64,459,27,20,0.033333333,0.425,0.0140625,0.018518519
+// compute the new number of pixels per scenario position,202,compute,"['function', 'block', 'block_content', 'comment']",97,459,80,23,0.050520833,0.425,0.041666667,0.021296296
+// compute the new number of pixels per scenario position,202,the,"['function', 'block', 'block_content', 'comment']",184,459,37,20,0.095833333,0.425,0.019270833,0.018518519
+// compute the new number of pixels per scenario position,202,new,"['function', 'block', 'block_content', 'comment']",227,459,37,17,0.118229167,0.425,0.019270833,0.015740741
+// compute the new number of pixels per scenario position,202,number,"['function', 'block', 'block_content', 'comment']",270,459,69,20,0.140625,0.425,0.0359375,0.018518519
+// compute the new number of pixels per scenario position,202,of,"['function', 'block', 'block_content', 'comment']",345,459,27,20,0.1796875,0.425,0.0140625,0.018518519
+// compute the new number of pixels per scenario position,202,pixels,"['function', 'block', 'block_content', 'comment']",378,459,69,24,0.196875,0.425,0.0359375,0.022222222
+// compute the new number of pixels per scenario position,202,per,"['function', 'block', 'block_content', 'comment']",454,459,36,21,0.236458333,0.425,0.01875,0.019444444
+// compute the new number of pixels per scenario position,202,scenario,"['function', 'block', 'block_content', 'comment']",497,459,91,20,0.258854167,0.425,0.047395833,0.018518519
+// compute the new number of pixels per scenario position,202,position,"['function', 'block', 'block_content', 'comment']",594,459,90,24,0.309375,0.425,0.046875,0.022222222
+mTimeBar,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",64,486,94,24,0.033333333,0.45,0.048958333,0.022222222
+scaleNumberOfPixelsPerPosition,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",158,486,351,24,0.082291667,0.45,0.1828125,0.022222222
+refresh,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",65,513,109,24,0.033854167,0.475,0.056770833,0.022222222

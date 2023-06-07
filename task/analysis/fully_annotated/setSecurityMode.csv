@@ -1,0 +1,33 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+public,0,,"['function', 'type', 'specifier']",22,135,69,24,0.011458333,0.125,0.0359375,0.022222222
+int,0,,"['function', 'type', 'name']",97,135,36,20,0.050520833,0.125,0.01875,0.018518519
+setSecurityMode,0,,"['function', 'name']",141,135,166,24,0.0734375,0.125,0.086458333,0.022222222
+int,1,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",334,135,37,20,0.173958333,0.125,0.019270833,0.018518519
+level,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",379,135,65,23,0.197395833,0.125,0.033854167,0.021296296
+String,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",453,135,69,24,0.2359375,0.125,0.0359375,0.022222222
+authToken,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",529,135,101,20,0.275520833,0.125,0.052604167,0.018518519
+throws,0,,"['function', 'throws']",659,135,69,20,0.343229167,0.125,0.0359375,0.018518519
+RemoteException,0,,"['function', 'throws', 'argument', 'expr', 'name']",734,135,167,24,0.382291667,0.125,0.086979167,0.022222222
+if,0,,"['function', 'block', 'block_content', 'if_stmt', 'if']",64,162,27,20,0.033333333,0.15,0.0140625,0.018518519
+this,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'call', 'name', 'name']",122,162,56,24,0.063541667,0.15,0.029166667,0.022222222
+authToken,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'call', 'name', 'name']",178,162,101,24,0.092708333,0.15,0.052604167,0.022222222
+equals,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'call', 'name', 'name']",279,162,67,24,0.1453125,0.15,0.034895833,0.022222222
+authToken,2,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",378,162,101,20,0.196875,0.15,0.052604167,0.018518519
+throw,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw']",108,189,59,20,0.05625,0.175,0.030729167,0.018518519
+new,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'operator']",173,189,37,17,0.090104167,0.175,0.019270833,0.015740741
+RemoteException,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'name']",216,189,175,24,0.1125,0.175,0.091145833,0.022222222
+"""Invalid Login Token""",100,"""Invalid","['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",400,189,90,20,0.208333333,0.175,0.046875,0.018518519
+"""Invalid Login Token""",100,Login,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",497,189,58,24,0.258854167,0.175,0.030208333,0.022222222
+"""Invalid Login Token""",100,"Token""","['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'throw', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",561,189,68,20,0.2921875,0.175,0.035416667,0.018518519
+ServerSettingBean,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",64,243,191,24,0.033333333,0.225,0.099479167,0.022222222
+setSecureMode,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",255,243,146,24,0.1328125,0.225,0.076041667,0.022222222
+"""""",0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",422,243,24,13,0.219791667,0.225,0.0125,0.012037037
++,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'operator']",453,243,16,16,0.2359375,0.225,0.008333333,0.014814815
+level,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",476,243,58,20,0.247916667,0.225,0.030208333,0.018518519
+serverSettingBean,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",65,270,201,24,0.033854167,0.25,0.1046875,0.022222222
+updateSettings,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",266,270,166,24,0.138541667,0.25,0.086458333,0.022222222
+securityMode,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'name']",65,297,134,24,0.033854167,0.275,0.069791667,0.022222222
+=,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'operator']",205,297,16,13,0.106770833,0.275,0.008333333,0.012037037
+level,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'name']",228,297,65,23,0.11875,0.275,0.033854167,0.021296296
+return,0,,"['function', 'block', 'block_content', 'return']",65,324,69,19,0.033854167,0.3,0.0359375,0.017592593
+securityMode,1,,"['function', 'block', 'block_content', 'return', 'expr', 'name']",141,324,141,24,0.0734375,0.3,0.0734375,0.022222222

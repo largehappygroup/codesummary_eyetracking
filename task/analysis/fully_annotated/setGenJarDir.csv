@@ -1,0 +1,34 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+public,0,,"['function', 'type', 'specifier']",22,135,69,24,0.011458333,0.125,0.0359375,0.022222222
+void,0,,"['function', 'type', 'name']",96,135,48,20,0.05,0.125,0.025,0.018518519
+setGenJarDir,0,,"['function', 'name']",151,135,143,24,0.078645833,0.125,0.074479167,0.022222222
+File,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",302,135,48,20,0.157291667,0.125,0.025,0.018518519
+genJarDir,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",356,135,99,24,0.185416667,0.125,0.0515625,0.022222222
+SandProject,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",455,135,121,24,0.236979167,0.125,0.063020833,0.022222222
+proj,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",594,135,46,24,0.309375,0.125,0.023958333,0.022222222
+proj,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",65,162,45,24,0.033854167,0.15,0.0234375,0.022222222
+getAntProject,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",111,162,172,24,0.0578125,0.15,0.089583333,0.022222222
+setProperty,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",284,162,140,24,0.147916667,0.15,0.072916667,0.022222222
+"""genJarDir""",0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",433,162,129,24,0.225520833,0.15,0.0671875,0.022222222
+genJarDir,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",572,162,110,24,0.297916667,0.15,0.057291667,0.022222222
+toString,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'call', 'name', 'name']",682,162,97,24,0.355208333,0.15,0.050520833,0.022222222
+SandProject,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name', 'name']",64,189,143,24,0.033333333,0.175,0.074479167,0.022222222
+downstream,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",216,189,113,20,0.1125,0.175,0.058854167,0.018518519
+=,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",334,189,16,13,0.173958333,0.175,0.008333333,0.012037037
+proj,2,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",356,189,51,24,0.185416667,0.175,0.0265625,0.022222222
+getRequiredBy,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",407,189,165,24,0.211979167,0.175,0.0859375,0.022222222
+for,0,,"['function', 'block', 'block_content', 'for']",64,243,46,24,0.033333333,0.225,0.023958333,0.022222222
+int,0,,"['function', 'block', 'block_content', 'for', 'control', 'init', 'decl', 'type', 'name']",118,243,37,20,0.061458333,0.225,0.019270833,0.018518519
+i,0,,"['function', 'block', 'block_content', 'for', 'control', 'init', 'decl', 'name']",162,243,15,23,0.084375,0.225,0.0234375,0.021296296
+=,1,,"['function', 'block', 'block_content', 'for', 'control', 'init', 'decl', 'init']",177,243,15,23,0.0921875,0.225,0.0078125,0.021296296
+0,0,,"['function', 'block', 'block_content', 'for', 'control', 'init', 'decl', 'init', 'expr', 'literal']",192,243,15,23,0.0921875,0.225,0.0078125,0.021296296
+i,1,,"['function', 'block', 'block_content', 'for', 'control', 'condition', 'expr', 'name']",216,243,16,20,0.1125,0.225,0.008333333,0.018518519
+<,0,,"['function', 'block', 'block_content', 'for', 'control', 'condition', 'expr', 'operator']",237,243,16,16,0.1234375,0.225,0.008333333,0.014814815
+downstream,1,,"['function', 'block', 'block_content', 'for', 'control', 'condition', 'expr', 'name', 'name']",259,243,120,20,0.134895833,0.225,0.0625,0.018518519
+length,0,,"['function', 'block', 'block_content', 'for', 'control', 'condition', 'expr', 'name', 'name']",379,243,76,24,0.197395833,0.225,0.039583333,0.022222222
+i,2,,"['function', 'block', 'block_content', 'for', 'control', 'incr', 'expr', 'name']",464,243,37,20,0.241666667,0.225,0.019270833,0.018518519
+setGenJarDir,1,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",108,270,143,24,0.05625,0.25,0.074479167,0.022222222
+genJarDir,2,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",259,270,109,24,0.134895833,0.25,0.056770833,0.022222222
+downstream,2,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",378,270,122,24,0.196875,0.25,0.063541667,0.022222222
+i,3,,"['function', 'block', 'block_content', 'for', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'index', 'expr', 'name']",507,270,16,20,0.2640625,0.25,0.008333333,0.018518519
+],0,,[],530,270,33,24,0.276041667,0.25,0.0171875,0.022222222

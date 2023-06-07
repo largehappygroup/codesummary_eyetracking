@@ -1,0 +1,35 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+public,0,,"['function', 'type', 'specifier']",22,135,69,24,0.011458333,0.125,0.0359375,0.022222222
+void,0,,"['function', 'type', 'name']",96,135,48,20,0.05,0.125,0.025,0.018518519
+testValidateSeparationCount,0,,"['function', 'name']",151,135,316,24,0.078645833,0.125,0.164583333,0.022222222
+try,0,,"['function', 'block', 'block_content', 'try']",65,162,37,23,0.033854167,0.15,0.019270833,0.021296296
+LinearDimension,0,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",109,189,167,24,0.056770833,0.175,0.086979167,0.022222222
+validateSeparationCount,0,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",276,189,255,24,0.14375,0.175,0.1328125,0.022222222
+0,0,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",550,189,16,19,0.286458333,0.175,0.008333333,0.017592593
+fail,0,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",108,216,77,24,0.05625,0.2,0.040104167,0.022222222
+catch,0,,"['function', 'block', 'block_content', 'try', 'catch']",86,243,58,20,0.044791667,0.225,0.030208333,0.018518519
+IllegalArgumentException,0,,"['function', 'block', 'block_content', 'try', 'catch', 'parameter_list', 'parameter', 'decl', 'type', 'name']",173,243,263,24,0.090104167,0.225,0.136979167,0.022222222
+ex,0,,"['function', 'block', 'block_content', 'try', 'catch', 'parameter_list', 'parameter', 'decl', 'name']",442,243,27,17,0.230208333,0.225,0.0140625,0.015740741
+// ok,200,//,"['function', 'block', 'block_content', 'try', 'catch', 'block', 'block_content', 'comment']",108,270,26,20,0.05625,0.25,0.013541667,0.018518519
+// ok,200,//,"['function', 'block', 'block_content', 'try', 'catch', 'block', 'block_content', 'comment']",108,270,26,20,0.05625,0.25,0.013541667,0.018518519
+// ok,200,ok,"['function', 'block', 'block_content', 'try', 'catch', 'block', 'block_content', 'comment']",140,270,26,20,0.072916667,0.25,0.013541667,0.018518519
+// ok,200,ok,"['function', 'block', 'block_content', 'try', 'catch', 'block', 'block_content', 'comment']",140,270,26,20,0.072916667,0.25,0.013541667,0.018518519
+try,1,,"['function', 'block', 'block_content', 'try']",65,324,37,23,0.033854167,0.3,0.019270833,0.021296296
+LinearDimension,1,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",109,351,167,24,0.056770833,0.325,0.086979167,0.022222222
+validateSeparationCount,1,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",276,351,255,24,0.14375,0.325,0.1328125,0.022222222
+-,0,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'operator']",552,351,15,19,0.2875,0.325,0.0078125,0.017592593
+2,0,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",567,351,15,19,0.2953125,0.325,0.0078125,0.017592593
+fail,1,,"['function', 'block', 'block_content', 'try', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",108,378,77,24,0.05625,0.35,0.040104167,0.022222222
+catch,1,,"['function', 'block', 'block_content', 'try', 'catch']",86,405,58,20,0.044791667,0.375,0.030208333,0.018518519
+IllegalArgumentException,1,,"['function', 'block', 'block_content', 'try', 'catch', 'parameter_list', 'parameter', 'decl', 'type', 'name']",173,405,263,24,0.090104167,0.375,0.136979167,0.022222222
+ex,1,,"['function', 'block', 'block_content', 'try', 'catch', 'parameter_list', 'parameter', 'decl', 'name']",442,405,27,17,0.230208333,0.375,0.0140625,0.015740741
+// ok,201,//,"['function', 'block', 'block_content', 'try', 'catch', 'block', 'block_content', 'comment']",108,432,26,20,0.05625,0.4,0.013541667,0.018518519
+// ok,201,//,"['function', 'block', 'block_content', 'try', 'catch', 'block', 'block_content', 'comment']",108,432,26,20,0.05625,0.4,0.013541667,0.018518519
+// ok,201,ok,"['function', 'block', 'block_content', 'try', 'catch', 'block', 'block_content', 'comment']",140,432,26,20,0.072916667,0.4,0.013541667,0.018518519
+// ok,201,ok,"['function', 'block', 'block_content', 'try', 'catch', 'block', 'block_content', 'comment']",140,432,26,20,0.072916667,0.4,0.013541667,0.018518519
+LinearDimension,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",65,486,167,24,0.033854167,0.45,0.086979167,0.022222222
+validateSeparationCount,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",232,486,256,24,0.120833333,0.45,0.133333333,0.022222222
+1,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",507,486,16,19,0.2640625,0.45,0.008333333,0.017592593
+LinearDimension,3,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",65,513,167,24,0.033854167,0.475,0.086979167,0.022222222
+validateSeparationCount,3,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",232,513,256,24,0.120833333,0.475,0.133333333,0.022222222
+2988,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",507,513,48,19,0.2640625,0.475,0.025,0.017592593

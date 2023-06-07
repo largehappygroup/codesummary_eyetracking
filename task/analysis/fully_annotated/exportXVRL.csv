@@ -1,0 +1,37 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+public,0,,"['function', 'type', 'specifier']",22,135,69,24,0.011458333,0.125,0.0359375,0.022222222
+void,0,,"['function', 'type', 'name']",96,135,48,20,0.05,0.125,0.025,0.018518519
+exportXVRL,0,,"['function', 'name']",151,135,121,24,0.078645833,0.125,0.063020833,0.022222222
+XMLStreamWriter,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",280,135,167,20,0.145833333,0.125,0.086979167,0.018518519
+xvrLDoc,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",453,135,81,19,0.2359375,0.125,0.0421875,0.017592593
+throws,0,,"['function', 'throws']",562,135,68,20,0.292708333,0.125,0.035416667,0.018518519
+Exception,0,,"['function', 'throws', 'argument', 'expr', 'name']",637,135,113,24,0.331770833,0.125,0.058854167,0.022222222
+JAXBContext,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name']",65,162,122,19,0.033854167,0.15,0.063541667,0.017592593
+context,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",194,162,80,19,0.101041667,0.15,0.041666667,0.017592593
+=,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",280,162,16,13,0.145833333,0.15,0.008333333,0.012037037
+JAXBContext,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",302,162,125,24,0.157291667,0.15,0.065104167,0.022222222
+newInstance,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",427,162,125,24,0.222395833,0.15,0.065104167,0.022222222
+ValidationReport,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",571,162,177,24,0.297395833,0.15,0.0921875,0.022222222
+class,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",748,162,55,24,0.389583333,0.15,0.028645833,0.022222222
+Marshaller,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name']",64,189,113,20,0.033333333,0.175,0.058854167,0.018518519
+m,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",183,189,16,17,0.0953125,0.175,0.008333333,0.015740741
+=,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",205,189,16,13,0.106770833,0.175,0.008333333,0.012037037
+context,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",226,189,86,24,0.117708333,0.175,0.044791667,0.022222222
+createMarshaller,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name', 'name']",312,189,196,24,0.1625,0.175,0.102083333,0.022222222
+m,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",64,216,12,24,0.033333333,0.2,0.00625,0.022222222
+setProperty,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",76,216,130,24,0.039583333,0.2,0.067708333,0.022222222
+Marshaller,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",226,216,112,23,0.117708333,0.2,0.058333333,0.021296296
+JAXB_FORMATTED_OUTPUT,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",338,216,235,23,0.176041667,0.2,0.122395833,0.021296296
+TRUE,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",594,216,48,19,0.309375,0.2,0.025,0.017592593
+ValidationReport,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name']",63,243,178,24,0.0328125,0.225,0.092708333,0.022222222
+vReport,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",248,243,80,23,0.129166667,0.225,0.041666667,0.021296296
+=,2,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",334,243,16,13,0.173958333,0.225,0.008333333,0.012037037
+exportVReport,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'call', 'name']",356,243,175,24,0.185416667,0.225,0.091145833,0.022222222
+if,0,,"['function', 'block', 'block_content', 'if_stmt', 'if']",64,297,27,20,0.033333333,0.275,0.0140625,0.018518519
+vReport,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'name']",118,297,80,23,0.061458333,0.275,0.041666667,0.021296296
+!=,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'operator']",208,297,23,19,0.108333333,0.275,0.011979167,0.017592593
+,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'literal']",238,297,47,20,0.123958333,0.275,0.024479167,0.018518519
+m,2,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",313,297,12,24,0.163020833,0.275,0.00625,0.022222222
+marshal,0,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",325,297,86,24,0.169270833,0.275,0.044791667,0.022222222
+vReport,2,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",431,297,88,23,0.224479167,0.275,0.045833333,0.021296296
+xvrLDoc,1,,"['function', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",529,297,80,19,0.275520833,0.275,0.041666667,0.017592593

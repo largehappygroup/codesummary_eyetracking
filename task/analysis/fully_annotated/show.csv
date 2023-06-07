@@ -1,0 +1,36 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+public,0,,"['function', 'type', 'specifier']",22,135,69,24,0.011458333,0.125,0.0359375,0.022222222
+void,0,,"['function', 'type', 'name']",96,135,48,20,0.05,0.125,0.025,0.018518519
+show,0,,"['function', 'name']",151,135,56,24,0.078645833,0.125,0.029166667,0.022222222
+Contact,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",215,135,80,19,0.111979167,0.125,0.041666667,0.017592593
+contact,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",302,135,80,19,0.157291667,0.125,0.041666667,0.017592593
+logger,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",66,162,71,24,0.034375,0.15,0.036979167,0.022222222
+fine,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",137,162,48,24,0.071354167,0.15,0.025,0.022222222
+"""Showing edit contact dialog for contact: """,100,"""Showing","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",206,162,90,24,0.107291667,0.15,0.046875,0.022222222
+"""Showing edit contact dialog for contact: """,100,edit,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",302,162,47,20,0.157291667,0.15,0.024479167,0.018518519
+"""Showing edit contact dialog for contact: """,100,contact,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",356,162,80,19,0.185416667,0.15,0.041666667,0.017592593
+"""Showing edit contact dialog for contact: """,100,dialog,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",442,162,70,24,0.230208333,0.15,0.036458333,0.022222222
+"""Showing edit contact dialog for contact: """,100,for,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",518,162,37,20,0.269791667,0.15,0.019270833,0.018518519
+"""Showing edit contact dialog for contact: """,100,contact:,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",561,162,88,19,0.2921875,0.15,0.045833333,0.017592593
+"""Showing edit contact dialog for contact: """,100,"""","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",660,162,13,13,0.34375,0.15,0.006770833,0.012037037
++,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'operator']",680,162,16,16,0.354166667,0.15,0.008333333,0.014814815
+contact,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",702,162,79,19,0.365625,0.15,0.041145833,0.017592593
+this,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'name', 'name']",65,189,44,20,0.033854167,0.175,0.022916667,0.018518519
+contact,2,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'name', 'name']",109,189,78,20,0.056770833,0.175,0.040625,0.018518519
+=,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'operator']",205,189,16,13,0.106770833,0.175,0.008333333,0.012037037
+contact,3,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'name']",226,189,89,22,0.117708333,0.175,0.046354167,0.02037037
+init,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",64,216,78,24,0.033333333,0.2,0.040625,0.022222222
+setLocationRelativeTo,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",65,243,240,24,0.033854167,0.225,0.125,0.022222222
+Context,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",313,243,77,20,0.163020833,0.225,0.040104167,0.018518519
+mainFrame,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",390,243,100,20,0.203125,0.225,0.052083333,0.018518519
+optionPane,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",64,270,115,24,0.033333333,0.25,0.059895833,0.022222222
+setValue,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",179,270,92,24,0.093229167,0.25,0.047916667,0.022222222
+JOptionPane,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",292,270,120,24,0.152083333,0.25,0.0625,0.022222222
+UNINITIALIZED_VALUE,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name', 'name']",412,270,208,24,0.214583333,0.25,0.108333333,0.022222222
+panel,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",65,297,58,24,0.033854167,0.275,0.030208333,0.022222222
+setContact,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",123,297,116,24,0.0640625,0.275,0.060416667,0.022222222
+contact,4,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",259,297,79,19,0.134895833,0.275,0.041145833,0.017592593
+panel,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",65,324,62,24,0.033854167,0.3,0.032291667,0.022222222
+prepareForShow,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",127,324,175,24,0.066145833,0.3,0.091145833,0.022222222
+setVisible,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name']",65,351,121,24,0.033854167,0.325,0.063020833,0.022222222
+TRUE,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",194,351,48,19,0.101041667,0.325,0.025,0.017592593

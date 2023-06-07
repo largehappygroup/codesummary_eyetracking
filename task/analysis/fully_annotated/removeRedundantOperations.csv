@@ -1,0 +1,36 @@
+word,occurrence,original,tree_parts,x,y,width,height,tobii_x,tobii_y,tobii_width,tobii_height
+private,0,,"['function', 'type', 'specifier']",22,135,80,24,0.011458333,0.125,0.041666667,0.022222222
+void,0,,"['function', 'type', 'name']",107,135,48,20,0.055729167,0.125,0.025,0.018518519
+removeRedundantOperations,0,,"['function', 'name']",163,135,282,24,0.084895833,0.125,0.146875,0.022222222
+OBEXElement,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name']",453,135,123,20,0.2359375,0.125,0.0640625,0.018518519
+file,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",583,135,55,23,0.303645833,0.125,0.028645833,0.021296296
+List,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name', 'name']",649,135,58,20,0.338020833,0.125,0.030208333,0.018518519
+OBEXElement,1,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name', 'argument_list', 'argument', 'name']",712,135,123,20,0.370833333,0.125,0.0640625,0.018518519
+>,0,,"['function', 'parameter_list', 'parameter', 'decl', 'type', 'name', 'argument_list']",842,135,16,16,0.438541667,0.125,0.008333333,0.014814815
+filesToRemove,0,,"['function', 'parameter_list', 'parameter', 'decl', 'name']",864,135,145,20,0.45,0.125,0.075520833,0.018518519
+OBEXElement,2,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'type', 'name']",64,162,123,20,0.033333333,0.15,0.0640625,0.018518519
+parentFolder,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'name']",194,162,134,24,0.101041667,0.15,0.069791667,0.022222222
+=,0,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init']",334,162,16,13,0.173958333,0.15,0.008333333,0.012037037
+file,1,,"['function', 'block', 'block_content', 'decl_stmt', 'decl', 'init', 'expr', 'name']",356,162,56,23,0.185416667,0.15,0.029166667,0.021296296
+log,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",66,189,36,24,0.034375,0.175,0.01875,0.022222222
+debug,0,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",102,189,61,24,0.053125,0.175,0.031770833,0.022222222
+"""Removing redundant operations""",100,"""Removing","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",184,189,101,24,0.095833333,0.175,0.052604167,0.022222222
+"""Removing redundant operations""",100,redundant,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",292,189,100,20,0.152083333,0.175,0.052083333,0.018518519
+"""Removing redundant operations""",100,"operations""","['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'literal']",399,189,122,24,0.2078125,0.175,0.063541667,0.022222222
+while,0,,"['function', 'block', 'block_content', 'while']",63,243,60,20,0.0328125,0.225,0.03125,0.018518519
+parentFolder,1,,"['function', 'block', 'block_content', 'while', 'condition', 'expr', 'name']",162,243,134,24,0.084375,0.225,0.069791667,0.022222222
+=,1,,"['function', 'block', 'block_content', 'while', 'condition', 'expr', 'operator']",302,243,16,13,0.157291667,0.225,0.008333333,0.012037037
+parentFolder,2,,"['function', 'block', 'block_content', 'while', 'condition', 'expr', 'call', 'name', 'name']",324,243,143,24,0.16875,0.225,0.074479167,0.022222222
+getParent,0,,"['function', 'block', 'block_content', 'while', 'condition', 'expr', 'call', 'name', 'name']",467,243,107,24,0.243229167,0.225,0.055729167,0.022222222
+!=,0,,"['function', 'block', 'block_content', 'while', 'condition', 'expr', 'operator']",618,243,24,19,0.321875,0.225,0.0125,0.017592593
+,0,,"['function', 'block', 'block_content', 'while', 'condition', 'expr', 'literal']",648,243,48,20,0.3375,0.225,0.025,0.018518519
+if,0,,"['function', 'block', 'block_content', 'while', 'block', 'block_content', 'if_stmt', 'if']",108,270,26,20,0.05625,0.25,0.013541667,0.018518519
+filesToRemove,1,,"['function', 'block', 'block_content', 'while', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'call', 'name', 'name']",162,270,148,24,0.084375,0.25,0.077083333,0.022222222
+contains,0,,"['function', 'block', 'block_content', 'while', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'call', 'name', 'name']",310,270,91,24,0.161458333,0.25,0.047395833,0.022222222
+parentFolder,3,,"['function', 'block', 'block_content', 'while', 'block', 'block_content', 'if_stmt', 'if', 'condition', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",421,270,134,24,0.219270833,0.25,0.069791667,0.022222222
+filesToRemove,2,,"['function', 'block', 'block_content', 'while', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",151,297,160,24,0.078645833,0.275,0.083333333,0.022222222
+remove,0,,"['function', 'block', 'block_content', 'while', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'name', 'name']",311,297,69,24,0.161979167,0.275,0.0359375,0.022222222
+file,2,,"['function', 'block', 'block_content', 'while', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'call', 'argument_list', 'argument', 'expr', 'name']",388,297,49,20,0.202083333,0.275,0.025520833,0.018518519
+file,3,,"['function', 'block', 'block_content', 'while', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'name']",151,324,48,20,0.078645833,0.3,0.025,0.018518519
+=,2,,"['function', 'block', 'block_content', 'while', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'operator']",205,324,16,13,0.106770833,0.3,0.008333333,0.012037037
+parentFolder,4,,"['function', 'block', 'block_content', 'while', 'block', 'block_content', 'if_stmt', 'if', 'block', 'block_content', 'expr_stmt', 'expr', 'name']",227,324,142,24,0.118229167,0.3,0.073958333,0.022222222
