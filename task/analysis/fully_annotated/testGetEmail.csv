@@ -39,4 +39,4 @@ result,1,,"['function', 'block', 'block_content', 'expr_stmt', 'expr', 'call', '
 "// fail( ""The test case is a prototype. "" );",201,case,"['function', 'block', 'block_content', 'comment']",280,351,49,17,0.145833333,0.325,0.025520833,0.015740741
 "// fail( ""The test case is a prototype. "" );",201,is,"['function', 'block', 'block_content', 'comment']",334,351,26,20,0.173958333,0.325,0.013541667,0.018518519
 "// fail( ""The test case is a prototype. "" );",201,a,"['function', 'block', 'block_content', 'comment']",367,351,16,17,0.191145833,0.325,0.008333333,0.015740741
-"// fail( ""The test case is a prototype. "" );",201,"prototype. "" );","['function', 'block', 'block_content', 'comment']",389,351,111,24,0.202604167,0.325,0.0578125',0.022222222
+"// fail( ""The test case is a prototype. "" );",201,"prototype. "" );","['function', 'block', 'block_content', 'comment']",389,351,111,24,0.202604167,0.325,0.0578125,0.022222222
