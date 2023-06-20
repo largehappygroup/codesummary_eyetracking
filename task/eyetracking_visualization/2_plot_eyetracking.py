@@ -5,12 +5,13 @@ import re
 from matplotlib import pyplot as plt
 import pandas as pd
 from tqdm import tqdm
-os.chdir('./intermediate_images/11_29')
+os.chdir('intermediate_images/')
+
 
 # hardcoded paths for testing purposes
 frame_dir = '11_29/'
 framelist = os.listdir('.')
-frame_out_dir = '../../video_frames_out/11_29'
+frame_out_dir = '../../video_frames_out/'
 framelen = len(framelist)
 framelist.sort()
 
@@ -70,7 +71,6 @@ def return_x_y(gaze):
     xyz = new_gaze_string.split(',')
     if xyz[0] == 'nan' or xyz[1] == 'nan':
         return "oof", "oof"
-    
     # returning values associated with gaze
     x = round(width*float(xyz[0]))
     y = round(height*float(xyz[1]))
@@ -79,7 +79,7 @@ def return_x_y(gaze):
 
 # for each frame, plot the eye-tracking coordinates
 for k, j in enumerate(tqdm(framelist)):
-    i = int(re.findall("\d+",j)[0]) - 333 # random hard-coded value corresponding to frame number of specific function.
+    i = int(re.findall("\d+",j)[0]) - 333 # hard-coded value corresponding to frame number of specific function.
                                           # subtract frame numbers here if starting in the middle
     
     img_path = os.getcwd() + '/' + framelist[k]

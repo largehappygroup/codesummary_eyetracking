@@ -4,10 +4,18 @@ import os
 import re
 from tqdm import tqdm
 
-os.chdir('/home/zachkaras/codeSummary_eyetracking/codesummary_eyetracking/task/eyetracking_visualization/video_frames_out/11_29/')
-output_dir = '../../videos/'
-fps = 30
-file_list = glob.glob('*.jpg')
-lsorted = sorted(file_list, key=lambda x: int(os.path.splitext(x)[0]))  
-clip = mpy.ImageSequenceClip(lsorted, fps=fps)
-clip.write_videofile("../../11_29_full.mp4")
+#folders = os.listdir("video_frames_out")
+folders = ['117']
+for pid in folders:
+    print(pid)
+    #if f"{pid}.mp4" in os.listdir("videos"):
+    #    continue
+    if int(pid) < 300:
+        fps = 120
+    elif int(pid) >= 300:
+        fps = 60
+    file_list = glob.glob(f"video_frames_out/{pid}/*.png")
+    file_list.sort()
+    print(file_list)
+    #clip = mpy.ImageSequenceClip(file_list, fps=fps)
+    #clip.write_videofile(f"videos/{pid}.mp4")
