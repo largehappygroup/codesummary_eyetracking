@@ -1,5 +1,5 @@
 fid,name,ref,callcon,function
-38737384,setSecurityMode,public method to set the security level, sets the security mode for the specified token ,"
+38737384,setSecurityMode,public method to set the security level," sets the security mode for the specified token ","
 
 public int setSecurityMode ( int level, String authToken ) throws RemoteException {
     if ( !this.authToken.equals( authToken )){
@@ -11,7 +11,7 @@ public int setSecurityMode ( int level, String authToken ) throws RemoteExceptio
     return securityMode;
 } 
 "
-22628734,setTopAttributes,populate top level attributes with opml type specific data attributes from, sets the top attributes of the top of the stack ,"
+22628734,setTopAttributes,populate top level attributes with opml type specific data attributes from," sets the top attributes of the top of the stack ","
 
 private void setTopAttributes( Attributes from ) {
     for ( int i = 0; i < from.getLength(); i++ ) {
@@ -20,7 +20,7 @@ private void setTopAttributes( Attributes from ) {
     }
 } 
 "
-18252350,joinTableRender,gets render of an association for the join combobox, creates the table interaction table ,"
+18252350,joinTableRender,gets render of an association for the join combobox," creates the table interaction table ","
 
 private String joinTableRender( Table from, Association association ) {
     int n = 0;
@@ -33,7 +33,7 @@ private String joinTableRender( Table from, Association association ) {
     return datamodel.getDisplayName( association.destination ) + ( n > 1?"" on "" + association.getName():"""" );
 } 
 "
-17121898,compareTo,compares the tpoint object with other tpoint using timestamps first i, compare this camera to the game ,"
+17121898,compareTo,compares the tpoint object with other tpoint using timestamps first i," compare this camera to the game ","
 
 public int compareTo( TPoint o ) {
     if (( this.value == o.value() ) && ( this.tstamp == o.tstamp() )) {
@@ -51,7 +51,7 @@ public int compareTo( TPoint o ) {
     return -1;
 } 
 "
-1810886,setNamedItem,this function delegates to the native method code set named item code in, set the named item ,"
+1810886,setNamedItem,this function delegates to the native method code set named item code in," set the named item ","
 
 public Node setNamedItem( Node arg ) {
     try {
@@ -62,7 +62,7 @@ public Node setNamedItem( Node arg ) {
     }
 } 
 "
-38184555,wndPreferences,window preferences menu action, helper method to fill the preferences of the application ,"
+38184555,wndPreferences,window preferences menu action," helper method to fill the preferences of the application ","
 
 public void wndPreferences() {
     log.entering( ""MainWindow"", ""wndPreferences"" );
@@ -72,7 +72,7 @@ public void wndPreferences() {
     log.exiting( ""MainWindow"", ""wndPreferences"" );
 } 
 "
-26412118,connectionErrorOccurred,responds to an error event, notification that a connection error occured ,"
+26412118,connectionErrorOccurred,responds to an error event," notification that a connection error occured ","
 
 public void connectionErrorOccurred( ConnectionEvent event ) {
     logger.warn( ""Received Connection Error event from a conection in pool "" + info.getName() );
@@ -83,7 +83,7 @@ public void connectionErrorOccurred( ConnectionEvent event ) {
     }
 } 
 "
-18912425,tellAgain,forward some message to the participant, sends an <UNK> to the queue ,"
+18912425,tellAgain,forward some message to the participant," sends an <UNK> to the queue ","
 
 protected void tellAgain( final QName message ) throws RemoteException{
     final AbstractCoordParticipantProxy proxy =
@@ -112,7 +112,7 @@ protected void tellAgain( final QName message ) throws RemoteException{
     }
 } 
 "
-22624602,asMap,for use in json emulate part of people db 1, maps a map as a map as a map ,"
+22624602,asMap,for use in json emulate part of people db 1," maps a map as a map as a map ","
 
 public Map asMap() {
     Map map = new HashMap();
@@ -127,7 +127,7 @@ public Map asMap() {
     return map;
 } 
 "
-35553791,createServerChooser,create server file view, creates the server chooser ,"
+35553791,createServerChooser,create server file view," creates the server chooser ","
 
 public void createServerChooser() {
     MainMenuBar mainMenuBar = MainMenuBar.getInstance();
@@ -141,7 +141,7 @@ public void createServerChooser() {
     downloadFile.setVisible( true );
 } 
 "
-21359951,show,show dialog with existing or new null contact, shows the given contact ,"
+21359951,show,show dialog with existing or new null contact," shows the given contact ","
 
 public void show( Contact contact ) {
     logger.fine( ""Showing edit contact dialog for contact: "" + contact );
@@ -154,7 +154,7 @@ public void show( Contact contact ) {
     setVisible( true );
 } 
 "
-13482891,visitRetStmt,make sure that all of targets of the tt ret tt are valid, visits a statement ,"
+13482891,visitRetStmt,make sure that all of targets of the tt ret tt are valid," visits a statement ","
 
 public void visitRetStmt( RetStmt stmt ) {
     Set targets = new LinkedHashSet();
@@ -170,7 +170,7 @@ public void visitRetStmt( RetStmt stmt ) {
     visitNode( stmt );
 } 
 "
-19218425,getClassNameForLookAndFeel,may return null if no mapping for the name exists, returns the name of the class name and feel ,"
+19218425,getClassNameForLookAndFeel,may return null if no mapping for the name exists," returns the name of the class name and feel ","
 
 public String getClassNameForLookAndFeel( String name ) {
     if ( lfNameToLookAndFeel.containsKey( name )) {
@@ -183,7 +183,7 @@ public String getClassNameForLookAndFeel( String name ) {
     }
 } 
 "
-29854794,genIdents,generates the names of this type, generate a evaluation sequence ,"
+29854794,genIdents,generates the names of this type," generate a evaluation sequence ","
 
 public JExpression genIdents() {
     TokenReference ref = getTokenReference();
@@ -195,7 +195,7 @@ public JExpression genIdents() {
     return VKUtils.createArray( ref, CStdType.String, init );
 } 
 "
-33519720,encode,encodes a string using base64 encoding, encode a string into utf 8 encoded encoded string ,"
+33519720,encode,encodes a string using base64 encoding," encode a string into utf 8 encoded encoded string ","
 
 public String encode( String string ) throws EncoderException {
     byte[] bytes, encoded_bytes;
@@ -212,7 +212,7 @@ public String encode( String string ) throws EncoderException {
     return encoded_string;
 } 
 "
-45130358,evaluate,evaluates the numbers of hours in the xsd date time, evaluates the value of a literal ,"
+45130358,evaluate,evaluates the numbers of hours in the xsd date time," evaluates the value of a literal ","
 
 public Value evaluate( Value value ) throws ExternalFunctionException {
     if (!( value instanceof Literal )) {
@@ -223,7 +223,7 @@ public Value evaluate( Value value ) throws ExternalFunctionException {
     return this.converter.convertInteger( date.getHour() );
 } 
 "
-27802185,createGraphModel,create a new pgraph model based on set of nodes, creates a new graph model containing the nodes ,"
+27802185,createGraphModel,create a new pgraph model based on set of nodes," creates a new graph model containing the nodes ","
 
 public GraphModel createGraphModel ( List includedNodes ) {
     num_models++;
@@ -236,7 +236,7 @@ public GraphModel createGraphModel ( List includedNodes ) {
     return model;
 } 
 "
-18251847,addDbArgs,adds jailer cli arguments for db connection, adds a new database command to the database ,"
+18251847,addDbArgs,adds jailer cli arguments for db connection," adds a new database command to the database ","
 
 public void addDbArgs( List<String> args ) {
     args.add( currentConnection.driverClass );
@@ -254,7 +254,7 @@ public void addDbArgs( List<String> args ) {
     }
 } 
 "
-47571922,getEffect,return the effect applied to this pokemon of a particular lock or, returns the effect of the ap sent by the transition ,"
+47571922,getEffect,return the effect applied to this pokemon of a particular lock or," returns the effect of the ap sent by the transition ","
 
 public StatusEffect getEffect( int lock ) {
     synchronized ( m_statuses ) {
@@ -274,7 +274,7 @@ public StatusEffect getEffect( int lock ) {
     return null;
 } 
 "
-3934822,documentLoadingCompleted,called when the loading of a document was completed, the loading of the document that has completed ,"
+3934822,documentLoadingCompleted,called when the loading of a document was completed," the loading of the document that has completed ","
 
 public void documentLoadingCompleted( SVGDocumentLoaderEvent e ) {
     if ( debug ) {
@@ -284,7 +284,7 @@ public void documentLoadingCompleted( SVGDocumentLoaderEvent e ) {
     setSVGDocument( e.getSVGDocument(), e.getSVGDocument().getURL(), e.getSVGDocument().getTitle() );
 } 
 "
-45147874,clearFieldersFromField,clear all fielders from the field, clears all observers of the field and removes them from the ,"
+45147874,clearFieldersFromField,clear all fielders from the field," clears all observers of the field and removes them from the ","
 
 public void clearFieldersFromField() {
     // clear all fielders from field
@@ -297,7 +297,7 @@ public void clearFieldersFromField() {
     }
 } 
 "
-3457090,createNewServerProcess,create a new socket process for a new connection, creates a new server process on the server ,"
+3457090,createNewServerProcess,create a new socket process for a new connection," creates a new server process on the server ","
 
 protected void createNewServerProcess( Socket socket ){
     logger.info( ""Received connection on port "" + getPort() + "" from ["" + socket.getInetAddress() + "":"" + socket.getPort() + ""]."" );
@@ -308,7 +308,7 @@ protected void createNewServerProcess( Socket socket ){
     new Thread( new Monitor( t )).start();
 } 
 "
-40936756,selectBracketingEntries,select the entries bracketing a specified date, select the entries in the specified date ,"
+40936756,selectBracketingEntries,select the entries bracketing a specified date," select the entries in the specified date ","
 
 protected boolean selectBracketingEntries( final AbsoluteDate date ) {
     try {
@@ -323,7 +323,7 @@ protected boolean selectBracketingEntries( final AbsoluteDate date ) {
     }
 } 
 "
-18354735,invalidateSession,removes the mapping between the designated sm2 client identifier and, invalidate a session with the id ,"
+18354735,invalidateSession,removes the mapping between the designated sm2 client identifier and," invalidate a session with the id ","
 
 public void invalidateSession( String uid, String sid ) {
     cat.debug( ""==> invalidateSession( "" + String.valueOf( uid ) + "", "" + String.valueOf( sid ) + "")"" );
@@ -336,7 +336,7 @@ public void invalidateSession( String uid, String sid ) {
     cat.debug( ""<== invalidateSession()"" );
 } 
 "
-43137003,getNAGString,returns the array of nags as a string delimited by space, returns the string representation of the <UNK> <UNK> ,"
+43137003,getNAGString,returns the array of nags as a string delimited by space," returns the string representation of the <UNK> <UNK> ","
 
 public String getNAGString ( boolean allNumeric ) {
     if ( nags == null ) return null;
@@ -357,7 +357,7 @@ public String getNAGString ( boolean allNumeric ) {
     return sb.toString();
 } 
 "
-18418213,showLatestPlan,loads the latest plan in order to show it, returns the latest available snapshot ,"
+18418213,showLatestPlan,loads the latest plan in order to show it," returns the latest available snapshot ","
 
 public String showLatestPlan() {
     // clear previous protocols
@@ -376,7 +376,7 @@ public String showLatestPlan() {
     return ""failure"";
 } 
 "
-33719114,testSetEvtID,test of set evt id method of class com, test of set method of class email ,"
+33719114,testSetEvtID,test of set evt id method of class com," test of set method of class email ","
 
 public void testSetEvtID() {
     System.out.println( ""setEvtID"" );    
@@ -388,7 +388,7 @@ public void testSetEvtID() {
     fail( ""The test case is a prototype."" );
 } 
 "
-26501411,doOutput,template method that can be overriden to log to another place than, print the output of the task ,"
+26501411,doOutput,template method that can be overriden to log to another place than," print the output of the task ","
 
 protected void doOutput( int lvl, Object message, Throwable t ) {
     System.out.print( ""["" );
@@ -403,7 +403,7 @@ protected void doOutput( int lvl, Object message, Throwable t ) {
     }
 } 
 "
-3456415,testLogin,check that the user login and password are set on session, tests that the login session is still logged in ,"
+3456415,testLogin,check that the user login and password are set on session," tests that the login session is still logged in ","
 
 public void testLogin() {
     SessionManager manager = new SimpleSessionManager();
@@ -416,7 +416,7 @@ public void testLogin() {
     assertTrue( session.isLoggedIn() );
 } 
 "
-19498280,test_10_bug2689872,an invalid character in a predicate is ignored but reported as a warning, test for int int ,"
+19498280,test,an invalid character in a predicate is ignored but reported as a warning," test for int int ","
 
 public void test_10_bug2689872() throws Exception {
     E con = getGeneric().createElement( ""elt"" );
@@ -433,7 +433,7 @@ public void test_10_bug2689872() throws Exception {
         );
 } 
 "
-43419611,saveCRCReply,here the local container description will be stored on disk, save the latest reply from the server ,"
+43419611,saveCRCReply,here the local container description will be stored on disk," save the latest reply from the server ","
 
 private void saveCRCReply( ClientRemoteContainerReply crcReply ) {	
     LoadService.currentlyWritingFile = true;
@@ -452,7 +452,7 @@ private void saveCRCReply( ClientRemoteContainerReply crcReply ) {
     LoadService.currentlyWritingFile = false;
 } 
 "
-34413808,init,method to handle initialisation tasks, initializes the object ,"
+34413808,init,method to handle initialisation tasks," initializes the object ","
 
 private void init() {
     _innerData = Collections.synchronizedMap( new LinkedHashMap< String, Object >() );
@@ -470,7 +470,7 @@ private void init() {
     _srcModel.addListDataListener( _srcListener );
 } 
 "
-19505695,getRodinDBStatus,returns the rodin database status object for this exception, get the status of a db ,"
+19505695,getRodinDBStatus,returns the rodin database status object for this exception," get the status of a db ","
 
 public IRodinDBStatus getRodinDBStatus() {
     IStatus status = this.getStatus();
@@ -485,7 +485,7 @@ public IRodinDBStatus getRodinDBStatus() {
     }
 } 
 "
-39298970,getApplicableLaw,selects the influence law which is applicable to a given influence, return a <UNK> or <UNK> or null if it is not yet,"
+39298970,getApplicableLaw,selects the influence law which is applicable to a given influence," return a <UNK> or <UNK> or null if it is not yet","
 
 public InfluenceLaw getApplicableLaw( Influence inf ) {
     if ( inf == null ) {
@@ -500,7 +500,7 @@ public InfluenceLaw getApplicableLaw( Influence inf ) {
     return null;
 } 
 "
-22907997,removeRedundantOperations,optimize the list of files to remove by discarding redundant operations like, remove the related operations from the server ,"
+22907997,removeRedundantOperations,optimize the list of files to remove by discarding redundant operations like," remove the related operations from the server ","
 
 private void removeRedundantOperations( OBEXElement file, List< OBEXElement > filesToRemove ) {
     OBEXElement parentFolder = file;
@@ -514,7 +514,7 @@ private void removeRedundantOperations( OBEXElement file, List< OBEXElement > fi
     }
 } 
 "
-18123253,setSelectedScript,sets the selected existing script, set the selected script ,"
+18123253,setSelectedScript,sets the selected existing script," set the selected script ","
 
 public void setSelectedScript( Object script ) {
     selectedScript = script;
@@ -530,7 +530,7 @@ public void setSelectedScript( Object script ) {
     treeViewer.setSelection( new StructuredSelection( project ), true );
 } 
 "
-40099556,removeSelection,removes the given entity from the basket, removes the given entity from the list of selected entity ,"
+40099556,removeSelection,removes the given entity from the basket," removes the given entity from the list of selected entity ","
 
 public void removeSelection( IEntity selection ) {
     // Assertions.
@@ -548,7 +548,7 @@ public void removeSelection( IEntity selection ) {
         
 } 
 "
-7957602,println,print a textual description of this expr info, print out the <UNK> ,"
+7957602,println,print a textual description of this expr info," print out the <UNK> ","
 
 protected void print() {
     System.out.println( ""Print for "" + prototype + ""------------------"" );
@@ -573,7 +573,7 @@ protected void print() {
     System.out.println( ""End Print ----------------------------"" );
 } 
 "
-19682824,handleHalt,handle the halt system call, handle <UNK> of <UNK> ,"
+19682824,handleHalt,handle the halt system call," handle <UNK> of <UNK> ","
 
 private int handleHalt() {
     //need to test that this is the root process
@@ -587,7 +587,7 @@ private int handleHalt() {
     return 0;
 } 
 "
-20687719,getConnectionPanel,this method initializes connection panel, this method initializes j panel ,"
+20687719,getConnectionPanel,this method initializes connection panel," this method initializes j panel ","
 
 private JPanel getConnectionPanel() {
     if ( connectionPanel == null ) {
@@ -601,7 +601,7 @@ private JPanel getConnectionPanel() {
     return connectionPanel;
 } 
 "
-37762493,moveUpTarget,moves the given target up in the list of active targets, moves the target at the specified index up to the index ,"
+37762493,moveUpTarget,moves the given target up in the list of active targets," moves the target at the specified index up to the index ","
 
 public void moveUpTarget( int index ) {
     Object target= targets.get( index );
@@ -618,7 +618,7 @@ public void moveUpTarget( int index ) {
     }
 } 
 "
-7848915,draw,draw the control fps panel in the control sketch window, draw the next character ,"
+7848915,draw,draw the control fps panel in the control sketch window," draw the next character ","
 
 public void draw() {
     p4vj.cSketch.stroke( 0 );
@@ -631,7 +631,7 @@ public void draw() {
     p4vj.cSketch.text( "" :: Control FPS"", xPos, yPos + ySize - 5 );
 } 
 "
-19344536,setCombo_Value,this method sets the vaule of combo value, set the value of combo value ,"
+19344536,Value,this method sets the vaule of combo value," set the value of combo value ","
 
 public void setCombo_Value( String val ) {
     If (( val == null || """".equals( val )) && ( Combo_Value == null || """".equals( Combo_Value ))) {
@@ -643,7 +643,7 @@ public void setCombo_Value( String val ) {
     }
 } 
 "
-1736289,resetSchedConflict,this method resets schedule conflict, resets the time conflict in the data store ,"
+1736289,resetSchedConflict,this method resets schedule conflict," resets the time conflict in the data store ","
 
 public void resetSchedConflict() {
     try {
@@ -659,7 +659,7 @@ public void resetSchedConflict() {
     }
 } 
 "
-36634895,swapItems,this function swaps two items positions in the menu list, swap items of items in the list ,"
+36634895,swapItems,this function swaps two items positions in the menu list," swap items of items in the list ","
 
 public void swapItems( int index, int change ){
     if( index >= 0 && index < allItems.length && change >= 0 && change < allItems.length ){
@@ -669,7 +669,7 @@ public void swapItems( int index, int change ){
     }
 } 
 "
-4453291,exit,gracefully shutdown the application, exit the event ,"
+4453291,exit,gracefully shutdown the application," exit the event ","
 
 public void exit( EventObject event ) {
     for ( ExitListener listener : exitListeners ) {
@@ -694,7 +694,7 @@ public void exit( EventObject event ) {
     }
 } 
 "
-14467418,setUpMrj,attempts to retrieve mrj version and mrj major version information on the, set up the look feel and feel ,"
+14467418,setUpMrj,attempts to retrieve mrj version and mrj major version information on the," set up the look feel and feel ","
 
 private void setUpMrj() {
     Belvedere4.mrjVersion = System.getProperty( ""mrj.version"" );
@@ -707,7 +707,7 @@ private void setUpMrj() {
     }
 } 
 "
-39233866,testInvoke,test if we can invoke a given service, test invoke method ,"
+39233866,testInvoke,test if we can invoke a given service," test invoke method ","
 
 public void testInvoke() throws Exception {
     transport.setRemoteService( ""TravelProcess"" );
@@ -720,7 +720,7 @@ public void testInvoke() throws Exception {
     assertEquals( DUMMY_RESULT, result );
 } 
 "
-39299426,liesBetween,check if a value lies between 2 other values, returns true if coordinates of the coordinates x y coordinates coordinates ,"
+39299426,liesBetween,check if a value lies between 2 other values," returns true if coordinates of the coordinates x y coordinates coordinates ","
 
 private boolean liesBetween( double x1, double x2, double x3 ) {
     if (( x1 <= x2 ) 
@@ -733,7 +733,7 @@ private boolean liesBetween( double x1, double x2, double x3 ) {
     return false;
 } 
 "
-28953715,readResponse,read the entire response from the http post as a string, reads a response from the input stream ,"
+28953715,readResponse,read the entire response from the http post as a string," reads a response from the input stream ","
 
 private String readResponse( InputStream stream ) {
     BufferedReader input = new BufferedReader( new InputStreamReader( stream ));
@@ -758,7 +758,7 @@ private String readResponse( InputStream stream ) {
     return sb.toString();
 } 
 "
-40875567,getBackCommand25,returns an initiliazed instance of back command25 component, returns an initiliazed instance of back <UNK> component ,"
+40875567,getBackCommand25,returns an initiliazed instance of back command25 component," returns an initiliazed instance of back <UNK> component ","
 
 public Command getBackCommand25() {
     if ( backCommand25 == null ) { //GEN-END: | 618-getter | 0 | 618-preInit
@@ -769,7 +769,7 @@ public Command getBackCommand25() {
     return backCommand25;
 } 
 "
-22622479,getStatusFlagFields,gets the status flag input fields from the input manager, returns the list of status flag for the specified ,"
+22622479,getStatusFlagFields,gets the status flag input fields from the input manager," returns the list of status flag for the specified ","
 
 private List getStatusFlagFields() {
     List list = new ArrayList();
@@ -784,7 +784,7 @@ private List getStatusFlagFields() {
     return list;
 } 
 "
-44521080,BFSdist,traverses the graph breadth first and updates the distance, this method is called by the <UNK> <UNK> to be called ,"
+44521080,BFSdist,traverses the graph breadth first and updates the distance," this method is called by the <UNK> <UNK> to be called ","
 
 public void BFSdist( Node n, Vector ToDo, int[] indirConn ){
     Node n2 = null;
@@ -804,7 +804,7 @@ public void BFSdist( Node n, Vector ToDo, int[] indirConn ){
     }
 } 
 "
-34426334,addLimit,helper method which creates and adds an option for limit to the specified, add the limit of the given amount to the specified ,"
+34426334,addLimit,helper method which creates and adds an option for limit to the specified," add the limit of the given amount to the specified ","
 
 private void addLimit( JPopupMenu popup ) {
     JMenuItem limit = makeMenuItem( ""Write option: Limit days..."",""
@@ -819,7 +819,7 @@ private void addLimit( JPopupMenu popup ) {
     popup.add( limit );
 } 
 "
-23014476,addRotation,adds a rotation to this matrix, adds a rotation to the rotation matrix ,"
+23014476,addRotation,adds a rotation to this matrix," adds a rotation to the rotation matrix ","
 
 public void addRotation( Vector3f axis, Angle rotation ) {
     Quaternion q = new Quaternion( rotation, axis );
@@ -830,7 +830,7 @@ public void addRotation( Vector3f axis, Angle rotation ) {
     matrix = result;
 } 
 "
-23286083,getScopePartnerLinks,return an code elist code containing all partner link elements defined, returns the scope of the given scope ,"
+23286083,getScopePartnerLinks,return an code elist code containing all partner link elements defined," returns the scope of the given scope ","
 
 public EList getScopePartnerLinks( final EObject process ) {
     TreeIterator contents = process.eAllContents();
@@ -846,7 +846,7 @@ public EList getScopePartnerLinks( final EObject process ) {
     return results;
 } 
 "
-40778768,configBalanceRanking,load balances from the ranking file and configure the timer to save, method to <UNK> the balance into the <UNK> file ,"
+40778768,configBalanceRanking,load balances from the ranking file and configure the timer to save," method to <UNK> the balance into the <UNK> file ","
 
 private void configBalanceRanking( List< IResponseTO > responses, String filePath ) {	
     PeerDAOFactory.getInstance().getAccountingDAO().loadBalancesRanking( filePath );
@@ -860,7 +860,7 @@ private void configBalanceRanking( List< IResponseTO > responses, String filePat
     responses.add( to );
 } 
 "
-1046788,testAddCountryWithSequenceGenerator,flow 2 positive case hibernate sequence generator, add country object to sequence generator ,"
+1046788,testAddCountryWithSequenceGenerator,flow 2 positive case hibernate sequence generator," add country object to sequence generator ","
 
 public void testAddCountryWithSequenceGenerator() throws Exception {
     CountryWithSequence country1 = new CountryWithSequence();
@@ -872,7 +872,7 @@ public void testAddCountryWithSequenceGenerator() throws Exception {
     assertNotNull( ""fail to add a new country with sequence generator."", countryCode );
 } 
 "
-51122387,getMessage,returns the detail message string of this throwable, returns the message ,"
+51122387,getMessage,returns the detail message string of this throwable," returns the message ","
 
 public String getMessage() {
     StringBuffer sb = new StringBuffer();
@@ -890,7 +890,7 @@ public String getMessage() {
     return sb.toString();
 } 
 "
-49121415,createDataset,creates a sample dataset, creates a dataset for the dataset ,"
+49121415,createDataset,creates a sample dataset," creates a dataset for the dataset ","
 
 private XYDataset createDataset( double[] values, String name ) {
     // create dataset 1
@@ -904,7 +904,7 @@ private XYDataset createDataset( double[] values, String name ) {
     return collection;
 } 
 "
-34426938,initOptionsMenu,initiates and populates the options menu, initializes the options menu ,"
+34426938,initOptionsMenu,initiates and populates the options menu," initializes the options menu ","
 
 private void initOptionsMenu( JMenuBar bar ) {
     optionsMenu = new JMenu( ""Options"" );
@@ -916,7 +916,7 @@ private void initOptionsMenu( JMenuBar bar ) {
     bar.add( optionsMenu );
 } 
 "
-45888514,openCursor,opens cursor with custom selection, opens a cursor to the specified source ,"
+45888514,openCursor,opens cursor with custom selection," opens a cursor to the specified source ","
 
 public Cursor openCursor( Context context, String selection, String[] selectionArgs ) {
     if( mSourcesUri == null ) {
@@ -925,7 +925,7 @@ public Cursor openCursor( Context context, String selection, String[] selectionA
     return context.getContentResolver().query( mSourcesUri, mProjection, selection, selectionArgs, Sources.SourcesTable.NAME );
 } 
 "
-29572299,listen,starts the server blocks indefinately, listens for incoming connections ,"
+29572299,listen,starts the server blocks indefinately," listens for incoming connections ","
 
 public void listen() throws IOException {
     logMessage( ""Server started at "" + this.getHostname() + "":"" + this.getPort() );
@@ -942,7 +942,7 @@ public void listen() throws IOException {
     }
 } 
 "
-51019251,fScore,hierarchical f score function, returns the score of a given concept ,"
+51019251,fScore,hierarchical f score function," returns the score of a given concept ","
 
 public double fScore( ONDEXConcept x, ONDEXConcept y ) {
     double recall = recall( x, y );
@@ -954,7 +954,7 @@ public double fScore( ONDEXConcept x, ONDEXConcept y ) {
     return score;
 } 
 "
-28631042,getMenuAdministracion,this method initializes menu administracion, this method initializes menu <UNK> ,"
+28631042,getMenuAdministracion,this method initializes menu administracion," this method initializes menu <UNK> ","
 
 private JMenu getMenuAdministracion() {
     if ( menuAdministracion == null ) {
@@ -967,7 +967,7 @@ private JMenu getMenuAdministracion() {
     return menuAdministracion;
 } 
 "
-48209810,setButtonText,sets the button text, set the text of the menu item ,"
+48209810,setButtonText,sets the button text," set the text of the menu item ","
 
 private void setButtonText() {
     String txt = menuItem.getTitle() + "" ("" + menuItem.getStock() + "" in Stock)"";
@@ -985,7 +985,7 @@ private void setButtonText() {
     this.setText( txt );
 } 
 "
-22407318,jbInit,add compononents to the page, this method initializes <UNK> ,"
+22407318,jbInit,add compononents to the page," this method initializes <UNK> ","
 
 private void jbInit() throws Exception {
     setLayout( new GridBagLayout() );
@@ -997,7 +997,7 @@ private void jbInit() throws Exception {
                           new Insets( 0, 0, 0, 0 ), 0, 0 ));
 } 
 "
-34413723,openNewContainerWindow,open a window to start the import process, opens a new window window ,"
+34413723,openNewContainerWindow,open a window to start the import process," opens a new window window ","
 
 public boolean openNewContainerWindow( String containerName, String containerDescription ){
     //if name is blank, disable use default option
@@ -1022,7 +1022,7 @@ public boolean openNewContainerWindow( String containerName, String containerDes
     return doImport;
 } 
 "
-39215677,iamNear,check if a player is next to another actor, check if the actor is a valid player ,"
+39215677,iamNear,check if a player is next to another actor," check if the actor is a valid player ","
 
 private boolean iamNear( Actor defender ) {
     short xDiff = ( short ) ( defender.getXpos() - getXpos() );
@@ -1034,7 +1034,7 @@ private boolean iamNear( Actor defender ) {
     return true;
 } 
 "
-4114383,add,adds a date to the list keeping the list sorted, adds a date to the list of fields ,"
+4114383,add,adds a date to the list keeping the list sorted," adds a date to the list of fields ","
 
 public boolean add( Date date ) {
     if ( dates.contains( date )) 
@@ -1055,7 +1055,7 @@ public boolean add( Date date ) {
     return true;
 } 
 "
-29852582,genSql,generate the code in pure java form, generate the sql connection to the target host ,"
+29852582,genSql,generate the code in pure java form," generate the sql connection to the target host ","
 
 public void genSql() throws PositionedError {
     try {
@@ -1069,7 +1069,7 @@ public void genSql() throws PositionedError {
     }
 } 
 "
-39233258,getJSplitPane,this method initializes j split pane, this method initializes j split pane ,"
+39233258,getJSplitPane,this method initializes j split pane," this method initializes j split pane ","
 
 private JSplitPane getJSplitPane() {
     if ( jSplitPane == null ) {
@@ -1086,7 +1086,7 @@ private JSplitPane getJSplitPane() {
     return jSplitPane;
 } 
 "
-33719607,testGetClassification,test of get classification method of class com, test of get classification method of class vgrabber ,"
+33719607,testGetClassification,test of get classification method of class com," test of get classification method of class vgrabber ","
 
 public void testGetClassification() {
     System.out.println( ""getClassification"" );
@@ -1100,7 +1100,7 @@ public void testGetClassification() {
     fail( ""The test case is a prototype."" );
 } 
 "
-38221424,removeService,removes service from this main form, removes a service from the registry ,"
+38221424,removeService,removes service from this main form," removes a service from the registry ","
 
 public void removeService( String type ) {
     CService service = ( CService ) services.get( type );
@@ -1112,7 +1112,7 @@ public void removeService( String type ) {
     }
 } 
 "
-45047585,exportXVRL,transform the validation report object into a xmlstream writer, export the given message to the given output stream ,"
+45047585,exportXVRL,transform the validation report object into a xmlstream writer," export the given message to the given output stream ","
 
 public void exportXVRL( XMLStreamWriter xvrLDoc ) throws Exception{
     JAXBContext context = JAXBContext.newInstance( ValidationReport.class );
@@ -1123,7 +1123,7 @@ public void exportXVRL( XMLStreamWriter xvrLDoc ) throws Exception{
     if ( vReport != null ) m.marshal( vReport, xvrLDoc );
 } 
 "
-27801498,setBinWidth,sets the bin width and repaints, set the bin width component ,"
+27801498,setBinWidth,sets the bin width and repaints," set the bin width component ","
 
 public void setBinWidth ( double new_bin_width ) {
     double old_bin_width = binWidth;
@@ -1134,7 +1134,7 @@ public void setBinWidth ( double new_bin_width ) {
     repaint();
 } // setBinWidth( double ) 
 "
-29859244,split,each token of the line is an element of the list, split a line to the current list of characters ,"
+29859244,split,each token of the line is an element of the list," split a line to the current list of characters ","
 
 private List split( String line ) {
     List result;
@@ -1153,7 +1153,7 @@ private List split( String line ) {
     return result;
 } 
 "
-38221537,addDigit,adds the digit to the indicator text editor, adds a digit character pair to the list of digits ,"
+38221537,addDigit,adds the digit to the indicator text editor," adds a digit character pair to the list of digits ","
 
 private void addDigit( char digit ) {
     if ( digit == '0' && value.equals( ""0"" )) return;
@@ -1168,7 +1168,7 @@ private void addDigit( char digit ) {
     showValue();
 } 
 "
-47571713,saveToFile,save the move sets to a file, saves the file to the file ,"
+47571713,saveToFile,save the move sets to a file," saves the file to the file ","
 
 public void saveToFile( File f ) {
     try {
@@ -1182,7 +1182,7 @@ public void saveToFile( File f ) {
     }
 } 
 "
-16958722,indexToLetter,converts the given integer into a character for the coordinate system, returns the index of the given letter if the index is valid,"
+16958722,indexToLetter,converts the given integer into a character for the coordinate system," returns the index of the given letter if the index is valid","
 
 public String indexToLetter( int index ) {
     if ( index == 0 )
@@ -1209,7 +1209,7 @@ public String indexToLetter( int index ) {
         return null;
 } 
 "
-34413807,close,notifies all views to de register from their view controllers, close the current preferences ,"
+34413807,close,notifies all views to de register from their view controllers," close the current preferences ","
 
 public void close(){
     Tabpanel tempPanel = null;
@@ -1229,7 +1229,7 @@ public void close(){
     }
 } 
 "
-34427273,populateNewList,helper method which populates the gui list for resources which are new at, populates the new list with the specified <UNK> ,"
+34427273,populateNewList,helper method which populates the gui list for resources which are new at," populates the new list with the specified <UNK> ","
 
 private void populateNewList() {
     newResources = mergeNewResources();
@@ -1244,7 +1244,7 @@ private void populateNewList() {
     });
 } 
 "
-49250848,isInvalidEmailLink,returns code true code if this link is an invalid email address link, checks if the email address is invalid email address ,"
+49250848,isInvalidEmailLink,returns code true code if this link is an invalid email address link," checks if the email address is invalid email address ","
 
 public boolean isInvalidEmailLink() {
     return textLink.contains( ArticleLink.EMAIL_AT_SEPARATOR ) &&
@@ -1252,7 +1252,7 @@ public boolean isInvalidEmailLink() {
         wikiFileURL.getWikiFileName( true ).contains( ArticleLink.EMAIL_AT_SEPARATOR );
 } 
 "
-15689897,getAll,returns all the values associated with the given key, get all the key value for the given key ,"
+15689897,getAll,returns all the values associated with the given key," get all the key value for the given key ","
 
 public List getAll( Object key ) {
     Object value = mMap.get( key );
@@ -1271,7 +1271,7 @@ public List getAll( Object key ) {
     }
 } 
 "
-40865383,getBackCommand12,returns an initiliazed instance of back command12 component, returns an initiliazed instance of back command12 component ,"
+40865383,getBackCommand12,returns an initiliazed instance of back command12 component," returns an initiliazed instance of back command12 component ","
 
 public Command getBackCommand12() {
     if ( backCommand12 == null ) {//GEN-END:|264-getter|0|264-preInit
@@ -1282,7 +1282,7 @@ public Command getBackCommand12() {
     return backCommand12;
 } 
 "
-45891169,removeView,removes a small view from the scenario list, removes the view from the view ,"
+45891169,removeView,removes a small view from the scenario list," removes the view from the view ","
 
 public void removeView( StateViewSmall view ) {
     view.setVisible( false );
@@ -1301,7 +1301,7 @@ public void removeView( StateViewSmall view ) {
     refresh();
 } 
 "
-50994916,setPhoto,set the jdai photo to display, sets the photo ,"
+50994916,setPhoto,set the jdai photo to display," sets the photo ","
 
 public void setPhoto( JdaiPhoto photo ) {
     String text = null;
@@ -1322,7 +1322,7 @@ public void setPhoto( JdaiPhoto photo ) {
     setNewPhoto( photo );
 } 
 "
-22625582,setUrls,sets the value of urls and normalizes them, set the urls ,"
+22625582,setUrls,sets the value of urls and normalizes them," set the urls ","
 
 public void setUrls( String[] theUrls ) throws IllegalStateException {
     if ( xmlProcessed )
@@ -1337,7 +1337,7 @@ public void setUrls( String[] theUrls ) throws IllegalStateException {
         this.urls = urls;
 } 
 "
-18421665,searchRecipe,this function searches a recipe starting with the recipe passed as parameter, creates a recipe that contains the given templates ,"
+18421665,searchRecipe,this function searches a recipe starting with the recipe passed as parameter," creates a recipe that contains the given templates ","
 
 private Recipe searchRecipe ( Recipe re ) {	
     Recipe recipe;
@@ -1358,7 +1358,7 @@ private Recipe searchRecipe ( Recipe re ) {
     return null;
 } 
 "
-18420500,getUnitCombo,this method initializes m unit combo, this method initializes unit combo ,"
+18420500,getUnitCombo,this method initializes m unit combo," this method initializes unit combo ","
 
 private JComboBox getUnitCombo() {
     if ( m_UnitCombo == null ) {
@@ -1372,7 +1372,7 @@ private JComboBox getUnitCombo() {
     return m_UnitCombo;
 } 
 "
-29601536,getBackCommand2,returns an initiliazed instance of back command2 component, returns an initiliazed instance of back command2 component ,"
+29601536,getBackCommand2,returns an initiliazed instance of back command2 component," returns an initiliazed instance of back command2 component ","
 
 public Command getBackCommand2() {
     if ( backCommand2 == null ) {//GEN-END:|92-getter|0|92-preInit
@@ -1383,7 +1383,7 @@ public Command getBackCommand2() {
     return backCommand2;
 } 
 "
-1810081,onAttach,this method is called when a widget is attached to the browsers document, invoked when the add button is pressed ,"
+1810081,onAttach,this method is called when a widget is attached to the browsers document," invoked when the add button is pressed ","
 
 protected void onAttach() {
     if ( attached )
@@ -1400,7 +1400,7 @@ protected void onAttach() {
     onLoad();
 } 
 "
-19282261,countQuery,performs a query and returns the count of objects the criteria specified, counts the number of queries in the database ,"
+19282261,countQuery,performs a query and returns the count of objects the criteria specified," counts the number of queries in the database ","
 
 protected int countQuery( final Query query ) throws PersistenceException {
     if ( query != null ){
@@ -1416,7 +1416,7 @@ protected int countQuery( final Query query ) throws PersistenceException {
     }
 } 
 "
-31203037,addToTechnicalComment,adds to the technical comment about this project, adds a comment to an instance of a <UNK> ,"
+31203037,addToTechnicalComment,adds to the technical comment about this project," adds a comment to an instance of a <UNK> ","
 
 public void addToTechnicalComment( final String add_to_technical_comment ) {
     if ( getTechnicalComment() != null && getTechnicalComment().length() > 0 ) {
@@ -1427,7 +1427,7 @@ public void addToTechnicalComment( final String add_to_technical_comment ) {
     }
 } 
 "
-35553511,refreshTreePanel,refresh tree panel, refreshes the tree panel ,"
+35553511,refreshTreePanel,refresh tree panel," refreshes the tree panel ","
 
 public void refreshTreePanel() {
     root.removeAllChildren();
@@ -1446,7 +1446,7 @@ public void refreshTreePanel() {
     tree.fireTreeExpanded( treePath );
 } 
 "
-26215341,updateGain,set the volume, update the gain factor ,"
+26215341,updateGain,set the volume," update the gain factor ","
 
 private void updateGain() {
     int pos = getValue();
@@ -1458,7 +1458,7 @@ private void updateGain() {
     }
 } 
 "
-10222579,equals,indicates whether some other object is equal to this one, compares this object against the specified object ,"
+10222579,equals,indicates whether some other object is equal to this one," compares this object against the specified object ","
 
 public boolean equals( Object obj ) {
     if ( obj == null || ( obj.getClass() != getClass() )) {
@@ -1468,7 +1468,7 @@ public boolean equals( Object obj ) {
     return ( s.simpleSelector.equals( simpleSelector ) && s.condition.equals( condition ));
 } 
 "
-4280405,getFiles,returns the files represented by the given fileset, returns the list of files that have a file set ,"
+4280405,getFiles,returns the files represented by the given fileset," returns the list of files that have a file set ","
 
 public List getFiles( FileSet fileSet ) {
     List files = new ArrayList();
@@ -1481,7 +1481,7 @@ public List getFiles( FileSet fileSet ) {
     return files;
 } 
 "
-1782360,getImageWithSource,returns the first image found in the page with the specified src attribute, returns a web image with the source code ,"
+1782360,getImageWithSource,returns the first image found in the page with the specified src attribute," returns a web image with the source code ","
 
 public WebImage getImageWithSource( String source ) {
     WebImage[] images = getImages();
@@ -1492,7 +1492,7 @@ public WebImage getImageWithSource( String source ) {
     return null;
 } 
 "
-40865212,getBackCommand22,returns an initiliazed instance of back command2 component, returns an initiliazed instance of back command2 component ,"
+40865212,getBackCommand22,returns an initiliazed instance of back command2 component," returns an initiliazed instance of back command2 component ","
 
 public Command getBackCommand2() {
     if ( backCommand2 == null ) {//GEN-END: | 233-getter | 0 | 233-preInit
@@ -1503,7 +1503,7 @@ public Command getBackCommand2() {
     return backCommand2;
 } 
 "
-19413001,messageSent,listens for output of the command, invoked when a message was sent to a message ,"
+19413001,messageSent,listens for output of the command," invoked when a message was sent to a message ","
 
 public void messageSent( MessageEvent e ) {
     String str = e.getMessage();
@@ -1515,7 +1515,7 @@ public void messageSent( MessageEvent e ) {
     super.messageSent( e );
 } 
 "
-19280843,getInstitutions,this method returns a collection or institution bean objects, returns the list of institutions in the database ,"
+19280843,getInstitutions,this method returns a collection or institution bean objects," returns the list of institutions in the database ","
 
 public Collection getInstitutions() {
     try {
@@ -1531,7 +1531,7 @@ public Collection getInstitutions() {
     }
 } 
 "
-19498298,testOccThm,all other tests only check for occurrences in axioms, test the value of input and target ,"
+19498298,testOccThm,all other tests only check for occurrences in axioms," test the value of input and target ","
 
 public void testOccThm() throws Exception {
     final IContextRoot context = ResourceUtils.createContext( rodinProject, CTX_BARE_NAME, CST_1DECL_1REF_THM );
@@ -1547,7 +1547,7 @@ public void testOccThm() throws Exception {
     tk.assertOccurrencesOtherThanDecl( cst1, occRef );
 } 
 "
-40879350,getOkCommand18,returns an initiliazed instance of ok command18 component, returns an initiliazed instance of ok command18 component ,"
+40879350,getOkCommand18,returns an initiliazed instance of ok command18 component," returns an initiliazed instance of ok command18 component ","
 
 public Command getOkCommand18() {
     if ( okCommand18 == null ) {//GEN-END: | 728-getter | 0 | 728-preInit
@@ -1558,7 +1558,7 @@ public Command getOkCommand18() {
     return okCommand18;
 } 
 "
-12723449,abstractMatrix3D,self modifying version of view dice, returns a new <UNK> that is the <UNK> of the <UNK> ,"
+12723449,abstractMatrix3D,self modifying version of view dice," returns a new <UNK> that is the <UNK> of the <UNK> ","
  
 protected AbstractMatrix3D vDice( int axis0, int axis1, int axis2 ) {
     super.vDice( axis0, axis1, axis2 );
@@ -1576,7 +1576,7 @@ protected AbstractMatrix3D vDice( int axis0, int axis1, int axis2 ) {
     return this;
 } 
 "
-34105249,makeUniqueParagraphForGlobalWithLength,used to create a paragraph of unique words with varying lengths, make a new paragraph paragraph for a given length ,"
+34105249,makeUniqueParagraphForGlobalWithLength,used to create a paragraph of unique words with varying lengths," make a new paragraph paragraph for a given length ","
 
 public void makeUniqueParagraphForGlobalWithLength( String global, int length ) {
     String paragraph = """";
@@ -1589,7 +1589,7 @@ public void makeUniqueParagraphForGlobalWithLength( String global, int length ) 
     utils.setGlobal( global, paragraph );
 } 
 "
-43040436,init2,initializes the class, initializes the package ,"
+43040436,init2,initializes the class," initializes the package ","
 
 private void init() throws CoreException {
     final String name = getClassName();
@@ -1599,7 +1599,7 @@ private void init() throws CoreException {
     createMainType( PUBLIC_KEYWORD, pkg.getElementName(), getClassName() );
 } 
 "
-36405409,appendDeclarations,p append declarations needed by the code note converter code to, append <UNK> of type <UNK> to the given ,"
+36405409,appendDeclarations,p append declarations needed by the code note converter code to," append <UNK> of type <UNK> to the given ","
 
 public void appendDeclarations( LaTeXDocumentPortion pack, LaTeXDocumentPortion decl ) {
     if ( bContainsEndnotes ) { 
@@ -1609,7 +1609,7 @@ public void appendDeclarations( LaTeXDocumentPortion pack, LaTeXDocumentPortion 
     if ( bContainsEndnotes ) convertEndnotesConfiguration( decl );
 } 
 "
-46026508,saveSetting,save settings to property file, save the properties of a custom properties ,"
+46026508,saveSetting,save settings to property file," save the properties of a custom properties ","
 
 private void saveSetting( CustomProperties prop ) {
     prop.setProperty( ""avalanchefever.gametype"", mapSet );
@@ -1620,7 +1620,7 @@ private void saveSetting( CustomProperties prop ) {
     prop.setProperty( ""avalanchefever.bigDisplay"", bigDisplay );
 } 
 "
-20787007,store,stores a new element in the zip file with the given path, store the contents of a zip entry ,"
+20787007,store,stores a new element in the zip file with the given path," store the contents of a zip entry ","
 
 public void store( String path, InputStream stream ) throws IOException {
     toIgnore.add( normalizePath( path ));
@@ -1630,7 +1630,7 @@ public void store( String path, InputStream stream ) throws IOException {
     zipOutput.closeEntry();
 } 
 "
-31696447,testNegativeParseCases,unit test 1 negative parse tests to make sure the parser detects, tests that a negative expression works correctly ,"
+31696447,testNegativeParseCases,unit test 1 negative parse tests to make sure the parser detects," tests that a negative expression works correctly ","
 
 public void  testNegativeParseCases() {
     verbose( ""--->Negative parse tests  START"" );
@@ -1643,7 +1643,7 @@ public void  testNegativeParseCases() {
     checkDelete();
   } 
 "
-34604973,deleteCascade,will delete algorithm and also references to it cascadely in tables, deletes the <UNK> of the given database ,"
+34604973,deleteCascade,will delete algorithm and also references to it cascadely in tables," deletes the <UNK> of the given database ","
 
 public void deleteCascade( VyhladavaciAlgoritmus algorithm ) {
     //searcheds
@@ -1665,7 +1665,7 @@ public void deleteCascade( VyhladavaciAlgoritmus algorithm ) {
     delete( algorithm );
 } 
 "
-48104729,clone,clone the format object, returns a copy of this datatype ,"
+48104729,clone,clone the format object," returns a copy of this datatype ","
 
 public Object clone() {
     Format result = new Format();
@@ -1687,7 +1687,7 @@ public Object clone() {
     return result;
 } 
 "
-31789275,setGenJarDir,recursively walk the given project tree setting the gen jar dir, sets the <UNK> directory for the <UNK> directory ,"
+31789275,setGenJarDir,recursively walk the given project tree setting the gen jar dir," sets the <UNK> directory for the <UNK> directory ","
 
 public void setGenJarDir( File genJarDir,SandProject proj ) {
     proj.getAntProject().setProperty( ""genJarDir"", genJarDir.toString() );
@@ -1698,7 +1698,7 @@ public void setGenJarDir( File genJarDir,SandProject proj ) {
     }
 } 
 "
-47570692,goToRegistration,brings the user to the registration dialog, this method initializes to registration ,"
+47570692,goToRegistration,brings the user to the registration dialog," this method initializes to registration ","
 
 private void goToRegistration() {
     m_logo.setVisible( false );
@@ -1714,7 +1714,7 @@ private void goToRegistration() {
     this.setTitle( ""Registration"" );
 } 
 "
-33719118,testGetEvtIDs,test of get evt ids method of class com, test of get <UNK> <UNK> method of class org ,"
+33719118,testGetEvtIDs,test of get evt ids method of class com," test of get <UNK> <UNK> method of class org ","
 
 public void testGetEvtIDs() {
     System.out.println( ""getEvtIDs"" );
@@ -1727,7 +1727,7 @@ public void testGetEvtIDs() {
     fail( ""The test case is a prototype."" );
 } 
 "
-39120328,toString,p returns the string representation of this matcher, returns a string representation of this pattern ,"
+39120328,toString,p returns the string representation of this matcher," returns a string representation of this pattern ","
 
 public String toString() {
     StringBuffer sb = new StringBuffer();
@@ -1745,7 +1745,7 @@ public String toString() {
     return sb.toString();
 } 
 "
-34425716,actionLoadNotes,called when the user selects to load the in game notes file, loads the selected notes from the button ,"
+34425716,actionLoadNotes,called when the user selects to load the in game notes file," loads the selected notes from the button ","
 
 private void actionLoadNotes() {
     enableUserActions( false );
@@ -1760,7 +1760,7 @@ private void actionLoadNotes() {
     enableUserActions( true );
 } 
 "
-29318894,getTargetServiceName,can be overridden by subclasses to customize how the wsa to header is, returns the name of the target service name ,"
+29318894,getTargetServiceName,can be overridden by subclasses to customize how the wsa to header is," returns the name of the target service name ","
 
 protected String getTargetServiceName( AddressingHeaders headers ) throws Exception {
     To toURI = headers.getTo();
@@ -1777,7 +1777,7 @@ protected String getTargetServiceName( AddressingHeaders headers ) throws Except
     return ( to.substring( to.lastIndexOf( '/' ) + 1 ));
 } 
 "
-48861766,addRelativeHeaders,add relative header, add the header to the table ,"
+48861766,addRelativeHeaders,add relative header," add the header to the table ","
 
 private void addRelativeHeaders( Response response, int timeInSeconds ) {
     response.setHeader( CACHE_CONTROL_HEADER, String.format( ""max-age=%d"", timeInSeconds ));
@@ -1786,7 +1786,7 @@ private void addRelativeHeaders( Response response, int timeInSeconds ) {
     response.setHeader( ""Expires"", DATE_FORMAT.format( expires ));
 } 
 "
-18929060,checkDescendantM,return true if member 2, checks if a member is <UNK> if possible ,"
+18929060,checkDescendantM,return true if member 2," checks if a member is <UNK> if possible ","
 
 public boolean checkDescendantM( Member aMember, Member dMember ) {
     mondrian.olap.Member monMember = (( MondrianMember ) aMember ).getMonMember();
@@ -1797,7 +1797,7 @@ public boolean checkDescendantM( Member aMember, Member dMember ) {
     return monDesc.isChildOrEqualTo( monMember );
 } 
 "
-19507735,testOneTwoThreeCreateCycle,ensures cycles are ignored, test one with one three ,"
+19507735,testOneTwoThreeCreateCycle,ensures cycles are ignored," test one with one three ","
 
 public void testOneTwoThreeCreateCycle() throws Exception {
     IRodinFile ctx = createRodinFile( ""P/x.ctx"" );
@@ -1822,7 +1822,7 @@ public void testOneTwoThreeCreateCycle() throws Exception {
                      ""CSC run /P/z.csc"");
 } 
 "
-34426756,makeCenter,helper method which creates and returns a canvas for images, make center of the center and returns a frame ,"
+34426756,makeCenter,helper method which creates and returns a canvas for images," make center of the center and returns a frame ","
 
 private Component makeCenter() {
     imageCanvas = new JPanel();
@@ -1839,7 +1839,7 @@ private Component makeCenter() {
     return new JScrollPane( imageCanvas );
 } 
 "
-19344442,loadSystems,load the various systems from the db, loads the existing database ,"
+19344442,loadSystems,load the various systems from the db," loads the existing database ","
 
 private void loadSystems() {
     int i, num;
@@ -1867,7 +1867,7 @@ private void loadSystems() {
     }
 } 
 "
-11950130,testGetCodigo,test of get codigo method of class proyectoventadepasajes, test of get tmp method of class com ,"
+11950130,testGetCodigo,test of get codigo method of class proyectoventadepasajes," test of get tmp method of class com ","
 
 public void testGetCodigo() {
     System.out.println( ""getCodigo"" );
@@ -1881,7 +1881,7 @@ public void testGetCodigo() {
     fail( ""The test case is a prototype."" );
 } 
 "
-24245709,fetchString,internal helper function read a string from the device, helper method to fetch a string from a register ,"
+24245709,fetchString,internal helper function read a string from the device," helper method to fetch a string from a register ","
 
 protected String fetchString( int register, int len ) {
     int ret = getData( register, byteBuff, 8 );
@@ -1892,7 +1892,7 @@ protected String fetchString( int register, int len ) {
         return new String( charBuff, 0, len );
 } 
 "
-22618655,getGlobalElements,gets the global elements attribute of the definition miner object, returns the list of all of the document contained in the document,"
+22618655,getGlobalElements,gets the global elements attribute of the definition miner object," returns the list of all of the document contained in the document","
 
 private void getGlobalElements( Document doc, File file ) {
     if ( doc == null ) {
@@ -1913,7 +1913,7 @@ private void getGlobalElements( Document doc, File file ) {
     }
 } 
 "
-1694531,getUserNameFromCookie,get users name from cookie, returns the name of the user object from a cookie ,"
+1694531,getUserNameFromCookie,get users name from cookie," returns the name of the user object from a cookie ","
 
 private String getUserNameFromCookie() throws Exception {
     String userName = null;
@@ -1932,7 +1932,7 @@ private String getUserNameFromCookie() throws Exception {
     return userName;
 } 
 "
-50995324,createCacheFile,write the scaled and rotated cache file for a photo, creates the file for the given photo ,"
+50995324,createCacheFile,write the scaled and rotated cache file for a photo," creates the file for the given photo ","
 
 protected void createCacheFile( Photo photo, File photoCacheFile, PhotoDimension dimension ) throws IOException {
     OutputStream photoOS = new BufferedOutputStream( new FileOutputStream( photoCacheFile ));
@@ -1940,7 +1940,7 @@ protected void createCacheFile( Photo photo, File photoCacheFile, PhotoDimension
     photoOS.close();
 } 
 "
-26285656,testValidateSeparationCount,test validate separation count, test the <UNK> of the <UNK> ,"
+26285656,testValidateSeparationCount,test validate separation count," test the <UNK> of the <UNK> ","
 
 public void testValidateSeparationCount() {
     try {
@@ -1959,7 +1959,7 @@ public void testValidateSeparationCount() {
     LinearDimension.validateSeparationCount( 2988 );
 } 
 "
-26493872,resolveValue,utility methods that resolve the value passed with for the given context, method resolve value ,"
+26493872,resolveValue,utility methods that resolve the value passed with for the given context," method resolve value ","
 
 protected String resolveValue( MagnetContext aContext, String aValue ) throws RenderingException {
     try {
@@ -1974,7 +1974,7 @@ protected String resolveValue( MagnetContext aContext, String aValue ) throws Re
     }
 } 
 "
-43040209,addErrors,adds the given error for the given property, adds the errors to the end of the given error ,"
+43040209,addErrors,adds the given error for the given property," adds the errors to the end of the given error ","
 
 public void addErrors( String el, IErrorDescription... error ) {
     final IErrorDescription[] msg = errors.get( el );
@@ -1982,7 +1982,7 @@ public void addErrors( String el, IErrorDescription... error ) {
     errors.put( el, msg == null ? error : merge( msg, error ));
 } 
 "
-16777940,readFromFile,ask a file for the username and password, reads the file from the file and then shows it ,"
+16777940,readFromFile,ask a file for the username and password," reads the file from the file and then shows it ","
 
 private void readFromFile() {
     try {
@@ -1999,7 +1999,7 @@ private void readFromFile() {
     }
 } 
 "
-33718481,testGetEmail,test of get email method of class tools, test of get email method of class org ,"
+33718481,testGetEmail,test of get email method of class tools," test of get email method of class org ","
 
 public void testGetEmail() {
     System.out.println( ""getEmail"" );
@@ -2012,7 +2012,7 @@ public void testGetEmail() {
     //  fail( ""The test case is a prototype."" );
 } 
 "
-45929468,getRelFeedItems,feed feed item, returns the list of the feed items for the given feed item,"
+45929468,getRelFeedItems,feed feed item," returns the list of the feed items for the given feed item","
 
 public List getRelFeedItems( FeedItem feedItem ) {
     final int feedId = feedItem.getFeed().getFeedId();
@@ -2020,7 +2020,7 @@ public List getRelFeedItems( FeedItem feedItem ) {
     return getPagedListByNativeSQL( FeedItem.class, sql, "" id desc"", 1, 20 );
 } 
 "
-2896279,print,returns a string representation of this regular expression, prints a tab ,"
+2896279,print,returns a string representation of this regular expression," prints a tab ","
 
 public String print( String tab ) {
     if ( content instanceof RegExp ) {
@@ -2030,7 +2030,7 @@ public String print( String tab ) {
         return tab + ""type = "" + type + Out.NL + tab + ""content :"" + Out.NL + tab + ""  "" + content;
 } 
 "
-27907979,atomToExpression,returns the expression for inserting or selecting the atom, convert atom to a <UNK> atom from the atom ,"
+27907979,atomToExpression,returns the expression for inserting or selecting the atom," convert atom to a <UNK> atom from the atom ","
 
 private String atomToExpression( Atom atom, String name ) {
     String expr = name + "" = "";
@@ -2054,7 +2054,7 @@ private String atomToExpression( Atom atom, String name ) {
     return expr;
 } 
 "
-33719117,testSetChkEvtID,test of set chk evt id method of class com, test of set chk method of class wikipedia ,"
+33719117,testSetChkEvtID,test of set chk evt id method of class com," test of set chk method of class wikipedia ","
 
 public void testSetChkEvtID() {
     System.out.println( ""setChkEvtID"" );
@@ -2068,7 +2068,7 @@ public void testSetChkEvtID() {
     fail( ""The test case is a prototype."" );
 } 
 "
-12725774,actionPerformed,group select or deselct on all selected rows, invoked when the user presses the selected items ,"
+12725774,actionPerformed,group select or deselct on all selected rows," invoked when the user presses the selected items ","
 
 public void actionPerformed( ActionEvent e ) {
     int[] selectedRows = features.getSelectedRows();
@@ -2083,7 +2083,7 @@ public void actionPerformed( ActionEvent e ) {
     }
 } 
 "
-20950900,load,loads the image from a file, loads the file into the file ,"
+20950900,load,loads the image from a file," loads the file into the file ","
 
 private void load( LockedFile file ) throws SQLIOException {
     file.setPosition( POS_HEADER );
@@ -2100,7 +2100,7 @@ private void load( LockedFile file ) throws SQLIOException {
     verifyAndFixHeader( file );
 } 
 "
-47479282,getAllSourceRoots,returns all of the source roots specified in the source bundle providing, returns the source roots of the plugin name ,"
+47479282,getAllSourceRoots,returns all of the source roots specified in the source bundle providing," returns the source roots of the plugin name ","
 
 public Set getAllSourceRoots( String pluginName, Version pluginVersion ) {
     Set pluginSourceRoots = new HashSet();
@@ -2115,7 +2115,7 @@ public Set getAllSourceRoots( String pluginName, Version pluginVersion ) {
     return pluginSourceRoots;
 } 
 "
-35061399,leaveAll,generate events to leave all components vertex edge or cell, removes the event from the list ,"
+35061399,leaveAll,generate events to leave all components vertex edge or cell," removes the event from the list ","
 
 private void leaveAll( MouseEvent<? extends EventHandler > event ) {
     LocInfo locInfo = new LocInfo();
@@ -2127,7 +2127,7 @@ private void leaveAll( MouseEvent<? extends EventHandler > event ) {
     lastLocInfo.copy( locInfo );
 } 
 "
-31788771,addUIDeployment,add a sand uideployment to our list of uis for this project, internal method for <UNK> the <UNK> thread ,"
+31788771,addUIDeployment,add a sand uideployment to our list of uis for this project," internal method for <UNK> the <UNK> thread ","
 
 public void addUIDeployment( SandUIDeployment uidep ) {
     SandUIDeployment[] olduis = getSandUIDeployments();
@@ -2137,7 +2137,7 @@ public void addUIDeployment( SandUIDeployment uidep ) {
     setSandUIDeployments( newuis );
 } 
 "
-34609355,getFastestGenerator,returns the fastest generator for the given language, returns the fastest generator for the given locale ,"
+34609355,getFastestGenerator,returns the fastest generator for the given language," returns the fastest generator for the given locale ","
 
 public WordFormGenerator getFastestGenerator( final Locale locale ) throws MorphologyException {
     if ( locale == null ) {
@@ -2150,7 +2150,7 @@ public WordFormGenerator getFastestGenerator( final Locale locale ) throws Morph
     return component;
 } 
 "
-40776207,process,notifies the client that the worker is ready to receive calls to other, process a worker thread ,"
+40776207,process,notifies the client that the worker is ready to receive calls to other," process a worker thread ","
 
 public void process( WorkerIsReadyMessageHandle handle, ServiceManager serviceManager ) {
     WorkerIsReadyProcessorRequestTO to = new WorkerIsReadyProcessorRequestTO();
@@ -2161,7 +2161,7 @@ public void process( WorkerIsReadyMessageHandle handle, ServiceManager serviceMa
     OurGridRequestControl.getInstance().execute( to, serviceManager );
 } 
 "
-41287529,play,start running the simulation from either a stopped or paused state, plays the current state ,"
+41287529,play,start running the simulation from either a stopped or paused state," plays the current state ","
 
 public void play(){
     if( currentState == SimulatorState.STOPPED ){
@@ -2176,7 +2176,7 @@ public void play(){
     }
 } 
 "
-250694,getCollaborateCollection,returns the list of collaborate collections for the given user id, get a list of addresses that are logged in ,"
+250694,getCollaborateCollection,returns the list of collaborate collections for the given user id," get a list of addresses that are logged in ","
 
 public List getCollaborateCollection( String userID ) throws AccessException {
     logger.debug( ""entering getCollaborateCollection()"" );
@@ -2189,7 +2189,7 @@ public List getCollaborateCollection( String userID ) throws AccessException {
     return list;
 } 
 "
-49866815,createChecklistItem,creates a checklist item for the specified list, create a new checklist item ,"
+49866815,createChecklistItem,creates a checklist item for the specified list," create a new checklist item ","
 
 public long createChecklistItem( long listId, String item, boolean isDone ) {
     ContentValues values = new ContentValues();
@@ -2199,7 +2199,7 @@ public long createChecklistItem( long listId, String item, boolean isDone ) {
     return mDb.insert( CHECKLIST_ITEM_TBL, null, values );
 } 
 "
-27798254,pluginRegistryContains,tests if plugin is in registry, check if the plugin is already contained in the registry ,"
+27798254,pluginRegistryContains,tests if plugin is in registry," check if the plugin is already contained in the registry ","
 
 public boolean pluginRegistryContains( String pluginName ) {
     synchronized ( registry ) {
@@ -2213,7 +2213,7 @@ public boolean pluginRegistryContains( String pluginName ) {
     return false;
 } 
 "
-51577053,addPKColumn,adds a primarykey column, adds primary key column with column name ,"
+51577053,addPKColumn,adds a primarykey column," adds primary key column with column name ","
 
 public void addPKColumn( String aPKColName ) throws IllegalArgumentException {
     Column col = ( Column ) colMap.get( aPKColName );
@@ -2225,7 +2225,7 @@ public void addPKColumn( String aPKColName ) throws IllegalArgumentException {
     pkColumns.add( col );
 } 
 "
-14477536,go,shake hands with the server, go through the user interface and send the user to the server,"
+14477536,go,shake hands with the server," go through the user interface and send the user to the server","
 
 public void go( String theUserName ) {
     try {
@@ -2248,7 +2248,7 @@ public void go( String theUserName ) {
     }
 } 
 "
-19507414,testMoveRFWithNullContainer,ensures that a rodin file cannot be moved to a null container, tests if a null include not null container null if not found,"
+19507414,testMoveRFWithNullContainer,ensures that a rodin file cannot be moved to a null container," tests if a null include not null container null if not found","
 
 public void testMoveRFWithNullContainer() throws CoreException {
     IRodinFile rfSource = createRodinFile( ""/P/X.test"" );
@@ -2260,7 +2260,7 @@ public void testMoveRFWithNullContainer() throws CoreException {
     assertTrue( ""Should not be able to move a rf to a null container"", false );
 } 
 "
-50891793,testSetExample,test of set example method of class com, test of set example method of class nl ,"
+50891793,testSetExample,test of set example method of class com," test of set example method of class nl ","
 
 public void testSetExample() {
     System.out.println( ""testSetExample"" );
@@ -2271,7 +2271,7 @@ public void testSetExample() {
     assertEquals( tag.getExample(), testString );
 } 
 "
-11759898,markStart,marks the start of the interval, mark the given tag ,"
+11759898,markStart,marks the start of the interval," mark the given tag ","
 
 public void markStart( Object tag ) {
     synchronized ( pair2startTimeMap ) {
@@ -2284,7 +2284,7 @@ public void markStart( Object tag ) {
     }
 } 
 "
-1118165,modifyRoleInCache,role user cache resource cache, modifies the role in the cache ,"
+1118165,modifyRoleInCache,role user cache resource cache," modifies the role in the cache ","
 
 public void modifyRoleInCache( Role role, String orgRolename ) {
     Set users = role.getUsers();
@@ -2299,7 +2299,7 @@ public void modifyRoleInCache( Role role, String orgRolename ) {
     }
 } 
 "
-1412807,capitalizeString,capitalizes the first letter of each word, capitalize the first letter of the beginning of a string ,"
+1412807,capitalizeString,capitalizes the first letter of each word," capitalize the first letter of the beginning of a string ","
 
 public String capitalizeString( String s ) {
     String result = """";
@@ -2313,7 +2313,7 @@ public String capitalizeString( String s ) {
     return result;
 } 
 "
-43303607,iconify,iconify the given frame, iconifies the frame location of the frame ,"
+43303607,iconify,iconify the given frame," iconifies the frame location of the frame ","
 
 public void iconify( final Frame frame ) {
     Point loc = getIconifyLocation( frame );
@@ -2328,7 +2328,7 @@ public void iconify( final Frame frame ) {
     });
 } 
 "
-19346491,checkSetLayout,checks layout set correctly, check if the layout is a layout ,"
+19346491,checkSetLayout,checks layout set correctly," check if the layout is a layout ","
 
 private void checkSetLayout( int layout, String field ) {
     filter.setLayoutIndex( layout );
@@ -2339,7 +2339,7 @@ private void checkSetLayout( int layout, String field ) {
     assertEquals( ""Expected field '"" + field + ""' but got "" + fld, field, fld );
 } 
 "
-50026101,getRemoteObject,return a reference to a remote object, returns the <UNK> object for the given <UNK> ,"
+50026101,getRemoteObject,return a reference to a remote object," returns the <UNK> object for the given <UNK> ","
 
 public DBusInterface getRemoteObject( String objectpath ) throws DBusException {
     if ( null == objectpath ) { throw new DBusException(_( ""Invalid object path: null"" )); }
@@ -2349,7 +2349,7 @@ public DBusInterface getRemoteObject( String objectpath ) throws DBusException {
     return dynamicProxy( objectpath );
 } 
 "
-33719869,testSetWelcomeMsg,test of set welcome msg method of class com, test of set welcome message method of class slide ,"
+33719869,testSetWelcomeMsg,test of set welcome msg method of class com," test of set welcome message method of class slide ","
 
 public void testSetWelcomeMsg() {
     System.out.println( ""setWelcomeMsg"" );
@@ -2361,7 +2361,7 @@ public void testSetWelcomeMsg() {
     fail( ""The test case is a prototype."" );
 } 
 "
-4627680,updateSchema,update an already existent user schema, updates the schema from the given schema ,"
+4627680,updateSchema,update an already existent user schema," updates the schema from the given schema ","
 
 public void updateSchema( String kind, SchemaTO schemaTO ) {
     try {
@@ -2371,7 +2371,7 @@ public void updateSchema( String kind, SchemaTO schemaTO ) {
     }
 } 
 "
-39840471,testCookieGreaterThan,verify the value stored in a cookie using code greater than tag code, tests if the cookie is greater than the same value ,"
+39840471,testCookieGreaterThan,verify the value stored in a cookie using code greater than tag code," tests if the cookie is greater than the same value ","
 
 public void testCookieGreaterThan() throws ServletException,  JspException {
     GreaterThanTag gt = new GreaterThanTag();

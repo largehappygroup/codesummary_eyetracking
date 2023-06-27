@@ -95,7 +95,7 @@ def tobii_data_callback(gaze_data):
     irl_right_coord = gaze_data['right_gaze_origin_in_user_coordinate_system']
     irl_left_point_on_screen = gaze_data['left_gaze_point_in_user_coordinate_system']
     irl_right_point_on_screen = gaze_data['right_gaze_point_in_user_coordinate_system']
-    # FIXME - check how bad the drifting is
+
     if task.current_task == "writing":
         fid = writing_stimuli.iloc[writing_arr[task.i-1], 1]
         func_name = writing_stimuli.iloc[writing_arr[task.i-1], 2]
