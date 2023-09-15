@@ -8,7 +8,7 @@ The main file for running the task is server2.py. It does not rely on any esoter
 The task is also designed so if the internet cuts out or if the task crashes, running server2.py with the same ID number will resume at the last save point. 
 Below is a list of all the data types recorded during the task:
 
-## Data 
+## Data - For access to data, please ask Zach (z.karas@vanderbilt.edu)
 * Keystrokes: All keystrokes made by participants, including timepoints and the function name. Saved as <idnum>_keystrokes.csv
 </br> (e.g. 008,showLatestPlan,18418213,S,2023-02-21 16:57:42.880827)
 </br>
