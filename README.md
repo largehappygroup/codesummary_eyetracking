@@ -27,9 +27,7 @@ The code responsible for the task is in the static/css folder and the templates 
 
 ## Stimuli
 This folder contains the "database." Just spreadsheets that store the Java functions, their id numbers, and summaries (human and AI written). 
-* stimulus_selection.ipynb - takes the pruned_seeds2.csv and generates writing stimuli and reading stimuli, which don't share any functions. The task is designed so 60% of the functions seen by each participant are the same, with the other 40% being from a larger, random pool of stimuli. Here it's designed so there are 40 reading stimuli and 25 writing stimuli. This file also does a sort of bit flip for whether participants see the human-written or AI-written summaries. Since it's all randomized, this may not do very much.
-### Folders
-
+* stimulus_selection.ipynb - takes the pruned_seeds2.csv and generates writing stimuli and reading stimuli, which don't share any functions. The task is designed so 60% of the functions seen by each participant are the same, with the other 40% being from a larger, random pool of stimuli. Here it's designed so there are 40 reading stimuli and 25 writing stimuli. This file also does a sort of bit flip for whether participants see the human-written or AI-written summaries.
 
 ## Bounding Boxes
 This directory contains the code for creating the bounding boxes, intermediate data, and final bounding box files. The important folders are final_stimuli (images of each Java function) and word_coordinates_final (polished bounding boxes for each function). Below is a short description of each file:
@@ -38,16 +36,19 @@ This directory contains the code for creating the bounding boxes, intermediate d
 * 3_bounding_boxes_preprocessing.ipynb - This file cleans all the csv files and removes trailing characters like ";" and boxes for paretheses only. Stores these polished files in word_coordinates_final
 * 3.5_split_bounding_boxes.ipynb - Using OCR split the methods by spaces, but this did not split method calls (e.g. clock.getCurrentTime). This split was accomplished manually to differentiate the object from the method call.
 * 4_localize_gaze.ipynb - Reads in the eye-tracking files and annotates each gaze point with the bounding box for the code the participant was looking at. Averages a participants left and right gaze coordinates.
-### Folders
+#### Folders
 * final_stimuli - contains screenshots of all 162 Java methods used in the study
 * old_stimuli - contains a record of methods that were excluded.
 * word_coordinates - contains the coordinates for every token in the Java methods. This folder contains an intermeidate representation, where some of the tokens have not been matched.
 * word_coordinates_final - contains the coordinates for all the tokens in raw pixel coordinates, as well as pixel coordinates normalized to be between 0 and 1. (Tobii records eye-tracking coordinates using 0-1 values)
 * word_coordinates_split - coordinates for tokens where object names and method calls are split
-* word_coordinates_split - intermediate representation.
+* word_coordinates_split_6_4 - intermediate representation.
 
 ## Analysis
-* noise.py - crude metric for calculating noise. Basically looks at the ratio of NaN rows  when the eye-tracker couldn't record someone's eyes, and valid coordinates.  
+This folder contains analysis code for both the Java methods, as well as the eye-tracking data. Java methods were parsed using srcML [3] to get the structural context of each token (e.g. variable declaration, conditional block, method name, etc.) based on the Abstract Syntax Tree (AST). These AST annotations were assigned to each token as a list, then combined with the bounding box coordinates to obtain unified spreadsheets of physical coordinates for the tokens as they were presented, and semantic information about the tokens. I then "abstracted" each token by giving it a generalized label based on its purpose in the methods ('Hello World' --> String Literal).
+
+I then analyzed the eye-tracking metrics associated with these tokens. More specifically, I calculated the fixation counts and fixation durations on each token, then computed the scan paths  
+* noise.py - crude metric for calculating noise. Basically looks at the ratio of NaN rows  when the eye-tracker couldn't record someone's eyes, and valid coordinates.
 
 
 
@@ -66,4 +67,7 @@ The general workflow is:
 Code Summarization. IEEE Transactions on Software Engineering (2023).
 
 [2] Alexander LeClair and Collin McMillan. 2019. Recommendations for datasets for source code summarization. arXiv preprint arXiv:1904.02660 (2019).
+
+[3] Michael L Collard, Michael John Decker, and Jonathan I Maletic. 2013. srcml: An infrastructure for the exploration, analysis, and manipulation of
+source code: A tool demonstration. In 2013 IEEE International conference on software maintenance. IEEE, 516–519.
 
