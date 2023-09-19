@@ -9,24 +9,18 @@ The task is also designed so if the internet cuts out or if the task crashes, ru
 Below is a list of all the data types recorded during the task:
 
 ## Data - For access, please email Zach with your name and title (z.karas@vanderbilt.edu).
-* Keystrokes: All keystrokes made by participants, including timepoints and the function name. Saved as <idnum>_keystrokes.csv
-</br> (e.g. 008,showLatestPlan,18418213,S,2023-02-21 16:57:42.880827)
-</br>
-* Task: All ratings on summary reading section and all summaries on writing section. Saved as <idnum>_task.csv
-</br> (e.g. ID#,	createServerChooser, 35553791,	reading,		 ,creates the server chooser, callcon,	neutral,	s_agree,	s_disagree,	agree,	36:35.9) where columns are participant_id, function_name, function_id, task, participant_summary, given_summary, summary_author, how_accurate, missing_info, unnecessary_info, end_time. For the writing condition, the ratings columns will be empty and the participant's summary will be recorded.
-</br>
+* Keystrokes: All keystrokes made by participants, including timepoints and the function name. Saved as <idnum>_keystrokes.csv (e.g. 008,showLatestPlan,18418213,S,2023-02-21 16:57:42.880827)
+* Task: All ratings on summary reading section and all summaries on writing section. Saved as <idnum>_task.csv (e.g. ID#,	createServerChooser, 35553791,	reading,		 ,creates the server chooser, callcon,	neutral,	s_agree,	s_disagree,	agree,	36:35.9) where columns are participant_id, function_name, function_id, task, participant_summary, given_summary, summary_author, how_accurate, missing_info, unnecessary_info, end_time. For the writing condition, the ratings columns will be empty and the participant's summary will be recorded.
 * Reading Save: The participant's progress on the reading task (e.g. how many stimuli they've seen)
-</br>
 * Writing Save: The participant's progress on the writing task (same as reading)
-</br>
-* Gaze folder: contains all the gaze files if eye-tracking is being recorded, split by file name. The column headers here are ['participant_id', 'function_name', 'function_id', 'system_timestamp', 'device_timestamp', 'valid_gaze_left', 'valid_gaze_right', 'gaze_left_eye', 'gaze_right_eye', 'valid_pd_left', 'valid_pd_right', 'gaze_left', 'gaze_right', 'irl_left_coord, irl_right_coord, irl_left_point_on_screen, irl_right_point_on_screen]
-The irl points are the participants locations in physical space (used for creating fixation filter)
+* Gaze folder: contains all the gaze files if eye-tracking is being recorded, split by file name. The column headers here are ['participant_id', 'function_name', 'function_id', 'system_timestamp', 'device_timestamp', 'valid_gaze_left', 'valid_gaze_right', 'gaze_left_eye', 'gaze_right_eye', 'valid_pd_left', 'valid_pd_right', 'gaze_left', 'gaze_right', 'irl_left_coord, irl_right_coord, irl_left_point_on_screen, irl_right_point_on_screen].
+The irl points are the participants locations in physical space (used for creating fixation filter.
 
 ## Actual task design
 The code responsible for the task is in the static/css folder and the templates folder. The templates folder contains html files corresponding to the task (reading template, writing template, rest slide template, etc.)
 
 ## Stimuli
-This folder contains the "database." Just spreadsheets that store the Java functions, their id numbers, and summaries (human and AI written). 
+This folder contains the "database." Just spreadsheets that store the Java functions, their id numbers, and summaries (human and AI written). The final spreadsheet used in the task is pruned_seeds2.csv
 * stimulus_selection.ipynb - takes the pruned_seeds2.csv and generates writing stimuli and reading stimuli, which don't share any functions. The task is designed so 60% of the functions seen by each participant are the same, with the other 40% being from a larger, random pool of stimuli. Here it's designed so there are 40 reading stimuli and 25 writing stimuli. This file also does a sort of bit flip for whether participants see the human-written or AI-written summaries.
 
 ## Bounding Boxes
@@ -45,9 +39,9 @@ This directory contains the code for creating the bounding boxes, intermediate d
 * word_coordinates_split_6_4 - intermediate representation.
 
 ## Analysis
-This folder contains analysis code for both the Java methods, as well as the eye-tracking data. Java methods were parsed using srcML [3] to get the structural context of each token (e.g. variable declaration, conditional block, method name, etc.) based on the Abstract Syntax Tree (AST). These AST annotations were assigned to each token as a list, then combined with the bounding box coordinates to obtain unified spreadsheets of physical coordinates for the tokens as they were presented, and semantic information about the tokens. I then "abstracted" each token by giving it a generalized label based on its AST context ('Hello World' --> String Literal). In total, there were 19 unique semantic labels for all the tokens in the Java methods. 
+This folder contains analysis code for both the Java methods, as well as the eye-tracking data. Java methods were parsed using srcML [3] to get the structural context of each token (e.g. variable declaration, conditional block, method name, etc.) based on the Abstract Syntax Tree (AST). These AST annotations were assigned to each token as a list, then combined with the bounding box coordinates. Through this process I obtained unified spreadsheets of physical coordinates for the tokens as they were presented, and semantic information about the tokens. I then "abstracted" each token by giving it a generalized label based on its AST context ('Hello World' --> String Literal). In total, there were 19 unique semantic labels for all the tokens in the Java methods. 
 
-Using the raw tokens and the abstract tokens, I then analyzed the eye-tracking data associated with these. For instance, I calculated the number of times participants would look at a token like 'println' (fixation count), and the amount of time they looked at it (fixation duration). I also calculated scan paths, which are the ordered sequences of fixations. 
+Using the raw tokens and the abstract tokens, I then analyzed the eye-tracking data associated with these. For instance, I calculated the number of times participants would look at a token like 'println' (fixation count), and the amount of time they looked at it (average fixation duration). I also calculated scan paths, which are the ordered sequences of fixations. 
 * noise.py - crude metric for calculating noise. Basically looks at the ratio of NaN rows  when the eye-tracker couldn't record someone's eyes, and valid coordinates.
 
 
