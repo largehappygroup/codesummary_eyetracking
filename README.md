@@ -39,10 +39,31 @@ This directory contains the code for creating the bounding boxes, intermediate d
 * word_coordinates_split_6_4 - intermediate representation.
 
 ## Analysis
-This folder contains analysis code for both the Java methods, as well as the eye-tracking data. Java methods were parsed into Abstract Syntax Trees (AST) using srcML [3] to get the structural context of each token (e.g. variable declaration, conditional block, method name, etc.). These AST annotations were assigned to each token as a list, then combined with the bounding box coordinates. Through this process I obtained unified spreadsheets of physical coordinates for the tokens as they were presented, and semantic information about the tokens. I then "abstracted" each token by giving it a generalized label based on its AST context ('Hello World' --> String Literal). In total, there were 19 unique semantic labels for all the tokens in the Java methods. 
 
-Using the raw tokens and the abstract tokens, I then analyzed the eye-tracking data associated with these. For instance, I calculated the number of times participants would look at a token like 'println' (fixation count), and the amount of time they looked at it (average fixation duration). I also calculated scan paths, which are the ordered sequences of fixations. 
+### Preprocessing
+This folder contains analysis code for both the Java methods, as well as the eye-tracking data. Java methods were parsed into Abstract Syntax Trees (AST) using srcML [3] to get the structural context of each token (e.g. variable declaration, conditional block, method name, etc.). These AST annotations were assigned to each token as a list, then combined with the bounding box coordinates. Through this process I obtained unified spreadsheets of physical coordinates for the tokens as they were presented, and semantic information about the tokens. I then "abstracted" each token by giving it a generalized label based on its AST context ('Hello World' --> String Literal). In total, there were 19 unique semantic labels for all the tokens in the Java methods. 
+* fixationCountAndDuration.py
+* fixationfilter.py
+* make_abstract_scan_paths.py
+* make_ASTs.py
+* make_scan_paths.py
+* parsing.ipynb
+
+### Midprocessing
+The midprocessing folder contains pickle files with intermediate data structures calculated from the pre-processing steps. Some important/helpful ones are the following:
+* abstract_code_parts_by_precedence.pkl - mapping between all tokens in all methods and their corresponding semantic label 
+* ASTs.pkl - AST representations for all the methods in the dataset
+* reading_scanpaths.pkl - all participant scan paths through the code for the reading condition (reading code with a pre-written summary)
+* writing_scanpaths.pkl - all participant scan paths through the code for the writing condition (reading code to write one's own summary)
+
+### Calculating Eye-tracking Metrics
+Using the raw tokens and the abstract tokens, I then analyzed the eye-tracking data associated with these. For instance, I calculated the number of times participants would look at a token like 'println' (fixation count), and the amount of time they looked at it (average fixation duration). I also calculated scan paths, which are the ordered sequences of fixations.
 * noise.py - crude metric for calculating noise. Basically looks at the ratio of NaN rows  when the eye-tracker couldn't record someone's eyes, and valid coordinates.
+* 2_AST.ipynb - one of the main analysis notebooks
+* 3_contiued.ipynb
+* 3_proportion_of_code.ipynb - one of the main analysis notebooks
+* analysis_wrapper.ipynb - contains some high level measures and stats about the task (time, total fixations)
+* 
 
 
 
